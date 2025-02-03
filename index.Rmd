@@ -1,5 +1,5 @@
 --- 
-title: "R Basic Course IEO"
+title: "R Basic Course"
 author: "Mardones, M. & Zúñiga, MJ."
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -24,7 +24,7 @@ knitr::opts_chunk$set(echo = FALSE,
                       warning = FALSE,
                       dev = 'jpeg',
                       dpi = 300,
-                      tidy.opts=list(width.cutoff=50), 
+                      tidy.opts=list(width.cutoff=40), 
                       tidy=TRUE)
 #XQuartz is a mess, put this in your onload to default to cairo instead
 options(bitmapType = "cairo") 

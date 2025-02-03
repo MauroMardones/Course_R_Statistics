@@ -20,8 +20,3 @@ sharing-your-book
 publishing
 pages
 metadata-for-sharing
-cover-image-path-to-the-social-sharing-image-like-imagescover.jpg
-r-markdown
-slide-with-bullets
-slide-with-r-output
-slide-with-plot
