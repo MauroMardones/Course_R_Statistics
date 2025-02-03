@@ -13,6 +13,7 @@ description: |
   set in the _output.yml file.
   The HTML output format for this example is bookdown::gitbook,
 link-citations: true
+linkcolor: blue
 site: bookdown::bookdown_site
 ---
 
