@@ -1,6 +1,7 @@
 bookdown::gitbook:
   css: style.css
   config:
+    entry: index.html
     toc:
       before: |
         <li><a href="./">R Basic Course IEO</a></li>
