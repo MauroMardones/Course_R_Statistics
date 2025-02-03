@@ -7,4 +7,9 @@ rmd_files:
   - index.Rmd
   - 01-intro.Rmd
   - 02-EDA.Rmd
+  - 03-Descr-stats.Rmd
+  - 04-Viz-Maps.Rmd
+  - 05-blocks.Rmd
+  - 06-share.Rmd
+  - 07-references.Rmd
   

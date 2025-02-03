@@ -16,7 +16,9 @@ bookdown::pdf_book:
   latex_engine: xelatex
   citation_package: natbib
   number_sections: true
+  pandoc_args: ["--top-level-division=chapter"]
   keep_tex: yes
+  linkcolor: blue
 
 bookdown::epub_book: default
 

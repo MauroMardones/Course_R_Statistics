@@ -1,4 +1,6 @@
-# Exploratory Data Analysis, Data handling, Data manipulation
+# Exploratory Data Analysis
+
+Data handling, Data manipulation
 
 Cross-references make it easier for your readers to find and link to elements in your book.
 
