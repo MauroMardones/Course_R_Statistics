@@ -2,3 +2,8 @@ delete_merged_file: true
 language:
   ui:
     chapter_name: "Section "
+
+rmd_files:
+  - index.Rmd
+  - 01-intro.Rmd
+  - 02-EDA.Rmd

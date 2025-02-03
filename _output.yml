@@ -1,10 +1,9 @@
 bookdown::gitbook:
   css: style.css
   config:
-    entry: index.html
     toc:
       before: |
-        <li><a href="./">R Basic Course IEO</a></li>
+        <li><a href="./">R Basic Course</a></li>
       after: |
         <li><a href="https://mauromardones.github.io/Course_R_Statictics/" target="blank">Published with bookdown</a></li>
     edit: https://github.com/mauromardones/Course_R_Statictics/main/%s

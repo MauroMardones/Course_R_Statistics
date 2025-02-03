@@ -1,4 +1,6 @@
-# Visualization. Graphics and Maps using modern packages
+# Visualization. 
+
+Graphics and Maps using modern packages
 
 ## Footnotes
 
