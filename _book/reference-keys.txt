@@ -1,6 +1,0 @@
-fig:nice-fig
-tab:nice-tab
-user.-intro-to-r-and-basic-features
-exploratory-data-analysis-data-handling-data-manipulation
-chapters-and-sub-chapters
-captioned-figures-and-tables
