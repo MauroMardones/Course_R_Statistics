@@ -1,0 +1,129 @@
+---
+title: "Intro to R and Basic Features"
+subtitle: "Curso R. Carrera Biología M/ Medio ambiente. Universidad de Chile."
+author: "Mauricio Mardones"
+date: "`r Sys.Date()`"
+output:
+  ioslides_presentation: default
+  widescreen: true
+  self_contained: true
+  css: custom.css
+---
+
+## Slide 1: Welcome
+
+- **R** is a programming language designed for:
+  - Statistical computing
+  - Data analysis
+  - Visualization
+  
+
+## Slide 2: ¿Por qué aprender R?
+
+![Visualización de datos](https://upload.wikimedia.org/wikipedia/commons/8/87/Scatterplot-matrix-example.png)
+
+- Código abierto y gratuito  
+- Gran comunidad de usuarios  
+- Potentes paquetes para ciencia de datos  
+- Investigación reproducible  
+
+
+
+
+## Slide 3: Getting Started
+
+1. Install R from [CRAN](https://cran.r-project.org)
+2. Install RStudio (optional, but highly recommended)
+3. Write your first R command:
+```r
+print("Hello, world!")
+```
+
+
+
+## Slide 4: Basic Data Types
+
+- **Numeric:** Numbers (e.g., `3.14`, `42`)
+- **Character:** Text strings (e.g., `"fish"`)
+- **Logical:** `TRUE` or `FALSE`
+- **Factor:** Categorical variables
+
+
+## Slide 5: Vectors
+
+- R's most fundamental data structure:
+   ```r
+   numbers <- c(1, 2, 3, 4)
+   letters <- c("a", "b", "c")
+   ```
+- Operations are vectorized:
+   ```r
+   numbers * 2
+   ```
+
+---
+
+## Slide 6: Data Frames
+
+- Table-like structures:
+```{r}
+df <- data.frame(Name = c("John", "Jane"), Age = c(25, 30))
+```
+- Inspect the structure:
+  
+```{r}
+head(df)
+```
+
+---
+
+## Slide 7: Visualization with ggplot2
+
+- Install the package:
+   ```r
+   install.packages("ggplot2")
+   ```
+- Example plot:
+
+
+```{r message=FALSE}
+library(tidyverse)
+ggplot(iris, aes(x = iris$Sepal.Length, y = iris$Species)) + geom_bar(stat = "identity")
+```
+
+---
+
+## Slide 8: Functions
+
+- Encapsulate reusable logic:
+
+```r
+square <- function(x) {
+     return(x^2)
+   }
+square(4)  # Output: 16
+```
+
+---
+
+## Slide 9: Statistical Analysis
+
+- Linear regression example:
+   ```r
+   fit <- lm(mpg ~ wt, data = mtcars)
+   summary(fit)
+   ```
+
+---
+
+## Slide 10: Conclusion
+
+- R is powerful for:
+  - Data analysis
+  - Visualization
+  - Statistics
+  
+**Happy Coding!**
+```
+
+Guarda el archivo con extensión `.Rmd` y renderízalo para obtener tu presentación.
