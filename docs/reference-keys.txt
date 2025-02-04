@@ -1,0 +1,16 @@
+eq:binom
+user.-intro-to-r-and-basic-features
+exploratory-data-analysis
+chapters-and-sub-chapters
+captioned-figures-and-tables
+descriptive-statistics.
+visualization.
+footnotes
+citations
+blocks
+equations
+callout-blocks
+sharing-your-book
+publishing
+pages
+metadata-for-sharing

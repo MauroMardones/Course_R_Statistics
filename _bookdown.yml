@@ -13,3 +13,4 @@ rmd_files:
   - 06-share.Rmd
   - 07-references.Rmd
   
+output_dir: "docs"
