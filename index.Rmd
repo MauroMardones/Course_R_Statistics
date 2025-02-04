@@ -18,11 +18,8 @@ site: bookdown::bookdown_site
 ```{r setup1, echo=FALSE}
 #rm(list = ls())
 #set.seed(999)
-knitr::opts_chunk$set(echo = FALSE,
-                      message = FALSE,
+knitr::opts_chunk$set(message = FALSE,
                       warning = FALSE,
-                      dev = 'jpeg',
-                      dpi = 300,
                       tidy.opts=list(width.cutoff=40), 
                       tidy=TRUE)
 #XQuartz is a mess, put this in your onload to default to cairo instead

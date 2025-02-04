@@ -34,7 +34,7 @@ knitr::opts_chunk$set(message = FALSE,
 summary(mtcars)
 ```
 
----
+
 
 ## Data Handling
 
@@ -51,7 +51,7 @@ data <- read.csv(url)
 head(data)
 ```
 
----
+
 
 ## Data Manipulation
 
@@ -65,7 +65,7 @@ subset_mpg <- mtcars[mtcars$mpg > 20, ]
 head(subset_mpg)
 ```
 
----
+
 
 ## Using `dplyr` for Data Manipulation
 
@@ -79,7 +79,7 @@ mtcars %>%
   summarise(avg_hp = mean(hp), count = n())
 ```
 
----
+
 
 ## Visualization with Base R
 
@@ -91,7 +91,7 @@ plot(mtcars$mpg, mtcars$hp,
      main = "MPG vs Horsepower")
 ```
 
----
+
 
 ## Final Thoughts
 - EDA is critical for understanding your data

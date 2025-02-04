@@ -1,9 +1,12 @@
-# Exploratory Data Analysis {#eda}
-
-## Introduction
+# Exploratory Data Analysis 
 
 Exploratory Data Analysis (EDA) is a crucial first step in analyzing data. It provides a summary of the main characteristics of datasets and helps identify patterns, outliers, and relationships.
 
+libraries
+
+```{r}
+library(tidyverse)
+```
 
 ## Summary Statistics in R
 
