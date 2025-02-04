@@ -37,6 +37,46 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -65,6 +105,20 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -75,7 +129,7 @@
 \urlstyle{same}
 \hypersetup{
   pdftitle={R Basic Course},
-  pdfauthor={Mardones, M. \& Zúñiga, MJ.},
+  pdfauthor={Mardones, Mauricio. \& Zúñiga, María José.},
   colorlinks=true,
   linkcolor={blue},
   filecolor={Maroon},
@@ -84,7 +138,7 @@
   pdfcreator={LaTeX via pandoc}}
 
 \title{R Basic Course}
-\author{Mardones, M. \& Zúñiga, MJ.}
+\author{Mardones, Mauricio. \& Zúñiga, María José.}
 \date{2025-02-04}
 
 \begin{document}
@@ -109,7 +163,7 @@ This course has these sections;
   \def\labelenumi{\arabic{enumi}.}
   \tightlist
   \item
-    \textbf{useR}. Intro to R and basic features,
+    \textbf{useR}. Intro to R and basic features.
   \end{enumerate}
 \item
   \begin{enumerate}
@@ -117,7 +171,7 @@ This course has these sections;
   \setcounter{enumi}{1}
   \tightlist
   \item
-    Exploratory Data Analysis, Data handling, Data manipulation
+    \textbf{Exploratory Data Analysis}. Basic concepts for data exploration.
   \end{enumerate}
 \item
   \begin{enumerate}
@@ -125,7 +179,7 @@ This course has these sections;
   \setcounter{enumi}{2}
   \tightlist
   \item
-    Descriptive Statistics. Parametric and No Parametric, Linear Regression, among others
+    \textbf{Descriptive Statistics}. Essential statistical calculations.
   \end{enumerate}
 \item
   \begin{enumerate}
@@ -133,46 +187,36 @@ This course has these sections;
   \setcounter{enumi}{3}
   \tightlist
   \item
-    Visualization. Graphics and Maps using modern packages
-    \ldots{} and more
+    \textbf{Visualization}. Graphics and Maps using modern packages
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \setcounter{enumi}{4}
+  \tightlist
+  \item
+    \textbf{Efficient code}. Organization strategies.\\
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \setcounter{enumi}{5}
+  \tightlist
+  \item
+    \textbf{Automatization and sharing} Report generation and result sharing.\\
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \setcounter{enumi}{6}
+  \tightlist
+  \item
+    \textbf{Management of Bibliographic} sources and additional materials.
   \end{enumerate}
 \end{itemize}
 
-This is a \emph{sample} book written in \textbf{Markdown}. You can use anything that Pandoc's Markdown supports; for example, a math equation \(a^2 + b^2 = c^2\).
-
-\hypertarget{usage}{%
-\section*{Usage}\label{usage}}
-\addcontentsline{toc}{section}{Usage}
-
-Each \textbf{bookdown} chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter \emph{must} start with a first-level heading: \texttt{\#\ A\ good\ chapter}, and can contain one (and only one) first-level heading.
-
-Use second-level and higher headings within chapters like: \texttt{\#\#\ A\ short\ section} or \texttt{\#\#\#\ An\ even\ shorter\ section}.
-
-The \texttt{index.Rmd} file is required, and is also your first book chapter. It will be the homepage when you render the book.
-
-\hypertarget{render-book}{%
-\section*{Render book}\label{render-book}}
-\addcontentsline{toc}{section}{Render book}
-
-You can render the HTML version of this example book without changing anything:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  Find the \textbf{Build} pane in the RStudio IDE, and
-\item
-  Click on \textbf{Build Book}, then select your output format, or select ``All formats'' if you'd like to use multiple formats from the same book source files.
-\end{enumerate}
-
-Or build the book from the R console:
-
-To render this example to PDF as a \texttt{bookdown::pdf\_book}, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): \url{https://yihui.org/tinytex/}.
-
-\hypertarget{preview-book}{%
-\section*{Preview book}\label{preview-book}}
-\addcontentsline{toc}{section}{Preview book}
-
-As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in ``Preview book'', or from the R console:
+All codes and used in this course can be founded in this repository with the structure to do this Ebook
+\href{https://github.com/MauroMardones/Course_R_Statistics}{Repo R Course}
 
 \hypertarget{user.-intro-to-r-and-basic-features}{%
 \chapter{\texorpdfstring{\textbf{useR}. Intro to R and basic features}{useR. Intro to R and basic features}}\label{user.-intro-to-r-and-basic-features}}
@@ -184,72 +228,177 @@ Source in this \href{https://estadistica-dma.ulpgc.es/cursoR4ULPGC/index.html}{l
 \hypertarget{exploratory-data-analysis}{%
 \chapter{Exploratory Data Analysis}\label{exploratory-data-analysis}}
 
-Data handling, Data manipulation
+Exploratory Data Analysis (EDA) is a crucial first step in analyzing data. It provides a summary of the main characteristics of datasets and helps identify patterns, outliers, and relationships.
 
-Cross-references make it easier for your readers to find and link to elements in your book.
+libraries
 
-\hypertarget{chapters-and-sub-chapters}{%
-\section{Chapters and sub-chapters}\label{chapters-and-sub-chapters}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
 
-There are two steps to cross-reference any heading:
+\hypertarget{summary-statistics-in-r}{%
+\section{Summary Statistics in R}\label{summary-statistics-in-r}}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+One of the simplest ways to start analyzing data is to generate summary statistics.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Simple summary of built{-}in dataset}
+\FunctionTok{summary}\NormalTok{(mtcars)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       mpg             cyl             disp             hp       
+##  Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  
+##  1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  
+##  Median :19.20   Median :6.000   Median :196.3   Median :123.0  
+##  Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  
+##  3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  
+##  Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  
+##       drat             wt             qsec             vs        
+##  Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  
+##  1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  
+##  Median :3.695   Median :3.325   Median :17.71   Median :0.0000  
+##  Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  
+##  3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  
+##  Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  
+##        am              gear            carb      
+##  Min.   :0.0000   Min.   :3.000   Min.   :1.000  
+##  1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  
+##  Median :0.0000   Median :4.000   Median :2.000  
+##  Mean   :0.4062   Mean   :3.688   Mean   :2.812  
+##  3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  
+##  Max.   :1.0000   Max.   :5.000   Max.   :8.000
+\end{verbatim}
+
+\hypertarget{data-handling}{%
+\section{Data Handling}\label{data-handling}}
+
+\hypertarget{loading-and-inspecting-data}{%
+\subsection{Loading and Inspecting Data}\label{loading-and-inspecting-data}}
+
+EDA often begins by loading the dataset and inspecting its structure.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Load CSV data}
+\NormalTok{url }\OtherTok{\textless{}{-}} \StringTok{"https://people.sc.fsu.edu/\textasciitilde{}jburkardt/data/csv/hw\_200.csv"}
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(url)}
+
+\CommentTok{\# View first rows of the data}
+\FunctionTok{head}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Index
+## 1     2
+## 2     3
+## 3     4
+## 4     5
+## 5     6
+## 6     7
+##   Height.Inches...Weight.Pounds..1..65.78..112.99.2..71.52..136.49.3..69.40..153.03.4..68.22..142.34.5..67.79..144.30.6..68.70..123.30.7..69.80..141.49.8..70.01..136.46.9..67.90..112.37.10..66.78..120.67.11..66.49..127.45.12..67.62..114.14.13..68.30..1 ...
+## 1                                                                                                                                                                                                                                                          71.52
+## 2                                                                                                                                                                                                                                                          69.40
+## 3                                                                                                                                                                                                                                                          68.22
+## 4                                                                                                                                                                                                                                                          67.79
+## 5                                                                                                                                                                                                                                                          68.70
+## 6                                                                                                                                                                                                                                                          69.80
+##   Weight.Pounds.
+## 1         136.49
+## 2         153.03
+## 3         142.34
+## 4         144.30
+## 5         123.30
+## 6         141.49
+\end{verbatim}
+
+\hypertarget{data-manipulation}{%
+\section{Data Manipulation}\label{data-manipulation}}
+
+\hypertarget{subsetting-data}{%
+\subsection{Subsetting Data}\label{subsetting-data}}
+
+You can select specific columns or rows based on logical operations.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Select rows where mpg is greater than}
+\CommentTok{\# 20}
+\NormalTok{subset\_mpg }\OtherTok{\textless{}{-}}\NormalTok{ mtcars[mtcars}\SpecialCharTok{$}\NormalTok{mpg }\SpecialCharTok{\textgreater{}} \DecValTok{20}\NormalTok{, ]}
+\FunctionTok{head}\NormalTok{(subset\_mpg)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                 mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4      21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag  21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710     22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+## Hornet 4 Drive 21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+## Merc 240D      24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
+## Merc 230       22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+\end{verbatim}
+
+\hypertarget{using-dplyr-for-data-manipulation}{%
+\subsection{\texorpdfstring{Using \texttt{dplyr} for Data Manipulation}{Using dplyr for Data Manipulation}}\label{using-dplyr-for-data-manipulation}}
+
+The \texttt{dplyr} package makes data manipulation efficient and readable.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Load the dplyr package}
+\FunctionTok{library}\NormalTok{(dplyr)}
+
+\CommentTok{\# Filter and summarize data}
+\NormalTok{mtcars }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{filter}\NormalTok{(mpg }\SpecialCharTok{\textgreater{}} \DecValTok{20}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{summarise}\NormalTok{(}\AttributeTok{avg\_hp =} \FunctionTok{mean}\NormalTok{(hp), }\AttributeTok{count =} \FunctionTok{n}\NormalTok{())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   avg_hp count
+## 1   88.5    14
+\end{verbatim}
+
+\hypertarget{visualization-with-base-r}{%
+\section{Visualization with Base R}\label{visualization-with-base-r}}
+
+Visualizations are essential for gaining insights quickly.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Simple scatter plot}
+\NormalTok{carsplot }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ mtcars,}
+    \FunctionTok{aes}\NormalTok{(mpg, hp)) }\SpecialCharTok{+} \FunctionTok{theme\_bw}\NormalTok{()}
+\NormalTok{carsplot}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\hypertarget{final-thoughts}{%
+\section{Final Thoughts}\label{final-thoughts}}
+
+\begin{itemize}
 \tightlist
 \item
-  Label the heading: \texttt{\#\ Hello\ world\ \{\#nice-label\}}.
+  EDA is critical for understanding your data.\\
+\item
+  Data handling ensures clean datasets.\\
+\item
+  Data manipulation prepares data for in-depth analysis.\\
+\item
+  Visualization helps reveal insights quickly.
+\end{itemize}
 
-  \begin{itemize}
-  \tightlist
-  \item
-    Leave the label off if you like the automated heading generated based on your heading title: for example, \texttt{\#\ Hello\ world} = \texttt{\#\ Hello\ world\ \{\#hello-world\}}.
-  \item
-    To label an un-numbered heading, use: \texttt{\#\ Hello\ world\ \{-\#nice-label\}} or \texttt{\{\#\ Hello\ world\ .unnumbered\}}.
-  \end{itemize}
-\end{enumerate}
-
-\hypertarget{captioned-figures-and-tables}{%
-\section{Captioned figures and tables}\label{captioned-figures-and-tables}}
-
-Figures and tables \emph{with captions} can also be cross-referenced from elsewhere in your book using \texttt{\textbackslash{}@ref(fig:chunk-label)} and \texttt{\textbackslash{}@ref(tab:chunk-label)}, respectively.
-
-See Figure \ref{fig:nice-fig}.
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.8\linewidth,alt={Plot with connected points showing that vapor pressure of mercury increases exponentially as temperature increases.}]{_main_files/figure-latex/nice-fig-1} 
-
-}
-
-\caption{Here is a nice figure!}\label{fig:nice-fig}
-\end{figure}
-
-Don't miss Table \ref{tab:nice-tab}.
-
-\begin{table}
-
-\caption{\label{tab:nice-tab}Here is a nice table!}
-\centering
-\begin{tabular}[t]{rr}
-\toprule
-temperature & pressure\\
-\midrule
-0 & 0.0002\\
-20 & 0.0012\\
-40 & 0.0060\\
-60 & 0.0300\\
-80 & 0.0900\\
-\addlinespace
-100 & 0.2700\\
-120 & 0.7500\\
-140 & 1.8500\\
-160 & 4.2000\\
-180 & 8.8000\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Sources
+\hypertarget{references}{%
+\section{References}\label{references}}
 
 \href{https://psyteachr.github.io/introdataviz/introduction.html}{Basic R}
 
@@ -261,15 +410,265 @@ Sources
 \hypertarget{descriptive-statistics.}{%
 \chapter{Descriptive Statistics.}\label{descriptive-statistics.}}
 
-Parametric and No Parametric, Linear Regression, among others
+\textbf{Descriptive statistics} summarize and organize data. They help us understand patterns and key characteristics in a dataset.
 
-You can add parts to organize one or more book chapters together. Parts can be inserted at the top of an .Rmd file, before the first-level chapter heading in that same file.
+We'll explore basic concepts using the \texttt{penguins} dataset from the \texttt{palmerpenguins} package.
 
-Add a numbered part: \texttt{\#\ (PART)\ Act\ one\ \{-\}} (followed by \texttt{\#\ A\ chapter})
+\hypertarget{the-penguins-dataset}{%
+\section{\texorpdfstring{The \texttt{penguins} Dataset}{The penguins Dataset}}\label{the-penguins-dataset}}
 
-Add an unnumbered part: \texttt{\#\ (PART\textbackslash{}*)\ Act\ one\ \{-\}} (followed by \texttt{\#\ A\ chapter})
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\FunctionTok{library}\NormalTok{(palmerpenguins)}
+\FunctionTok{library}\NormalTok{(kableExtra)}
+\FunctionTok{data}\NormalTok{(}\StringTok{"penguins"}\NormalTok{)}
+\FunctionTok{kbl}\NormalTok{(}\FunctionTok{head}\NormalTok{(penguins, }\AttributeTok{n =} \DecValTok{4}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
 
-Add an appendix as a special kind of un-numbered part: \texttt{\#\ (APPENDIX)\ Other\ stuff\ \{-\}} (followed by \texttt{\#\ A\ chapter}). Chapters in an appendix are prepended with letters instead of numbers.
+\begin{tabular}[t]{l|l|r|r|r|r|l|r}
+\hline
+species & island & bill\_length\_mm & bill\_depth\_mm & flipper\_length\_mm & body\_mass\_g & sex & year\\
+\hline
+Adelie & Torgersen & 39.1 & 18.7 & 181 & 3750 & male & 2007\\
+\hline
+Adelie & Torgersen & 39.5 & 17.4 & 186 & 3800 & female & 2007\\
+\hline
+Adelie & Torgersen & 40.3 & 18.0 & 195 & 3250 & female & 2007\\
+\hline
+Adelie & Torgersen & NA & NA & NA & NA & NA & 2007\\
+\hline
+\end{tabular}
+
+\hypertarget{basic-data-exploration}{%
+\section{Basic Data Exploration}\label{basic-data-exploration}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Check dimensions and structure}
+\FunctionTok{dim}\NormalTok{(penguins)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 344   8
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(penguins)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## tibble [344 x 8] (S3: tbl_df/tbl/data.frame)
+##  $ species          : Factor w/ 3 levels "Adelie","Chinstrap",..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ island           : Factor w/ 3 levels "Biscoe","Dream",..: 3 3 3 3 3 3 3 3 3 3 ...
+##  $ bill_length_mm   : num [1:344] 39.1 39.5 40.3 NA 36.7 39.3 38.9 39.2 34.1 42 ...
+##  $ bill_depth_mm    : num [1:344] 18.7 17.4 18 NA 19.3 20.6 17.8 19.6 18.1 20.2 ...
+##  $ flipper_length_mm: int [1:344] 181 186 195 NA 193 190 181 195 193 190 ...
+##  $ body_mass_g      : int [1:344] 3750 3800 3250 NA 3450 3650 3625 4675 3475 4250 ...
+##  $ sex              : Factor w/ 2 levels "female","male": 2 1 1 NA 1 2 1 2 NA NA ...
+##  $ year             : int [1:344] 2007 2007 2007 2007 2007 2007 2007 2007 2007 2007 ...
+\end{verbatim}
+
+\hypertarget{summary-statistics}{%
+\section{Summary Statistics}\label{summary-statistics}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Quick statistical overview}
+\FunctionTok{summary}\NormalTok{(penguins)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       species          island    bill_length_mm  bill_depth_mm  
+##  Adelie   :152   Biscoe   :168   Min.   :32.10   Min.   :13.10  
+##  Chinstrap: 68   Dream    :124   1st Qu.:39.23   1st Qu.:15.60  
+##  Gentoo   :124   Torgersen: 52   Median :44.45   Median :17.30  
+##                                  Mean   :43.92   Mean   :17.15  
+##                                  3rd Qu.:48.50   3rd Qu.:18.70  
+##                                  Max.   :59.60   Max.   :21.50  
+##                                  NA's   :2       NA's   :2      
+##  flipper_length_mm  body_mass_g       sex           year     
+##  Min.   :172.0     Min.   :2700   female:165   Min.   :2007  
+##  1st Qu.:190.0     1st Qu.:3550   male  :168   1st Qu.:2007  
+##  Median :197.0     Median :4050   NA's  : 11   Median :2008  
+##  Mean   :200.9     Mean   :4202                Mean   :2008  
+##  3rd Qu.:213.0     3rd Qu.:4750                3rd Qu.:2009  
+##  Max.   :231.0     Max.   :6300                Max.   :2009  
+##  NA's   :2         NA's   :2
+\end{verbatim}
+
+\hypertarget{central-tendency}{%
+\section{Central Tendency}\label{central-tendency}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Mean:} average value\\
+\item
+  \textbf{Median:} middle value\\
+\item
+  \textbf{Mode:} most frequent value
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(penguins}\SpecialCharTok{$}\NormalTok{bill\_length\_mm, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 43.92193
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{median}\NormalTok{(penguins}\SpecialCharTok{$}\NormalTok{bill\_length\_mm, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 44.45
+\end{verbatim}
+
+\hypertarget{variability}{%
+\section{Variability}\label{variability}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Range:} difference between max and min\\
+\item
+  \textbf{Variance:} spread of the data\\
+\item
+  \textbf{Standard deviation:} square root of variance
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{range}\NormalTok{(penguins}\SpecialCharTok{$}\NormalTok{bill\_length\_mm, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 32.1 59.6
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{var}\NormalTok{(penguins}\SpecialCharTok{$}\NormalTok{bill\_length\_mm, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 29.80705
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(penguins}\SpecialCharTok{$}\NormalTok{bill\_length\_mm, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5.459584
+\end{verbatim}
+
+\hypertarget{grouped-summaries}{%
+\section{Grouped Summaries}\label{grouped-summaries}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Grouped mean by species}
+\FunctionTok{library}\NormalTok{(dplyr)}
+\NormalTok{penguins }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{group\_by}\NormalTok{(species) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{summarise}\NormalTok{(}\AttributeTok{mean\_bill\_length =} \FunctionTok{mean}\NormalTok{(bill\_length\_mm,}
+        \AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 3 x 2
+##   species   mean_bill_length
+##   <fct>                <dbl>
+## 1 Adelie                38.8
+## 2 Chinstrap             48.8
+## 3 Gentoo                47.5
+\end{verbatim}
+
+\hypertarget{visualization-histograms}{%
+\section{Visualization: Histograms}\label{visualization-histograms}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{ggplot}\NormalTok{(penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ bill\_length\_mm)) }\SpecialCharTok{+}
+    \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins =} \DecValTok{30}\NormalTok{, }\AttributeTok{fill =} \StringTok{"skyblue"}\NormalTok{,}
+        \AttributeTok{color =} \StringTok{"black"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Bill Length Distribution"}\NormalTok{,}
+    \AttributeTok{x =} \StringTok{"Bill Length (mm)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-14-1.pdf}
+
+\hypertarget{boxplots-for-group-comparison}{%
+\section{Boxplots for Group Comparison}\label{boxplots-for-group-comparison}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ species, }\AttributeTok{y =}\NormalTok{ bill\_length\_mm,}
+    \AttributeTok{fill =}\NormalTok{ species)) }\SpecialCharTok{+} \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Bill Length by Species"}\NormalTok{,}
+    \AttributeTok{y =} \StringTok{"Bill Length (mm)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-15-1.pdf}
+
+\hypertarget{correlation}{%
+\section{Correlation}\label{correlation}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cor}\NormalTok{(penguins}\SpecialCharTok{$}\NormalTok{bill\_length\_mm, penguins}\SpecialCharTok{$}\NormalTok{bill\_depth\_mm,}
+    \AttributeTok{use =} \StringTok{"complete.obs"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -0.2350529
+\end{verbatim}
+
+\hypertarget{scatter-plot-for-relationships}{%
+\section{Scatter Plot for Relationships}\label{scatter-plot-for-relationships}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ bill\_length\_mm,}
+    \AttributeTok{y =}\NormalTok{ bill\_depth\_mm, }\AttributeTok{color =}\NormalTok{ species)) }\SpecialCharTok{+}
+    \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Bill Length vs Depth"}\NormalTok{,}
+    \AttributeTok{x =} \StringTok{"Bill Length (mm)"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Bill Depth (mm)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-17-1.pdf}
+
+\hypertarget{conclusion}{%
+\section{Conclusion}\label{conclusion}}
+
+\begin{itemize}
+\tightlist
+\item
+  Descriptive statistics are fundamental for understanding data.\\
+\item
+  R provides powerful tools to calculate, visualize, and interpret data patterns.
+\end{itemize}
+
+Questions?
 
 Sources in this \href{https://cienciadedatos.net/estadistica-con-r}{link}
 
@@ -277,174 +676,18 @@ Sources in this \href{https://cienciadedatos.net/estadistica-con-r}{link}
 
 \href{https://fcorowe.github.io/sl/d1n1_intro.html}{Data Types \& Probability Distributions}
 
-LR model with \href{https://cran.r-project.org/web/packages/ggiraphExtra/vignettes/ggPredict.html}{ggPredict()}
-
-\begin{verbatim}
-##     Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
-## 1            5.1         3.5          1.4         0.2     setosa
-## 2            4.9         3.0          1.4         0.2     setosa
-## 3            4.7         3.2          1.3         0.2     setosa
-## 4            4.6         3.1          1.5         0.2     setosa
-## 5            5.0         3.6          1.4         0.2     setosa
-## 6            5.4         3.9          1.7         0.4     setosa
-## 7            4.6         3.4          1.4         0.3     setosa
-## 8            5.0         3.4          1.5         0.2     setosa
-## 9            4.4         2.9          1.4         0.2     setosa
-## 10           4.9         3.1          1.5         0.1     setosa
-## 11           5.4         3.7          1.5         0.2     setosa
-## 12           4.8         3.4          1.6         0.2     setosa
-## 13           4.8         3.0          1.4         0.1     setosa
-## 14           4.3         3.0          1.1         0.1     setosa
-## 15           5.8         4.0          1.2         0.2     setosa
-## 16           5.7         4.4          1.5         0.4     setosa
-## 17           5.4         3.9          1.3         0.4     setosa
-## 18           5.1         3.5          1.4         0.3     setosa
-## 19           5.7         3.8          1.7         0.3     setosa
-## 20           5.1         3.8          1.5         0.3     setosa
-## 21           5.4         3.4          1.7         0.2     setosa
-## 22           5.1         3.7          1.5         0.4     setosa
-## 23           4.6         3.6          1.0         0.2     setosa
-## 24           5.1         3.3          1.7         0.5     setosa
-## 25           4.8         3.4          1.9         0.2     setosa
-## 26           5.0         3.0          1.6         0.2     setosa
-## 27           5.0         3.4          1.6         0.4     setosa
-## 28           5.2         3.5          1.5         0.2     setosa
-## 29           5.2         3.4          1.4         0.2     setosa
-## 30           4.7         3.2          1.6         0.2     setosa
-## 31           4.8         3.1          1.6         0.2     setosa
-## 32           5.4         3.4          1.5         0.4     setosa
-## 33           5.2         4.1          1.5         0.1     setosa
-## 34           5.5         4.2          1.4         0.2     setosa
-## 35           4.9         3.1          1.5         0.2     setosa
-## 36           5.0         3.2          1.2         0.2     setosa
-## 37           5.5         3.5          1.3         0.2     setosa
-## 38           4.9         3.6          1.4         0.1     setosa
-## 39           4.4         3.0          1.3         0.2     setosa
-## 40           5.1         3.4          1.5         0.2     setosa
-## 41           5.0         3.5          1.3         0.3     setosa
-## 42           4.5         2.3          1.3         0.3     setosa
-## 43           4.4         3.2          1.3         0.2     setosa
-## 44           5.0         3.5          1.6         0.6     setosa
-## 45           5.1         3.8          1.9         0.4     setosa
-## 46           4.8         3.0          1.4         0.3     setosa
-## 47           5.1         3.8          1.6         0.2     setosa
-## 48           4.6         3.2          1.4         0.2     setosa
-## 49           5.3         3.7          1.5         0.2     setosa
-## 50           5.0         3.3          1.4         0.2     setosa
-## 51           7.0         3.2          4.7         1.4 versicolor
-## 52           6.4         3.2          4.5         1.5 versicolor
-## 53           6.9         3.1          4.9         1.5 versicolor
-## 54           5.5         2.3          4.0         1.3 versicolor
-## 55           6.5         2.8          4.6         1.5 versicolor
-## 56           5.7         2.8          4.5         1.3 versicolor
-## 57           6.3         3.3          4.7         1.6 versicolor
-## 58           4.9         2.4          3.3         1.0 versicolor
-## 59           6.6         2.9          4.6         1.3 versicolor
-## 60           5.2         2.7          3.9         1.4 versicolor
-## 61           5.0         2.0          3.5         1.0 versicolor
-## 62           5.9         3.0          4.2         1.5 versicolor
-## 63           6.0         2.2          4.0         1.0 versicolor
-## 64           6.1         2.9          4.7         1.4 versicolor
-## 65           5.6         2.9          3.6         1.3 versicolor
-## 66           6.7         3.1          4.4         1.4 versicolor
-## 67           5.6         3.0          4.5         1.5 versicolor
-## 68           5.8         2.7          4.1         1.0 versicolor
-## 69           6.2         2.2          4.5         1.5 versicolor
-## 70           5.6         2.5          3.9         1.1 versicolor
-## 71           5.9         3.2          4.8         1.8 versicolor
-## 72           6.1         2.8          4.0         1.3 versicolor
-## 73           6.3         2.5          4.9         1.5 versicolor
-## 74           6.1         2.8          4.7         1.2 versicolor
-## 75           6.4         2.9          4.3         1.3 versicolor
-## 76           6.6         3.0          4.4         1.4 versicolor
-## 77           6.8         2.8          4.8         1.4 versicolor
-## 78           6.7         3.0          5.0         1.7 versicolor
-## 79           6.0         2.9          4.5         1.5 versicolor
-## 80           5.7         2.6          3.5         1.0 versicolor
-## 81           5.5         2.4          3.8         1.1 versicolor
-## 82           5.5         2.4          3.7         1.0 versicolor
-## 83           5.8         2.7          3.9         1.2 versicolor
-## 84           6.0         2.7          5.1         1.6 versicolor
-## 85           5.4         3.0          4.5         1.5 versicolor
-## 86           6.0         3.4          4.5         1.6 versicolor
-## 87           6.7         3.1          4.7         1.5 versicolor
-## 88           6.3         2.3          4.4         1.3 versicolor
-## 89           5.6         3.0          4.1         1.3 versicolor
-## 90           5.5         2.5          4.0         1.3 versicolor
-## 91           5.5         2.6          4.4         1.2 versicolor
-## 92           6.1         3.0          4.6         1.4 versicolor
-## 93           5.8         2.6          4.0         1.2 versicolor
-## 94           5.0         2.3          3.3         1.0 versicolor
-## 95           5.6         2.7          4.2         1.3 versicolor
-## 96           5.7         3.0          4.2         1.2 versicolor
-## 97           5.7         2.9          4.2         1.3 versicolor
-## 98           6.2         2.9          4.3         1.3 versicolor
-## 99           5.1         2.5          3.0         1.1 versicolor
-## 100          5.7         2.8          4.1         1.3 versicolor
-## 101          6.3         3.3          6.0         2.5  virginica
-## 102          5.8         2.7          5.1         1.9  virginica
-## 103          7.1         3.0          5.9         2.1  virginica
-## 104          6.3         2.9          5.6         1.8  virginica
-## 105          6.5         3.0          5.8         2.2  virginica
-## 106          7.6         3.0          6.6         2.1  virginica
-## 107          4.9         2.5          4.5         1.7  virginica
-## 108          7.3         2.9          6.3         1.8  virginica
-## 109          6.7         2.5          5.8         1.8  virginica
-## 110          7.2         3.6          6.1         2.5  virginica
-## 111          6.5         3.2          5.1         2.0  virginica
-## 112          6.4         2.7          5.3         1.9  virginica
-## 113          6.8         3.0          5.5         2.1  virginica
-## 114          5.7         2.5          5.0         2.0  virginica
-## 115          5.8         2.8          5.1         2.4  virginica
-## 116          6.4         3.2          5.3         2.3  virginica
-## 117          6.5         3.0          5.5         1.8  virginica
-## 118          7.7         3.8          6.7         2.2  virginica
-## 119          7.7         2.6          6.9         2.3  virginica
-## 120          6.0         2.2          5.0         1.5  virginica
-## 121          6.9         3.2          5.7         2.3  virginica
-## 122          5.6         2.8          4.9         2.0  virginica
-## 123          7.7         2.8          6.7         2.0  virginica
-## 124          6.3         2.7          4.9         1.8  virginica
-## 125          6.7         3.3          5.7         2.1  virginica
-## 126          7.2         3.2          6.0         1.8  virginica
-## 127          6.2         2.8          4.8         1.8  virginica
-## 128          6.1         3.0          4.9         1.8  virginica
-## 129          6.4         2.8          5.6         2.1  virginica
-## 130          7.2         3.0          5.8         1.6  virginica
-## 131          7.4         2.8          6.1         1.9  virginica
-## 132          7.9         3.8          6.4         2.0  virginica
-## 133          6.4         2.8          5.6         2.2  virginica
-## 134          6.3         2.8          5.1         1.5  virginica
-## 135          6.1         2.6          5.6         1.4  virginica
-## 136          7.7         3.0          6.1         2.3  virginica
-## 137          6.3         3.4          5.6         2.4  virginica
-## 138          6.4         3.1          5.5         1.8  virginica
-## 139          6.0         3.0          4.8         1.8  virginica
-## 140          6.9         3.1          5.4         2.1  virginica
-## 141          6.7         3.1          5.6         2.4  virginica
-## 142          6.9         3.1          5.1         2.3  virginica
-## 143          5.8         2.7          5.1         1.9  virginica
-## 144          6.8         3.2          5.9         2.3  virginica
-## 145          6.7         3.3          5.7         2.5  virginica
-## 146          6.7         3.0          5.2         2.3  virginica
-## 147          6.3         2.5          5.0         1.9  virginica
-## 148          6.5         3.0          5.2         2.0  virginica
-## 149          6.2         3.4          5.4         2.3  virginica
-## 150          5.9         3.0          5.1         1.8  virginica
-\end{verbatim}
-
 \hypertarget{visualization.}{%
 \chapter{Visualization.}\label{visualization.}}
 
 Graphics and Maps using modern packages
 
-\hypertarget{footnotes}{%
-\section{Footnotes}\label{footnotes}}
+\hypertarget{graphics}{%
+\section{Graphics}\label{graphics}}
 
 Footnotes are put inside the square brackets after a caret \texttt{\^{}{[}{]}}. Like this one \footnote{This is a footnote.}.
 
-\hypertarget{citations}{%
-\section{Citations}\label{citations}}
+\hypertarget{simple-maps}{%
+\section{Simple maps}\label{simple-maps}}
 
 Reference items in your bibliography file(s) using \texttt{@key}.
 
@@ -453,8 +696,8 @@ Note that the \texttt{.bib} files need to be listed in the index.Rmd with the YA
 
 The RStudio Visual Markdown Editor can also make it easier to insert citations: \url{https://rstudio.github.io/visual-markdown-editing/\#/citations}
 
-\hypertarget{blocks}{%
-\chapter{Blocks}\label{blocks}}
+\hypertarget{efficient-code}{%
+\chapter{Efficient Code}\label{efficient-code}}
 
 \hypertarget{equations}{%
 \section{Equations}\label{equations}}
@@ -475,8 +718,8 @@ Read more here \url{https://bookdown.org/yihui/bookdown/markdown-extensions-by-b
 
 The R Markdown Cookbook provides more help on how to use custom blocks to design your own callouts: \url{https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html}
 
-\hypertarget{sharing-your-book}{%
-\chapter{Sharing your book}\label{sharing-your-book}}
+\hypertarget{reporting-and-sharing}{%
+\chapter{Reporting and Sharing}\label{reporting-and-sharing}}
 
 \hypertarget{publishing}{%
 \section{Publishing}\label{publishing}}
@@ -502,6 +745,13 @@ Read more about the features of this output format here:
 \url{https://pkgs.rstudio.com/bookdown/reference/gitbook.html}
 
 Or use:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\StringTok{\textasciigrave{}}\AttributeTok{?}\StringTok{\textasciigrave{}}\NormalTok{(bookdown}\SpecialCharTok{::}\NormalTok{gitbook)}
+\end{Highlighting}
+\end{Shaded}
+
 
   \bibliography{book.bib,packages.bib}
 

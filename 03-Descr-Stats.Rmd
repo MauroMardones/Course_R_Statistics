@@ -1,6 +1,5 @@
 # Descriptive Statistics. 
 
-## Introduction  
 
 **Descriptive statistics** summarize and organize data. They help us understand patterns and key characteristics in a dataset.  
 
@@ -9,8 +8,8 @@ We'll explore basic concepts using the `penguins` dataset from the `palmerpengui
 ## The `penguins` Dataset  
 
 ```{r}
-# Load the data
-library(palmerpenguins)
+library(tidyverse)
+library(palmerpenguins)  
 library(kableExtra)
 data("penguins")
 kbl(head(penguins, n = 4))
@@ -101,7 +100,6 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
 - R provides powerful tools to calculate, visualize, and interpret data patterns.  
 
 Questions?
-``` 
 
 Sources in this [link](https://cienciadedatos.net/estadistica-con-r)
 
@@ -109,27 +107,4 @@ Sources in this [link](https://cienciadedatos.net/estadistica-con-r)
 
 
 [Data Types & Probability Distributions](https://fcorowe.github.io/sl/d1n1_intro.html)
-
-LR model with [ggPredict()](https://cran.r-project.org/web/packages/ggiraphExtra/vignettes/ggPredict.html)
-
-```{r}
-data("iris")
-iris
-```
-
-```{r eval=FALSE}
-# What is the mean age?
-mean(pirates$age)
-## [1] 27
-
-# What was the tallest pirate?
-max(pirates$height)
-## [1] 209
-
-# How many pirates are there of each sex?
-table(pirates$sex)
-## 
-## female   male  other 
-##    464    490     46
-```
 

@@ -1,7 +1,16 @@
 # **useR**. Intro to R and basic features 
 
 
+```{r fig.width ="50%, fig.caption "Seminal Paper of R}
+knitr::include_graphics('images/papeR.png')
+```
+
+
+
 Source in this [link](https://estadistica-dma.ulpgc.es/cursoR4ULPGC/index.html)
 
 
 [An introduction to R](https://intro2r.com/index.html)
+
+
+seminal paper or R! [here](http://www.aliquote.org/cours/2012_biomed/biblio/Ihaka1996.pdf)

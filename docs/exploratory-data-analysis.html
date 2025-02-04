@@ -5,28 +5,22 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Section 2 Exploratory Data Analysis | R Basic Course</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-set in the _output.yml file.
-The HTML output format for this example is bookdown::gitbook,</p>" />
+  <meta name="description" content="Section 2 Exploratory Data Analysis | R Basic Course" />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Section 2 Exploratory Data Analysis | R Basic Course" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-set in the _output.yml file.
-The HTML output format for this example is bookdown::gitbook,</p>" />
+  
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Section 2 Exploratory Data Analysis | R Basic Course" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-set in the _output.yml file.
-The HTML output format for this example is bookdown::gitbook,</p>" />
+  
   
 
-<meta name="author" content="Mardones, M. &amp; Zúñiga, MJ." />
+<meta name="author" content="Mardones, Mauricio. &amp; Zúñiga, María José." />
 
 
 <meta name="date" content="2025-02-04" />
@@ -58,8 +52,74 @@ The HTML output format for this example is bookdown::gitbook,</p>" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -104,36 +164,55 @@ div.csl-indent {
 <li><a href="./">R Basic Course</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About Course_R</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i>Usage</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#render-book"><i class="fa fa-check"></i>Render book</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#preview-book"><i class="fa fa-check"></i>Preview book</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About Course_R</a></li>
 <li class="chapter" data-level="1" data-path="user.-intro-to-r-and-basic-features.html"><a href="user.-intro-to-r-and-basic-features.html"><i class="fa fa-check"></i><b>1</b> <strong>useR</strong>. Intro to R and basic features</a></li>
 <li class="chapter" data-level="2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html"><i class="fa fa-check"></i><b>2</b> Exploratory Data Analysis</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#chapters-and-sub-chapters"><i class="fa fa-check"></i><b>2.1</b> Chapters and sub-chapters</a></li>
-<li class="chapter" data-level="2.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#captioned-figures-and-tables"><i class="fa fa-check"></i><b>2.2</b> Captioned figures and tables</a></li>
+<li class="chapter" data-level="2.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#summary-statistics-in-r"><i class="fa fa-check"></i><b>2.1</b> Summary Statistics in R</a></li>
+<li class="chapter" data-level="2.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#data-handling"><i class="fa fa-check"></i><b>2.2</b> Data Handling</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#loading-and-inspecting-data"><i class="fa fa-check"></i><b>2.2.1</b> Loading and Inspecting Data</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html"><i class="fa fa-check"></i><b>3</b> Descriptive Statistics.</a></li>
+<li class="chapter" data-level="2.3" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#data-manipulation"><i class="fa fa-check"></i><b>2.3</b> Data Manipulation</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#subsetting-data"><i class="fa fa-check"></i><b>2.3.1</b> Subsetting Data</a></li>
+<li class="chapter" data-level="2.3.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#using-dplyr-for-data-manipulation"><i class="fa fa-check"></i><b>2.3.2</b> Using <code>dplyr</code> for Data Manipulation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#visualization-with-base-r"><i class="fa fa-check"></i><b>2.4</b> Visualization with Base R</a></li>
+<li class="chapter" data-level="2.5" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#final-thoughts"><i class="fa fa-check"></i><b>2.5</b> Final Thoughts</a></li>
+<li class="chapter" data-level="2.6" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#references"><i class="fa fa-check"></i><b>2.6</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html"><i class="fa fa-check"></i><b>3</b> Descriptive Statistics.</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#the-penguins-dataset"><i class="fa fa-check"></i><b>3.1</b> The <code>penguins</code> Dataset</a></li>
+<li class="chapter" data-level="3.2" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#basic-data-exploration"><i class="fa fa-check"></i><b>3.2</b> Basic Data Exploration</a></li>
+<li class="chapter" data-level="3.3" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#summary-statistics"><i class="fa fa-check"></i><b>3.3</b> Summary Statistics</a></li>
+<li class="chapter" data-level="3.4" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#central-tendency"><i class="fa fa-check"></i><b>3.4</b> Central Tendency</a></li>
+<li class="chapter" data-level="3.5" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#variability"><i class="fa fa-check"></i><b>3.5</b> Variability</a></li>
+<li class="chapter" data-level="3.6" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#grouped-summaries"><i class="fa fa-check"></i><b>3.6</b> Grouped Summaries</a></li>
+<li class="chapter" data-level="3.7" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#visualization-histograms"><i class="fa fa-check"></i><b>3.7</b> Visualization: Histograms</a></li>
+<li class="chapter" data-level="3.8" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#boxplots-for-group-comparison"><i class="fa fa-check"></i><b>3.8</b> Boxplots for Group Comparison</a></li>
+<li class="chapter" data-level="3.9" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#correlation"><i class="fa fa-check"></i><b>3.9</b> Correlation</a></li>
+<li class="chapter" data-level="3.10" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#scatter-plot-for-relationships"><i class="fa fa-check"></i><b>3.10</b> Scatter Plot for Relationships</a></li>
+<li class="chapter" data-level="3.11" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#conclusion"><i class="fa fa-check"></i><b>3.11</b> Conclusion</a></li>
+</ul></li>
 <li class="chapter" data-level="4" data-path="visualization..html"><a href="visualization..html"><i class="fa fa-check"></i><b>4</b> Visualization.</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="visualization..html"><a href="visualization..html#footnotes"><i class="fa fa-check"></i><b>4.1</b> Footnotes</a></li>
-<li class="chapter" data-level="4.2" data-path="visualization..html"><a href="visualization..html#citations"><i class="fa fa-check"></i><b>4.2</b> Citations</a></li>
+<li class="chapter" data-level="4.1" data-path="visualization..html"><a href="visualization..html#graphics"><i class="fa fa-check"></i><b>4.1</b> Graphics</a></li>
+<li class="chapter" data-level="4.2" data-path="visualization..html"><a href="visualization..html#simple-maps"><i class="fa fa-check"></i><b>4.2</b> Simple maps</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>5</b> Blocks</a>
+<li class="chapter" data-level="5" data-path="efficient-code.html"><a href="efficient-code.html"><i class="fa fa-check"></i><b>5</b> Efficient Code</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>5.1</b> Equations</a></li>
-<li class="chapter" data-level="5.2" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>5.2</b> Callout blocks</a></li>
+<li class="chapter" data-level="5.1" data-path="efficient-code.html"><a href="efficient-code.html#equations"><i class="fa fa-check"></i><b>5.1</b> Equations</a></li>
+<li class="chapter" data-level="5.2" data-path="efficient-code.html"><a href="efficient-code.html#callout-blocks"><i class="fa fa-check"></i><b>5.2</b> Callout blocks</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>6</b> Sharing your book</a>
+<li class="chapter" data-level="6" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html"><i class="fa fa-check"></i><b>6</b> Reporting and Sharing</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>6.1</b> Publishing</a></li>
-<li class="chapter" data-level="6.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>6.2</b> 404 pages</a></li>
-<li class="chapter" data-level="6.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>6.3</b> Metadata for sharing</a></li>
+<li class="chapter" data-level="6.1" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html#publishing"><i class="fa fa-check"></i><b>6.1</b> Publishing</a></li>
+<li class="chapter" data-level="6.2" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html#pages"><i class="fa fa-check"></i><b>6.2</b> 404 pages</a></li>
+<li class="chapter" data-level="6.3" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html#metadata-for-sharing"><i class="fa fa-check"></i><b>6.3</b> Metadata for sharing</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://mauromardones.github.io/Course_R_Statictics/" target="_blank">Published with bookdown</a></li>
 
@@ -156,82 +235,124 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="exploratory-data-analysis" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">Section 2</span> Exploratory Data Analysis<a href="exploratory-data-analysis.html#exploratory-data-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Data handling, Data manipulation</p>
-<p>Cross-references make it easier for your readers to find and link to elements in your book.</p>
-<div id="chapters-and-sub-chapters" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Chapters and sub-chapters<a href="exploratory-data-analysis.html#chapters-and-sub-chapters" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>There are two steps to cross-reference any heading:</p>
-<ol style="list-style-type: decimal">
-<li>Label the heading: <code># Hello world {#nice-label}</code>.
+<p>Exploratory Data Analysis (EDA) is a crucial first step in analyzing data. It provides a summary of the main characteristics of datasets and helps identify patterns, outliers, and relationships.</p>
+<p>libraries</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="exploratory-data-analysis.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div id="summary-statistics-in-r" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Summary Statistics in R<a href="exploratory-data-analysis.html#summary-statistics-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>One of the simplest ways to start analyzing data is to generate summary statistics.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="exploratory-data-analysis.html#cb2-1" tabindex="-1"></a><span class="co"># Simple summary of built-in dataset</span></span>
+<span id="cb2-2"><a href="exploratory-data-analysis.html#cb2-2" tabindex="-1"></a><span class="fu">summary</span>(mtcars)</span></code></pre></div>
+<pre><code>##       mpg             cyl             disp             hp       
+##  Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  
+##  1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  
+##  Median :19.20   Median :6.000   Median :196.3   Median :123.0  
+##  Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  
+##  3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  
+##  Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  
+##       drat             wt             qsec             vs        
+##  Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  
+##  1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  
+##  Median :3.695   Median :3.325   Median :17.71   Median :0.0000  
+##  Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  
+##  3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  
+##  Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  
+##        am              gear            carb      
+##  Min.   :0.0000   Min.   :3.000   Min.   :1.000  
+##  1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  
+##  Median :0.0000   Median :4.000   Median :2.000  
+##  Mean   :0.4062   Mean   :3.688   Mean   :2.812  
+##  3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  
+##  Max.   :1.0000   Max.   :5.000   Max.   :8.000</code></pre>
+</div>
+<div id="data-handling" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Data Handling<a href="exploratory-data-analysis.html#data-handling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="loading-and-inspecting-data" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Loading and Inspecting Data<a href="exploratory-data-analysis.html#loading-and-inspecting-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>EDA often begins by loading the dataset and inspecting its structure.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="exploratory-data-analysis.html#cb4-1" tabindex="-1"></a><span class="co"># Load CSV data</span></span>
+<span id="cb4-2"><a href="exploratory-data-analysis.html#cb4-2" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://people.sc.fsu.edu/~jburkardt/data/csv/hw_200.csv&quot;</span></span>
+<span id="cb4-3"><a href="exploratory-data-analysis.html#cb4-3" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(url)</span>
+<span id="cb4-4"><a href="exploratory-data-analysis.html#cb4-4" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="exploratory-data-analysis.html#cb4-5" tabindex="-1"></a><span class="co"># View first rows of the data</span></span>
+<span id="cb4-6"><a href="exploratory-data-analysis.html#cb4-6" tabindex="-1"></a><span class="fu">head</span>(data)</span></code></pre></div>
+<pre><code>##   Index
+## 1     2
+## 2     3
+## 3     4
+## 4     5
+## 5     6
+## 6     7
+##   Height.Inches...Weight.Pounds..1..65.78..112.99.2..71.52..136.49.3..69.40..153.03.4..68.22..142.34.5..67.79..144.30.6..68.70..123.30.7..69.80..141.49.8..70.01..136.46.9..67.90..112.37.10..66.78..120.67.11..66.49..127.45.12..67.62..114.14.13..68.30..1 ...
+## 1                                                                                                                                                                                                                                                          71.52
+## 2                                                                                                                                                                                                                                                          69.40
+## 3                                                                                                                                                                                                                                                          68.22
+## 4                                                                                                                                                                                                                                                          67.79
+## 5                                                                                                                                                                                                                                                          68.70
+## 6                                                                                                                                                                                                                                                          69.80
+##   Weight.Pounds.
+## 1         136.49
+## 2         153.03
+## 3         142.34
+## 4         144.30
+## 5         123.30
+## 6         141.49</code></pre>
+</div>
+</div>
+<div id="data-manipulation" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Data Manipulation<a href="exploratory-data-analysis.html#data-manipulation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="subsetting-data" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Subsetting Data<a href="exploratory-data-analysis.html#subsetting-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You can select specific columns or rows based on logical operations.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="exploratory-data-analysis.html#cb6-1" tabindex="-1"></a><span class="co"># Select rows where mpg is greater than</span></span>
+<span id="cb6-2"><a href="exploratory-data-analysis.html#cb6-2" tabindex="-1"></a><span class="co"># 20</span></span>
+<span id="cb6-3"><a href="exploratory-data-analysis.html#cb6-3" tabindex="-1"></a>subset_mpg <span class="ot">&lt;-</span> mtcars[mtcars<span class="sc">$</span>mpg <span class="sc">&gt;</span> <span class="dv">20</span>, ]</span>
+<span id="cb6-4"><a href="exploratory-data-analysis.html#cb6-4" tabindex="-1"></a><span class="fu">head</span>(subset_mpg)</span></code></pre></div>
+<pre><code>##                 mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4      21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag  21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710     22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+## Hornet 4 Drive 21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+## Merc 240D      24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
+## Merc 230       22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2</code></pre>
+</div>
+<div id="using-dplyr-for-data-manipulation" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Using <code>dplyr</code> for Data Manipulation<a href="exploratory-data-analysis.html#using-dplyr-for-data-manipulation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <code>dplyr</code> package makes data manipulation efficient and readable.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="exploratory-data-analysis.html#cb8-1" tabindex="-1"></a><span class="co"># Load the dplyr package</span></span>
+<span id="cb8-2"><a href="exploratory-data-analysis.html#cb8-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb8-3"><a href="exploratory-data-analysis.html#cb8-3" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="exploratory-data-analysis.html#cb8-4" tabindex="-1"></a><span class="co"># Filter and summarize data</span></span>
+<span id="cb8-5"><a href="exploratory-data-analysis.html#cb8-5" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb8-6"><a href="exploratory-data-analysis.html#cb8-6" tabindex="-1"></a>    <span class="fu">filter</span>(mpg <span class="sc">&gt;</span> <span class="dv">20</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-7"><a href="exploratory-data-analysis.html#cb8-7" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">avg_hp =</span> <span class="fu">mean</span>(hp), <span class="at">count =</span> <span class="fu">n</span>())</span></code></pre></div>
+<pre><code>##   avg_hp count
+## 1   88.5    14</code></pre>
+</div>
+</div>
+<div id="visualization-with-base-r" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Visualization with Base R<a href="exploratory-data-analysis.html#visualization-with-base-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Visualizations are essential for gaining insights quickly.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="exploratory-data-analysis.html#cb10-1" tabindex="-1"></a><span class="co"># Simple scatter plot</span></span>
+<span id="cb10-2"><a href="exploratory-data-analysis.html#cb10-2" tabindex="-1"></a>carsplot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">data =</span> mtcars,</span>
+<span id="cb10-3"><a href="exploratory-data-analysis.html#cb10-3" tabindex="-1"></a>    <span class="fu">aes</span>(mpg, hp)) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb10-4"><a href="exploratory-data-analysis.html#cb10-4" tabindex="-1"></a>carsplot</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+<div id="final-thoughts" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Final Thoughts<a href="exploratory-data-analysis.html#final-thoughts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li>Leave the label off if you like the automated heading generated based on your heading title: for example, <code># Hello world</code> = <code># Hello world {#hello-world}</code>.</li>
-<li>To label an un-numbered heading, use: <code># Hello world {-#nice-label}</code> or <code>{# Hello world .unnumbered}</code>.</li>
-</ul></li>
-</ol>
+<li>EDA is critical for understanding your data.<br />
+</li>
+<li>Data handling ensures clean datasets.<br />
+</li>
+<li>Data manipulation prepares data for in-depth analysis.<br />
+</li>
+<li>Visualization helps reveal insights quickly.</li>
+</ul>
 </div>
-<div id="captioned-figures-and-tables" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Captioned figures and tables<a href="exploratory-data-analysis.html#captioned-figures-and-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Figures and tables <em>with captions</em> can also be cross-referenced from elsewhere in your book using <code>\@ref(fig:chunk-label)</code> and <code>\@ref(tab:chunk-label)</code>, respectively.</p>
-<p>See Figure <a href="exploratory-data-analysis.html#fig:nice-fig">2.1</a>.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:nice-fig"></span>
-<img src="_main_files/figure-html/nice-fig-1.jpeg" alt="Plot with connected points showing that vapor pressure of mercury increases exponentially as temperature increases." width="80%" />
-<p class="caption">
-Figure 2.1: Here is a nice figure!
-</p>
-</div>
-<p>Don’t miss Table <a href="exploratory-data-analysis.html#tab:nice-tab">2.1</a>.</p>
-<table>
-<caption><span id="tab:nice-tab">Table 2.1: </span>Here is a nice table!</caption>
-<thead>
-<tr class="header">
-<th align="right">temperature</th>
-<th align="right">pressure</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">0</td>
-<td align="right">0.0002</td>
-</tr>
-<tr class="even">
-<td align="right">20</td>
-<td align="right">0.0012</td>
-</tr>
-<tr class="odd">
-<td align="right">40</td>
-<td align="right">0.0060</td>
-</tr>
-<tr class="even">
-<td align="right">60</td>
-<td align="right">0.0300</td>
-</tr>
-<tr class="odd">
-<td align="right">80</td>
-<td align="right">0.0900</td>
-</tr>
-<tr class="even">
-<td align="right">100</td>
-<td align="right">0.2700</td>
-</tr>
-<tr class="odd">
-<td align="right">120</td>
-<td align="right">0.7500</td>
-</tr>
-<tr class="even">
-<td align="right">140</td>
-<td align="right">1.8500</td>
-</tr>
-<tr class="odd">
-<td align="right">160</td>
-<td align="right">4.2000</td>
-</tr>
-<tr class="even">
-<td align="right">180</td>
-<td align="right">8.8000</td>
-</tr>
-</tbody>
-</table>
-<p>Sources</p>
+<div id="references" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> References<a href="exploratory-data-analysis.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><a href="https://psyteachr.github.io/introdataviz/introduction.html">Basic R</a></p>
 <p><a href="https://cran.r-project.org/web/packages/DataExplorer/vignettes/dataexplorer-intro.html">Data Explorer</a></p>
 <p><a href="https://eda.seas.gwu.edu/2022-Fall/class/1-getting-started.html">EMSE 4572</a>
@@ -295,7 +416,8 @@ gitbook.start({
 "toc": {
 "collapse": "subsection"
 },
-"output_dir": "docs"
+"output_dir": "docs",
+"collapse_section": true
 });
 });
 </script>

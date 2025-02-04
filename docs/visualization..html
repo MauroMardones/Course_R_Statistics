@@ -5,28 +5,22 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Section 4 Visualization. | R Basic Course</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-set in the _output.yml file.
-The HTML output format for this example is bookdown::gitbook,</p>" />
+  <meta name="description" content="Section 4 Visualization. | R Basic Course" />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Section 4 Visualization. | R Basic Course" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-set in the _output.yml file.
-The HTML output format for this example is bookdown::gitbook,</p>" />
+  
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Section 4 Visualization. | R Basic Course" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-set in the _output.yml file.
-The HTML output format for this example is bookdown::gitbook,</p>" />
+  
   
 
-<meta name="author" content="Mardones, M. &amp; Zúñiga, MJ." />
+<meta name="author" content="Mardones, Mauricio. &amp; Zúñiga, María José." />
 
 
 <meta name="date" content="2025-02-04" />
@@ -37,7 +31,7 @@ The HTML output format for this example is bookdown::gitbook,</p>" />
   
   
 <link rel="prev" href="descriptive-statistics..html"/>
-<link rel="next" href="blocks.html"/>
+<link rel="next" href="efficient-code.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -58,8 +52,74 @@ The HTML output format for this example is bookdown::gitbook,</p>" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -104,36 +164,55 @@ div.csl-indent {
 <li><a href="./">R Basic Course</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About Course_R</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i>Usage</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#render-book"><i class="fa fa-check"></i>Render book</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#preview-book"><i class="fa fa-check"></i>Preview book</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About Course_R</a></li>
 <li class="chapter" data-level="1" data-path="user.-intro-to-r-and-basic-features.html"><a href="user.-intro-to-r-and-basic-features.html"><i class="fa fa-check"></i><b>1</b> <strong>useR</strong>. Intro to R and basic features</a></li>
 <li class="chapter" data-level="2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html"><i class="fa fa-check"></i><b>2</b> Exploratory Data Analysis</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#chapters-and-sub-chapters"><i class="fa fa-check"></i><b>2.1</b> Chapters and sub-chapters</a></li>
-<li class="chapter" data-level="2.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#captioned-figures-and-tables"><i class="fa fa-check"></i><b>2.2</b> Captioned figures and tables</a></li>
+<li class="chapter" data-level="2.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#summary-statistics-in-r"><i class="fa fa-check"></i><b>2.1</b> Summary Statistics in R</a></li>
+<li class="chapter" data-level="2.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#data-handling"><i class="fa fa-check"></i><b>2.2</b> Data Handling</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#loading-and-inspecting-data"><i class="fa fa-check"></i><b>2.2.1</b> Loading and Inspecting Data</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html"><i class="fa fa-check"></i><b>3</b> Descriptive Statistics.</a></li>
+<li class="chapter" data-level="2.3" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#data-manipulation"><i class="fa fa-check"></i><b>2.3</b> Data Manipulation</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#subsetting-data"><i class="fa fa-check"></i><b>2.3.1</b> Subsetting Data</a></li>
+<li class="chapter" data-level="2.3.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#using-dplyr-for-data-manipulation"><i class="fa fa-check"></i><b>2.3.2</b> Using <code>dplyr</code> for Data Manipulation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#visualization-with-base-r"><i class="fa fa-check"></i><b>2.4</b> Visualization with Base R</a></li>
+<li class="chapter" data-level="2.5" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#final-thoughts"><i class="fa fa-check"></i><b>2.5</b> Final Thoughts</a></li>
+<li class="chapter" data-level="2.6" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#references"><i class="fa fa-check"></i><b>2.6</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html"><i class="fa fa-check"></i><b>3</b> Descriptive Statistics.</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#the-penguins-dataset"><i class="fa fa-check"></i><b>3.1</b> The <code>penguins</code> Dataset</a></li>
+<li class="chapter" data-level="3.2" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#basic-data-exploration"><i class="fa fa-check"></i><b>3.2</b> Basic Data Exploration</a></li>
+<li class="chapter" data-level="3.3" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#summary-statistics"><i class="fa fa-check"></i><b>3.3</b> Summary Statistics</a></li>
+<li class="chapter" data-level="3.4" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#central-tendency"><i class="fa fa-check"></i><b>3.4</b> Central Tendency</a></li>
+<li class="chapter" data-level="3.5" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#variability"><i class="fa fa-check"></i><b>3.5</b> Variability</a></li>
+<li class="chapter" data-level="3.6" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#grouped-summaries"><i class="fa fa-check"></i><b>3.6</b> Grouped Summaries</a></li>
+<li class="chapter" data-level="3.7" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#visualization-histograms"><i class="fa fa-check"></i><b>3.7</b> Visualization: Histograms</a></li>
+<li class="chapter" data-level="3.8" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#boxplots-for-group-comparison"><i class="fa fa-check"></i><b>3.8</b> Boxplots for Group Comparison</a></li>
+<li class="chapter" data-level="3.9" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#correlation"><i class="fa fa-check"></i><b>3.9</b> Correlation</a></li>
+<li class="chapter" data-level="3.10" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#scatter-plot-for-relationships"><i class="fa fa-check"></i><b>3.10</b> Scatter Plot for Relationships</a></li>
+<li class="chapter" data-level="3.11" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#conclusion"><i class="fa fa-check"></i><b>3.11</b> Conclusion</a></li>
+</ul></li>
 <li class="chapter" data-level="4" data-path="visualization..html"><a href="visualization..html"><i class="fa fa-check"></i><b>4</b> Visualization.</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="visualization..html"><a href="visualization..html#footnotes"><i class="fa fa-check"></i><b>4.1</b> Footnotes</a></li>
-<li class="chapter" data-level="4.2" data-path="visualization..html"><a href="visualization..html#citations"><i class="fa fa-check"></i><b>4.2</b> Citations</a></li>
+<li class="chapter" data-level="4.1" data-path="visualization..html"><a href="visualization..html#graphics"><i class="fa fa-check"></i><b>4.1</b> Graphics</a></li>
+<li class="chapter" data-level="4.2" data-path="visualization..html"><a href="visualization..html#simple-maps"><i class="fa fa-check"></i><b>4.2</b> Simple maps</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>5</b> Blocks</a>
+<li class="chapter" data-level="5" data-path="efficient-code.html"><a href="efficient-code.html"><i class="fa fa-check"></i><b>5</b> Efficient Code</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>5.1</b> Equations</a></li>
-<li class="chapter" data-level="5.2" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>5.2</b> Callout blocks</a></li>
+<li class="chapter" data-level="5.1" data-path="efficient-code.html"><a href="efficient-code.html#equations"><i class="fa fa-check"></i><b>5.1</b> Equations</a></li>
+<li class="chapter" data-level="5.2" data-path="efficient-code.html"><a href="efficient-code.html#callout-blocks"><i class="fa fa-check"></i><b>5.2</b> Callout blocks</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>6</b> Sharing your book</a>
+<li class="chapter" data-level="6" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html"><i class="fa fa-check"></i><b>6</b> Reporting and Sharing</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>6.1</b> Publishing</a></li>
-<li class="chapter" data-level="6.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>6.2</b> 404 pages</a></li>
-<li class="chapter" data-level="6.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>6.3</b> Metadata for sharing</a></li>
+<li class="chapter" data-level="6.1" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html#publishing"><i class="fa fa-check"></i><b>6.1</b> Publishing</a></li>
+<li class="chapter" data-level="6.2" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html#pages"><i class="fa fa-check"></i><b>6.2</b> 404 pages</a></li>
+<li class="chapter" data-level="6.3" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html#metadata-for-sharing"><i class="fa fa-check"></i><b>6.3</b> Metadata for sharing</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://mauromardones.github.io/Course_R_Statictics/" target="_blank">Published with bookdown</a></li>
 
@@ -157,12 +236,12 @@ div.csl-indent {
 <div id="visualization." class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">Section 4</span> Visualization.<a href="visualization..html#visualization." class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Graphics and Maps using modern packages</p>
-<div id="footnotes" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> Footnotes<a href="visualization..html#footnotes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="graphics" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Graphics<a href="visualization..html#graphics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Footnotes are put inside the square brackets after a caret <code>^[]</code>. Like this one <a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
 </div>
-<div id="citations" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> Citations<a href="visualization..html#citations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="simple-maps" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Simple maps<a href="visualization..html#simple-maps" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Reference items in your bibliography file(s) using <code>@key</code>.</p>
 <p>For example, we are using the <strong>bookdown</strong> package <span class="citation">(<a href="#ref-R-bookdown">Xie 2024</a>)</span> (check out the last code chunk in index.Rmd to see how this citation key was added) in this sample book, which was built on top of R Markdown and <strong>knitr</strong> <span class="citation">(<a href="#ref-xie2015">Xie 2015</a>)</span> (this citation was added manually in an external file book.bib).
 Note that the <code>.bib</code> files need to be listed in the index.Rmd with the YAML <code>bibliography</code> key.</p>
@@ -170,7 +249,7 @@ Note that the <code>.bib</code> files need to be listed in the index.Rmd with th
 
 </div>
 </div>
-<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3>References<a href="references-1.html#references-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-xie2015" class="csl-entry">
 Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.org/knitr/">http://yihui.org/knitr/</a>.
@@ -191,7 +270,7 @@ Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd 
         </div>
       </div>
 <a href="descriptive-statistics..html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="blocks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="efficient-code.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -241,7 +320,8 @@ gitbook.start({
 "toc": {
 "collapse": "subsection"
 },
-"output_dir": "docs"
+"output_dir": "docs",
+"collapse_section": true
 });
 });
 </script>

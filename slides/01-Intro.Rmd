@@ -7,7 +7,8 @@ output:
   ioslides_presentation: default
   widescreen: true
   self_contained: true
-  css: custom.css
+  height: 600
+  width: 1000
 ---
 
 ## Slide 1: Welcome
@@ -28,17 +29,37 @@ output:
 - Investigación reproducible  
 
 
+## Origin {.columns-2 .smaller}
+
+- Some bullet points which take up some space space space space space space space
+
+- on the column on the left
+
+- which are then wrapped to the right column. 
+
+- *Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.*
+
+- line break after this longer bullet point but intead it breaks in some strange place even though it would have space at the bottom of the left column!
+
+<!-- the columns should break here -->
+
+```{r echo=FALSE, out.width='80%', fig.pos="center", fig.cap="Seminal paper of R"}
+knitr::include_graphics('~/IEO/CURSOS/Course_R_Statistics/images/papeR.png')
+```
 
 
-## Slide 3: Getting Started
+
+## Getting Started
+
+
 
 1. Install R from [CRAN](https://cran.r-project.org)
 2. Install RStudio (optional, but highly recommended)
 3. Write your first R command:
-```r
+
+```{r echo= TRUE}
 print("Hello, world!")
 ```
-
 
 
 ## Slide 4: Basic Data Types

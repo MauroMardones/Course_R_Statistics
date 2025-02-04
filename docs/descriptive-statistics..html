@@ -5,28 +5,22 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Section 3 Descriptive Statistics. | R Basic Course</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-set in the _output.yml file.
-The HTML output format for this example is bookdown::gitbook,</p>" />
+  <meta name="description" content="Section 3 Descriptive Statistics. | R Basic Course" />
   <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Section 3 Descriptive Statistics. | R Basic Course" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-set in the _output.yml file.
-The HTML output format for this example is bookdown::gitbook,</p>" />
+  
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Section 3 Descriptive Statistics. | R Basic Course" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-set in the _output.yml file.
-The HTML output format for this example is bookdown::gitbook,</p>" />
+  
   
 
-<meta name="author" content="Mardones, M. &amp; Zúñiga, MJ." />
+<meta name="author" content="Mardones, Mauricio. &amp; Zúñiga, María José." />
 
 
 <meta name="date" content="2025-02-04" />
@@ -58,8 +52,74 @@ The HTML output format for this example is bookdown::gitbook,</p>" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -104,36 +164,55 @@ div.csl-indent {
 <li><a href="./">R Basic Course</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About Course_R</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i>Usage</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#render-book"><i class="fa fa-check"></i>Render book</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#preview-book"><i class="fa fa-check"></i>Preview book</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About Course_R</a></li>
 <li class="chapter" data-level="1" data-path="user.-intro-to-r-and-basic-features.html"><a href="user.-intro-to-r-and-basic-features.html"><i class="fa fa-check"></i><b>1</b> <strong>useR</strong>. Intro to R and basic features</a></li>
 <li class="chapter" data-level="2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html"><i class="fa fa-check"></i><b>2</b> Exploratory Data Analysis</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#chapters-and-sub-chapters"><i class="fa fa-check"></i><b>2.1</b> Chapters and sub-chapters</a></li>
-<li class="chapter" data-level="2.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#captioned-figures-and-tables"><i class="fa fa-check"></i><b>2.2</b> Captioned figures and tables</a></li>
+<li class="chapter" data-level="2.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#summary-statistics-in-r"><i class="fa fa-check"></i><b>2.1</b> Summary Statistics in R</a></li>
+<li class="chapter" data-level="2.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#data-handling"><i class="fa fa-check"></i><b>2.2</b> Data Handling</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#loading-and-inspecting-data"><i class="fa fa-check"></i><b>2.2.1</b> Loading and Inspecting Data</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html"><i class="fa fa-check"></i><b>3</b> Descriptive Statistics.</a></li>
+<li class="chapter" data-level="2.3" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#data-manipulation"><i class="fa fa-check"></i><b>2.3</b> Data Manipulation</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#subsetting-data"><i class="fa fa-check"></i><b>2.3.1</b> Subsetting Data</a></li>
+<li class="chapter" data-level="2.3.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#using-dplyr-for-data-manipulation"><i class="fa fa-check"></i><b>2.3.2</b> Using <code>dplyr</code> for Data Manipulation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#visualization-with-base-r"><i class="fa fa-check"></i><b>2.4</b> Visualization with Base R</a></li>
+<li class="chapter" data-level="2.5" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#final-thoughts"><i class="fa fa-check"></i><b>2.5</b> Final Thoughts</a></li>
+<li class="chapter" data-level="2.6" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#references"><i class="fa fa-check"></i><b>2.6</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html"><i class="fa fa-check"></i><b>3</b> Descriptive Statistics.</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#the-penguins-dataset"><i class="fa fa-check"></i><b>3.1</b> The <code>penguins</code> Dataset</a></li>
+<li class="chapter" data-level="3.2" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#basic-data-exploration"><i class="fa fa-check"></i><b>3.2</b> Basic Data Exploration</a></li>
+<li class="chapter" data-level="3.3" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#summary-statistics"><i class="fa fa-check"></i><b>3.3</b> Summary Statistics</a></li>
+<li class="chapter" data-level="3.4" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#central-tendency"><i class="fa fa-check"></i><b>3.4</b> Central Tendency</a></li>
+<li class="chapter" data-level="3.5" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#variability"><i class="fa fa-check"></i><b>3.5</b> Variability</a></li>
+<li class="chapter" data-level="3.6" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#grouped-summaries"><i class="fa fa-check"></i><b>3.6</b> Grouped Summaries</a></li>
+<li class="chapter" data-level="3.7" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#visualization-histograms"><i class="fa fa-check"></i><b>3.7</b> Visualization: Histograms</a></li>
+<li class="chapter" data-level="3.8" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#boxplots-for-group-comparison"><i class="fa fa-check"></i><b>3.8</b> Boxplots for Group Comparison</a></li>
+<li class="chapter" data-level="3.9" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#correlation"><i class="fa fa-check"></i><b>3.9</b> Correlation</a></li>
+<li class="chapter" data-level="3.10" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#scatter-plot-for-relationships"><i class="fa fa-check"></i><b>3.10</b> Scatter Plot for Relationships</a></li>
+<li class="chapter" data-level="3.11" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#conclusion"><i class="fa fa-check"></i><b>3.11</b> Conclusion</a></li>
+</ul></li>
 <li class="chapter" data-level="4" data-path="visualization..html"><a href="visualization..html"><i class="fa fa-check"></i><b>4</b> Visualization.</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="visualization..html"><a href="visualization..html#footnotes"><i class="fa fa-check"></i><b>4.1</b> Footnotes</a></li>
-<li class="chapter" data-level="4.2" data-path="visualization..html"><a href="visualization..html#citations"><i class="fa fa-check"></i><b>4.2</b> Citations</a></li>
+<li class="chapter" data-level="4.1" data-path="visualization..html"><a href="visualization..html#graphics"><i class="fa fa-check"></i><b>4.1</b> Graphics</a></li>
+<li class="chapter" data-level="4.2" data-path="visualization..html"><a href="visualization..html#simple-maps"><i class="fa fa-check"></i><b>4.2</b> Simple maps</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>5</b> Blocks</a>
+<li class="chapter" data-level="5" data-path="efficient-code.html"><a href="efficient-code.html"><i class="fa fa-check"></i><b>5</b> Efficient Code</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>5.1</b> Equations</a></li>
-<li class="chapter" data-level="5.2" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>5.2</b> Callout blocks</a></li>
+<li class="chapter" data-level="5.1" data-path="efficient-code.html"><a href="efficient-code.html#equations"><i class="fa fa-check"></i><b>5.1</b> Equations</a></li>
+<li class="chapter" data-level="5.2" data-path="efficient-code.html"><a href="efficient-code.html#callout-blocks"><i class="fa fa-check"></i><b>5.2</b> Callout blocks</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>6</b> Sharing your book</a>
+<li class="chapter" data-level="6" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html"><i class="fa fa-check"></i><b>6</b> Reporting and Sharing</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>6.1</b> Publishing</a></li>
-<li class="chapter" data-level="6.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>6.2</b> 404 pages</a></li>
-<li class="chapter" data-level="6.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>6.3</b> Metadata for sharing</a></li>
+<li class="chapter" data-level="6.1" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html#publishing"><i class="fa fa-check"></i><b>6.1</b> Publishing</a></li>
+<li class="chapter" data-level="6.2" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html#pages"><i class="fa fa-check"></i><b>6.2</b> 404 pages</a></li>
+<li class="chapter" data-level="6.3" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html#metadata-for-sharing"><i class="fa fa-check"></i><b>6.3</b> Metadata for sharing</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://mauromardones.github.io/Course_R_Statictics/" target="_blank">Published with bookdown</a></li>
 
@@ -156,167 +235,277 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="descriptive-statistics." class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">Section 3</span> Descriptive Statistics.<a href="descriptive-statistics..html#descriptive-statistics." class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Parametric and No Parametric, Linear Regression, among others</p>
-<p>You can add parts to organize one or more book chapters together. Parts can be inserted at the top of an .Rmd file, before the first-level chapter heading in that same file.</p>
-<p>Add a numbered part: <code># (PART) Act one {-}</code> (followed by <code># A chapter</code>)</p>
-<p>Add an unnumbered part: <code># (PART\*) Act one {-}</code> (followed by <code># A chapter</code>)</p>
-<p>Add an appendix as a special kind of un-numbered part: <code># (APPENDIX) Other stuff {-}</code> (followed by <code># A chapter</code>). Chapters in an appendix are prepended with letters instead of numbers.</p>
+<p><strong>Descriptive statistics</strong> summarize and organize data. They help us understand patterns and key characteristics in a dataset.</p>
+<p>We’ll explore basic concepts using the <code>penguins</code> dataset from the <code>palmerpenguins</code> package.</p>
+<div id="the-penguins-dataset" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> The <code>penguins</code> Dataset<a href="descriptive-statistics..html#the-penguins-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="descriptive-statistics..html#cb11-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb11-2"><a href="descriptive-statistics..html#cb11-2" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb11-3"><a href="descriptive-statistics..html#cb11-3" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb11-4"><a href="descriptive-statistics..html#cb11-4" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;penguins&quot;</span>)</span>
+<span id="cb11-5"><a href="descriptive-statistics..html#cb11-5" tabindex="-1"></a><span class="fu">kbl</span>(<span class="fu">head</span>(penguins, <span class="at">n =</span> <span class="dv">4</span>))</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+species
+</th>
+<th style="text-align:left;">
+island
+</th>
+<th style="text-align:right;">
+bill_length_mm
+</th>
+<th style="text-align:right;">
+bill_depth_mm
+</th>
+<th style="text-align:right;">
+flipper_length_mm
+</th>
+<th style="text-align:right;">
+body_mass_g
+</th>
+<th style="text-align:left;">
+sex
+</th>
+<th style="text-align:right;">
+year
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Adelie
+</td>
+<td style="text-align:left;">
+Torgersen
+</td>
+<td style="text-align:right;">
+39.1
+</td>
+<td style="text-align:right;">
+18.7
+</td>
+<td style="text-align:right;">
+181
+</td>
+<td style="text-align:right;">
+3750
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:right;">
+2007
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Adelie
+</td>
+<td style="text-align:left;">
+Torgersen
+</td>
+<td style="text-align:right;">
+39.5
+</td>
+<td style="text-align:right;">
+17.4
+</td>
+<td style="text-align:right;">
+186
+</td>
+<td style="text-align:right;">
+3800
+</td>
+<td style="text-align:left;">
+female
+</td>
+<td style="text-align:right;">
+2007
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Adelie
+</td>
+<td style="text-align:left;">
+Torgersen
+</td>
+<td style="text-align:right;">
+40.3
+</td>
+<td style="text-align:right;">
+18.0
+</td>
+<td style="text-align:right;">
+195
+</td>
+<td style="text-align:right;">
+3250
+</td>
+<td style="text-align:left;">
+female
+</td>
+<td style="text-align:right;">
+2007
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Adelie
+</td>
+<td style="text-align:left;">
+Torgersen
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:right;">
+2007
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="basic-data-exploration" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Basic Data Exploration<a href="descriptive-statistics..html#basic-data-exploration" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="descriptive-statistics..html#cb12-1" tabindex="-1"></a><span class="co"># Check dimensions and structure</span></span>
+<span id="cb12-2"><a href="descriptive-statistics..html#cb12-2" tabindex="-1"></a><span class="fu">dim</span>(penguins)</span></code></pre></div>
+<pre><code>## [1] 344   8</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="descriptive-statistics..html#cb14-1" tabindex="-1"></a><span class="fu">str</span>(penguins)</span></code></pre></div>
+<pre><code>## tibble [344 × 8] (S3: tbl_df/tbl/data.frame)
+##  $ species          : Factor w/ 3 levels &quot;Adelie&quot;,&quot;Chinstrap&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ island           : Factor w/ 3 levels &quot;Biscoe&quot;,&quot;Dream&quot;,..: 3 3 3 3 3 3 3 3 3 3 ...
+##  $ bill_length_mm   : num [1:344] 39.1 39.5 40.3 NA 36.7 39.3 38.9 39.2 34.1 42 ...
+##  $ bill_depth_mm    : num [1:344] 18.7 17.4 18 NA 19.3 20.6 17.8 19.6 18.1 20.2 ...
+##  $ flipper_length_mm: int [1:344] 181 186 195 NA 193 190 181 195 193 190 ...
+##  $ body_mass_g      : int [1:344] 3750 3800 3250 NA 3450 3650 3625 4675 3475 4250 ...
+##  $ sex              : Factor w/ 2 levels &quot;female&quot;,&quot;male&quot;: 2 1 1 NA 1 2 1 2 NA NA ...
+##  $ year             : int [1:344] 2007 2007 2007 2007 2007 2007 2007 2007 2007 2007 ...</code></pre>
+</div>
+<div id="summary-statistics" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Summary Statistics<a href="descriptive-statistics..html#summary-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="descriptive-statistics..html#cb16-1" tabindex="-1"></a><span class="co"># Quick statistical overview</span></span>
+<span id="cb16-2"><a href="descriptive-statistics..html#cb16-2" tabindex="-1"></a><span class="fu">summary</span>(penguins)</span></code></pre></div>
+<pre><code>##       species          island    bill_length_mm  bill_depth_mm  
+##  Adelie   :152   Biscoe   :168   Min.   :32.10   Min.   :13.10  
+##  Chinstrap: 68   Dream    :124   1st Qu.:39.23   1st Qu.:15.60  
+##  Gentoo   :124   Torgersen: 52   Median :44.45   Median :17.30  
+##                                  Mean   :43.92   Mean   :17.15  
+##                                  3rd Qu.:48.50   3rd Qu.:18.70  
+##                                  Max.   :59.60   Max.   :21.50  
+##                                  NA&#39;s   :2       NA&#39;s   :2      
+##  flipper_length_mm  body_mass_g       sex           year     
+##  Min.   :172.0     Min.   :2700   female:165   Min.   :2007  
+##  1st Qu.:190.0     1st Qu.:3550   male  :168   1st Qu.:2007  
+##  Median :197.0     Median :4050   NA&#39;s  : 11   Median :2008  
+##  Mean   :200.9     Mean   :4202                Mean   :2008  
+##  3rd Qu.:213.0     3rd Qu.:4750                3rd Qu.:2009  
+##  Max.   :231.0     Max.   :6300                Max.   :2009  
+##  NA&#39;s   :2         NA&#39;s   :2</code></pre>
+</div>
+<div id="central-tendency" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Central Tendency<a href="descriptive-statistics..html#central-tendency" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><strong>Mean:</strong> average value<br />
+</li>
+<li><strong>Median:</strong> middle value<br />
+</li>
+<li><strong>Mode:</strong> most frequent value</li>
+</ul>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="descriptive-statistics..html#cb18-1" tabindex="-1"></a><span class="fu">mean</span>(penguins<span class="sc">$</span>bill_length_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 43.92193</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="descriptive-statistics..html#cb20-1" tabindex="-1"></a><span class="fu">median</span>(penguins<span class="sc">$</span>bill_length_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 44.45</code></pre>
+</div>
+<div id="variability" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Variability<a href="descriptive-statistics..html#variability" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><strong>Range:</strong> difference between max and min<br />
+</li>
+<li><strong>Variance:</strong> spread of the data<br />
+</li>
+<li><strong>Standard deviation:</strong> square root of variance</li>
+</ul>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="descriptive-statistics..html#cb22-1" tabindex="-1"></a><span class="fu">range</span>(penguins<span class="sc">$</span>bill_length_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 32.1 59.6</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="descriptive-statistics..html#cb24-1" tabindex="-1"></a><span class="fu">var</span>(penguins<span class="sc">$</span>bill_length_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 29.80705</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="descriptive-statistics..html#cb26-1" tabindex="-1"></a><span class="fu">sd</span>(penguins<span class="sc">$</span>bill_length_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 5.459584</code></pre>
+</div>
+<div id="grouped-summaries" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> Grouped Summaries<a href="descriptive-statistics..html#grouped-summaries" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="descriptive-statistics..html#cb28-1" tabindex="-1"></a><span class="co"># Grouped mean by species</span></span>
+<span id="cb28-2"><a href="descriptive-statistics..html#cb28-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb28-3"><a href="descriptive-statistics..html#cb28-3" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb28-4"><a href="descriptive-statistics..html#cb28-4" tabindex="-1"></a>    <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb28-5"><a href="descriptive-statistics..html#cb28-5" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">mean_bill_length =</span> <span class="fu">mean</span>(bill_length_mm,</span>
+<span id="cb28-6"><a href="descriptive-statistics..html#cb28-6" tabindex="-1"></a>        <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 2
+##   species   mean_bill_length
+##   &lt;fct&gt;                &lt;dbl&gt;
+## 1 Adelie                38.8
+## 2 Chinstrap             48.8
+## 3 Gentoo                47.5</code></pre>
+</div>
+<div id="visualization-histograms" class="section level2 hasAnchor" number="3.7">
+<h2><span class="header-section-number">3.7</span> Visualization: Histograms<a href="descriptive-statistics..html#visualization-histograms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="descriptive-statistics..html#cb30-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-2"><a href="descriptive-statistics..html#cb30-2" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm)) <span class="sc">+</span></span>
+<span id="cb30-3"><a href="descriptive-statistics..html#cb30-3" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">30</span>, <span class="at">fill =</span> <span class="st">&quot;skyblue&quot;</span>,</span>
+<span id="cb30-4"><a href="descriptive-statistics..html#cb30-4" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Bill Length Distribution&quot;</span>,</span>
+<span id="cb30-5"><a href="descriptive-statistics..html#cb30-5" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Bill Length (mm)&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+</div>
+<div id="boxplots-for-group-comparison" class="section level2 hasAnchor" number="3.8">
+<h2><span class="header-section-number">3.8</span> Boxplots for Group Comparison<a href="descriptive-statistics..html#boxplots-for-group-comparison" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="descriptive-statistics..html#cb31-1" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> bill_length_mm,</span>
+<span id="cb31-2"><a href="descriptive-statistics..html#cb31-2" tabindex="-1"></a>    <span class="at">fill =</span> species)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Bill Length by Species&quot;</span>,</span>
+<span id="cb31-3"><a href="descriptive-statistics..html#cb31-3" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Bill Length (mm)&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+</div>
+<div id="correlation" class="section level2 hasAnchor" number="3.9">
+<h2><span class="header-section-number">3.9</span> Correlation<a href="descriptive-statistics..html#correlation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="descriptive-statistics..html#cb32-1" tabindex="-1"></a><span class="fu">cor</span>(penguins<span class="sc">$</span>bill_length_mm, penguins<span class="sc">$</span>bill_depth_mm,</span>
+<span id="cb32-2"><a href="descriptive-statistics..html#cb32-2" tabindex="-1"></a>    <span class="at">use =</span> <span class="st">&quot;complete.obs&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] -0.2350529</code></pre>
+</div>
+<div id="scatter-plot-for-relationships" class="section level2 hasAnchor" number="3.10">
+<h2><span class="header-section-number">3.10</span> Scatter Plot for Relationships<a href="descriptive-statistics..html#scatter-plot-for-relationships" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="descriptive-statistics..html#cb34-1" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm,</span>
+<span id="cb34-2"><a href="descriptive-statistics..html#cb34-2" tabindex="-1"></a>    <span class="at">y =</span> bill_depth_mm, <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb34-3"><a href="descriptive-statistics..html#cb34-3" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Bill Length vs Depth&quot;</span>,</span>
+<span id="cb34-4"><a href="descriptive-statistics..html#cb34-4" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Bill Length (mm)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Bill Depth (mm)&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+</div>
+<div id="conclusion" class="section level2 hasAnchor" number="3.11">
+<h2><span class="header-section-number">3.11</span> Conclusion<a href="descriptive-statistics..html#conclusion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Descriptive statistics are fundamental for understanding data.<br />
+</li>
+<li>R provides powerful tools to calculate, visualize, and interpret data patterns.</li>
+</ul>
+<p>Questions?</p>
 <p>Sources in this <a href="https://cienciadedatos.net/estadistica-con-r">link</a></p>
 <p><a href="https://www.datanalytics.com/libro_r/index.html">here</a></p>
 <p><a href="https://fcorowe.github.io/sl/d1n1_intro.html">Data Types &amp; Probability Distributions</a></p>
-<p>LR model with <a href="https://cran.r-project.org/web/packages/ggiraphExtra/vignettes/ggPredict.html">ggPredict()</a></p>
-<pre><code>##     Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
-## 1            5.1         3.5          1.4         0.2     setosa
-## 2            4.9         3.0          1.4         0.2     setosa
-## 3            4.7         3.2          1.3         0.2     setosa
-## 4            4.6         3.1          1.5         0.2     setosa
-## 5            5.0         3.6          1.4         0.2     setosa
-## 6            5.4         3.9          1.7         0.4     setosa
-## 7            4.6         3.4          1.4         0.3     setosa
-## 8            5.0         3.4          1.5         0.2     setosa
-## 9            4.4         2.9          1.4         0.2     setosa
-## 10           4.9         3.1          1.5         0.1     setosa
-## 11           5.4         3.7          1.5         0.2     setosa
-## 12           4.8         3.4          1.6         0.2     setosa
-## 13           4.8         3.0          1.4         0.1     setosa
-## 14           4.3         3.0          1.1         0.1     setosa
-## 15           5.8         4.0          1.2         0.2     setosa
-## 16           5.7         4.4          1.5         0.4     setosa
-## 17           5.4         3.9          1.3         0.4     setosa
-## 18           5.1         3.5          1.4         0.3     setosa
-## 19           5.7         3.8          1.7         0.3     setosa
-## 20           5.1         3.8          1.5         0.3     setosa
-## 21           5.4         3.4          1.7         0.2     setosa
-## 22           5.1         3.7          1.5         0.4     setosa
-## 23           4.6         3.6          1.0         0.2     setosa
-## 24           5.1         3.3          1.7         0.5     setosa
-## 25           4.8         3.4          1.9         0.2     setosa
-## 26           5.0         3.0          1.6         0.2     setosa
-## 27           5.0         3.4          1.6         0.4     setosa
-## 28           5.2         3.5          1.5         0.2     setosa
-## 29           5.2         3.4          1.4         0.2     setosa
-## 30           4.7         3.2          1.6         0.2     setosa
-## 31           4.8         3.1          1.6         0.2     setosa
-## 32           5.4         3.4          1.5         0.4     setosa
-## 33           5.2         4.1          1.5         0.1     setosa
-## 34           5.5         4.2          1.4         0.2     setosa
-## 35           4.9         3.1          1.5         0.2     setosa
-## 36           5.0         3.2          1.2         0.2     setosa
-## 37           5.5         3.5          1.3         0.2     setosa
-## 38           4.9         3.6          1.4         0.1     setosa
-## 39           4.4         3.0          1.3         0.2     setosa
-## 40           5.1         3.4          1.5         0.2     setosa
-## 41           5.0         3.5          1.3         0.3     setosa
-## 42           4.5         2.3          1.3         0.3     setosa
-## 43           4.4         3.2          1.3         0.2     setosa
-## 44           5.0         3.5          1.6         0.6     setosa
-## 45           5.1         3.8          1.9         0.4     setosa
-## 46           4.8         3.0          1.4         0.3     setosa
-## 47           5.1         3.8          1.6         0.2     setosa
-## 48           4.6         3.2          1.4         0.2     setosa
-## 49           5.3         3.7          1.5         0.2     setosa
-## 50           5.0         3.3          1.4         0.2     setosa
-## 51           7.0         3.2          4.7         1.4 versicolor
-## 52           6.4         3.2          4.5         1.5 versicolor
-## 53           6.9         3.1          4.9         1.5 versicolor
-## 54           5.5         2.3          4.0         1.3 versicolor
-## 55           6.5         2.8          4.6         1.5 versicolor
-## 56           5.7         2.8          4.5         1.3 versicolor
-## 57           6.3         3.3          4.7         1.6 versicolor
-## 58           4.9         2.4          3.3         1.0 versicolor
-## 59           6.6         2.9          4.6         1.3 versicolor
-## 60           5.2         2.7          3.9         1.4 versicolor
-## 61           5.0         2.0          3.5         1.0 versicolor
-## 62           5.9         3.0          4.2         1.5 versicolor
-## 63           6.0         2.2          4.0         1.0 versicolor
-## 64           6.1         2.9          4.7         1.4 versicolor
-## 65           5.6         2.9          3.6         1.3 versicolor
-## 66           6.7         3.1          4.4         1.4 versicolor
-## 67           5.6         3.0          4.5         1.5 versicolor
-## 68           5.8         2.7          4.1         1.0 versicolor
-## 69           6.2         2.2          4.5         1.5 versicolor
-## 70           5.6         2.5          3.9         1.1 versicolor
-## 71           5.9         3.2          4.8         1.8 versicolor
-## 72           6.1         2.8          4.0         1.3 versicolor
-## 73           6.3         2.5          4.9         1.5 versicolor
-## 74           6.1         2.8          4.7         1.2 versicolor
-## 75           6.4         2.9          4.3         1.3 versicolor
-## 76           6.6         3.0          4.4         1.4 versicolor
-## 77           6.8         2.8          4.8         1.4 versicolor
-## 78           6.7         3.0          5.0         1.7 versicolor
-## 79           6.0         2.9          4.5         1.5 versicolor
-## 80           5.7         2.6          3.5         1.0 versicolor
-## 81           5.5         2.4          3.8         1.1 versicolor
-## 82           5.5         2.4          3.7         1.0 versicolor
-## 83           5.8         2.7          3.9         1.2 versicolor
-## 84           6.0         2.7          5.1         1.6 versicolor
-## 85           5.4         3.0          4.5         1.5 versicolor
-## 86           6.0         3.4          4.5         1.6 versicolor
-## 87           6.7         3.1          4.7         1.5 versicolor
-## 88           6.3         2.3          4.4         1.3 versicolor
-## 89           5.6         3.0          4.1         1.3 versicolor
-## 90           5.5         2.5          4.0         1.3 versicolor
-## 91           5.5         2.6          4.4         1.2 versicolor
-## 92           6.1         3.0          4.6         1.4 versicolor
-## 93           5.8         2.6          4.0         1.2 versicolor
-## 94           5.0         2.3          3.3         1.0 versicolor
-## 95           5.6         2.7          4.2         1.3 versicolor
-## 96           5.7         3.0          4.2         1.2 versicolor
-## 97           5.7         2.9          4.2         1.3 versicolor
-## 98           6.2         2.9          4.3         1.3 versicolor
-## 99           5.1         2.5          3.0         1.1 versicolor
-## 100          5.7         2.8          4.1         1.3 versicolor
-## 101          6.3         3.3          6.0         2.5  virginica
-## 102          5.8         2.7          5.1         1.9  virginica
-## 103          7.1         3.0          5.9         2.1  virginica
-## 104          6.3         2.9          5.6         1.8  virginica
-## 105          6.5         3.0          5.8         2.2  virginica
-## 106          7.6         3.0          6.6         2.1  virginica
-## 107          4.9         2.5          4.5         1.7  virginica
-## 108          7.3         2.9          6.3         1.8  virginica
-## 109          6.7         2.5          5.8         1.8  virginica
-## 110          7.2         3.6          6.1         2.5  virginica
-## 111          6.5         3.2          5.1         2.0  virginica
-## 112          6.4         2.7          5.3         1.9  virginica
-## 113          6.8         3.0          5.5         2.1  virginica
-## 114          5.7         2.5          5.0         2.0  virginica
-## 115          5.8         2.8          5.1         2.4  virginica
-## 116          6.4         3.2          5.3         2.3  virginica
-## 117          6.5         3.0          5.5         1.8  virginica
-## 118          7.7         3.8          6.7         2.2  virginica
-## 119          7.7         2.6          6.9         2.3  virginica
-## 120          6.0         2.2          5.0         1.5  virginica
-## 121          6.9         3.2          5.7         2.3  virginica
-## 122          5.6         2.8          4.9         2.0  virginica
-## 123          7.7         2.8          6.7         2.0  virginica
-## 124          6.3         2.7          4.9         1.8  virginica
-## 125          6.7         3.3          5.7         2.1  virginica
-## 126          7.2         3.2          6.0         1.8  virginica
-## 127          6.2         2.8          4.8         1.8  virginica
-## 128          6.1         3.0          4.9         1.8  virginica
-## 129          6.4         2.8          5.6         2.1  virginica
-## 130          7.2         3.0          5.8         1.6  virginica
-## 131          7.4         2.8          6.1         1.9  virginica
-## 132          7.9         3.8          6.4         2.0  virginica
-## 133          6.4         2.8          5.6         2.2  virginica
-## 134          6.3         2.8          5.1         1.5  virginica
-## 135          6.1         2.6          5.6         1.4  virginica
-## 136          7.7         3.0          6.1         2.3  virginica
-## 137          6.3         3.4          5.6         2.4  virginica
-## 138          6.4         3.1          5.5         1.8  virginica
-## 139          6.0         3.0          4.8         1.8  virginica
-## 140          6.9         3.1          5.4         2.1  virginica
-## 141          6.7         3.1          5.6         2.4  virginica
-## 142          6.9         3.1          5.1         2.3  virginica
-## 143          5.8         2.7          5.1         1.9  virginica
-## 144          6.8         3.2          5.9         2.3  virginica
-## 145          6.7         3.3          5.7         2.5  virginica
-## 146          6.7         3.0          5.2         2.3  virginica
-## 147          6.3         2.5          5.0         1.9  virginica
-## 148          6.5         3.0          5.2         2.0  virginica
-## 149          6.2         3.4          5.4         2.3  virginica
-## 150          5.9         3.0          5.1         1.8  virginica</code></pre>
 
+</div>
 </div>
             </section>
 
@@ -374,7 +563,8 @@ gitbook.start({
 "toc": {
 "collapse": "subsection"
 },
-"output_dir": "docs"
+"output_dir": "docs",
+"collapse_section": true
 });
 });
 </script>
