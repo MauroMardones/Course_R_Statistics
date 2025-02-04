@@ -1,17 +1,107 @@
 # Descriptive Statistics. 
 
-Parametric and No Parametric, Linear Regression, among others
+## Introduction  
 
-You can add parts to organize one or more book chapters together. Parts can be inserted at the top of an .Rmd file, before the first-level chapter heading in that same file. 
+**Descriptive statistics** summarize and organize data. They help us understand patterns and key characteristics in a dataset.  
 
-Add a numbered part: `# (PART) Act one {-}` (followed by `# A chapter`)
+We'll explore basic concepts using the `penguins` dataset from the `palmerpenguins` package.  
 
-Add an unnumbered part: `# (PART\*) Act one {-}` (followed by `# A chapter`)
+## The `penguins` Dataset  
 
-Add an appendix as a special kind of un-numbered part: `# (APPENDIX) Other stuff {-}` (followed by `# A chapter`). Chapters in an appendix are prepended with letters instead of numbers.
+```{r}
+# Load the data
+library(palmerpenguins)
+library(kableExtra)
+data("penguins")
+kbl(head(penguins, n = 4))
+```
 
+## Basic Data Exploration  
 
+```{r}
+# Check dimensions and structure
+dim(penguins)
+str(penguins)
+```
 
+## Summary Statistics  
+
+```{r}
+# Quick statistical overview
+summary(penguins)
+```
+
+## Central Tendency  
+
+- **Mean:** average value  
+- **Median:** middle value  
+- **Mode:** most frequent value  
+
+```{r}
+mean(penguins$bill_length_mm, na.rm = TRUE)
+median(penguins$bill_length_mm, na.rm = TRUE)
+```
+
+## Variability  
+
+- **Range:** difference between max and min  
+- **Variance:** spread of the data  
+- **Standard deviation:** square root of variance  
+
+```{r}
+range(penguins$bill_length_mm, na.rm = TRUE)
+var(penguins$bill_length_mm, na.rm = TRUE)
+sd(penguins$bill_length_mm, na.rm = TRUE)
+```
+
+## Grouped Summaries  
+
+```{r}
+# Grouped mean by species
+library(dplyr)
+penguins %>%
+  group_by(species) %>%
+  summarise(mean_bill_length = mean(bill_length_mm, na.rm = TRUE))
+```
+
+## Visualization: Histograms  
+
+```{r}
+library(ggplot2)
+ggplot(penguins, aes(x = bill_length_mm)) +
+  geom_histogram(bins = 30, fill = "skyblue", color = "black") +
+  labs(title = "Bill Length Distribution", x = "Bill Length (mm)")
+```
+
+## Boxplots for Group Comparison  
+
+```{r}
+ggplot(penguins, aes(x = species, y = bill_length_mm, fill = species)) +
+  geom_boxplot() +
+  labs(title = "Bill Length by Species", y = "Bill Length (mm)")
+```
+
+## Correlation  
+
+```{r}
+cor(penguins$bill_length_mm, penguins$bill_depth_mm, use = "complete.obs")
+```
+
+## Scatter Plot for Relationships  
+
+```{r}
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
+  geom_point() +
+  labs(title = "Bill Length vs Depth", x = "Bill Length (mm)", y = "Bill Depth (mm)")
+```
+
+## Conclusion  
+
+- Descriptive statistics are fundamental for understanding data.  
+- R provides powerful tools to calculate, visualize, and interpret data patterns.  
+
+Questions?
+``` 
 
 Sources in this [link](https://cienciadedatos.net/estadistica-con-r)
 

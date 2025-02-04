@@ -69,10 +69,10 @@ Visualizations are essential for gaining insights quickly.
 
 ```{r}
 # Simple scatter plot
-plot(mtcars$mpg, mtcars$hp,
-     xlab = "Miles per Gallon",
-     ylab = "Horsepower",
-     main = "MPG vs Horsepower")
+carsplot <- ggplot()+
+  geom_point(data=mtcars, aes(mpg,hp))+
+  theme_bw()
+carsplot
 ```
 
 

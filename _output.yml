@@ -9,6 +9,7 @@ bookdown::gitbook:
         <li><a href="https://mauromardones.github.io/Course_R_Statictics/" target="_blank">Published with bookdown</a></li>
     edit: "https://github.com/mauromardones/Course_R_Statictics/main/%s"
     download: ["pdf", "epub"]
+    collapse_section: true
 
 bookdown::pdf_book:
   includes:
