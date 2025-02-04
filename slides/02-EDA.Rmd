@@ -10,6 +10,16 @@ output:
     css: custom.css
 ---
 
+```{r echo=FALSE}
+knitr::opts_chunk$set(message = FALSE,
+                      warning = FALSE,
+                      out.width = "50%",
+                      dev = 'jpeg',
+                      dpi = 300,
+                      tidy.opts=list(width.cutoff=40), 
+                      tidy=TRUE)
+```
+
 ## Exploratory Data Analysis (EDA)
 
 ### What is EDA?

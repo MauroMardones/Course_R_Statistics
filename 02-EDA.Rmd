@@ -1,41 +1,92 @@
-# Exploratory Data Analysis
+# Exploratory Data Analysis {#eda}
 
-Data handling, Data manipulation
+## Introduction
 
-Cross-references make it easier for your readers to find and link to elements in your book.
-
-## Chapters and sub-chapters
-
-There are two steps to cross-reference any heading:
-
-1. Label the heading: `# Hello world {#nice-label}`. 
-    - Leave the label off if you like the automated heading generated based on your heading title: for example, `# Hello world` = `# Hello world {#hello-world}`.
-    - To label an un-numbered heading, use: `# Hello world {-#nice-label}` or `{# Hello world .unnumbered}`.
+Exploratory Data Analysis (EDA) is a crucial first step in analyzing data. It provides a summary of the main characteristics of datasets and helps identify patterns, outliers, and relationships.
 
 
-## Captioned figures and tables
+## Summary Statistics in R
 
-Figures and tables *with captions* can also be cross-referenced from elsewhere in your book using `\@ref(fig:chunk-label)` and `\@ref(tab:chunk-label)`, respectively.
+One of the simplest ways to start analyzing data is to generate summary statistics.
 
-See Figure \@ref(fig:nice-fig).
-
-```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center', fig.alt='Plot with connected points showing that vapor pressure of mercury increases exponentially as temperature increases.'}
-par(mar = c(4, 4, .1, .1))
-plot(pressure, type = 'b', pch = 19)
-```
-
-Don't miss Table \@ref(tab:nice-tab).
-
-```{r nice-tab, tidy=FALSE}
-knitr::kable(
-  head(pressure, 10), caption = 'Here is a nice table!',
-  booktabs = TRUE
-)
+```{r}
+# Simple summary of built-in dataset
+summary(mtcars)
 ```
 
 
 
-Sources
+## Data Handling
+
+### Loading and Inspecting Data  
+
+EDA often begins by loading the dataset and inspecting its structure.
+
+```{r}
+# Load CSV data
+url <- "https://people.sc.fsu.edu/~jburkardt/data/csv/hw_200.csv"
+data <- read.csv(url)
+
+# View first rows of the data
+head(data)
+```
+
+
+
+## Data Manipulation  
+
+### Subsetting Data  
+
+You can select specific columns or rows based on logical operations.
+
+```{r}
+# Select rows where mpg is greater than 20
+subset_mpg <- mtcars[mtcars$mpg > 20, ]
+head(subset_mpg)
+```
+
+
+
+### Using `dplyr` for Data Manipulation  
+
+The `dplyr` package makes data manipulation efficient and readable.
+
+```{r}
+# Load the dplyr package
+library(dplyr)
+
+# Filter and summarize data
+mtcars %>%
+  filter(mpg > 20) %>%
+  summarise(avg_hp = mean(hp), count = n())
+```
+
+
+
+## Visualization with Base R  
+
+Visualizations are essential for gaining insights quickly.
+
+```{r}
+# Simple scatter plot
+plot(mtcars$mpg, mtcars$hp,
+     xlab = "Miles per Gallon",
+     ylab = "Horsepower",
+     main = "MPG vs Horsepower")
+```
+
+
+
+## Final Thoughts  
+
+- EDA is critical for understanding your data.  
+- Data handling ensures clean datasets.  
+- Data manipulation prepares data for in-depth analysis.  
+- Visualization helps reveal insights quickly.
+
+
+
+## References  
 
 [Basic R](https://psyteachr.github.io/introdataviz/introduction.html)
 

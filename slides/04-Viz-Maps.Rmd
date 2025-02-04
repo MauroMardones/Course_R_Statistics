@@ -1,0 +1,256 @@
+---
+title: "Visualization techniques and map handling"
+subtitle: "Curso R. Carrera Biología M/ Medio Ambiente. Universidad de Chile."
+author: "Mauricio Mardones"
+date: "`r Sys.Date()`"
+output:
+  ioslides_presentation:
+    widescreen: true
+    self_contained: true
+    css: custom.css
+---
+
+
+## Introduction  
+
+- **Descriptive statistics** summarize and organize data.  
+- They help us understand patterns and key characteristics in a dataset.  
+
+We'll explore basic concepts using the `penguins` dataset from the `palmerpenguins` package.  
+
+---
+
+## The `penguins` Dataset  
+
+```{r}  
+# Load the data  
+library(palmerpenguins)  
+data("penguins")  
+head(penguins)  
+```  
+
+---
+
+## Basic Data Exploration  
+
+```{r}  
+# Check dimensions and structure  
+dim(penguins)  
+str(penguins)  
+```  
+
+---
+
+## Summary Statistics  
+
+```{r}  
+# Quick statistical overview  
+summary(penguins)  
+```  
+
+---
+
+## Central Tendency  
+
+- **Mean:** average value  
+- **Median:** middle value  
+- **Mode:** most frequent value  
+
+```{r}  
+mean(penguins$bill_length_mm, na.rm = TRUE)  
+median(penguins$bill_length_mm, na.rm = TRUE)  
+```  
+
+---
+
+## Variability  
+
+- **Range:** difference between max and min  
+- **Variance:** spread of the data  
+- **Standard deviation:** square root of variance  
+
+```{r}  
+range(penguins$bill_length_mm, na.rm = TRUE)  
+var(penguins$bill_length_mm, na.rm = TRUE)  
+sd(penguins$bill_length_mm, na.rm = TRUE)  
+```  
+
+---
+
+## Grouped Summaries  
+
+```{r}  
+# Grouped mean by species  
+library(dplyr)  
+penguins %>%  
+  group_by(species) %>%  
+  summarise(mean_bill_length = mean(bill_length_mm, na.rm = TRUE))  
+```  
+
+---
+
+## Visualization: Histograms  
+
+```{r}  
+library(ggplot2)  
+ggplot(penguins, aes(x = bill_length_mm)) +  
+  geom_histogram(bins = 30, fill = "skyblue", color = "black") +  
+  labs(title = "Bill Length Distribution", x = "Bill Length (mm)")  
+```  
+
+---
+
+## Boxplots for Group Comparison  
+
+```{r}  
+ggplot(penguins, aes(x = species, y = bill_length_mm, fill = species)) +  
+  geom_boxplot() +  
+  labs(title = "Bill Length by Species", y = "Bill Length (mm)")  
+```  
+
+---
+
+## Correlation  
+
+```{r}  
+cor(penguins$bill_length_mm, penguins$bill_depth_mm, use = "complete.obs")  
+```  
+
+---
+
+## Scatter Plot for Relationships  
+
+```{r}  
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +  
+  geom_point() +  
+  labs(title = "Bill Length vs Depth", x = "Bill Length (mm)", y = "Bill Depth (mm)")  
+```  
+
+---
+
+## Conclusion  
+
+- Descriptive statistics are fundamental for understanding data.  
+- R provides powerful tools to calculate, visualize, and interpret data patterns.  
+
+Questions?  
+
+```  
+## Introduction  
+
+- Visualizing spatial data helps communicate geographic patterns.  
+- We will explore key visualization techniques using the `sf` package.  
+- Example: Maps focused on Chilean administrative divisions.  
+
+---
+
+## Required Libraries  
+
+```{r}  
+library(sf)  
+library(ggplot2)  
+library(rnaturalearth)  
+library(rnaturalearthdata)  
+```  
+
+---
+
+## Loading Country Data for Chile  
+
+```{r}  
+# Download country data for Chile  
+chile <- ne_states(country = "Chile", returnclass = "sf")  
+
+# Inspect the data  
+head(chile)  
+```  
+
+---
+
+## Simple Map Plot  
+
+```{r}  
+plot(chile["name"], col = terrain.colors(nrow(chile)))  
+```  
+
+---
+
+## Visualization with `ggplot2`  
+
+```{r}  
+ggplot(chile) +  
+  geom_sf(aes(fill = name)) +  
+  ggtitle("Chilean Administrative Regions") +  
+  theme_minimal()  
+```  
+
+---
+
+## Highlighting Central Regions  
+
+```{r}  
+chile_filtered <- chile[chile$name %in% c("Valparaíso", "Región Metropolitana", "O'Higgins"), ]  
+
+ggplot(chile_filtered) +  
+  geom_sf(fill = "lightblue", color = "black") +  
+  ggtitle("Central Chile Map (Filtered)")  
+```  
+
+---
+
+## Adding Cities  
+
+```{r}  
+cities <- data.frame(  
+  name = c("Santiago", "Valparaíso", "Rancagua"),  
+  lon = c(-70.6483, -71.6221, -70.7411),  
+  lat = c(-33.4489, -33.0458, -34.1708)  
+)  
+
+cities_sf <- st_as_sf(cities, coords = c("lon", "lat"), crs = 4326)  
+
+ggplot() +  
+  geom_sf(data = chile, fill = "white", color = "gray") +  
+  geom_sf(data = cities_sf, color = "red", size = 3) +  
+  ggtitle("Map of Major Cities in Chile")  
+```  
+
+---
+
+## Changing Projection (CRS)  
+
+```{r}  
+chile_proj <- st_transform(chile, crs = 32719)  
+
+ggplot(chile_proj) +  
+  geom_sf(fill = "lightgreen") +  
+  ggtitle("Map in UTM Zone 19S Projection")  
+```  
+
+---
+
+## Layered Map Example  
+
+```{r}  
+ggplot() +  
+  geom_sf(data = chile, fill = "lightblue") +  
+  geom_sf(data = cities_sf, color = "red", size = 3) +  
+  ggtitle("Map of Chile with Regions and Major Cities")  
+```  
+
+---
+
+## Conclusion  
+
+- `sf` and `ggplot2` are powerful tools for spatial data visualization.  
+- `rnaturalearth` provides accessible boundary data for countries and regions.  
+- Mapping techniques support complex geographic analyses.  
+
+Questions?  
+```  
+
+### Notas  
+
+- `rnaturalearth` permite obtener límites administrativos de primer nivel (regiones) para Chile.  
+- El código usa el sistema de coordenadas `WGS84`, pero es posible transformar a otros sistemas (`EPSG:32719`).  
+- Se pueden ajustar colores y filtros según tus preferencias.
