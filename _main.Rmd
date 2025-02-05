@@ -1,0 +1,144 @@
+--- 
+title: "R Basic Course"
+#subtitle: "This book was made with educational objetctive to improve R skill in students and professional staff"
+author: "Mardones, Mauricio. & Zúñiga, María José."
+date: "`r Sys.Date()`"
+output: pdf_document
+documentclass: book
+bibliography:
+- book.bib
+- packages.bib
+url: your book url like https://mauromardones.github.io/Course_R_Statictics/
+link-citations: true
+linkcolor: blue
+site: bookdown::bookdown_site
+---
+
+# About Course_R {-}
+
+Placeholder
+
+
+
+<!--chapter:end:index.Rmd-->
+
+# **useR**. Intro to R and basic features 
+
+
+```{r fig.width ="50%, fig.caption "Seminal Paper of R}
+knitr::include_graphics('images/papeR.png')
+```
+
+
+
+Source in this [link](https://estadistica-dma.ulpgc.es/cursoR4ULPGC/index.html)
+
+
+[An introduction to R](https://intro2r.com/index.html)
+
+
+seminal paper or R! [here](http://www.aliquote.org/cours/2012_biomed/biblio/Ihaka1996.pdf)
+
+<!--chapter:end:01-intro.Rmd-->
+
+
+# Exploratory Data Analysis 
+
+Placeholder
+
+
+## Summary Statistics in R
+## Data Handling
+### Loading and Inspecting Data  
+## Data Manipulation  
+### Subsetting Data  
+### Using `dplyr` for Data Manipulation  
+## Visualization with Base R  
+## Final Thoughts  
+## References  
+
+<!--chapter:end:02-EDA.Rmd-->
+
+
+# Descriptive Statistics. 
+
+Placeholder
+
+
+## The `penguins` Dataset  
+## Basic Data Exploration  
+## Summary Statistics  
+## Central Tendency  
+## Variability  
+## Grouped Summaries  
+## Visualization: Histograms  
+## Boxplots for Group Comparison  
+## Correlation  
+## Scatter Plot for Relationships  
+## Conclusion  
+
+<!--chapter:end:03-Descr-stats.Rmd-->
+
+# Visualization. 
+
+Graphics and Maps using modern packages
+
+## Graphics 
+
+Footnotes are put inside the square brackets after a caret `^[]`. Like this one ^[This is a footnote.]. 
+
+## Simple maps
+
+Reference items in your bibliography file(s) using `@key`.
+
+For example, we are using the **bookdown** package [@R-bookdown] (check out the last code chunk in index.Rmd to see how this citation key was added) in this sample book, which was built on top of R Markdown and **knitr** [@xie2015] (this citation was added manually in an external file book.bib). 
+Note that the `.bib` files need to be listed in the index.Rmd with the YAML `bibliography` key.
+
+
+The RStudio Visual Markdown Editor can also make it easier to insert citations: <https://rstudio.github.io/visual-markdown-editing/#/citations>
+
+<!--chapter:end:04-Viz-Maps.Rmd-->
+
+# Efficient Code
+
+## Equations
+
+Here is an equation.
+
+\begin{equation} 
+  f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
+  (\#eq:binom)
+\end{equation} 
+
+You may refer to using `\@ref(eq:binom)`, like see Equation \@ref(eq:binom).
+
+
+
+
+Read more here <https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html>.
+
+## Callout blocks
+
+
+The R Markdown Cookbook provides more help on how to use custom blocks to design your own callouts: https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html
+
+<!--chapter:end:05-Effi_code.Rmd-->
+
+
+# Reporting and Sharing 
+
+Placeholder
+
+
+## Publishing
+## 404 pages
+## Metadata for sharing
+
+<!--chapter:end:06-Rep_Share.Rmd-->
+
+`r if (knitr::is_html_output()) '
+# References {-}
+'`
+
+<!--chapter:end:07-references.Rmd-->
+

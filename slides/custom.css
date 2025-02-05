@@ -1,0 +1,14 @@
+pre code {
+  font-size: 6px;
+  line-height: 1.0;
+}
+
+.output pre {
+  font-size: 6px;
+}
+
+pre {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}

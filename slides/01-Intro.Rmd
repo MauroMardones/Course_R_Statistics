@@ -1,33 +1,52 @@
 ---
 title: "Intro to R and Basic Features"
-subtitle: "Curso R. Carrera Biología M/ Medio ambiente. Universidad de Chile."
 author: "Mauricio Mardones"
 date: "`r Sys.Date()`"
 output:
   ioslides_presentation: default
   widescreen: true
   self_contained: true
-  height: 600
-  width: 1000
+  css: custom.css
+  slidy_presentation: default
+subtitle: Curso R. Carrera Biología M/ Medio ambiente. Universidad de Chile.
 ---
 
-## Slide 1: Welcome
+```{r echo=FALSE}
+library(tidyverse)
+```
+
+
+## Welcome R user 
 
 - **R** is a programming language designed for:
   - Statistical computing
   - Data analysis
   - Visualization
-  
 
-## Slide 2: ¿Por qué aprender R?
 
-![Visualización de datos](https://upload.wikimedia.org/wikipedia/commons/8/87/Scatterplot-matrix-example.png)
+## ¿Why learn R? 
 
-- Código abierto y gratuito  
-- Gran comunidad de usuarios  
-- Potentes paquetes para ciencia de datos  
-- Investigación reproducible  
+<div style="display: flex; align-items: center; justify-content: space-between;">
 
+<div style="width: 50%;">
+
+- Open source and free  
+- big community  
+- ~ 13.000 packages  
+- Reproducible science
+
+</div>
+
+<div style="width: 50%; text-align: center;">
+
+
+is just this
+
+```{r echo=FALSE, out.width="90%", fig.align='center'}
+knitr::include_graphics(here::here('images/calc.jpg'))
+```
+
+but... 
 
 ## Origin {.columns-2 .smaller}
 
@@ -43,7 +62,7 @@ output:
 
 <!-- the columns should break here -->
 
-```{r echo=FALSE, out.width='80%', fig.pos="center", fig.cap="Seminal paper of R"}
+```{r echo=FALSE, out.width='80%', fig.align='center'}
 knitr::include_graphics('~/IEO/CURSOS/Course_R_Statistics/images/papeR.png')
 ```
 
@@ -62,7 +81,7 @@ print("Hello, world!")
 ```
 
 
-## Slide 4: Basic Data Types
+## Basic Data Types
 
 - **Numeric:** Numbers (e.g., `3.14`, `42`)
 - **Character:** Text strings (e.g., `"fish"`)
@@ -70,21 +89,19 @@ print("Hello, world!")
 - **Factor:** Categorical variables
 
 
-## Slide 5: Vectors
+## Vectors
 
 - R's most fundamental data structure:
-   ```r
-   numbers <- c(1, 2, 3, 4)
-   letters <- c("a", "b", "c")
-   ```
+```{r}
+numbers <- c(1, 2, 3, 4)
+letters <- c("a", "b", "c")
+```
 - Operations are vectorized:
-   ```r
-   numbers * 2
-   ```
+```{r}
+numbers * 2
+```
 
----
-
-## Slide 6: Data Frames
+## Data Frames
 
 - Table-like structures:
 ```{r}
@@ -96,48 +113,75 @@ df <- data.frame(Name = c("John", "Jane"), Age = c(25, 30))
 head(df)
 ```
 
----
+## Visualization
 
-## Slide 7: Visualization with ggplot2
+- Example base plot:
 
-- Install the package:
-   ```r
-   install.packages("ggplot2")
-   ```
-- Example plot:
+Data used
 
+```{r}
+kbl(head(iris))
+```
+##
 
-```{r message=FALSE}
-library(tidyverse)
-ggplot(iris, aes(x = iris$Sepal.Length, y = iris$Species)) + geom_bar(stat = "identity")
+```{r fig.width=5, fig.height=3, out.width="60%", fig.align='center'}
+plottex <- ggplot(iris, 
+       aes(x = Sepal.Length, 
+           y = Species)) + 
+  geom_bar(stat = "identity")
+plottex
 ```
 
----
+##
 
-## Slide 8: Functions
+```{r fig.width=5, fig.height=3, out.width="60%", fig.align='center'}
+plottex <- ggplot(iris, 
+       aes(x = Sepal.Length, 
+           y = Species)) + 
+  geom_bar(stat = "identity")+
+  theme_minimal()
+plottex
+```
+
+##
+
+```{r fig.width=5, fig.height=3, out.width="60%", fig.align='center'}
+plottex <- ggplot(iris, 
+       aes(x = Sepal.Length, 
+           y = Species)) + 
+  geom_bar(stat = "identity")+
+  theme_minimal()+
+  coord_flip()
+plottex
+```
+
+
+## Functions
 
 - Encapsulate reusable logic:
 
-```r
+```{r}
 square <- function(x) {
      return(x^2)
    }
 square(4)  # Output: 16
 ```
 
----
 
-## Slide 9: Statistical Analysis
+## Statistical Analysis {.columns-2}
+
 
 - Linear regression example:
-   ```r
-   fit <- lm(mpg ~ wt, data = mtcars)
-   summary(fit)
-   ```
+```{r}
+fit <- lm(mpg ~ wt, data = mtcars)
 
----
+```
 
-## Slide 10: Conclusion
+```{r}
+summary(fit)
+```
+
+## Conclusion
 
 - R is powerful for:
   - Data analysis
@@ -145,6 +189,3 @@ square(4)  # Output: 16
   - Statistics
   
 **Happy Coding!**
-```
-
-Guarda el archivo con extensión `.Rmd` y renderízalo para obtener tu presentación.
