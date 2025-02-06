@@ -1,6 +1,6 @@
 ---
 title: "Intro to R and Basic Features"
-author: "Mauricio Mardones"
+author: "Mauricio Mardones. Biologo Marino. Instituto Español de Oceanografía, Spain."
 date: "`r Sys.Date()`"
 output:
   ioslides_presentation: default
@@ -8,7 +8,7 @@ output:
   self_contained: true
   css: custom.css
   slidy_presentation: default
-subtitle: Curso R. Carrera Biología M/ Medio ambiente. Universidad de Chile.
+subtitle: Curso R. Carrera Biología m/ Medio ambiente. Universidad de Chile.
 ---
 
 ```{r echo=FALSE}
@@ -22,6 +22,28 @@ library(tidyverse)
   - Statistical computing
   - Data analysis
   - Visualization
+
+
+## Origin 
+
+- R comenzó a ser desarrollado en 1992 por Robert Gentleman y Ross Ihaka, de departamento de Estadística de la Universidad de Auckland (Nueva Zelanda), con el objetivo de disponer de un lenguaje para enseñar cursos introductorios de estadística.
+
+- La primera versión del programa sale en 1994; en 1995 adopta una licencia de software libre GNU. La difusión del programa se realiza boca a oreja.
+
+
+```{r echo=FALSE, out.width='50%', fig.align='center'}
+knitr::include_graphics(here::here('images/Ross&Robert.png'))
+```
+
+##
+
+- En 1996 publican en el Journal of Computational and Graphical Statistics un artículo describiendo el programa: [R: A language for data analysis and graphics](http://www.aliquote.org/cours/2012_biomed/biblio/Ihaka1996.pdf)
+
+```{r echo=FALSE, out.width='40%', fig.align='center'}
+knitr::include_graphics('~/IEO/CURSOS/Course_R_Statistics/images/papeR.png')
+```
+
+
 
 
 ## ¿Why learn R? 
@@ -46,35 +68,40 @@ is just this
 knitr::include_graphics(here::here('images/calc.jpg'))
 ```
 
-but... 
+but... powerfull!
 
-## Origin {.columns-2 .smaller}
-
-- Some bullet points which take up some space space space space space space space
-
-- on the column on the left
-
-- which are then wrapped to the right column. 
-
-- *Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.*
-
-- line break after this longer bullet point but intead it breaks in some strange place even though it would have space at the bottom of the left column!
-
-<!-- the columns should break here -->
-
-```{r echo=FALSE, out.width='80%', fig.align='center'}
-knitr::include_graphics('~/IEO/CURSOS/Course_R_Statistics/images/papeR.png')
-```
 
 
 
 ## Getting Started
 
 
+Install R from [CRAN](https://cran.r-project.org)
 
-1. Install R from [CRAN](https://cran.r-project.org)
-2. Install RStudio (optional, but highly recommended)
-3. Write your first R command:
+
+```{r echo=FALSE, out.width="50%", fig.align='center'}
+knitr::include_graphics(here::here('images/rpages.png'))
+```
+
+[Download R](https://www.r-project.org)
+
+
+##
+
+Install RStudio (optional, but highly recommended)
+
+
+```{r echo=FALSE, out.width="80%", fig.align='center'}
+knitr::include_graphics(here::here('images/rstudio.png'))
+```
+
+[Download Rstudio](https://posit.co/download/rstudio-desktop/)
+
+
+
+##
+
+Write your first R command:
 
 ```{r echo= TRUE}
 print("Hello, world!")
@@ -168,17 +195,19 @@ square(4)  # Output: 16
 ```
 
 
-## Statistical Analysis {.columns-2}
-
+## Statistical Analysis
 
 - Linear regression example:
+
 ```{r}
 fit <- lm(mpg ~ wt, data = mtcars)
-
+summary(fit)
 ```
 
-```{r}
-summary(fit)
+## Write on a *"Script"*
+
+```{r echo=FALSE, out.width="100%", fig.align='center'}
+knitr::include_graphics(here::here('images/script.png'))
 ```
 
 ## Conclusion
@@ -187,5 +216,4 @@ summary(fit)
   - Data analysis
   - Visualization
   - Statistics
-  
-**Happy Coding!**
+  - **Powerful tool in Earth sciences!**

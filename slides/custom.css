@@ -12,3 +12,9 @@ pre {
   border: none !important;
   box-shadow: none !important;
 }
+
+slides > slide.dark > hgroup h2 {
+  color: #FFFFBB;
+  font-size: 40px;
+  letter-spacing: 10;
+}
