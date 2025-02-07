@@ -139,7 +139,7 @@
 
 \title{R Basic Course}
 \author{Mardones, Mauricio. \& Zúñiga, María José.}
-\date{2025-02-04}
+\date{2025-02-07}
 
 \begin{document}
 \maketitle
@@ -220,6 +220,326 @@ All codes and used in this course can be founded in this repository with the str
 
 \hypertarget{user.-intro-to-r-and-basic-features}{%
 \chapter{\texorpdfstring{\textbf{useR}. Intro to R and basic features}{useR. Intro to R and basic features}}\label{user.-intro-to-r-and-basic-features}}
+
+\hypertarget{welcome-r-user}{%
+\section{Welcome R user}\label{welcome-r-user}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{R} is a programming language designed for:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Statistical computing
+  \item
+    Data analysis
+  \item
+    Visualization
+  \end{itemize}
+\end{itemize}
+
+\begin{center}\includegraphics[width=0.5\linewidth]{images/rpages} \end{center}
+
+\href{https://www.r-project.org}{Download R}
+
+\begin{center}\includegraphics[width=0.5\linewidth]{images/rpages} \end{center}
+
+\href{https://posit.co/download/rstudio-desktop/}{Download Rstudio}
+
+\hypertarget{why-learn-r}{%
+\section{¿Why learn R?}\label{why-learn-r}}
+
+\begin{itemize}
+\tightlist
+\item
+  Open source and free\\
+\item
+  big community\\
+\item
+  \textasciitilde{} 13.000 packages\\
+\item
+  Reproducible science
+\end{itemize}
+
+is just this
+
+\begin{center}\includegraphics[width=0.9\linewidth]{images/calc} \end{center}
+
+but\ldots{}
+
+\hypertarget{origin-of-r}{%
+\section{Origin of R}\label{origin-of-r}}
+
+Seminal paper or R! \href{http://www.aliquote.org/cours/2012_biomed/biblio/Ihaka1996.pdf}{here} (Fig. \ref{fig:semi}).
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{images/papeR} 
+
+}
+
+\caption{Seminal Paper of R}\label{fig:semi}
+\end{figure}
+
+\hypertarget{getting-started}{%
+\section{Getting Started}\label{getting-started}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Install R from \href{https://cran.r-project.org}{CRAN}
+\item
+  Install RStudio (optional, but highly recommended)
+\item
+  Write your first R command:
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(}\StringTok{"Hello, world!"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Hello, world!"
+\end{verbatim}
+
+\hypertarget{basic-data-types}{%
+\section{Basic Data Types}\label{basic-data-types}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Numeric:} Numbers (e.g., \texttt{3.14}, \texttt{42})
+\item
+  \textbf{Character:} Text strings (e.g., \texttt{"fish"})
+\item
+  \textbf{Logical:} \texttt{TRUE} or \texttt{FALSE}
+\item
+  \textbf{Factor:} Categorical variables
+\end{itemize}
+
+\hypertarget{vectors}{%
+\section{Vectors}\label{vectors}}
+
+\begin{itemize}
+\tightlist
+\item
+  R's most fundamental data structure:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{numbers }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{)}
+\NormalTok{letters }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  Operations are vectorized:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{numbers }\SpecialCharTok{*} \DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2 4 6 8
+\end{verbatim}
+
+\hypertarget{data-frames}{%
+\section{Data Frames}\label{data-frames}}
+
+\begin{itemize}
+\tightlist
+\item
+  Table-like structures:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{Name =} \FunctionTok{c}\NormalTok{(}\StringTok{"John"}\NormalTok{, }\StringTok{"Jane"}\NormalTok{),}
+    \AttributeTok{Age =} \FunctionTok{c}\NormalTok{(}\DecValTok{25}\NormalTok{, }\DecValTok{30}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  Inspect the structure:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Name Age
+## 1 John  25
+## 2 Jane  30
+\end{verbatim}
+
+\hypertarget{visualization}{%
+\section{Visualization}\label{visualization}}
+
+\begin{itemize}
+\tightlist
+\item
+  Example base plot:
+\end{itemize}
+
+Data used
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{kbl}\NormalTok{(}\FunctionTok{head}\NormalTok{(iris))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}[t]{r|r|r|r|l}
+\hline
+Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
+\hline
+5.1 & 3.5 & 1.4 & 0.2 & setosa\\
+\hline
+4.9 & 3.0 & 1.4 & 0.2 & setosa\\
+\hline
+4.7 & 3.2 & 1.3 & 0.2 & setosa\\
+\hline
+4.6 & 3.1 & 1.5 & 0.2 & setosa\\
+\hline
+5.0 & 3.6 & 1.4 & 0.2 & setosa\\
+\hline
+5.4 & 3.9 & 1.7 & 0.4 & setosa\\
+\hline
+\end{tabular}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plottex }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(iris, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Sepal.Length,}
+    \AttributeTok{y =}\NormalTok{ Species)) }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{)}
+\NormalTok{plottex}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.6\linewidth]{_main_files/figure-latex/unnamed-chunk-12-1} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plottex }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(iris, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Sepal.Length,}
+    \AttributeTok{y =}\NormalTok{ Species)) }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{) }\SpecialCharTok{+}
+    \FunctionTok{theme\_minimal}\NormalTok{()}
+\NormalTok{plottex}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.6\linewidth]{_main_files/figure-latex/unnamed-chunk-13-1} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plottex }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(iris, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Sepal.Length,}
+    \AttributeTok{y =}\NormalTok{ Species)) }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{) }\SpecialCharTok{+}
+    \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{coord\_flip}\NormalTok{()}
+\NormalTok{plottex}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.6\linewidth]{_main_files/figure-latex/unnamed-chunk-14-1} \end{center}
+
+\hypertarget{functions}{%
+\section{Functions}\label{functions}}
+
+\begin{itemize}
+\tightlist
+\item
+  Encapsulate reusable logic:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{square }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) \{}
+    \FunctionTok{return}\NormalTok{(x}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}
+\NormalTok{\}}
+\FunctionTok{square}\NormalTok{(}\DecValTok{4}\NormalTok{)  }\CommentTok{\# Output: 16}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 16
+\end{verbatim}
+
+\hypertarget{statistical-analysis}{%
+\section{Statistical Analysis}\label{statistical-analysis}}
+
+\begin{itemize}
+\tightlist
+\item
+  Linear regression example:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fit }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(mpg }\SpecialCharTok{\textasciitilde{}}\NormalTok{ wt, }\AttributeTok{data =}\NormalTok{ mtcars)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(fit)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = mpg ~ wt, data = mtcars)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4.5432 -2.3647 -0.1252  1.4096  6.8727 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)  37.2851     1.8776  19.858  < 2e-16 ***
+## wt           -5.3445     0.5591  -9.559 1.29e-10 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 3.046 on 30 degrees of freedom
+## Multiple R-squared:  0.7528, Adjusted R-squared:  0.7446 
+## F-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10
+\end{verbatim}
+
+\hypertarget{conclusion}{%
+\section{Conclusion}\label{conclusion}}
+
+\begin{itemize}
+\tightlist
+\item
+  R is powerful for:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Data analysis
+  \item
+    Visualization
+  \item
+    Statistics
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{sources}{%
+\section{Sources}\label{sources}}
 
 Source in this \href{https://estadistica-dma.ulpgc.es/cursoR4ULPGC/index.html}{link}
 
@@ -380,7 +700,7 @@ Visualizations are essential for gaining insights quickly.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-7-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-23-1.pdf}
 
 \hypertarget{final-thoughts}{%
 \section{Final Thoughts}\label{final-thoughts}}
@@ -614,7 +934,7 @@ Adelie & Torgersen & NA & NA & NA & NA & NA & 2007\\
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-14-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-30-1.pdf}
 
 \hypertarget{boxplots-for-group-comparison}{%
 \section{Boxplots for Group Comparison}\label{boxplots-for-group-comparison}}
@@ -627,7 +947,7 @@ Adelie & Torgersen & NA & NA & NA & NA & NA & 2007\\
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-15-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-31-1.pdf}
 
 \hypertarget{correlation}{%
 \section{Correlation}\label{correlation}}
@@ -655,10 +975,10 @@ Adelie & Torgersen & NA & NA & NA & NA & NA & 2007\\
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-17-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-33-1.pdf}
 
-\hypertarget{conclusion}{%
-\section{Conclusion}\label{conclusion}}
+\hypertarget{conclusion-1}{%
+\section{Conclusion}\label{conclusion-1}}
 
 \begin{itemize}
 \tightlist

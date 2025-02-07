@@ -29,8 +29,13 @@ Raw exercise in script can be found here:
 Interactive course presentations can be found here:  
 [Course Presentations](https://github.com/MauroMardones/Course_R_Statistics/slides)  
 
+to render each slides follow this;
+
+`rmarkdown::render("slides/slides_file.Rmd", output_file = "../slides/slides_file.html")`
+
+
 ## Authors  
 - Mauricio Mardones. Researcher Instituto Español de Oceanografía. Cádiz, Spain. Doctorate student Antartic and SUbAntarctic Science. Unversidad de Magallanes. Chile 
-- María José Zúñiga  
+- María José Zúñiga. Researcher Instituto Español de Oceanografía. Cádiz, Spain.
 
-We hope you enjoy the course and gain valuable insights into R!  
+We hope you enjoy the course and gain some skills into R!  
