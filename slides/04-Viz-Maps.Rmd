@@ -1,256 +1,152 @@
 ---
-title: "Visualization techniques and map handling"
+title: "Visualization techniques and maps handling"
 subtitle: "Curso R. Carrera Biología M/ Medio Ambiente. Universidad de Chile."
 author: "Mauricio Mardones"
 date: "`r Sys.Date()`"
 output:
   ioslides_presentation:
     widescreen: true
-    self_contained: true
     css: custom.css
 ---
 
 
-## Introduction  
 
-- **Descriptive statistics** summarize and organize data.  
-- They help us understand patterns and key characteristics in a dataset.  
+# Slide 1: Introduction
 
-We'll explore basic concepts using the `penguins` dataset from the `palmerpenguins` package.  
-
----
-
-## The `penguins` Dataset  
-
-```{r}  
-# Load the data  
-library(palmerpenguins)  
-data("penguins")  
-head(penguins)  
-```  
+## Visualizations and Maps in R
+- Importance of clear, informative visualizations
+- Common mistakes to avoid
+- Overview of good and bad examples
 
 ---
 
-## Basic Data Exploration  
-
-```{r}  
-# Check dimensions and structure  
-dim(penguins)  
-str(penguins)  
-```  
-
----
-
-## Summary Statistics  
-
-```{r}  
-# Quick statistical overview  
-summary(penguins)  
-```  
+# Slide 2: Principles of Good Visualization
+## Key Elements:
+- Simplicity
+- Clarity
+- Relevance
+- Consistency
 
 ---
 
-## Central Tendency  
+# Slide 3: Good Example - Clear and Simple Plot
 
-- **Mean:** average value  
-- **Median:** middle value  
-- **Mode:** most frequent value  
+```{r}
+library(ggplot2)
+data(mpg)
+ggplot(mpg, aes(x=displ, y=hwy)) +
+  geom_point() +
+  labs(title="Engine Displacement vs. Highway Mileage")
+```
 
-```{r}  
-mean(penguins$bill_length_mm, na.rm = TRUE)  
-median(penguins$bill_length_mm, na.rm = TRUE)  
-```  
-
----
-
-## Variability  
-
-- **Range:** difference between max and min  
-- **Variance:** spread of the data  
-- **Standard deviation:** square root of variance  
-
-```{r}  
-range(penguins$bill_length_mm, na.rm = TRUE)  
-var(penguins$bill_length_mm, na.rm = TRUE)  
-sd(penguins$bill_length_mm, na.rm = TRUE)  
-```  
+- Clear labels and title
+- Simple scatter plot
 
 ---
 
-## Grouped Summaries  
+# Slide 4: Bad Example - Overloaded Plot
 
-```{r}  
-# Grouped mean by species  
-library(dplyr)  
-penguins %>%  
-  group_by(species) %>%  
-  summarise(mean_bill_length = mean(bill_length_mm, na.rm = TRUE))  
-```  
-
----
-
-## Visualization: Histograms  
-
-```{r}  
-library(ggplot2)  
-ggplot(penguins, aes(x = bill_length_mm)) +  
-  geom_histogram(bins = 30, fill = "skyblue", color = "black") +  
-  labs(title = "Bill Length Distribution", x = "Bill Length (mm)")  
-```  
+```{r}
+ggplot(mpg, aes(x=displ, y=hwy, color=class, size=cty)) +
+  geom_point() +
+  labs(title="Overloaded Plot Example") +
+  theme_minimal()
+```
+- Too much information in one plot
+- Hard to interpret
 
 ---
 
-## Boxplots for Group Comparison  
-
-```{r}  
-ggplot(penguins, aes(x = species, y = bill_length_mm, fill = species)) +  
-  geom_boxplot() +  
-  labs(title = "Bill Length by Species", y = "Bill Length (mm)")  
-```  
+# Slide 5: Choosing the Right Map for the Data
+## Map Types:
+- Choropleth maps
+- Scatter plots with coordinates
+- Heatmaps
 
 ---
 
-## Correlation  
-
-```{r}  
-cor(penguins$bill_length_mm, penguins$bill_depth_mm, use = "complete.obs")  
-```  
-
----
-
-## Scatter Plot for Relationships  
-
-```{r}  
-ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +  
-  geom_point() +  
-  labs(title = "Bill Length vs Depth", x = "Bill Length (mm)", y = "Bill Depth (mm)")  
-```  
+# Slide 6: Good Example - Choropleth Map
+```{r}
+library(ggplot2)
+library(sf)
+world <- st_read(system.file("shape/nc.shp", package="sf"))
+ggplot(data = world) + 
+  geom_sf(aes(fill = AREA)) +
+  labs(title = "Area Distribution by Region")
+```
+- Clear regional differences
+- Proper use of color scales
 
 ---
 
-## Conclusion  
-
-- Descriptive statistics are fundamental for understanding data.  
-- R provides powerful tools to calculate, visualize, and interpret data patterns.  
-
-Questions?  
-
-```  
-## Introduction  
-
-- Visualizing spatial data helps communicate geographic patterns.  
-- We will explore key visualization techniques using the `sf` package.  
-- Example: Maps focused on Chilean administrative divisions.  
+# Slide 7: Bad Example - Poor Map Color Choices
+```{r}
+ggplot(data = world) + 
+  geom_sf(aes(fill = AREA)) +
+  scale_fill_viridis() +
+  labs(title = "Bad Map Example")
+```
+- Color choice that doesn't differentiate well for everyone (e.g., colorblindness)
 
 ---
 
-## Required Libraries  
-
-```{r}  
-library(sf)  
-library(ggplot2)  
-library(rnaturalearth)  
-library(rnaturalearthdata)  
-```  
-
----
-
-## Loading Country Data for Chile  
-
-```{r}  
-# Download country data for Chile  
-chile <- ne_states(country = "Chile", returnclass = "sf")  
-
-# Inspect the data  
-head(chile)  
-```  
+# Slide 8: Good Example - Using Facets in Maps
+```{r}
+library(dplyr)
+ggplot(mpg, aes(x=displ, y=hwy)) +
+  geom_point() +
+  facet_wrap(~class) +
+  labs(title="Vehicle Class Facets")
+```
+- Facets make comparisons easy
+- Clearly segmented data
 
 ---
 
-## Simple Map Plot  
-
-```{r}  
-plot(chile["name"], col = terrain.colors(nrow(chile)))  
-```  
-
----
-
-## Visualization with `ggplot2`  
-
-```{r}  
-ggplot(chile) +  
-  geom_sf(aes(fill = name)) +  
-  ggtitle("Chilean Administrative Regions") +  
-  theme_minimal()  
-```  
+# Slide 9: Bad Example - Overuse of Facets
+```{r}
+ggplot(mpg, aes(x=displ, y=hwy)) +
+  geom_point() +
+  facet_wrap(~class + manufacturer) +
+  labs(title="Overused Facets Example")
+```
+- Too many facets makes it hard to extract meaning
+- Can overwhelm the audience
 
 ---
 
-## Highlighting Central Regions  
-
-```{r}  
-chile_filtered <- chile[chile$name %in% c("Valparaíso", "Región Metropolitana", "O'Higgins"), ]  
-
-ggplot(chile_filtered) +  
-  geom_sf(fill = "lightblue", color = "black") +  
-  ggtitle("Central Chile Map (Filtered)")  
-```  
-
----
-
-## Adding Cities  
-
-```{r}  
-cities <- data.frame(  
-  name = c("Santiago", "Valparaíso", "Rancagua"),  
-  lon = c(-70.6483, -71.6221, -70.7411),  
-  lat = c(-33.4489, -33.0458, -34.1708)  
-)  
-
-cities_sf <- st_as_sf(cities, coords = c("lon", "lat"), crs = 4326)  
-
-ggplot() +  
-  geom_sf(data = chile, fill = "white", color = "gray") +  
-  geom_sf(data = cities_sf, color = "red", size = 3) +  
-  ggtitle("Map of Major Cities in Chile")  
-```  
+# Slide 10: Mapping with Interactive Visualizations
+## Using `leaflet` in R
+```{r}
+library(leaflet)
+leaflet() %>%
+  addTiles() %>%
+  addMarkers(lng = -87.6298, lat = 41.8781, popup = "Chicago")
+```
+- Interactive maps allow user exploration
+- Add custom markers and popups
 
 ---
 
-## Changing Projection (CRS)  
-
-```{r}  
-chile_proj <- st_transform(chile, crs = 32719)  
-
-ggplot(chile_proj) +  
-  geom_sf(fill = "lightgreen") +  
-  ggtitle("Map in UTM Zone 19S Projection")  
-```  
-
----
-
-## Layered Map Example  
-
-```{r}  
-ggplot() +  
-  geom_sf(data = chile, fill = "lightblue") +  
-  geom_sf(data = cities_sf, color = "red", size = 3) +  
-  ggtitle("Map of Chile with Regions and Major Cities")  
-```  
+# Slide 11: Bad Example - Static Maps for Interactive Data
+```{r}
+library(ggplot2)
+ggplot(world, aes(fill = AREA)) + 
+  geom_sf() +
+  theme_void() +
+  labs(title="Static Map for Interactive Data")
+```
+- Static map limits user interaction and exploration
+- Ineffective for interactive data
 
 ---
 
-## Conclusion  
+# Slide 12: Conclusion
+## Best Practices:
+- Simplify your plots
+- Choose the right map type
+- Avoid visual clutter
+- Make interactive maps when appropriate
+```
 
-- `sf` and `ggplot2` are powerful tools for spatial data visualization.  
-- `rnaturalearth` provides accessible boundary data for countries and regions.  
-- Mapping techniques support complex geographic analyses.  
-
-Questions?  
-```  
-
-### Notas  
-
-- `rnaturalearth` permite obtener límites administrativos de primer nivel (regiones) para Chile.  
-- El código usa el sistema de coordenadas `WGS84`, pero es posible transformar a otros sistemas (`EPSG:32719`).  
-- Se pueden ajustar colores y filtros según tus preferencias.
+This provides a presentation structure with both good and bad examples, demonstrating clear principles of effective visualization and mapping in R. You can add images or further tweak the formatting for the final output in `ioslides`.

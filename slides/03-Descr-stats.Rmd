@@ -1,14 +1,16 @@
 ---
 title: "Class 3. Descriptive Statistics"
-subtitle: "Curso R. Carrera Biología M/ Medio Ambiente. Universidad de Chile."
-author: "Mauricio Mardones"
+author: "Mauricio Mardones. Biologo Marino. Instituto Español de Oceanografía, Spain."
 date: "`r Sys.Date()`"
 output:
-  ioslides_presentation:
-    widescreen: true
-    self_contained: true
-    css: custom.css
+  ioslides_presentation: default
+  widescreen: true
+  self_contained: true
+  css: custom.css
+  slidy_presentation: default
+subtitle: Curso R. Carrera Biología m/ Medio ambiente. Universidad de Chile.
 ---
+
 
 ## Introduction  
 

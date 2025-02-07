@@ -227,7 +227,7 @@ fviz_cluster(kmeans_result, data = scaled_data,
 ## Maps
 
 # Instalar paquetes necesarios si no están instalados
-install.packages(c("sf", "ggplot2", "dplyr", "ggspatial", "rnaturalearth", "rnaturalearthdata"))
+install.packages(c("sf", "ggplot2", "dplyr", "ggspatial", "rnaturalearth", "rnaturalearthdata", "terra", "rasterVis", "ncdf4", "lubridate", "jsonlite", "httr"))
 
 # Cargar librerías
 library(sf)
@@ -236,17 +236,14 @@ library(dplyr)
 library(ggspatial)
 library(rnaturalearth)
 library(rnaturalearthdata)
+library(terra)
+library(rasterVis)
+library(lubridate)
+library(jsonlite)
+library(httr)
 
 # Obtener el mapa de Chile
 chile <- ne_states(country = "Chile", returnclass = "sf")
-
-
-#Pruuebo el plot
-
-plotch <- ggplot(data = chile) +
-  geom_sf(fill = "lightblue")+
-  theme_bw()
-plotch
 
 # Filtrar para la Región de Los Lagos, que incluye Puerto Montt
 region_puerto_montt <- chile %>%
@@ -271,8 +268,7 @@ points_sf <- st_as_sf(points_data, coords = c("lon", "lat"), crs = 4326)
 # Plot del mapa con puntos y atributos
 plot <- ggplot(data = region_puerto_montt) +
   geom_sf(fill = "lightblue") +
-  geom_sf(data = points_sf, 
-          aes(color = respiration_rate), size = 3) +
+  geom_sf(data = points_sf, aes(color = respiration_rate), size = 3) +
   scale_color_viridis_c() +
   annotation_scale(location = "bl") +
   annotation_north_arrow(location = "tr", which_north = "true") +
@@ -281,8 +277,6 @@ plot <- ggplot(data = region_puerto_montt) +
     subtitle = "Tasa de respiración de animales (simulada)",
     color = "Respiration Rate"
   ) +
-  scale_color_viridis_c(option = "G",
-                        direction = -1)+
   theme_minimal()
 
 print(plot)
