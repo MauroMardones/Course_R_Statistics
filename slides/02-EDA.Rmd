@@ -1,100 +1,68 @@
 ---
-title: "Exploratory Analisys Data"
-subtitle: "Curso R. Carrera Biología M/ Medio ambiente. Universidad de Chile."
-author: "Mauricio Mardones"
+title: "Exploratory Analisys Data in R"
+author: "Mauricio Mardones. Biologo Marino. Instituto Español de Oceanografía, Spain."
 date: "`r Sys.Date()`"
 output:
-  ioslides_presentation:
-    widescreen: true
-    self_contained: true
-    css: custom.css
+  ioslides_presentation: default
+  widescreen: true
+  self_contained: true
+  css: custom.css
+  slidy_presentation: default
+subtitle: Curso R. Carrera Biología m/ Medio ambiente. Universidad de Chile.
+
 ---
 
-```{r echo=FALSE}
-knitr::opts_chunk$set(message = FALSE,
-                      warning = FALSE,
-                      out.width = "50%",
-                      dev = 'jpeg',
-                      dpi = 300,
-                      tidy.opts=list(width.cutoff=40), 
-                      tidy=TRUE)
-```
 
-## Exploratory Data Analysis (EDA)
 
-### What is EDA?
-- First step in analyzing data
-- Summarizes main characteristics of datasets
-- Helps detect patterns, outliers, and relationships
+## What is Exploratory Data Analysis (EDA)? 
 
-### Example: Summary Statistics in R
+
+Exploratory Data Analysis (EDA) involves summarizing and visualizing datasets to uncover insights. Key steps include: 
+
+>1. **Data Overview:** Understanding data types, structure, and missing values using `str()` and `summary()`.  
+>2. **Data Cleaning:** Handling missing data, correcting errors, and standardizing values.  
+>3. **Descriptive Statistics:** Calculating means, medians, and standard deviations for quantitative variables.  
+>4. **Visualizations:** Plotting histograms, scatter plots, and box plots to identify trends and outliers.  
+>5. **Identifying Patterns:** Detecting relationships, clusters, or anomalies for hypothesis generation.
+
+## Data set example
+
+Structure
 
 ```{r}
-# Simple summary of built-in dataset
+head(mtcars)
+```
+##
+
+Summary by variable
+
+```{r eval=FALSE}
 summary(mtcars)
 ```
 
 
+```{r echo=FALSE}
+kbl(summary(mtcars))
+```
+## Data
 
-## Data Handling
+- Loading the `palmerpenguins` dataset
 
-### Loading and Inspecting Data
-- Reading data from CSV files
-- Checking structure and data types
-
-```{r}
-# Load CSV data
-url <- "https://people.sc.fsu.edu/~jburkardt/data/csv/hw_200.csv"
-data <- read.csv(url)
-
-# View first rows of the data
-head(data)
+```{r echo=FALSE, out.width='90%', fig.align='center'}
+knitr::include_graphics(here::here('images/penguins.png'))
 ```
 
+##
 
 
-## Data Manipulation
-
-### Subsetting Data
-- Select specific columns or rows
-- Use logical operations
-
-```{r}
-# Select rows where mpg is greater than 20
-subset_mpg <- mtcars[mtcars$mpg > 20, ]
-head(subset_mpg)
+```{r echo=FALSE, out.width='70%', fig.align='center'}
+knitr::include_graphics(here::here('images/palmer.jpeg'))
 ```
 
+## Hand on!
 
-
-## Using `dplyr` for Data Manipulation
-
-```{r}
-# Load the dplyr package
-library(dplyr)
-
-# Filter and summarize data
-mtcars %>%
-  filter(mpg > 20) %>%
-  summarise(avg_hp = mean(hp), count = n())
-```
-
-
-
-## Visualization with Base R
-
-```{r}
-# Simple scatter plot
-plot(mtcars$mpg, mtcars$hp,
-     xlab = "Miles per Gallon",
-     ylab = "Horsepower",
-     main = "MPG vs Horsepower")
-```
-
-
-
-## Final Thoughts
-- EDA is critical for understanding your data
-- Data handling ensures clean datasets
-- Data manipulation prepares data for analysis
-- Visualization helps reveal insights quickly
+- This class will cover:
+  
+  - Data manipulation 
+  - Descriptive statistics
+  - Multivariate statistcs...

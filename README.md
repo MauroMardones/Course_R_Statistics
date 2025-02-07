@@ -20,9 +20,14 @@ The content is structured into clear sections to support step-by-step learning a
 The online version of the course is available at the following link:  
 [R Basic Course](https://mauromardones.github.io/Course_R_Statistics/)  
 
+
+## Script 
+Raw exercise in script can be found here:
+[Script](https://github.com/MauroMardones/Course_R_Statistics/slides)  
+
 ## Presentations  
 Interactive course presentations can be found here:  
-[Course Presentations](https://github.com/MauroMardones/Course_R_Statistics/tree/main/slides)  
+[Course Presentations](https://github.com/MauroMardones/Course_R_Statistics/slides)  
 
 ## Authors  
 - Mauricio Mardones. Researcher Instituto Español de Oceanografía. Cádiz, Spain. Doctorate student Antartic and SUbAntarctic Science. Unversidad de Magallanes. Chile 
