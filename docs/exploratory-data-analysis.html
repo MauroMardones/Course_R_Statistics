@@ -245,15 +245,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.3</span> Basic Data Overview<a href="exploratory-data-analysis.html#basic-data-overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="exploratory-data-analysis.html#cb20-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">head</span>(penguins_clean))</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 8
-##   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-##   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
-## 1 Adelie  Torgersen           39.1          18.7               181        3750
-## 2 Adelie  Torgersen           39.5          17.4               186        3800
-## 3 Adelie  Torgersen           40.3          18                 195        3250
-## 4 Adelie  Torgersen           36.7          19.3               193        3450
-## 5 Adelie  Torgersen           39.3          20.6               190        3650
-## 6 Adelie  Torgersen           38.9          17.8               181        3625
-## # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+##   species island    bill_length_mm bill_depth_mm flipper_length_mm
+##   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;
+## 1 Adelie  Torgersen           39.1          18.7               181
+## 2 Adelie  Torgersen           39.5          17.4               186
+## 3 Adelie  Torgersen           40.3          18                 195
+## 4 Adelie  Torgersen           36.7          19.3               193
+## 5 Adelie  Torgersen           39.3          20.6               190
+## 6 Adelie  Torgersen           38.9          17.8               181
+## # ℹ 3 more variables: body_mass_g &lt;int&gt;, sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="exploratory-data-analysis.html#cb22-1" tabindex="-1"></a><span class="fu">str</span>(penguins_clean)</span></code></pre></div>
 <pre><code>## tibble [333 × 8] (S3: tbl_df/tbl/data.frame)
 ##  $ species          : Factor w/ 3 levels &quot;Adelie&quot;,&quot;Chinstrap&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...

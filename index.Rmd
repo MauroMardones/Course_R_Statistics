@@ -35,12 +35,11 @@ Description and educational material for introductory course on R, descriptive s
 This course has these sections;
 
 - 1. **useR**. Intro to R and basic features. 
-- 2. **Exploratory Data Analysis**. Basic concepts for data exploration.
-- 3. **Descriptive Statistics**. Essential statistical calculations. 
-- 4. **Visualization**. Graphics and Maps using modern packages
-- 5. **Efficient code**. Organization strategies.  
-- 6. **Automatization and sharing** Report generation and result sharing.  
-- 7. **Management of Bibliographic** sources and additional materials. 
+- 2. **Exploratory Data Analysis**. Basic concepts for data exploration. Essential statistical calculations. 
+- 3. **Visualization**. Graphics and Maps using modern packages
+- 4. **Efficient code**. Organization strategies.  
+- 5. **Automatization and sharing** Report generation and result sharing.  
+- 6. **Management of Bibliographic** sources and additional materials. 
 
 
 All codes and used in this course can be founded in this repository with the structure to do this Ebook
