@@ -9,19 +9,6 @@ Graphics and Maps using modern packages
 
 Load penguins dataset
 
-```{r echo =FALSE}
-knitr::opts_chunk$set(message = FALSE,
-                      eval = TRUE,
-                      warning = FALSE,
-                      fig.align = 'center',
-                      dev = 'jpeg',
-                      dpi = 300, 
-                      fig.align='center')
-#XQuartz is a mess, put this in your onload to default to cairo instead
-options(bitmapType = "cairo") 
-# (https://github.com/tidyverse/ggplot2/issues/2655)
-# Lo mapas se hacen mas rapido
-```
 
 ```{r}
 if (!require("palmerpenguins")) install.packages("palmerpenguins")
