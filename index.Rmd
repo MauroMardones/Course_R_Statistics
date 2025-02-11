@@ -43,7 +43,6 @@ This course has these sections;
 - 7. **Management of Bibliographic** sources and additional materials. 
 
 
-
 All codes and used in this course can be founded in this repository with the structure to do this Ebook
 [Repo R Course](https://github.com/MauroMardones/Course_R_Statistics)
 

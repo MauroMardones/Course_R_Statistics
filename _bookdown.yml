@@ -7,10 +7,9 @@ rmd_files:
   - index.Rmd
   - 01-intro.Rmd
   - 02-EDA.Rmd
-  - 03-Descr-stats.Rmd
-  - 04-Viz-Maps.Rmd
-  - 05-Effi_code.Rmd
-  - 06-Rep_Share.Rmd
-  - 07-references.Rmd
+  - 03-Viz-Maps.Rmd
+  - 04-Effi_code.Rmd
+  - 05-Rep_Share.Rmd
+  - 06-references.Rmd
   
 output_dir: "docs"

@@ -2,82 +2,155 @@
 
 Exploratory Data Analysis (EDA) is a crucial first step in analyzing data. It provides a summary of the main characteristics of datasets and helps identify patterns, outliers, and relationships.
 
-libraries
+
+This section demonstrates an exploratory data analysis (EDA) of the **Palmer Penguins Dataset** using both base R and Tidyverse. It includes cleaning, descriptive statistics, and relationships between variables.
+
+```{r echo =FALSE}
+knitr::opts_chunk$set(message = FALSE,
+                      eval = TRUE,
+                      warning = FALSE,
+                      fig.align = 'center',
+                      dev = 'jpeg',
+                      dpi = 300, 
+                      fig.align='center')
+#XQuartz is a mess, put this in your onload to default to cairo instead
+options(bitmapType = "cairo") 
+# (https://github.com/tidyverse/ggplot2/issues/2655)
+# Lo mapas se hacen mas rapido
+```
+
+## Load Necessary Packages
 
 ```{r}
+if (!require("palmerpenguins")) install.packages("palmerpenguins")
+if (!require("tidyverse")) install.packages("tidyverse")
+
+library(palmerpenguins)
 library(tidyverse)
 ```
 
-## Summary Statistics in R
-
-One of the simplest ways to start analyzing data is to generate summary statistics.
+## Load and Clean Data
 
 ```{r}
-# Simple summary of built-in dataset
-summary(mtcars)
+penguins <- palmerpenguins::penguins
+penguins_clean <- drop_na(penguins)
+
+```
+
+## Basic Data Overview
+
+```{r}
+print(head(penguins_clean))
 ```
 
 
-
-## Data Handling
-
-### Loading and Inspecting Data  
-
-EDA often begins by loading the dataset and inspecting its structure.
-
 ```{r}
-# Load CSV data
-url <- "https://people.sc.fsu.edu/~jburkardt/data/csv/hw_200.csv"
-data <- read.csv(url)
-
-# View first rows of the data
-head(data)
+str(penguins_clean)
 ```
 
 
+```{r}
+summary(select(penguins_clean, where(is.numeric)))
+```
 
-## Data Manipulation  
-
-### Subsetting Data  
-
-You can select specific columns or rows based on logical operations.
+## Measures of Central Tendency
 
 ```{r}
-# Select rows where mpg is greater than 20
-subset_mpg <- mtcars[mtcars$mpg > 20, ]
-head(subset_mpg)
+mean_flipper <- mean(penguins_clean$flipper_length_mm)
+median_flipper <- median(penguins_clean$flipper_length_mm)
+mean_flipper
+median_flipper
+```
+
+## Measures of Spread
+
+```{r}
+range_body_mass <- range(penguins_clean$body_mass_g)
+var_body_mass <- var(penguins_clean$body_mass_g)
+sd_body_mass <- sd(penguins_clean$body_mass_g)
+
+cat("\nRange of body mass:", range_body_mass)
+cat("\nVariance of body mass:", var_body_mass)
+cat("\nStandard deviation of body mass:", sd_body_mass)
+```
+
+## Frequency Tables for Categorical Data
+
+```{r}
+cat("\nFrequency of species:\n")
+print(table(penguins_clean$species))
+```
+
+## Relationships Between Variables
+
+```{r}
+cov_bill <- cov(penguins_clean$bill_length_mm, penguins_clean$bill_depth_mm)
+cor_bill <- cor(penguins_clean$bill_length_mm, penguins_clean$bill_depth_mm)
+```
+
+## Outlier Detection
+
+```{r}
+q1 <- quantile(penguins_clean$body_mass_g, 0.25)
+q3 <- quantile(penguins_clean$body_mass_g, 0.75)
+iqr_value <- q3 - q1
+lower_bound <- q1 - 1.5 * iqr_value
+upper_bound <- q3 + 1.5 * iqr_value
+
+outliers <- penguins_clean %>% 
+  filter(body_mass_g < lower_bound | body_mass_g > upper_bound) %>% 
+  select(species, body_mass_g)
+
+cat("\nOutliers in body mass:\n")
+print(outliers)
+```
+
+## Comparison Between Groups
+
+```{r}
+penguins_clean %>% 
+  filter(species %in% c("Adelie", "Gentoo")) %>%
+  group_by(species) %>%
+  summarise(
+    mean_body_mass = mean(body_mass_g),
+    sd_body_mass = sd(body_mass_g)
+  )
+```
+
+## Statistical Test: t-Test
+
+```{r}
+penguins_subset <- penguins_clean %>%
+  filter(species %in% c("Adelie", "Gentoo"))
+
+t_test_result <- t.test(body_mass_g ~ species, 
+                        data = penguins_subset)
+
+cat("\nT-Test Results:\n")
+print(t_test_result)
 ```
 
 
-
-### Using `dplyr` for Data Manipulation  
-
-The `dplyr` package makes data manipulation efficient and readable.
-
-```{r}
-# Load the dplyr package
-library(dplyr)
-
-# Filter and summarize data
-mtcars %>%
-  filter(mpg > 20) %>%
-  summarise(avg_hp = mean(hp), count = n())
-```
+The null hypothesis (`H0`) assumes that the mean body mass of *Adelie* and *Gentoo* penguins is the same. If the p-value < 0.05, we reject `H0`, indicating a significant difference in the body mass of these species.
 
 
-
-## Visualization with Base R  
-
-Visualizations are essential for gaining insights quickly.
+## One-Way ANOVA
 
 ```{r}
-# Simple scatter plot
-carsplot <- ggplot()+
-  geom_point(data=mtcars, aes(mpg,hp))+
-  theme_bw()
-carsplot
+anova_body_mass <- aov(bill_length_mm ~ species, data = penguins_clean)
+summary(anova_body_mass)
 ```
 
+## Simple Linear Regression
+
+```{r}
+model <- lm(body_mass_g ~ flipper_length_mm, data = penguins_clean)
+summary(model)
+```
+
+## Conclusion
+
+This script demonstrates exploratory data analysis (EDA) using both Base R and Tidyverse, including cleaning, descriptive statistics, and relationships between variables. The statistical tests (t-test and ANOVA) provide insights into differences between groups, while regression analysis highlights potential predictive relationships.
 
 
 ## Final Thoughts  

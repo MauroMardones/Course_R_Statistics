@@ -81,9 +81,10 @@ ggplot(data = world) +
 
 # Slide 7: Bad Example - Poor Map Color Choices
 ```{r}
+library(ggplot2)
 ggplot(data = world) + 
   geom_sf(aes(fill = AREA)) +
-  scale_fill_viridis() +
+  scale_fill_viridis_b() +
   labs(title = "Bad Map Example")
 ```
 - Color choice that doesn't differentiate well for everyone (e.g., colorblindness)
@@ -147,6 +148,7 @@ ggplot(world, aes(fill = AREA)) +
 - Choose the right map type
 - Avoid visual clutter
 - Make interactive maps when appropriate
-```
+
+----
 
 This provides a presentation structure with both good and bad examples, demonstrating clear principles of effective visualization and mapping in R. You can add images or further tweak the formatting for the final output in `ioslides`.

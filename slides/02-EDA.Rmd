@@ -9,9 +9,7 @@ output:
   css: custom.css
   slidy_presentation: default
 subtitle: Curso R. Carrera Biología m/ Medio ambiente. Universidad de Chile.
-
 ---
-
 
 
 ## What is Exploratory Data Analysis (EDA)? 
@@ -36,14 +34,11 @@ head(mtcars)
 
 Summary by variable
 
-```{r eval=FALSE}
+```{r}
 summary(mtcars)
 ```
 
 
-```{r echo=FALSE}
-kbl(summary(mtcars))
-```
 ## Data
 
 - Loading the `palmerpenguins` dataset
@@ -54,10 +49,99 @@ knitr::include_graphics(here::here('images/penguins.png'))
 
 ##
 
+Where this data was obtained...
 
 ```{r echo=FALSE, out.width='70%', fig.align='center'}
 knitr::include_graphics(here::here('images/palmer.jpeg'))
 ```
+
+---
+
+## The `penguins` Dataset  
+
+```{r}  
+# Load the data  
+library(palmerpenguins)  
+library(kableExtra)
+data("penguins")  
+kbl(head(penguins, n = c(4, 8)))
+```  
+
+---
+
+## Basic Data Exploration  
+
+```{r}  
+# Check dimensions and structure  
+dim(penguins)  
+str(penguins)  
+```  
+
+---
+
+## Summary Statistics  
+
+```{r}  
+# Quick statistical overview  
+summary(penguins)  
+```  
+
+---
+
+## Central Tendency  
+
+- **Mean:** average value  
+- **Median:** middle value  
+- **Mode:** most frequent value  
+
+```{r}  
+mean(penguins$bill_length_mm, na.rm = TRUE)  
+median(penguins$bill_length_mm, na.rm = TRUE)  
+```  
+
+---
+
+## Variability  
+
+- **Range:** difference between max and min  
+- **Variance:** spread of the data  
+- **Standard deviation:** square root of variance  
+
+```{r}  
+range(penguins$bill_length_mm, na.rm = TRUE)  
+var(penguins$bill_length_mm, na.rm = TRUE)  
+sd(penguins$bill_length_mm, na.rm = TRUE)  
+```  
+
+---
+
+## Grouped Summaries  
+
+```{r}  
+# Grouped mean by species  
+library(dplyr)  
+penguins %>%  
+  group_by(species) %>%  
+  summarise(mean_bill_length = mean(bill_length_mm, na.rm = TRUE))  
+```  
+
+
+## Correlation  
+
+```{r}  
+cor(penguins$bill_length_mm, 
+    penguins$bill_depth_mm, 
+    use = "complete.obs")  
+```  
+
+
+## Conclusion  
+
+- Descriptive statistics are fundamental for understanding data.  
+- R provides powerful tools to calculate, visualize, and interpret data patterns.  
+
+Questions?  
+
 
 ## Hand on!
 
@@ -65,4 +149,4 @@ knitr::include_graphics(here::here('images/palmer.jpeg'))
   
   - Data manipulation 
   - Descriptive statistics
-  - Multivariate statistcs...
+  - Multivariate statistics...

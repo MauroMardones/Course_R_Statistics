@@ -23,7 +23,7 @@
 <meta name="author" content="Mardones, Mauricio. &amp; Zúñiga, María José." />
 
 
-<meta name="date" content="2025-02-07" />
+<meta name="date" content="2025-02-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="user.-intro-to-r-and-basic-features.html"/>
-<link rel="next" href="descriptive-statistics..html"/>
+<link rel="next" href="visualization..html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -125,28 +125,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 </style>
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -182,49 +160,48 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html"><i class="fa fa-check"></i><b>2</b> Exploratory Data Analysis</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#summary-statistics-in-r"><i class="fa fa-check"></i><b>2.1</b> Summary Statistics in R</a></li>
-<li class="chapter" data-level="2.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#data-handling"><i class="fa fa-check"></i><b>2.2</b> Data Handling</a>
-<ul>
-<li class="chapter" data-level="2.2.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#loading-and-inspecting-data"><i class="fa fa-check"></i><b>2.2.1</b> Loading and Inspecting Data</a></li>
+<li class="chapter" data-level="2.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#load-necessary-packages"><i class="fa fa-check"></i><b>2.1</b> Load Necessary Packages</a></li>
+<li class="chapter" data-level="2.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#load-and-clean-data"><i class="fa fa-check"></i><b>2.2</b> Load and Clean Data</a></li>
+<li class="chapter" data-level="2.3" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#basic-data-overview"><i class="fa fa-check"></i><b>2.3</b> Basic Data Overview</a></li>
+<li class="chapter" data-level="2.4" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#measures-of-central-tendency"><i class="fa fa-check"></i><b>2.4</b> Measures of Central Tendency</a></li>
+<li class="chapter" data-level="2.5" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#measures-of-spread"><i class="fa fa-check"></i><b>2.5</b> Measures of Spread</a></li>
+<li class="chapter" data-level="2.6" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#frequency-tables-for-categorical-data"><i class="fa fa-check"></i><b>2.6</b> Frequency Tables for Categorical Data</a></li>
+<li class="chapter" data-level="2.7" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#relationships-between-variables"><i class="fa fa-check"></i><b>2.7</b> Relationships Between Variables</a></li>
+<li class="chapter" data-level="2.8" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#outlier-detection"><i class="fa fa-check"></i><b>2.8</b> Outlier Detection</a></li>
+<li class="chapter" data-level="2.9" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#comparison-between-groups"><i class="fa fa-check"></i><b>2.9</b> Comparison Between Groups</a></li>
+<li class="chapter" data-level="2.10" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#statistical-test-t-test"><i class="fa fa-check"></i><b>2.10</b> Statistical Test: t-Test</a></li>
+<li class="chapter" data-level="2.11" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#one-way-anova"><i class="fa fa-check"></i><b>2.11</b> One-Way ANOVA</a></li>
+<li class="chapter" data-level="2.12" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#simple-linear-regression"><i class="fa fa-check"></i><b>2.12</b> Simple Linear Regression</a></li>
+<li class="chapter" data-level="2.13" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#conclusion-1"><i class="fa fa-check"></i><b>2.13</b> Conclusion</a></li>
+<li class="chapter" data-level="2.14" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#final-thoughts"><i class="fa fa-check"></i><b>2.14</b> Final Thoughts</a></li>
+<li class="chapter" data-level="2.15" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#references"><i class="fa fa-check"></i><b>2.15</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#data-manipulation"><i class="fa fa-check"></i><b>2.3</b> Data Manipulation</a>
+<li class="chapter" data-level="3" data-path="visualization..html"><a href="visualization..html"><i class="fa fa-check"></i><b>3</b> Visualization.</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#subsetting-data"><i class="fa fa-check"></i><b>2.3.1</b> Subsetting Data</a></li>
-<li class="chapter" data-level="2.3.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#using-dplyr-for-data-manipulation"><i class="fa fa-check"></i><b>2.3.2</b> Using <code>dplyr</code> for Data Manipulation</a></li>
-</ul></li>
-<li class="chapter" data-level="2.4" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#visualization-with-base-r"><i class="fa fa-check"></i><b>2.4</b> Visualization with Base R</a></li>
-<li class="chapter" data-level="2.5" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#final-thoughts"><i class="fa fa-check"></i><b>2.5</b> Final Thoughts</a></li>
-<li class="chapter" data-level="2.6" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#references"><i class="fa fa-check"></i><b>2.6</b> References</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html"><i class="fa fa-check"></i><b>3</b> Descriptive Statistics.</a>
+<li class="chapter" data-level="3.1" data-path="visualization..html"><a href="visualization..html#graphics"><i class="fa fa-check"></i><b>3.1</b> Graphics</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#the-penguins-dataset"><i class="fa fa-check"></i><b>3.1</b> The <code>penguins</code> Dataset</a></li>
-<li class="chapter" data-level="3.2" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#basic-data-exploration"><i class="fa fa-check"></i><b>3.2</b> Basic Data Exploration</a></li>
-<li class="chapter" data-level="3.3" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#summary-statistics"><i class="fa fa-check"></i><b>3.3</b> Summary Statistics</a></li>
-<li class="chapter" data-level="3.4" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#central-tendency"><i class="fa fa-check"></i><b>3.4</b> Central Tendency</a></li>
-<li class="chapter" data-level="3.5" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#variability"><i class="fa fa-check"></i><b>3.5</b> Variability</a></li>
-<li class="chapter" data-level="3.6" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#grouped-summaries"><i class="fa fa-check"></i><b>3.6</b> Grouped Summaries</a></li>
-<li class="chapter" data-level="3.7" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#visualization-histograms"><i class="fa fa-check"></i><b>3.7</b> Visualization: Histograms</a></li>
-<li class="chapter" data-level="3.8" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#boxplots-for-group-comparison"><i class="fa fa-check"></i><b>3.8</b> Boxplots for Group Comparison</a></li>
-<li class="chapter" data-level="3.9" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#correlation"><i class="fa fa-check"></i><b>3.9</b> Correlation</a></li>
-<li class="chapter" data-level="3.10" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#scatter-plot-for-relationships"><i class="fa fa-check"></i><b>3.10</b> Scatter Plot for Relationships</a></li>
-<li class="chapter" data-level="3.11" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#conclusion-1"><i class="fa fa-check"></i><b>3.11</b> Conclusion</a></li>
+<li class="chapter" data-level="3.1.1" data-path="visualization..html"><a href="visualization..html#base-r-visualizations"><i class="fa fa-check"></i><b>3.1.1</b> Base R Visualizations</a></li>
+<li class="chapter" data-level="3.1.2" data-path="visualization..html"><a href="visualization..html#visualization-techniques"><i class="fa fa-check"></i><b>3.1.2</b> Visualization Techniques</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="visualization..html"><a href="visualization..html"><i class="fa fa-check"></i><b>4</b> Visualization.</a>
+<li class="chapter" data-level="3.2" data-path="visualization..html"><a href="visualization..html#tidyverse-universe-visualizations"><i class="fa fa-check"></i><b>3.2</b> <code>Tidyverse</code> universe Visualizations</a></li>
+<li class="chapter" data-level="3.3" data-path="visualization..html"><a href="visualization..html#simple-maps"><i class="fa fa-check"></i><b>3.3</b> Simple maps</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="visualization..html"><a href="visualization..html#graphics"><i class="fa fa-check"></i><b>4.1</b> Graphics</a></li>
-<li class="chapter" data-level="4.2" data-path="visualization..html"><a href="visualization..html#simple-maps"><i class="fa fa-check"></i><b>4.2</b> Simple maps</a></li>
+<li class="chapter" data-level="3.3.1" data-path="visualization..html"><a href="visualization..html#other-maps"><i class="fa fa-check"></i><b>3.3.1</b> Other maps</a></li>
+<li class="chapter" data-level="3.3.2" data-path="visualization..html"><a href="visualization..html#key-advantages-of-sf"><i class="fa fa-check"></i><b>3.3.2</b> <strong>Key Advantages of <code>sf</code>:</strong></a></li>
+<li class="chapter" data-level="3.3.3" data-path="visualization..html"><a href="visualization..html#useful-functions"><i class="fa fa-check"></i><b>3.3.3</b> <strong>Useful Functions</strong></a></li>
+<li class="chapter" data-level="3.3.4" data-path="visualization..html"><a href="visualization..html#additional-resources"><i class="fa fa-check"></i><b>3.3.4</b> <strong>Additional Resources</strong></a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="efficient-code.html"><a href="efficient-code.html"><i class="fa fa-check"></i><b>5</b> Efficient Code</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="efficient-code.html"><a href="efficient-code.html#equations"><i class="fa fa-check"></i><b>5.1</b> Equations</a></li>
-<li class="chapter" data-level="5.2" data-path="efficient-code.html"><a href="efficient-code.html#callout-blocks"><i class="fa fa-check"></i><b>5.2</b> Callout blocks</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html"><i class="fa fa-check"></i><b>6</b> Reporting and Sharing</a>
+<li class="chapter" data-level="4" data-path="efficient-code.html"><a href="efficient-code.html"><i class="fa fa-check"></i><b>4</b> Efficient Code</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html#publishing"><i class="fa fa-check"></i><b>6.1</b> Publishing</a></li>
-<li class="chapter" data-level="6.2" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html#pages"><i class="fa fa-check"></i><b>6.2</b> 404 pages</a></li>
-<li class="chapter" data-level="6.3" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html#metadata-for-sharing"><i class="fa fa-check"></i><b>6.3</b> Metadata for sharing</a></li>
+<li class="chapter" data-level="4.1" data-path="efficient-code.html"><a href="efficient-code.html#equations"><i class="fa fa-check"></i><b>4.1</b> Equations</a></li>
+<li class="chapter" data-level="4.2" data-path="efficient-code.html"><a href="efficient-code.html#callout-blocks"><i class="fa fa-check"></i><b>4.2</b> Callout blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html"><i class="fa fa-check"></i><b>5</b> Reporting and Sharing</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html#publishing"><i class="fa fa-check"></i><b>5.1</b> Publishing</a></li>
+<li class="chapter" data-level="5.2" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html#pages"><i class="fa fa-check"></i><b>5.2</b> 404 pages</a></li>
+<li class="chapter" data-level="5.3" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html#metadata-for-sharing"><i class="fa fa-check"></i><b>5.3</b> Metadata for sharing</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -250,111 +227,203 @@ div.csl-indent {
 <div id="exploratory-data-analysis" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">Section 2</span> Exploratory Data Analysis<a href="exploratory-data-analysis.html#exploratory-data-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Exploratory Data Analysis (EDA) is a crucial first step in analyzing data. It provides a summary of the main characteristics of datasets and helps identify patterns, outliers, and relationships.</p>
-<p>libraries</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="exploratory-data-analysis.html#cb18-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
-<div id="summary-statistics-in-r" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Summary Statistics in R<a href="exploratory-data-analysis.html#summary-statistics-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>One of the simplest ways to start analyzing data is to generate summary statistics.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="exploratory-data-analysis.html#cb19-1" tabindex="-1"></a><span class="co"># Simple summary of built-in dataset</span></span>
-<span id="cb19-2"><a href="exploratory-data-analysis.html#cb19-2" tabindex="-1"></a><span class="fu">summary</span>(mtcars)</span></code></pre></div>
-<pre><code>##       mpg             cyl             disp             hp       
-##  Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  
-##  1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  
-##  Median :19.20   Median :6.000   Median :196.3   Median :123.0  
-##  Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  
-##  3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  
-##  Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  
-##       drat             wt             qsec             vs        
-##  Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  
-##  1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  
-##  Median :3.695   Median :3.325   Median :17.71   Median :0.0000  
-##  Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  
-##  3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  
-##  Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  
-##        am              gear            carb      
-##  Min.   :0.0000   Min.   :3.000   Min.   :1.000  
-##  1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  
-##  Median :0.0000   Median :4.000   Median :2.000  
-##  Mean   :0.4062   Mean   :3.688   Mean   :2.812  
-##  3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  
-##  Max.   :1.0000   Max.   :5.000   Max.   :8.000</code></pre>
+<p>This section demonstrates an exploratory data analysis (EDA) of the <strong>Palmer Penguins Dataset</strong> using both base R and Tidyverse. It includes cleaning, descriptive statistics, and relationships between variables.</p>
+<div id="load-necessary-packages" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Load Necessary Packages<a href="exploratory-data-analysis.html#load-necessary-packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="exploratory-data-analysis.html#cb18-1" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;palmerpenguins&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;palmerpenguins&quot;</span>)</span>
+<span id="cb18-2"><a href="exploratory-data-analysis.html#cb18-2" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;tidyverse&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
+<span id="cb18-3"><a href="exploratory-data-analysis.html#cb18-3" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="exploratory-data-analysis.html#cb18-4" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb18-5"><a href="exploratory-data-analysis.html#cb18-5" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 </div>
-<div id="data-handling" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Data Handling<a href="exploratory-data-analysis.html#data-handling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="loading-and-inspecting-data" class="section level3 hasAnchor" number="2.2.1">
-<h3><span class="header-section-number">2.2.1</span> Loading and Inspecting Data<a href="exploratory-data-analysis.html#loading-and-inspecting-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>EDA often begins by loading the dataset and inspecting its structure.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="exploratory-data-analysis.html#cb21-1" tabindex="-1"></a><span class="co"># Load CSV data</span></span>
-<span id="cb21-2"><a href="exploratory-data-analysis.html#cb21-2" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://people.sc.fsu.edu/~jburkardt/data/csv/hw_200.csv&quot;</span></span>
-<span id="cb21-3"><a href="exploratory-data-analysis.html#cb21-3" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(url)</span>
-<span id="cb21-4"><a href="exploratory-data-analysis.html#cb21-4" tabindex="-1"></a></span>
-<span id="cb21-5"><a href="exploratory-data-analysis.html#cb21-5" tabindex="-1"></a><span class="co"># View first rows of the data</span></span>
-<span id="cb21-6"><a href="exploratory-data-analysis.html#cb21-6" tabindex="-1"></a><span class="fu">head</span>(data)</span></code></pre></div>
-<pre><code>##   Index
-## 1     2
-## 2     3
-## 3     4
-## 4     5
-## 5     6
-## 6     7
-##   Height.Inches...Weight.Pounds..1..65.78..112.99.2..71.52..136.49.3..69.40..153.03.4..68.22..142.34.5..67.79..144.30.6..68.70..123.30.7..69.80..141.49.8..70.01..136.46.9..67.90..112.37.10..66.78..120.67.11..66.49..127.45.12..67.62..114.14.13..68.30..1 ...
-## 1                                                                                                                                                                                                                                                          71.52
-## 2                                                                                                                                                                                                                                                          69.40
-## 3                                                                                                                                                                                                                                                          68.22
-## 4                                                                                                                                                                                                                                                          67.79
-## 5                                                                                                                                                                                                                                                          68.70
-## 6                                                                                                                                                                                                                                                          69.80
-##   Weight.Pounds.
-## 1         136.49
-## 2         153.03
-## 3         142.34
-## 4         144.30
-## 5         123.30
-## 6         141.49</code></pre>
+<div id="load-and-clean-data" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Load and Clean Data<a href="exploratory-data-analysis.html#load-and-clean-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="exploratory-data-analysis.html#cb19-1" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> palmerpenguins<span class="sc">::</span>penguins</span>
+<span id="cb19-2"><a href="exploratory-data-analysis.html#cb19-2" tabindex="-1"></a>penguins_clean <span class="ot">&lt;-</span> <span class="fu">drop_na</span>(penguins)</span></code></pre></div>
 </div>
+<div id="basic-data-overview" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Basic Data Overview<a href="exploratory-data-analysis.html#basic-data-overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="exploratory-data-analysis.html#cb20-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">head</span>(penguins_clean))</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 8
+##   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+##   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+## 1 Adelie  Torgersen           39.1          18.7               181        3750
+## 2 Adelie  Torgersen           39.5          17.4               186        3800
+## 3 Adelie  Torgersen           40.3          18                 195        3250
+## 4 Adelie  Torgersen           36.7          19.3               193        3450
+## 5 Adelie  Torgersen           39.3          20.6               190        3650
+## 6 Adelie  Torgersen           38.9          17.8               181        3625
+## # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="exploratory-data-analysis.html#cb22-1" tabindex="-1"></a><span class="fu">str</span>(penguins_clean)</span></code></pre></div>
+<pre><code>## tibble [333 × 8] (S3: tbl_df/tbl/data.frame)
+##  $ species          : Factor w/ 3 levels &quot;Adelie&quot;,&quot;Chinstrap&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ island           : Factor w/ 3 levels &quot;Biscoe&quot;,&quot;Dream&quot;,..: 3 3 3 3 3 3 3 3 3 3 ...
+##  $ bill_length_mm   : num [1:333] 39.1 39.5 40.3 36.7 39.3 38.9 39.2 41.1 38.6 34.6 ...
+##  $ bill_depth_mm    : num [1:333] 18.7 17.4 18 19.3 20.6 17.8 19.6 17.6 21.2 21.1 ...
+##  $ flipper_length_mm: int [1:333] 181 186 195 193 190 181 195 182 191 198 ...
+##  $ body_mass_g      : int [1:333] 3750 3800 3250 3450 3650 3625 4675 3200 3800 4400 ...
+##  $ sex              : Factor w/ 2 levels &quot;female&quot;,&quot;male&quot;: 2 1 1 1 2 1 2 1 2 2 ...
+##  $ year             : int [1:333] 2007 2007 2007 2007 2007 2007 2007 2007 2007 2007 ...</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="exploratory-data-analysis.html#cb24-1" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">select</span>(penguins_clean, <span class="fu">where</span>(is.numeric)))</span></code></pre></div>
+<pre><code>##  bill_length_mm  bill_depth_mm   flipper_length_mm  body_mass_g  
+##  Min.   :32.10   Min.   :13.10   Min.   :172       Min.   :2700  
+##  1st Qu.:39.50   1st Qu.:15.60   1st Qu.:190       1st Qu.:3550  
+##  Median :44.50   Median :17.30   Median :197       Median :4050  
+##  Mean   :43.99   Mean   :17.16   Mean   :201       Mean   :4207  
+##  3rd Qu.:48.60   3rd Qu.:18.70   3rd Qu.:213       3rd Qu.:4775  
+##  Max.   :59.60   Max.   :21.50   Max.   :231       Max.   :6300  
+##       year     
+##  Min.   :2007  
+##  1st Qu.:2007  
+##  Median :2008  
+##  Mean   :2008  
+##  3rd Qu.:2009  
+##  Max.   :2009</code></pre>
 </div>
-<div id="data-manipulation" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> Data Manipulation<a href="exploratory-data-analysis.html#data-manipulation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="subsetting-data" class="section level3 hasAnchor" number="2.3.1">
-<h3><span class="header-section-number">2.3.1</span> Subsetting Data<a href="exploratory-data-analysis.html#subsetting-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>You can select specific columns or rows based on logical operations.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="exploratory-data-analysis.html#cb23-1" tabindex="-1"></a><span class="co"># Select rows where mpg is greater than</span></span>
-<span id="cb23-2"><a href="exploratory-data-analysis.html#cb23-2" tabindex="-1"></a><span class="co"># 20</span></span>
-<span id="cb23-3"><a href="exploratory-data-analysis.html#cb23-3" tabindex="-1"></a>subset_mpg <span class="ot">&lt;-</span> mtcars[mtcars<span class="sc">$</span>mpg <span class="sc">&gt;</span> <span class="dv">20</span>, ]</span>
-<span id="cb23-4"><a href="exploratory-data-analysis.html#cb23-4" tabindex="-1"></a><span class="fu">head</span>(subset_mpg)</span></code></pre></div>
-<pre><code>##                 mpg cyl  disp  hp drat    wt  qsec vs am gear carb
-## Mazda RX4      21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
-## Mazda RX4 Wag  21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
-## Datsun 710     22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
-## Hornet 4 Drive 21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
-## Merc 240D      24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
-## Merc 230       22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2</code></pre>
+<div id="measures-of-central-tendency" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Measures of Central Tendency<a href="exploratory-data-analysis.html#measures-of-central-tendency" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="exploratory-data-analysis.html#cb26-1" tabindex="-1"></a>mean_flipper <span class="ot">&lt;-</span> <span class="fu">mean</span>(penguins_clean<span class="sc">$</span>flipper_length_mm)</span>
+<span id="cb26-2"><a href="exploratory-data-analysis.html#cb26-2" tabindex="-1"></a>median_flipper <span class="ot">&lt;-</span> <span class="fu">median</span>(penguins_clean<span class="sc">$</span>flipper_length_mm)</span>
+<span id="cb26-3"><a href="exploratory-data-analysis.html#cb26-3" tabindex="-1"></a>mean_flipper</span></code></pre></div>
+<pre><code>## [1] 200.967</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="exploratory-data-analysis.html#cb28-1" tabindex="-1"></a>median_flipper</span></code></pre></div>
+<pre><code>## [1] 197</code></pre>
 </div>
-<div id="using-dplyr-for-data-manipulation" class="section level3 hasAnchor" number="2.3.2">
-<h3><span class="header-section-number">2.3.2</span> Using <code>dplyr</code> for Data Manipulation<a href="exploratory-data-analysis.html#using-dplyr-for-data-manipulation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The <code>dplyr</code> package makes data manipulation efficient and readable.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="exploratory-data-analysis.html#cb25-1" tabindex="-1"></a><span class="co"># Load the dplyr package</span></span>
-<span id="cb25-2"><a href="exploratory-data-analysis.html#cb25-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb25-3"><a href="exploratory-data-analysis.html#cb25-3" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="exploratory-data-analysis.html#cb25-4" tabindex="-1"></a><span class="co"># Filter and summarize data</span></span>
-<span id="cb25-5"><a href="exploratory-data-analysis.html#cb25-5" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
-<span id="cb25-6"><a href="exploratory-data-analysis.html#cb25-6" tabindex="-1"></a>    <span class="fu">filter</span>(mpg <span class="sc">&gt;</span> <span class="dv">20</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb25-7"><a href="exploratory-data-analysis.html#cb25-7" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">avg_hp =</span> <span class="fu">mean</span>(hp), <span class="at">count =</span> <span class="fu">n</span>())</span></code></pre></div>
-<pre><code>##   avg_hp count
-## 1   88.5    14</code></pre>
+<div id="measures-of-spread" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Measures of Spread<a href="exploratory-data-analysis.html#measures-of-spread" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="exploratory-data-analysis.html#cb30-1" tabindex="-1"></a>range_body_mass <span class="ot">&lt;-</span> <span class="fu">range</span>(penguins_clean<span class="sc">$</span>body_mass_g)</span>
+<span id="cb30-2"><a href="exploratory-data-analysis.html#cb30-2" tabindex="-1"></a>var_body_mass <span class="ot">&lt;-</span> <span class="fu">var</span>(penguins_clean<span class="sc">$</span>body_mass_g)</span>
+<span id="cb30-3"><a href="exploratory-data-analysis.html#cb30-3" tabindex="-1"></a>sd_body_mass <span class="ot">&lt;-</span> <span class="fu">sd</span>(penguins_clean<span class="sc">$</span>body_mass_g)</span>
+<span id="cb30-4"><a href="exploratory-data-analysis.html#cb30-4" tabindex="-1"></a></span>
+<span id="cb30-5"><a href="exploratory-data-analysis.html#cb30-5" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Range of body mass:&quot;</span>, range_body_mass)</span></code></pre></div>
+<pre><code>## 
+## Range of body mass: 2700 6300</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="exploratory-data-analysis.html#cb32-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Variance of body mass:&quot;</span>, var_body_mass)</span></code></pre></div>
+<pre><code>## 
+## Variance of body mass: 648372.5</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="exploratory-data-analysis.html#cb34-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Standard deviation of body mass:&quot;</span>,</span>
+<span id="cb34-2"><a href="exploratory-data-analysis.html#cb34-2" tabindex="-1"></a>    sd_body_mass)</span></code></pre></div>
+<pre><code>## 
+## Standard deviation of body mass: 805.2158</code></pre>
 </div>
+<div id="frequency-tables-for-categorical-data" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Frequency Tables for Categorical Data<a href="exploratory-data-analysis.html#frequency-tables-for-categorical-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="exploratory-data-analysis.html#cb36-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Frequency of species:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## Frequency of species:</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="exploratory-data-analysis.html#cb38-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">table</span>(penguins_clean<span class="sc">$</span>species))</span></code></pre></div>
+<pre><code>## 
+##    Adelie Chinstrap    Gentoo 
+##       146        68       119</code></pre>
 </div>
-<div id="visualization-with-base-r" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> Visualization with Base R<a href="exploratory-data-analysis.html#visualization-with-base-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Visualizations are essential for gaining insights quickly.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="exploratory-data-analysis.html#cb27-1" tabindex="-1"></a><span class="co"># Simple scatter plot</span></span>
-<span id="cb27-2"><a href="exploratory-data-analysis.html#cb27-2" tabindex="-1"></a>carsplot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">data =</span> mtcars,</span>
-<span id="cb27-3"><a href="exploratory-data-analysis.html#cb27-3" tabindex="-1"></a>    <span class="fu">aes</span>(mpg, hp)) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
-<span id="cb27-4"><a href="exploratory-data-analysis.html#cb27-4" tabindex="-1"></a>carsplot</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<div id="relationships-between-variables" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> Relationships Between Variables<a href="exploratory-data-analysis.html#relationships-between-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="exploratory-data-analysis.html#cb40-1" tabindex="-1"></a>cov_bill <span class="ot">&lt;-</span> <span class="fu">cov</span>(penguins_clean<span class="sc">$</span>bill_length_mm,</span>
+<span id="cb40-2"><a href="exploratory-data-analysis.html#cb40-2" tabindex="-1"></a>    penguins_clean<span class="sc">$</span>bill_depth_mm)</span>
+<span id="cb40-3"><a href="exploratory-data-analysis.html#cb40-3" tabindex="-1"></a>cor_bill <span class="ot">&lt;-</span> <span class="fu">cor</span>(penguins_clean<span class="sc">$</span>bill_length_mm,</span>
+<span id="cb40-4"><a href="exploratory-data-analysis.html#cb40-4" tabindex="-1"></a>    penguins_clean<span class="sc">$</span>bill_depth_mm)</span></code></pre></div>
 </div>
-<div id="final-thoughts" class="section level2 hasAnchor" number="2.5">
-<h2><span class="header-section-number">2.5</span> Final Thoughts<a href="exploratory-data-analysis.html#final-thoughts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="outlier-detection" class="section level2 hasAnchor" number="2.8">
+<h2><span class="header-section-number">2.8</span> Outlier Detection<a href="exploratory-data-analysis.html#outlier-detection" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="exploratory-data-analysis.html#cb41-1" tabindex="-1"></a>q1 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(penguins_clean<span class="sc">$</span>body_mass_g,</span>
+<span id="cb41-2"><a href="exploratory-data-analysis.html#cb41-2" tabindex="-1"></a>    <span class="fl">0.25</span>)</span>
+<span id="cb41-3"><a href="exploratory-data-analysis.html#cb41-3" tabindex="-1"></a>q3 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(penguins_clean<span class="sc">$</span>body_mass_g,</span>
+<span id="cb41-4"><a href="exploratory-data-analysis.html#cb41-4" tabindex="-1"></a>    <span class="fl">0.75</span>)</span>
+<span id="cb41-5"><a href="exploratory-data-analysis.html#cb41-5" tabindex="-1"></a>iqr_value <span class="ot">&lt;-</span> q3 <span class="sc">-</span> q1</span>
+<span id="cb41-6"><a href="exploratory-data-analysis.html#cb41-6" tabindex="-1"></a>lower_bound <span class="ot">&lt;-</span> q1 <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> iqr_value</span>
+<span id="cb41-7"><a href="exploratory-data-analysis.html#cb41-7" tabindex="-1"></a>upper_bound <span class="ot">&lt;-</span> q3 <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> iqr_value</span>
+<span id="cb41-8"><a href="exploratory-data-analysis.html#cb41-8" tabindex="-1"></a></span>
+<span id="cb41-9"><a href="exploratory-data-analysis.html#cb41-9" tabindex="-1"></a>outliers <span class="ot">&lt;-</span> penguins_clean <span class="sc">%&gt;%</span></span>
+<span id="cb41-10"><a href="exploratory-data-analysis.html#cb41-10" tabindex="-1"></a>    <span class="fu">filter</span>(body_mass_g <span class="sc">&lt;</span> lower_bound <span class="sc">|</span> body_mass_g <span class="sc">&gt;</span></span>
+<span id="cb41-11"><a href="exploratory-data-analysis.html#cb41-11" tabindex="-1"></a>        upper_bound) <span class="sc">%&gt;%</span></span>
+<span id="cb41-12"><a href="exploratory-data-analysis.html#cb41-12" tabindex="-1"></a>    <span class="fu">select</span>(species, body_mass_g)</span>
+<span id="cb41-13"><a href="exploratory-data-analysis.html#cb41-13" tabindex="-1"></a></span>
+<span id="cb41-14"><a href="exploratory-data-analysis.html#cb41-14" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Outliers in body mass:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## Outliers in body mass:</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="exploratory-data-analysis.html#cb43-1" tabindex="-1"></a><span class="fu">print</span>(outliers)</span></code></pre></div>
+<pre><code>## # A tibble: 0 × 2
+## # ℹ 2 variables: species &lt;fct&gt;, body_mass_g &lt;int&gt;</code></pre>
+</div>
+<div id="comparison-between-groups" class="section level2 hasAnchor" number="2.9">
+<h2><span class="header-section-number">2.9</span> Comparison Between Groups<a href="exploratory-data-analysis.html#comparison-between-groups" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="exploratory-data-analysis.html#cb45-1" tabindex="-1"></a>penguins_clean <span class="sc">%&gt;%</span></span>
+<span id="cb45-2"><a href="exploratory-data-analysis.html#cb45-2" tabindex="-1"></a>    <span class="fu">filter</span>(species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Adelie&quot;</span>, <span class="st">&quot;Gentoo&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb45-3"><a href="exploratory-data-analysis.html#cb45-3" tabindex="-1"></a>    <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb45-4"><a href="exploratory-data-analysis.html#cb45-4" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">mean_body_mass =</span> <span class="fu">mean</span>(body_mass_g),</span>
+<span id="cb45-5"><a href="exploratory-data-analysis.html#cb45-5" tabindex="-1"></a>        <span class="at">sd_body_mass =</span> <span class="fu">sd</span>(body_mass_g))</span></code></pre></div>
+<pre><code>## # A tibble: 2 × 3
+##   species mean_body_mass sd_body_mass
+##   &lt;fct&gt;            &lt;dbl&gt;        &lt;dbl&gt;
+## 1 Adelie           3706.         459.
+## 2 Gentoo           5092.         501.</code></pre>
+</div>
+<div id="statistical-test-t-test" class="section level2 hasAnchor" number="2.10">
+<h2><span class="header-section-number">2.10</span> Statistical Test: t-Test<a href="exploratory-data-analysis.html#statistical-test-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="exploratory-data-analysis.html#cb47-1" tabindex="-1"></a>penguins_subset <span class="ot">&lt;-</span> penguins_clean <span class="sc">%&gt;%</span></span>
+<span id="cb47-2"><a href="exploratory-data-analysis.html#cb47-2" tabindex="-1"></a>    <span class="fu">filter</span>(species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Adelie&quot;</span>, <span class="st">&quot;Gentoo&quot;</span>))</span>
+<span id="cb47-3"><a href="exploratory-data-analysis.html#cb47-3" tabindex="-1"></a></span>
+<span id="cb47-4"><a href="exploratory-data-analysis.html#cb47-4" tabindex="-1"></a>t_test_result <span class="ot">&lt;-</span> <span class="fu">t.test</span>(body_mass_g <span class="sc">~</span> species,</span>
+<span id="cb47-5"><a href="exploratory-data-analysis.html#cb47-5" tabindex="-1"></a>    <span class="at">data =</span> penguins_subset)</span>
+<span id="cb47-6"><a href="exploratory-data-analysis.html#cb47-6" tabindex="-1"></a></span>
+<span id="cb47-7"><a href="exploratory-data-analysis.html#cb47-7" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">T-Test Results:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## T-Test Results:</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="exploratory-data-analysis.html#cb49-1" tabindex="-1"></a><span class="fu">print</span>(t_test_result)</span></code></pre></div>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  body_mass_g by species
+## t = -23.254, df = 242.14, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means between group Adelie and group Gentoo is not equal to 0
+## 95 percent confidence interval:
+##  -1503.702 -1268.843
+## sample estimates:
+## mean in group Adelie mean in group Gentoo 
+##             3706.164             5092.437</code></pre>
+<p>The null hypothesis (<code>H0</code>) assumes that the mean body mass of <em>Adelie</em> and <em>Gentoo</em> penguins is the same. If the p-value &lt; 0.05, we reject <code>H0</code>, indicating a significant difference in the body mass of these species.</p>
+</div>
+<div id="one-way-anova" class="section level2 hasAnchor" number="2.11">
+<h2><span class="header-section-number">2.11</span> One-Way ANOVA<a href="exploratory-data-analysis.html#one-way-anova" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="exploratory-data-analysis.html#cb51-1" tabindex="-1"></a>anova_body_mass <span class="ot">&lt;-</span> <span class="fu">aov</span>(bill_length_mm <span class="sc">~</span> species,</span>
+<span id="cb51-2"><a href="exploratory-data-analysis.html#cb51-2" tabindex="-1"></a>    <span class="at">data =</span> penguins_clean)</span>
+<span id="cb51-3"><a href="exploratory-data-analysis.html#cb51-3" tabindex="-1"></a><span class="fu">summary</span>(anova_body_mass)</span></code></pre></div>
+<pre><code>##              Df Sum Sq Mean Sq F value Pr(&gt;F)    
+## species       2   7015    3508   397.3 &lt;2e-16 ***
+## Residuals   330   2914       9                   
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+</div>
+<div id="simple-linear-regression" class="section level2 hasAnchor" number="2.12">
+<h2><span class="header-section-number">2.12</span> Simple Linear Regression<a href="exploratory-data-analysis.html#simple-linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="exploratory-data-analysis.html#cb53-1" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass_g <span class="sc">~</span> flipper_length_mm,</span>
+<span id="cb53-2"><a href="exploratory-data-analysis.html#cb53-2" tabindex="-1"></a>    <span class="at">data =</span> penguins_clean)</span>
+<span id="cb53-3"><a href="exploratory-data-analysis.html#cb53-3" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = body_mass_g ~ flipper_length_mm, data = penguins_clean)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1057.33  -259.79   -12.24   242.97  1293.89 
+## 
+## Coefficients:
+##                   Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)       -5872.09     310.29  -18.93   &lt;2e-16 ***
+## flipper_length_mm    50.15       1.54   32.56   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 393.3 on 331 degrees of freedom
+## Multiple R-squared:  0.7621, Adjusted R-squared:  0.7614 
+## F-statistic:  1060 on 1 and 331 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div id="conclusion-1" class="section level2 hasAnchor" number="2.13">
+<h2><span class="header-section-number">2.13</span> Conclusion<a href="exploratory-data-analysis.html#conclusion-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This script demonstrates exploratory data analysis (EDA) using both Base R and Tidyverse, including cleaning, descriptive statistics, and relationships between variables. The statistical tests (t-test and ANOVA) provide insights into differences between groups, while regression analysis highlights potential predictive relationships.</p>
+</div>
+<div id="final-thoughts" class="section level2 hasAnchor" number="2.14">
+<h2><span class="header-section-number">2.14</span> Final Thoughts<a href="exploratory-data-analysis.html#final-thoughts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>EDA is critical for understanding your data.<br />
 </li>
@@ -365,8 +434,8 @@ div.csl-indent {
 <li>Visualization helps reveal insights quickly.</li>
 </ul>
 </div>
-<div id="references" class="section level2 hasAnchor" number="2.6">
-<h2><span class="header-section-number">2.6</span> References<a href="exploratory-data-analysis.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="references" class="section level2 hasAnchor" number="2.15">
+<h2><span class="header-section-number">2.15</span> References<a href="exploratory-data-analysis.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><a href="https://psyteachr.github.io/introdataviz/introduction.html">Basic R</a></p>
 <p><a href="https://cran.r-project.org/web/packages/DataExplorer/vignettes/dataexplorer-intro.html">Data Explorer</a></p>
 <p><a href="https://eda.seas.gwu.edu/2022-Fall/class/1-getting-started.html">EMSE 4572</a>
@@ -380,7 +449,7 @@ div.csl-indent {
         </div>
       </div>
 <a href="user.-intro-to-r-and-basic-features.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="descriptive-statistics..html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="visualization..html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

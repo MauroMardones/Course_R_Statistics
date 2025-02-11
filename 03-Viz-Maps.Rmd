@@ -1,0 +1,513 @@
+# Visualization. 
+
+Graphics and Maps using modern packages
+
+## Graphics 
+
+### Base R Visualizations
+
+
+Load penguins dataset
+
+```{r echo =FALSE}
+knitr::opts_chunk$set(message = FALSE,
+                      eval = TRUE,
+                      warning = FALSE,
+                      fig.align = 'center',
+                      dev = 'jpeg',
+                      dpi = 300, 
+                      fig.align='center')
+#XQuartz is a mess, put this in your onload to default to cairo instead
+options(bitmapType = "cairo") 
+# (https://github.com/tidyverse/ggplot2/issues/2655)
+# Lo mapas se hacen mas rapido
+```
+
+```{r}
+if (!require("palmerpenguins")) install.packages("palmerpenguins")
+library(palmerpenguins)
+library(data.table)
+data("penguins")
+```
+
+Load and Clean Data
+
+```{r}
+penguins <- na.omit(palmerpenguins::penguins)
+```
+
+### Visualization Techniques
+
+
+Histogram of body mass
+```{r}
+hist(penguins$body_mass_g, 
+     main = "Histogram of Body Mass", 
+     xlab = "Body Mass (g)", 
+     col = "skyblue", 
+     border = "white")
+```
+
+Boxplot of body mass by species
+
+```{r}
+boxplot(body_mass_g ~ species, data = penguins, 
+        main = "Body Mass by Species", 
+        ylab = "Body Mass (g)", 
+        col = c("tomato", "lightgreen", "lightblue"))
+```
+
+Scatter plot of flipper length vs body mass
+
+```{r}
+plot(penguins$flipper_length_mm, penguins$body_mass_g, 
+     main = "Flipper Length vs Body Mass", 
+     xlab = "Flipper Length (mm)", 
+     ylab = "Body Mass (g)", 
+     pch = 19, col = "darkorange")
+```
+
+Bar plot of species counts
+
+```{r}
+species_counts <- table(penguins$species)
+barplot(species_counts, 
+        main = "Counts of Penguin Species", 
+        col = c("purple", "cyan", "gold"), 
+        ylab = "Count")
+```
+
+Pie chart of species distribution
+
+```{r}
+pie(species_counts, 
+    main = "Species Distribution", 
+    col = c("purple", "cyan", "gold"),
+    border = "antiquewhite3")
+
+# cl <- colors() Nº colores 
+```
+
+Density plot of bill length
+
+```{r}
+plot(density(penguins$bill_length_mm), 
+     main = "Density Plot of Bill Length", 
+     xlab = "Bill Length (mm)", 
+     col = "darkgreen")
+```
+
+Pairs plot for numeric variables
+
+```{r}
+pairs(penguins[, sapply(penguins, is.numeric)], 
+      main = "Pairs Plot for Penguins Data")
+```
+
+Stripchart of body mass by species
+```{r}
+stripchart(body_mass_g ~ species, data = penguins, 
+           vertical = TRUE, 
+           main = "Stripchart of Body Mass by Species", 
+           col = c("red", "blue", "green"))
+```
+
+Scatter plot with regression line
+
+```{r}
+plot(penguins$bill_length_mm, penguins$bill_depth_mm, 
+     main = "Bill Length vs Bill Depth", 
+     xlab = "Bill Length (mm)", 
+     ylab = "Bill Depth (mm)", 
+     pch = 19, col = "blue")
+abline(lm(bill_depth_mm ~ bill_length_mm, data = penguins), 
+       col = "red", lwd = 2)
+```
+
+## `Tidyverse` universe Visualizations
+
+Load necessary package
+
+```{r}
+if (!require("tidyverse")) install.packages("tidyverse")
+library(tidyverse)
+```
+
+
+Histogram using ggplot2
+
+```{r}
+ggplot(penguins, aes(x = body_mass_g)) +
+  geom_histogram(binwidth = 200, 
+                 fill = "steelblue", 
+                 color = "white") +
+  labs(title = "Histogram of Body Mass", 
+       x = "Body Mass (g)")
+```
+Boxplot of body mass by species
+
+```{r}
+body <- ggplot(penguins, aes(x = species, 
+                     y = body_mass_g, 
+                     fill = species)) +
+  geom_boxplot() +
+  labs(title = "Body Mass by Species", 
+       y = "Body Mass (g)")
+```
+Scatter plot of flipper length vs body mass
+
+```{r}
+ggplot(penguins, aes(x = flipper_length_mm, 
+                     y = body_mass_g, 
+                     color = species)) +
+  geom_point() +
+  labs(title = "Flipper Length vs Body Mass", 
+       x = "Flipper Length (mm)", 
+       y = "Body Mass (g)")
+```
+
+Bar plot of species counts
+```{r}
+ggplot(penguins, aes(x = species, fill = species)) +
+  geom_bar() +
+  labs(title = "Counts of Penguin Species")
+```
+
+Density plot of bill length
+
+```{r}
+ggplot(penguins, 
+       aes(x = bill_length_mm, 
+           fill = species)) +
+  geom_density(alpha = 0.5) +
+  labs(title = "Density Plot of Bill Length", 
+       x = "Bill Length (mm)")
+```
+
+Violin plot of body mass by species
+
+```{r}
+ggplot(penguins, aes(x = species, 
+                     y = body_mass_g, 
+                     fill = species)) +
+  geom_violin() +
+  labs(title = "Violin Plot of Body Mass by Species", 
+       y = "Body Mass (g)")
+```
+Faceted scatter plot
+
+```{r}
+ggplot(penguins, 
+       aes(x = bill_length_mm, 
+           y = bill_depth_mm, 
+           color = species)) +
+  geom_point() +
+  facet_wrap(~species) +
+  labs(title = "Bill Length vs Bill Depth by Species")
+```
+
+Correlations plot
+
+Select numeric columns and compute correlation matrix
+
+```{r}
+penguins_numeric <- penguins %>% 
+  select(where(is.numeric))
+cor_matrix <- cor(penguins_numeric, 
+                  use = "complete.obs")
+```
+
+Melt the correlation matrix for ggplot
+
+```{r}
+cor_data <- data.table::melt(cor_matrix, 
+                             varnames = c("Var1", "Var2"))
+```
+
+Create the heatmap plot
+```{r}
+ggplot(cor_data, aes(x = Var1,
+                     y = Var2, 
+                     fill = value)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient2(low = "red", mid = "white", 
+                       high = "blue",
+                       midpoint = 0) +
+  geom_text(aes(label = round(value, 2)), color = "black", size = 4) +  
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 90, hjust = 1),
+    axis.text.y = element_text(size = 10)
+  ) +
+  labs(
+    title = "Correlation Heatmap of Numeric Variables",
+    x = "Variables",
+    y = "Variables",
+    fill = "Correlation"
+  )
+```
+Dot plot
+
+```{r}
+ggplot(penguins, 
+       aes(x = body_mass_g, 
+           y = species)) +
+  geom_dotplot(binaxis = "x", 
+               stackdir = "center", 
+               dotsize = 0.5) +
+  labs(title = "Dot Plot of Body Mass by Species")
+```
+
+Plot regression with tidyverse
+
+```{r}
+penguins %>%
+  ggplot(aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point(color = "skyblue", size = 3) +
+  geom_smooth(method = "loess",
+              color = "red", se = TRUE) +
+  labs(title = "Linear Regression: Body Mass vs Flipper Length",
+       x = "Flipper Length (mm)",
+       y = "Body Mass (g)") +
+  theme_minimal()
+```
+
+Multivariate Analysis Example (PCA)
+
+Base R PCA
+
+```{r}
+pca_data <- penguins %>% 
+  select(c("bill_length_mm",
+                         "bill_depth_mm", 
+                         "flipper_length_mm", 
+                         "body_mass_g"))
+pca_result <- prcomp(na.omit(pca_data), 
+                     scale. = TRUE)
+summary(pca_result)
+```
+PCA Plot in Base R
+```{r}
+biplot(pca_result, main = "PCA of Penguins Data")
+```
+Clustering with k-means
+
+```{r}
+library(cluster)
+
+# Seleccionar solo las columnas numéricas necesarias (removiendo NAs)
+data <- na.omit(penguins[, c("bill_length_mm", "bill_depth_mm", 
+                             "flipper_length_mm", "body_mass_g")])
+
+# Escalado de los datos
+scaled_data <- scale(data)
+
+# Selección del número óptimo de clústeres (Método Elbow)
+wss <- sapply(1:10, function(k) {
+  kmeans(scaled_data, centers = k, nstart = 25)$tot.withinss
+})
+
+# Gráfico del codo
+plot(1:10, wss, type = "b", pch = 19, frame = FALSE,
+     xlab = "Número de clusters",
+     ylab = "Suma total de cuadrados dentro de los clusters")
+```
+
+```{r}
+# Aplicación del algoritmo k-means
+kmeans_result <- kmeans(scaled_data, centers = 3, 
+                        nstart = 25)
+data$cluster <- as.factor(kmeans_result$cluster)
+
+# Visualización de clústeres
+library(factoextra)
+
+# Visualización en un espacio PCA
+fviz_cluster(kmeans_result, 
+             data = scaled_data,
+             geom = "point", ellipse.type = "convex",
+             ggtheme = theme_minimal())
+```
+
+## Simple maps
+
+
+Instalar paquetes necesarios si no están instalados. 
+```{r}
+library(sf)
+library(ggplot2)
+library(dplyr)
+library(ggspatial)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(terra)
+library(lubridate)
+```
+
+Chile example:
+```{r}
+chile <- ne_states(country = "Chile", returnclass = "sf")
+```
+
+Puerto Montt example
+```{r}
+region_puerto_montt <- chile %>%
+  filter(name_en == "Los Lagos")
+```
+
+random coordinates with variable
+```{r}
+lat_center <- -41.469
+lon_center <- -72.942
+
+#set.seed(42)  # Semilla para reproducibilidad
+n_points <- 50
+points_data <- data.frame(
+  lon = runif(n_points, lon_center - 0.8, lon_center + 0.8),
+  lat = runif(n_points, lat_center - 0.8, lat_center + 0.8),
+  respiration_rate = rnorm(n_points, mean = 10, sd = 2)  
+)
+```
+
+Convert `sf` object
+```{r}
+points_sf <- st_as_sf(points_data, coords = c("lon", "lat"), crs = 4326)
+```
+
+Test map with attributes
+
+```{r}
+plot <- ggplot(data = region_puerto_montt) +
+  geom_sf(fill = "lightblue") +
+  geom_sf(data = points_sf, aes(color = respiration_rate), size = 3) +
+  scale_color_viridis_c() +
+  annotation_scale(location = "bl") +
+  annotation_north_arrow(location = "tr", which_north = "true") +
+  labs(
+    title = "Puntos Aleatorios en Puerto Montt",
+    subtitle = "Tasa de respiración de animales (simulada)",
+    color = "Respiration Rate"
+  ) +
+  theme_minimal()
+
+print(plot)
+```
+
+Convertir a objeto espacial `sf`
+
+```{r}
+points_sf <- st_as_sf(points_data, coords = c("lon", "lat"), crs = 4326)
+```
+
+### Other maps
+
+Heat map
+
+```{r}
+ggplot(data = region_puerto_montt) +
+  geom_sf(fill = "lightgrey") +
+  stat_density_2d(data = points_data, 
+                  aes(x = lon, y = lat, 
+                      fill = ..level..), 
+                  geom = "polygon") +
+  scale_fill_viridis_c(option="C") +
+  labs(title = "Mapa de Calor de Tasas de Respiración") +
+  theme_minimal()
+```
+
+Points by attribute
+
+```{r}
+ggplot(data = region_puerto_montt) +
+  geom_sf(fill = "lightgreen") +
+  geom_point(data = points_data, 
+             aes(x = lon, y = lat, 
+                 size = respiration_rate, 
+                 color = respiration_rate)) +
+  scale_color_viridis_c() +
+  labs(title = "Rate respiration by attribute") +
+  theme_minimal()
+```
+
+Mapa con líneas de contorno
+
+```{r}
+ggplot(data = region_puerto_montt) +
+  geom_sf(fill = "lightyellow") +
+  stat_density_2d(data = points_data, aes(x = lon, y = lat, color = ..level..), geom = "density2d") +
+  scale_color_viridis_c() +
+  labs(title = "Mapa con Líneas de Contorno") +
+  theme_minimal()
+```
+
+Mapa por cuadrantes
+
+```{r}
+points_data <- points_data %>%
+  mutate(
+    lat_group = cut(lat, breaks = 4),
+    lon_group = cut(lon, breaks = 4)
+  )
+
+ggplot(points_data, aes(x = lon, y = lat, color = respiration_rate)) +
+  geom_point(size = 3) +
+  facet_grid(lat_group ~ lon_group) +
+  scale_color_viridis_c() +
+  labs(title = "Mapa Facetado por Cuadrantes") +
+  theme_minimal()
+```
+
+```{r}
+# Cargar shapefile en R
+# ruta_shapefile <- "ruta/del/archivo.shp"
+# shapefile_data <- st_read(ruta_shapefile)
+# plot(st_geometry(shapefile_data))
+```
+
+```{r}
+# Cargar archivo Excel con datos georreferenciados
+# ruta_excel <- "ruta/del/archivo.xlsx"
+# datos_excel <- read_excel(ruta_excel)
+# sf_datos <- st_as_sf(datos_excel, coords = c("lon", "lat"), crs = 4326)
+# ggplot() +
+#   geom_sf(data = region_puerto_montt, fill = "lightgrey") +
+#   geom_sf(data = sf_datos, color = "red", size = 3) +
+#   theme_minimal()
+```
+
+
+The `sf` package (Simple Features) by Edzer Pebesma is a crucial tool for spatial data analysis in R. It provides a modern, efficient, and standardized way to handle vector spatial data using the Simple Features specification defined by the Open Geospatial Consortium (OGC). Here's why it's significant and why it has become essential compared to older, deprecated libraries:
+
+### **Key Advantages of `sf`:**
+1. **Simple Features Standard:**  
+   - Adheres to the OGC Simple Features standard, which ensures compatibility with modern GIS systems (e.g., QGIS, PostGIS). 
+   
+2. **Enhanced Performance:**  
+   - Operates on top of the `GEOS`, `GDAL`, and `PROJ` libraries, offering high-performance spatial operations.  
+   - More memory-efficient than older alternatives like `sp`.
+
+3. **Easy Integration with the Tidyverse:**  
+   - `sf` objects (data frames with a geometry column) integrate seamlessly with `dplyr`, `ggplot2`, and other tidyverse packages.
+   
+4. **Better Handling of Coordinate Systems:**  
+   - Simplifies the manipulation and transformation of coordinate reference systems (CRS).
+   - Easily handles projections via the `st_crs()` function.
+
+5. **Deprecated Libraries:**  
+   - Older packages like `sp` and `rgdal` have been phased out due to their complex S4 structure and lack of maintenance.  
+   - `sf` uses a simpler and more flexible approach with class `sfc` (simple feature column), making operations straightforward.
+
+### **Useful Functions**
+- `st_read()`: Import spatial data (shapefiles, geoJSON, etc.).
+- `st_transform()`: Change CRS.
+- `st_intersection()`, `st_union()`: Spatial operations.
+- `ggplot2::geom_sf()`: Plot spatial data directly.
+
+---
+
+### **Additional Resources**
+- [Official `sf` Documentation](https://r-spatial.github.io/sf/)  
+- [CRAN Page for `sf`](https://cran.r-project.org/package=sf)  
+- [Simple Features Standard by OGC](https://www.ogc.org/standards/sfa)  
+- [R-spatial Blog](https://r-spatial.org/) for spatial data tutorials  
+

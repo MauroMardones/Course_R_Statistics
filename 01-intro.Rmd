@@ -14,14 +14,14 @@ library(kableExtra)
   - Visualization
   
 
-```{r echo=FALSE, out.width="50%", fig.align='center'}
+```{r echo=FALSE, fig.align='center'}
 knitr::include_graphics(here::here('images/rpages.png'))
 ```
 
 [Download R](https://www.r-project.org)
 
 
-```{r echo=FALSE, out.width="50%", fig.align='center'}
+```{r echo=FALSE,  fig.align='center'}
 knitr::include_graphics(here::here('images/rpages.png'))
 ```
 
@@ -37,7 +37,7 @@ knitr::include_graphics(here::here('images/rpages.png'))
 
 is just this
 
-```{r echo=FALSE, out.width="90%", fig.align='center'}
+```{r echo=FALSE,  fig.align='center'}
 knitr::include_graphics(here::here('images/calc.jpg'))
 ```
 
@@ -47,7 +47,7 @@ but...
 
 Seminal paper or R! [here](http://www.aliquote.org/cours/2012_biomed/biblio/Ihaka1996.pdf) (Fig. \@ref(fig:semi)).
 
-```{r semi, echo=FALSE, out.width ="90%", fig.align='center', fig.cap= "Seminal Paper of R"}
+```{r semi, echo=FALSE, fig.align='center', fig.cap= "Seminal Paper of R"}
 knitr::include_graphics('images/papeR.png')
 ```
 
@@ -107,7 +107,7 @@ kbl(head(iris))
 ```
 
 
-```{r fig.width=5, fig.height=3, out.width="60%", fig.align='center'}
+```{r fig.align='center'}
 plottex <- ggplot(iris, 
        aes(x = Sepal.Length, 
            y = Species)) + 
@@ -117,7 +117,7 @@ plottex
 
 
 
-```{r fig.width=5, fig.height=3, out.width="60%", fig.align='center'}
+```{r  fig.align='center'}
 plottex <- ggplot(iris, 
        aes(x = Sepal.Length, 
            y = Species)) + 
@@ -128,7 +128,7 @@ plottex
 
 
 
-```{r fig.width=5, fig.height=3, out.width="60%", fig.align='center'}
+```{r  fig.align='center'}
 plottex <- ggplot(iris, 
        aes(x = Sepal.Length, 
            y = Species)) + 

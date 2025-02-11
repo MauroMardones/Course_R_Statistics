@@ -23,7 +23,7 @@
 <meta name="author" content="Mardones, Mauricio. &amp; Zúñiga, María José." />
 
 
-<meta name="date" content="2025-02-07" />
+<meta name="date" content="2025-02-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -125,28 +125,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 </style>
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -182,49 +160,48 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html"><i class="fa fa-check"></i><b>2</b> Exploratory Data Analysis</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#summary-statistics-in-r"><i class="fa fa-check"></i><b>2.1</b> Summary Statistics in R</a></li>
-<li class="chapter" data-level="2.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#data-handling"><i class="fa fa-check"></i><b>2.2</b> Data Handling</a>
-<ul>
-<li class="chapter" data-level="2.2.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#loading-and-inspecting-data"><i class="fa fa-check"></i><b>2.2.1</b> Loading and Inspecting Data</a></li>
+<li class="chapter" data-level="2.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#load-necessary-packages"><i class="fa fa-check"></i><b>2.1</b> Load Necessary Packages</a></li>
+<li class="chapter" data-level="2.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#load-and-clean-data"><i class="fa fa-check"></i><b>2.2</b> Load and Clean Data</a></li>
+<li class="chapter" data-level="2.3" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#basic-data-overview"><i class="fa fa-check"></i><b>2.3</b> Basic Data Overview</a></li>
+<li class="chapter" data-level="2.4" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#measures-of-central-tendency"><i class="fa fa-check"></i><b>2.4</b> Measures of Central Tendency</a></li>
+<li class="chapter" data-level="2.5" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#measures-of-spread"><i class="fa fa-check"></i><b>2.5</b> Measures of Spread</a></li>
+<li class="chapter" data-level="2.6" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#frequency-tables-for-categorical-data"><i class="fa fa-check"></i><b>2.6</b> Frequency Tables for Categorical Data</a></li>
+<li class="chapter" data-level="2.7" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#relationships-between-variables"><i class="fa fa-check"></i><b>2.7</b> Relationships Between Variables</a></li>
+<li class="chapter" data-level="2.8" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#outlier-detection"><i class="fa fa-check"></i><b>2.8</b> Outlier Detection</a></li>
+<li class="chapter" data-level="2.9" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#comparison-between-groups"><i class="fa fa-check"></i><b>2.9</b> Comparison Between Groups</a></li>
+<li class="chapter" data-level="2.10" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#statistical-test-t-test"><i class="fa fa-check"></i><b>2.10</b> Statistical Test: t-Test</a></li>
+<li class="chapter" data-level="2.11" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#one-way-anova"><i class="fa fa-check"></i><b>2.11</b> One-Way ANOVA</a></li>
+<li class="chapter" data-level="2.12" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#simple-linear-regression"><i class="fa fa-check"></i><b>2.12</b> Simple Linear Regression</a></li>
+<li class="chapter" data-level="2.13" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#conclusion-1"><i class="fa fa-check"></i><b>2.13</b> Conclusion</a></li>
+<li class="chapter" data-level="2.14" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#final-thoughts"><i class="fa fa-check"></i><b>2.14</b> Final Thoughts</a></li>
+<li class="chapter" data-level="2.15" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#references"><i class="fa fa-check"></i><b>2.15</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#data-manipulation"><i class="fa fa-check"></i><b>2.3</b> Data Manipulation</a>
+<li class="chapter" data-level="3" data-path="visualization..html"><a href="visualization..html"><i class="fa fa-check"></i><b>3</b> Visualization.</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#subsetting-data"><i class="fa fa-check"></i><b>2.3.1</b> Subsetting Data</a></li>
-<li class="chapter" data-level="2.3.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#using-dplyr-for-data-manipulation"><i class="fa fa-check"></i><b>2.3.2</b> Using <code>dplyr</code> for Data Manipulation</a></li>
-</ul></li>
-<li class="chapter" data-level="2.4" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#visualization-with-base-r"><i class="fa fa-check"></i><b>2.4</b> Visualization with Base R</a></li>
-<li class="chapter" data-level="2.5" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#final-thoughts"><i class="fa fa-check"></i><b>2.5</b> Final Thoughts</a></li>
-<li class="chapter" data-level="2.6" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#references"><i class="fa fa-check"></i><b>2.6</b> References</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html"><i class="fa fa-check"></i><b>3</b> Descriptive Statistics.</a>
+<li class="chapter" data-level="3.1" data-path="visualization..html"><a href="visualization..html#graphics"><i class="fa fa-check"></i><b>3.1</b> Graphics</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#the-penguins-dataset"><i class="fa fa-check"></i><b>3.1</b> The <code>penguins</code> Dataset</a></li>
-<li class="chapter" data-level="3.2" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#basic-data-exploration"><i class="fa fa-check"></i><b>3.2</b> Basic Data Exploration</a></li>
-<li class="chapter" data-level="3.3" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#summary-statistics"><i class="fa fa-check"></i><b>3.3</b> Summary Statistics</a></li>
-<li class="chapter" data-level="3.4" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#central-tendency"><i class="fa fa-check"></i><b>3.4</b> Central Tendency</a></li>
-<li class="chapter" data-level="3.5" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#variability"><i class="fa fa-check"></i><b>3.5</b> Variability</a></li>
-<li class="chapter" data-level="3.6" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#grouped-summaries"><i class="fa fa-check"></i><b>3.6</b> Grouped Summaries</a></li>
-<li class="chapter" data-level="3.7" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#visualization-histograms"><i class="fa fa-check"></i><b>3.7</b> Visualization: Histograms</a></li>
-<li class="chapter" data-level="3.8" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#boxplots-for-group-comparison"><i class="fa fa-check"></i><b>3.8</b> Boxplots for Group Comparison</a></li>
-<li class="chapter" data-level="3.9" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#correlation"><i class="fa fa-check"></i><b>3.9</b> Correlation</a></li>
-<li class="chapter" data-level="3.10" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#scatter-plot-for-relationships"><i class="fa fa-check"></i><b>3.10</b> Scatter Plot for Relationships</a></li>
-<li class="chapter" data-level="3.11" data-path="descriptive-statistics..html"><a href="descriptive-statistics..html#conclusion-1"><i class="fa fa-check"></i><b>3.11</b> Conclusion</a></li>
+<li class="chapter" data-level="3.1.1" data-path="visualization..html"><a href="visualization..html#base-r-visualizations"><i class="fa fa-check"></i><b>3.1.1</b> Base R Visualizations</a></li>
+<li class="chapter" data-level="3.1.2" data-path="visualization..html"><a href="visualization..html#visualization-techniques"><i class="fa fa-check"></i><b>3.1.2</b> Visualization Techniques</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="visualization..html"><a href="visualization..html"><i class="fa fa-check"></i><b>4</b> Visualization.</a>
+<li class="chapter" data-level="3.2" data-path="visualization..html"><a href="visualization..html#tidyverse-universe-visualizations"><i class="fa fa-check"></i><b>3.2</b> <code>Tidyverse</code> universe Visualizations</a></li>
+<li class="chapter" data-level="3.3" data-path="visualization..html"><a href="visualization..html#simple-maps"><i class="fa fa-check"></i><b>3.3</b> Simple maps</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="visualization..html"><a href="visualization..html#graphics"><i class="fa fa-check"></i><b>4.1</b> Graphics</a></li>
-<li class="chapter" data-level="4.2" data-path="visualization..html"><a href="visualization..html#simple-maps"><i class="fa fa-check"></i><b>4.2</b> Simple maps</a></li>
+<li class="chapter" data-level="3.3.1" data-path="visualization..html"><a href="visualization..html#other-maps"><i class="fa fa-check"></i><b>3.3.1</b> Other maps</a></li>
+<li class="chapter" data-level="3.3.2" data-path="visualization..html"><a href="visualization..html#key-advantages-of-sf"><i class="fa fa-check"></i><b>3.3.2</b> <strong>Key Advantages of <code>sf</code>:</strong></a></li>
+<li class="chapter" data-level="3.3.3" data-path="visualization..html"><a href="visualization..html#useful-functions"><i class="fa fa-check"></i><b>3.3.3</b> <strong>Useful Functions</strong></a></li>
+<li class="chapter" data-level="3.3.4" data-path="visualization..html"><a href="visualization..html#additional-resources"><i class="fa fa-check"></i><b>3.3.4</b> <strong>Additional Resources</strong></a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="efficient-code.html"><a href="efficient-code.html"><i class="fa fa-check"></i><b>5</b> Efficient Code</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="efficient-code.html"><a href="efficient-code.html#equations"><i class="fa fa-check"></i><b>5.1</b> Equations</a></li>
-<li class="chapter" data-level="5.2" data-path="efficient-code.html"><a href="efficient-code.html#callout-blocks"><i class="fa fa-check"></i><b>5.2</b> Callout blocks</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html"><i class="fa fa-check"></i><b>6</b> Reporting and Sharing</a>
+<li class="chapter" data-level="4" data-path="efficient-code.html"><a href="efficient-code.html"><i class="fa fa-check"></i><b>4</b> Efficient Code</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html#publishing"><i class="fa fa-check"></i><b>6.1</b> Publishing</a></li>
-<li class="chapter" data-level="6.2" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html#pages"><i class="fa fa-check"></i><b>6.2</b> 404 pages</a></li>
-<li class="chapter" data-level="6.3" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html#metadata-for-sharing"><i class="fa fa-check"></i><b>6.3</b> Metadata for sharing</a></li>
+<li class="chapter" data-level="4.1" data-path="efficient-code.html"><a href="efficient-code.html#equations"><i class="fa fa-check"></i><b>4.1</b> Equations</a></li>
+<li class="chapter" data-level="4.2" data-path="efficient-code.html"><a href="efficient-code.html#callout-blocks"><i class="fa fa-check"></i><b>4.2</b> Callout blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html"><i class="fa fa-check"></i><b>5</b> Reporting and Sharing</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html#publishing"><i class="fa fa-check"></i><b>5.1</b> Publishing</a></li>
+<li class="chapter" data-level="5.2" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html#pages"><i class="fa fa-check"></i><b>5.2</b> 404 pages</a></li>
+<li class="chapter" data-level="5.3" data-path="reporting-and-sharing.html"><a href="reporting-and-sharing.html#metadata-for-sharing"><i class="fa fa-check"></i><b>5.3</b> Metadata for sharing</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -250,7 +227,7 @@ div.csl-indent {
 <div id="header">
 <h1 class="title">R Basic Course</h1>
 <p class="author"><em>Mardones, Mauricio. &amp; Zúñiga, María José.</em></p>
-<p class="date"><em>2025-02-07</em></p>
+<p class="date"><em>2025-02-11</em></p>
 </div>
 <div id="about-course_r" class="section level1 unnumbered hasAnchor">
 <h1>About Course_R<a href="index.html#about-course_r" class="anchor-section" aria-label="Anchor link to header"></a></h1>

@@ -39,7 +39,9 @@ knitr::include_graphics(here::here('images/Ross&Robert.png'))
 
 - En 1996 publican en el Journal of Computational and Graphical Statistics un artículo describiendo el programa: [R: A language for data analysis and graphics](http://www.aliquote.org/cours/2012_biomed/biblio/Ihaka1996.pdf)
 
-```{r echo=FALSE, out.width='40%', fig.align='center'}
+##
+
+```{r echo=FALSE, out.width='60%', fig.align='center'}
 knitr::include_graphics('~/IEO/CURSOS/Course_R_Statistics/images/papeR.png')
 ```
 

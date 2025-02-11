@@ -109,23 +109,25 @@ penguins_clean %>% glimpse()
 # =============================
 
 # Mean of flipper length
-penguins_clean %>% summarise(mean_flipper = mean(flipper_length_mm))
+penguins_clean %>% 
+  summarise(mean_flipper = mean(flipper_length_mm))
 
 # Median of flipper length
-penguins_clean %>% summarise(median_flipper = median(flipper_length_mm))
+penguins_clean %>% 
+  summarise(median_flipper = median(flipper_length_mm))
 
 # =============================
 # Measures of Spread
 # =============================
 
 # Range of body mass
-penguins_clean %>% summarise(range_body_mass = range(body_mass_g))
+penguins_clean %>% 
+  summarise(range_body_mass = range(body_mass_g))
 
 # Variance and standard deviation of body mass
-penguins_clean %>% summarise(
-  var_body_mass = var(body_mass_g),
-  sd_body_mass = sd(body_mass_g)
-)
+penguins_clean %>% 
+  summarise(var_body_mass = var(body_mass_g),
+            sd_body_mass = sd(body_mass_g))
 
 # =============================
 # Frequency Tables for Categorical Data
