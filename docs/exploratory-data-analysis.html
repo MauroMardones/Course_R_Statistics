@@ -245,15 +245,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.3</span> Basic Data Overview<a href="exploratory-data-analysis.html#basic-data-overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="exploratory-data-analysis.html#cb20-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">head</span>(penguins_clean))</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 8
-##   species island    bill_length_mm bill_depth_mm flipper_length_mm
-##   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;
-## 1 Adelie  Torgersen           39.1          18.7               181
-## 2 Adelie  Torgersen           39.5          17.4               186
-## 3 Adelie  Torgersen           40.3          18                 195
-## 4 Adelie  Torgersen           36.7          19.3               193
-## 5 Adelie  Torgersen           39.3          20.6               190
-## 6 Adelie  Torgersen           38.9          17.8               181
-## # ℹ 3 more variables: body_mass_g &lt;int&gt;, sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+##   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+##   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+## 1 Adelie  Torgersen           39.1          18.7               181        3750
+## 2 Adelie  Torgersen           39.5          17.4               186        3800
+## 3 Adelie  Torgersen           40.3          18                 195        3250
+## 4 Adelie  Torgersen           36.7          19.3               193        3450
+## 5 Adelie  Torgersen           39.3          20.6               190        3650
+## 6 Adelie  Torgersen           38.9          17.8               181        3625
+## # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="exploratory-data-analysis.html#cb22-1" tabindex="-1"></a><span class="fu">str</span>(penguins_clean)</span></code></pre></div>
 <pre><code>## tibble [333 × 8] (S3: tbl_df/tbl/data.frame)
 ##  $ species          : Factor w/ 3 levels &quot;Adelie&quot;,&quot;Chinstrap&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
@@ -301,8 +301,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="exploratory-data-analysis.html#cb32-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Variance of body mass:&quot;</span>, var_body_mass)</span></code></pre></div>
 <pre><code>## 
 ## Variance of body mass: 648372.5</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="exploratory-data-analysis.html#cb34-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Standard deviation of body mass:&quot;</span>,</span>
-<span id="cb34-2"><a href="exploratory-data-analysis.html#cb34-2" tabindex="-1"></a>    sd_body_mass)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="exploratory-data-analysis.html#cb34-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Standard deviation of body mass:&quot;</span>, sd_body_mass)</span></code></pre></div>
 <pre><code>## 
 ## Standard deviation of body mass: 805.2158</code></pre>
 </div>
@@ -318,27 +317,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="relationships-between-variables" class="section level2 hasAnchor" number="2.7">
 <h2><span class="header-section-number">2.7</span> Relationships Between Variables<a href="exploratory-data-analysis.html#relationships-between-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="exploratory-data-analysis.html#cb40-1" tabindex="-1"></a>cov_bill <span class="ot">&lt;-</span> <span class="fu">cov</span>(penguins_clean<span class="sc">$</span>bill_length_mm,</span>
-<span id="cb40-2"><a href="exploratory-data-analysis.html#cb40-2" tabindex="-1"></a>    penguins_clean<span class="sc">$</span>bill_depth_mm)</span>
-<span id="cb40-3"><a href="exploratory-data-analysis.html#cb40-3" tabindex="-1"></a>cor_bill <span class="ot">&lt;-</span> <span class="fu">cor</span>(penguins_clean<span class="sc">$</span>bill_length_mm,</span>
-<span id="cb40-4"><a href="exploratory-data-analysis.html#cb40-4" tabindex="-1"></a>    penguins_clean<span class="sc">$</span>bill_depth_mm)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="exploratory-data-analysis.html#cb40-1" tabindex="-1"></a>cov_bill <span class="ot">&lt;-</span> <span class="fu">cov</span>(penguins_clean<span class="sc">$</span>bill_length_mm, penguins_clean<span class="sc">$</span>bill_depth_mm)</span>
+<span id="cb40-2"><a href="exploratory-data-analysis.html#cb40-2" tabindex="-1"></a>cor_bill <span class="ot">&lt;-</span> <span class="fu">cor</span>(penguins_clean<span class="sc">$</span>bill_length_mm, penguins_clean<span class="sc">$</span>bill_depth_mm)</span></code></pre></div>
 </div>
 <div id="outlier-detection" class="section level2 hasAnchor" number="2.8">
 <h2><span class="header-section-number">2.8</span> Outlier Detection<a href="exploratory-data-analysis.html#outlier-detection" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="exploratory-data-analysis.html#cb41-1" tabindex="-1"></a>q1 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(penguins_clean<span class="sc">$</span>body_mass_g,</span>
-<span id="cb41-2"><a href="exploratory-data-analysis.html#cb41-2" tabindex="-1"></a>    <span class="fl">0.25</span>)</span>
-<span id="cb41-3"><a href="exploratory-data-analysis.html#cb41-3" tabindex="-1"></a>q3 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(penguins_clean<span class="sc">$</span>body_mass_g,</span>
-<span id="cb41-4"><a href="exploratory-data-analysis.html#cb41-4" tabindex="-1"></a>    <span class="fl">0.75</span>)</span>
-<span id="cb41-5"><a href="exploratory-data-analysis.html#cb41-5" tabindex="-1"></a>iqr_value <span class="ot">&lt;-</span> q3 <span class="sc">-</span> q1</span>
-<span id="cb41-6"><a href="exploratory-data-analysis.html#cb41-6" tabindex="-1"></a>lower_bound <span class="ot">&lt;-</span> q1 <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> iqr_value</span>
-<span id="cb41-7"><a href="exploratory-data-analysis.html#cb41-7" tabindex="-1"></a>upper_bound <span class="ot">&lt;-</span> q3 <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> iqr_value</span>
-<span id="cb41-8"><a href="exploratory-data-analysis.html#cb41-8" tabindex="-1"></a></span>
-<span id="cb41-9"><a href="exploratory-data-analysis.html#cb41-9" tabindex="-1"></a>outliers <span class="ot">&lt;-</span> penguins_clean <span class="sc">%&gt;%</span></span>
-<span id="cb41-10"><a href="exploratory-data-analysis.html#cb41-10" tabindex="-1"></a>    <span class="fu">filter</span>(body_mass_g <span class="sc">&lt;</span> lower_bound <span class="sc">|</span> body_mass_g <span class="sc">&gt;</span></span>
-<span id="cb41-11"><a href="exploratory-data-analysis.html#cb41-11" tabindex="-1"></a>        upper_bound) <span class="sc">%&gt;%</span></span>
-<span id="cb41-12"><a href="exploratory-data-analysis.html#cb41-12" tabindex="-1"></a>    <span class="fu">select</span>(species, body_mass_g)</span>
-<span id="cb41-13"><a href="exploratory-data-analysis.html#cb41-13" tabindex="-1"></a></span>
-<span id="cb41-14"><a href="exploratory-data-analysis.html#cb41-14" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Outliers in body mass:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="exploratory-data-analysis.html#cb41-1" tabindex="-1"></a>q1 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(penguins_clean<span class="sc">$</span>body_mass_g, <span class="fl">0.25</span>)</span>
+<span id="cb41-2"><a href="exploratory-data-analysis.html#cb41-2" tabindex="-1"></a>q3 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(penguins_clean<span class="sc">$</span>body_mass_g, <span class="fl">0.75</span>)</span>
+<span id="cb41-3"><a href="exploratory-data-analysis.html#cb41-3" tabindex="-1"></a>iqr_value <span class="ot">&lt;-</span> q3 <span class="sc">-</span> q1</span>
+<span id="cb41-4"><a href="exploratory-data-analysis.html#cb41-4" tabindex="-1"></a>lower_bound <span class="ot">&lt;-</span> q1 <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> iqr_value</span>
+<span id="cb41-5"><a href="exploratory-data-analysis.html#cb41-5" tabindex="-1"></a>upper_bound <span class="ot">&lt;-</span> q3 <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> iqr_value</span>
+<span id="cb41-6"><a href="exploratory-data-analysis.html#cb41-6" tabindex="-1"></a></span>
+<span id="cb41-7"><a href="exploratory-data-analysis.html#cb41-7" tabindex="-1"></a>outliers <span class="ot">&lt;-</span> penguins_clean <span class="sc">%&gt;%</span> </span>
+<span id="cb41-8"><a href="exploratory-data-analysis.html#cb41-8" tabindex="-1"></a>  <span class="fu">filter</span>(body_mass_g <span class="sc">&lt;</span> lower_bound <span class="sc">|</span> body_mass_g <span class="sc">&gt;</span> upper_bound) <span class="sc">%&gt;%</span> </span>
+<span id="cb41-9"><a href="exploratory-data-analysis.html#cb41-9" tabindex="-1"></a>  <span class="fu">select</span>(species, body_mass_g)</span>
+<span id="cb41-10"><a href="exploratory-data-analysis.html#cb41-10" tabindex="-1"></a></span>
+<span id="cb41-11"><a href="exploratory-data-analysis.html#cb41-11" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Outliers in body mass:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Outliers in body mass:</code></pre>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="exploratory-data-analysis.html#cb43-1" tabindex="-1"></a><span class="fu">print</span>(outliers)</span></code></pre></div>
@@ -347,11 +341,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="comparison-between-groups" class="section level2 hasAnchor" number="2.9">
 <h2><span class="header-section-number">2.9</span> Comparison Between Groups<a href="exploratory-data-analysis.html#comparison-between-groups" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="exploratory-data-analysis.html#cb45-1" tabindex="-1"></a>penguins_clean <span class="sc">%&gt;%</span></span>
-<span id="cb45-2"><a href="exploratory-data-analysis.html#cb45-2" tabindex="-1"></a>    <span class="fu">filter</span>(species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Adelie&quot;</span>, <span class="st">&quot;Gentoo&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb45-3"><a href="exploratory-data-analysis.html#cb45-3" tabindex="-1"></a>    <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
-<span id="cb45-4"><a href="exploratory-data-analysis.html#cb45-4" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">mean_body_mass =</span> <span class="fu">mean</span>(body_mass_g),</span>
-<span id="cb45-5"><a href="exploratory-data-analysis.html#cb45-5" tabindex="-1"></a>        <span class="at">sd_body_mass =</span> <span class="fu">sd</span>(body_mass_g))</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="exploratory-data-analysis.html#cb45-1" tabindex="-1"></a>penguins_clean <span class="sc">%&gt;%</span> </span>
+<span id="cb45-2"><a href="exploratory-data-analysis.html#cb45-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Adelie&quot;</span>, <span class="st">&quot;Gentoo&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb45-3"><a href="exploratory-data-analysis.html#cb45-3" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb45-4"><a href="exploratory-data-analysis.html#cb45-4" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb45-5"><a href="exploratory-data-analysis.html#cb45-5" tabindex="-1"></a>    <span class="at">mean_body_mass =</span> <span class="fu">mean</span>(body_mass_g),</span>
+<span id="cb45-6"><a href="exploratory-data-analysis.html#cb45-6" tabindex="-1"></a>    <span class="at">sd_body_mass =</span> <span class="fu">sd</span>(body_mass_g)</span>
+<span id="cb45-7"><a href="exploratory-data-analysis.html#cb45-7" tabindex="-1"></a>  )</span></code></pre></div>
 <pre><code>## # A tibble: 2 × 3
 ##   species mean_body_mass sd_body_mass
 ##   &lt;fct&gt;            &lt;dbl&gt;        &lt;dbl&gt;
@@ -361,10 +357,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="statistical-test-t-test" class="section level2 hasAnchor" number="2.10">
 <h2><span class="header-section-number">2.10</span> Statistical Test: t-Test<a href="exploratory-data-analysis.html#statistical-test-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="exploratory-data-analysis.html#cb47-1" tabindex="-1"></a>penguins_subset <span class="ot">&lt;-</span> penguins_clean <span class="sc">%&gt;%</span></span>
-<span id="cb47-2"><a href="exploratory-data-analysis.html#cb47-2" tabindex="-1"></a>    <span class="fu">filter</span>(species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Adelie&quot;</span>, <span class="st">&quot;Gentoo&quot;</span>))</span>
+<span id="cb47-2"><a href="exploratory-data-analysis.html#cb47-2" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Adelie&quot;</span>, <span class="st">&quot;Gentoo&quot;</span>))</span>
 <span id="cb47-3"><a href="exploratory-data-analysis.html#cb47-3" tabindex="-1"></a></span>
-<span id="cb47-4"><a href="exploratory-data-analysis.html#cb47-4" tabindex="-1"></a>t_test_result <span class="ot">&lt;-</span> <span class="fu">t.test</span>(body_mass_g <span class="sc">~</span> species,</span>
-<span id="cb47-5"><a href="exploratory-data-analysis.html#cb47-5" tabindex="-1"></a>    <span class="at">data =</span> penguins_subset)</span>
+<span id="cb47-4"><a href="exploratory-data-analysis.html#cb47-4" tabindex="-1"></a>t_test_result <span class="ot">&lt;-</span> <span class="fu">t.test</span>(body_mass_g <span class="sc">~</span> species, </span>
+<span id="cb47-5"><a href="exploratory-data-analysis.html#cb47-5" tabindex="-1"></a>                        <span class="at">data =</span> penguins_subset)</span>
 <span id="cb47-6"><a href="exploratory-data-analysis.html#cb47-6" tabindex="-1"></a></span>
 <span id="cb47-7"><a href="exploratory-data-analysis.html#cb47-7" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">T-Test Results:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## 
@@ -385,9 +381,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="one-way-anova" class="section level2 hasAnchor" number="2.11">
 <h2><span class="header-section-number">2.11</span> One-Way ANOVA<a href="exploratory-data-analysis.html#one-way-anova" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="exploratory-data-analysis.html#cb51-1" tabindex="-1"></a>anova_body_mass <span class="ot">&lt;-</span> <span class="fu">aov</span>(bill_length_mm <span class="sc">~</span> species,</span>
-<span id="cb51-2"><a href="exploratory-data-analysis.html#cb51-2" tabindex="-1"></a>    <span class="at">data =</span> penguins_clean)</span>
-<span id="cb51-3"><a href="exploratory-data-analysis.html#cb51-3" tabindex="-1"></a><span class="fu">summary</span>(anova_body_mass)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="exploratory-data-analysis.html#cb51-1" tabindex="-1"></a>anova_body_mass <span class="ot">&lt;-</span> <span class="fu">aov</span>(bill_length_mm <span class="sc">~</span> species, <span class="at">data =</span> penguins_clean)</span>
+<span id="cb51-2"><a href="exploratory-data-analysis.html#cb51-2" tabindex="-1"></a><span class="fu">summary</span>(anova_body_mass)</span></code></pre></div>
 <pre><code>##              Df Sum Sq Mean Sq F value Pr(&gt;F)    
 ## species       2   7015    3508   397.3 &lt;2e-16 ***
 ## Residuals   330   2914       9                   
@@ -396,9 +391,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="simple-linear-regression" class="section level2 hasAnchor" number="2.12">
 <h2><span class="header-section-number">2.12</span> Simple Linear Regression<a href="exploratory-data-analysis.html#simple-linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="exploratory-data-analysis.html#cb53-1" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass_g <span class="sc">~</span> flipper_length_mm,</span>
-<span id="cb53-2"><a href="exploratory-data-analysis.html#cb53-2" tabindex="-1"></a>    <span class="at">data =</span> penguins_clean)</span>
-<span id="cb53-3"><a href="exploratory-data-analysis.html#cb53-3" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="exploratory-data-analysis.html#cb53-1" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass_g <span class="sc">~</span> flipper_length_mm, <span class="at">data =</span> penguins_clean)</span>
+<span id="cb53-2"><a href="exploratory-data-analysis.html#cb53-2" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = body_mass_g ~ flipper_length_mm, data = penguins_clean)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2024.9.23)  11 FEB 2025 15:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2024.9.23)  11 FEB 2025 16:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -472,7 +472,7 @@ File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
 \BKM@id=\count311
 ))
 Package hyperref Info: Option `colorlinks' set `true' on input line 125.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 131.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 139.
 (/Users/mauriciomardones/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/Users/mauriciomardones/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -482,36 +482,36 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 ) (./_main.aux)
 \openout1 = `_main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Info: Redefining \microtypecontext on input line 131.
-Package microtype Info: Applying patch `item' on input line 131.
-Package microtype Info: Applying patch `toc' on input line 131.
-Package microtype Info: Applying patch `eqnum' on input line 131.
-Package microtype Info: Applying patch `footnote' on input line 131.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Info: Redefining \microtypecontext on input line 139.
+Package microtype Info: Applying patch `item' on input line 139.
+Package microtype Info: Applying patch `toc' on input line 139.
+Package microtype Info: Applying patch `eqnum' on input line 139.
+Package microtype Info: Applying patch `footnote' on input line 139.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 131.
+LaTeX Info: Redefining \showhyphens on input line 139.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -523,36 +523,36 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 (/Users/mauriciomardones/Library/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 131.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 134.
+Package hyperref Info: Link coloring ON on input line 139.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 142.
 (/Users/mauriciomardones/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 134.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 142.
 (/Users/mauriciomardones/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 134.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 142.
 (/Users/mauriciomardones/Library/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 134.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 142.
 (/Users/mauriciomardones/Library/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 134.
+(Font)              <12> on input line 142.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 134.
+(Font)              <8> on input line 142.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 134.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 134.
+(Font)              <6> on input line 142.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 142.
 (/Users/mauriciomardones/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/Users/mauriciomardones/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 134.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 142.
 (/Users/mauriciomardones/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/Users/mauriciomardones/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -564,7 +564,7 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 {/Users/mauriciomardones/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 148.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 156.
 (/Users/mauriciomardones/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -582,7 +582,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 193--195
 ] [2
 
 ]
-<images/rpages.png, id=38, 1206.5075pt x 1131.22626pt>
+<images/rpages.png, id=37, 1206.5075pt x 1131.22626pt>
 File: images/rpages.png Graphic file (type png)
 <use images/rpages.png>
 Package pdftex.def Info: images/rpages.png  used on input line 235.
@@ -623,7 +623,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 253--255
 
  []
 
-<images/calc.jpg, id=65, 983.675pt x 983.675pt>
+<images/calc.jpg, id=64, 983.675pt x 983.675pt>
 File: images/calc.jpg Graphic file (type jpg)
 <use images/calc.jpg>
 Package pdftex.def Info: images/calc.jpg  used on input line 260.
@@ -637,7 +637,7 @@ Overfull \hbox (205.01372pt too wide) in paragraph at lines 260--260
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [7] [8 <./images/calc.jpg>]
-<images/papeR.png, id=77, 647.41875pt x 856.19875pt>
+<images/papeR.png, id=76, 647.41875pt x 856.19875pt>
 File: images/papeR.png Graphic file (type png)
 <use images/papeR.png>
 Package pdftex.def Info: images/papeR.png  used on input line 273.
@@ -658,164 +658,161 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 296.
 [9] [10 <./images/papeR.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 402.
+(Font)              <10> on input line 401.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 402.
+(Font)              <7> on input line 401.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 402.
-<_main_files/figure-latex/unnamed-chunk-12-1.pdf, id=104, 469.755pt x 325.215pt>
+(Font)              <5> on input line 401.
+<_main_files/figure-latex/unnamed-chunk-12-1.pdf, id=103, 469.755pt x 325.215pt>
 File: _main_files/figure-latex/unnamed-chunk-12-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-12-1.pdf>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-12-1.pdf  used on input line 428.
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-12-1.pdf  used on input line 429.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 [11 <./_main_files/figure-latex/unnamed-chunk-12-1.pdf>]
-<_main_files/figure-latex/unnamed-chunk-13-1.pdf, id=117, 469.755pt x 325.215pt>
+<_main_files/figure-latex/unnamed-chunk-13-1.pdf, id=116, 469.755pt x 325.215pt>
 File: _main_files/figure-latex/unnamed-chunk-13-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-13-1.pdf>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-13-1.pdf  used on input line 439.
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-13-1.pdf  used on input line 442.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-<_main_files/figure-latex/unnamed-chunk-14-1.pdf, id=118, 469.755pt x 325.215pt>
+<_main_files/figure-latex/unnamed-chunk-14-1.pdf, id=117, 469.755pt x 325.215pt>
 File: _main_files/figure-latex/unnamed-chunk-14-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-14-1.pdf>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-14-1.pdf  used on input line 450.
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-14-1.pdf  used on input line 456.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [12 <./_main_files/figure-latex/unnamed-chunk-13-1.pdf>] [13 <./_main_files/figure-latex/unnamed-chunk-14-1.pdf>] [14]
-Overfull \hbox (80.24876pt too wide) in paragraph at lines 598--598
+Overfull \hbox (80.24876pt too wide) in paragraph at lines 604--604
 []\T1/lmtt/m/n/10 ##   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g[] 
  []
 
 
-Overfull \hbox (80.24876pt too wide) in paragraph at lines 598--598
+Overfull \hbox (80.24876pt too wide) in paragraph at lines 604--604
 []\T1/lmtt/m/n/10 ##   <fct>   <fct>              <dbl>         <dbl>             <int>       <int>[] 
  []
 
 
-Overfull \hbox (80.24876pt too wide) in paragraph at lines 598--598
+Overfull \hbox (80.24876pt too wide) in paragraph at lines 604--604
 []\T1/lmtt/m/n/10 ## 1 Adelie  Torgersen           39.1          18.7               181        3750[] 
  []
 
 
-Overfull \hbox (80.24876pt too wide) in paragraph at lines 598--598
+Overfull \hbox (80.24876pt too wide) in paragraph at lines 604--604
 []\T1/lmtt/m/n/10 ## 2 Adelie  Torgersen           39.5          17.4               186        3800[] 
  []
 
 
-Overfull \hbox (80.24876pt too wide) in paragraph at lines 598--598
+Overfull \hbox (80.24876pt too wide) in paragraph at lines 604--604
 []\T1/lmtt/m/n/10 ## 3 Adelie  Torgersen           40.3          18                 195        3250[] 
  []
 
 
-Overfull \hbox (80.24876pt too wide) in paragraph at lines 598--598
+Overfull \hbox (80.24876pt too wide) in paragraph at lines 604--604
 []\T1/lmtt/m/n/10 ## 4 Adelie  Torgersen           36.7          19.3               193        3450[] 
  []
 
 [15
 
 ]
-Overfull \hbox (80.24876pt too wide) in paragraph at lines 598--598
+Overfull \hbox (80.24876pt too wide) in paragraph at lines 604--604
 []\T1/lmtt/m/n/10 ## 5 Adelie  Torgersen           39.3          20.6               190        3650[] 
  []
 
 
-Overfull \hbox (80.24876pt too wide) in paragraph at lines 598--598
+Overfull \hbox (80.24876pt too wide) in paragraph at lines 604--604
 []\T1/lmtt/m/n/10 ## 6 Adelie  Torgersen           38.9          17.8               181        3625[] 
  []
 
 
-Overfull \hbox (137.9986pt too wide) in paragraph at lines 616--616
+Overfull \hbox (137.9986pt too wide) in paragraph at lines 622--622
 []\T1/lmtt/m/n/10 ##  $ species          : Factor w/ 3 levels "Adelie","Chinstrap",..: 1 1 1 1 1 1 1 1 1 1 ...[] 
  []
 
 
-Overfull \hbox (116.99866pt too wide) in paragraph at lines 616--616
+Overfull \hbox (116.99866pt too wide) in paragraph at lines 622--622
 []\T1/lmtt/m/n/10 ##  $ island           : Factor w/ 3 levels "Biscoe","Dream",..: 3 3 3 3 3 3 3 3 3 3 ...[] 
  []
 
 
-Overfull \hbox (127.49863pt too wide) in paragraph at lines 616--616
+Overfull \hbox (127.49863pt too wide) in paragraph at lines 622--622
 []\T1/lmtt/m/n/10 ##  $ bill_length_mm   : num [1:333] 39.1 39.5 40.3 36.7 39.3 38.9 39.2 41.1 38.6 34.6 ...[] 
  []
 
 
-Overfull \hbox (116.99866pt too wide) in paragraph at lines 616--616
+Overfull \hbox (116.99866pt too wide) in paragraph at lines 622--622
 []\T1/lmtt/m/n/10 ##  $ bill_depth_mm    : num [1:333] 18.7 17.4 18 19.3 20.6 17.8 19.6 17.6 21.2 21.1 ...[] 
  []
 
 
-Overfull \hbox (74.99878pt too wide) in paragraph at lines 616--616
+Overfull \hbox (74.99878pt too wide) in paragraph at lines 622--622
 []\T1/lmtt/m/n/10 ##  $ flipper_length_mm: int [1:333] 181 186 195 193 190 181 195 182 191 198 ...[] 
  []
 
 
-Overfull \hbox (127.49863pt too wide) in paragraph at lines 616--616
+Overfull \hbox (127.49863pt too wide) in paragraph at lines 622--622
 []\T1/lmtt/m/n/10 ##  $ body_mass_g      : int [1:333] 3750 3800 3250 3450 3650 3625 4675 3200 3800 4400 ...[] 
  []
 
 
-Overfull \hbox (95.99872pt too wide) in paragraph at lines 616--616
+Overfull \hbox (95.99872pt too wide) in paragraph at lines 622--622
 []\T1/lmtt/m/n/10 ##  $ sex              : Factor w/ 2 levels "female","male": 2 1 1 1 2 1 2 1 2 2 ...[] 
  []
 
 
-Overfull \hbox (127.49863pt too wide) in paragraph at lines 616--616
+Overfull \hbox (127.49863pt too wide) in paragraph at lines 622--622
 []\T1/lmtt/m/n/10 ##  $ year             : int [1:333] 2007 2007 2007 2007 2007 2007 2007 2007 2007 2007 ...[] 
  []
 
 
-Overfull \hbox (1.499pt too wide) in paragraph at lines 639--639
+Overfull \hbox (1.499pt too wide) in paragraph at lines 645--645
 []\T1/lmtt/m/n/10 ##  bill_length_mm  bill_depth_mm   flipper_length_mm  body_mass_g[] 
  []
 
 
-Overfull \hbox (1.499pt too wide) in paragraph at lines 639--639
+Overfull \hbox (1.499pt too wide) in paragraph at lines 645--645
 []\T1/lmtt/m/n/10 ##  Min.   :32.10   Min.   :13.10   Min.   :172       Min.   :2700[] 
  []
 
 
-Overfull \hbox (1.499pt too wide) in paragraph at lines 639--639
+Overfull \hbox (1.499pt too wide) in paragraph at lines 645--645
 []\T1/lmtt/m/n/10 ##  1st Qu.:39.50   1st Qu.:15.60   1st Qu.:190       1st Qu.:3550[] 
  []
 
 
-Overfull \hbox (1.499pt too wide) in paragraph at lines 639--639
+Overfull \hbox (1.499pt too wide) in paragraph at lines 645--645
 []\T1/lmtt/m/n/10 ##  Median :44.50   Median :17.30   Median :197       Median :4050[] 
  []
 
 
-Overfull \hbox (1.499pt too wide) in paragraph at lines 639--639
+Overfull \hbox (1.499pt too wide) in paragraph at lines 645--645
 []\T1/lmtt/m/n/10 ##  Mean   :43.99   Mean   :17.16   Mean   :201       Mean   :4207[] 
  []
 
 
-Overfull \hbox (1.499pt too wide) in paragraph at lines 639--639
+Overfull \hbox (1.499pt too wide) in paragraph at lines 645--645
 []\T1/lmtt/m/n/10 ##  3rd Qu.:48.60   3rd Qu.:18.70   3rd Qu.:213       3rd Qu.:4775[] 
  []
 
 
-Overfull \hbox (1.499pt too wide) in paragraph at lines 639--639
+Overfull \hbox (1.499pt too wide) in paragraph at lines 645--645
 []\T1/lmtt/m/n/10 ##  Max.   :59.60   Max.   :21.50   Max.   :231       Max.   :6300[] 
  []
 
 
 Underfull \vbox (badness 1655) has occurred while \output is active []
 
-[16]
-Underfull \vbox (badness 5893) has occurred while \output is active []
-
-[17] [18]
-Overfull \hbox (216.74837pt too wide) in paragraph at lines 845--845
+[16] [17] [18]
+Overfull \hbox (216.74837pt too wide) in paragraph at lines 847--847
 []\T1/lmtt/m/n/10 ## alternative hypothesis: true difference in means between group Adelie and group Gentoo is not equal to 0[] 
  []
 
-[19]
+
 Overfull \hbox (27.74892pt too wide) in paragraph at lines 901--901
 []\T1/lmtt/m/n/10 ## lm(formula = body_mass_g ~ flipper_length_mm, data = penguins_clean)[] 
  []
 
-
+[19]
 Underfull \hbox (badness 10000) in paragraph at lines 918--920
 
  []
@@ -831,10 +828,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 922--924
  []
 
 [20]
-<_main_files/figure-latex/unnamed-chunk-36-1.jpeg, id=216, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-36-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-36-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-36-1.jpeg  used on input line 983.
+<_main_files/figure-latex/unnamed-chunk-34-1.pdf, id=215, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-34-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-34-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-34-1.pdf  used on input line 985.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -842,242 +839,289 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [21
 
 ]
-<_main_files/figure-latex/unnamed-chunk-37-1.jpeg, id=228, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-37-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-37-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-37-1.jpeg  used on input line 995.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-[22 <./_main_files/figure-latex/unnamed-chunk-36-1.jpeg> <./_main_files/figure-latex/unnamed-chunk-37-1.jpeg>]
-<_main_files/figure-latex/unnamed-chunk-38-1.jpeg, id=233, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-38-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-38-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-38-1.jpeg  used on input line 1008.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-<_main_files/figure-latex/unnamed-chunk-39-1.jpeg, id=234, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-39-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-39-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-39-1.jpeg  used on input line 1020.
+<_main_files/figure-latex/unnamed-chunk-35-1.pdf, id=227, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-35-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-35-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-35-1.pdf  used on input line 998.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[23 <./_main_files/figure-latex/unnamed-chunk-38-1.jpeg>]
-<_main_files/figure-latex/unnamed-chunk-40-1.jpeg, id=240, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-40-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-40-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-40-1.jpeg  used on input line 1031.
+[22 <./_main_files/figure-latex/unnamed-chunk-34-1.pdf>]
+<_main_files/figure-latex/unnamed-chunk-36-1.pdf, id=238, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-36-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-36-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-36-1.pdf  used on input line 1012.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-[24 <./_main_files/figure-latex/unnamed-chunk-39-1.jpeg> <./_main_files/figure-latex/unnamed-chunk-40-1.jpeg>]
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 1035.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[23 <./_main_files/figure-latex/unnamed-chunk-35-1.pdf>]
+<_main_files/figure-latex/unnamed-chunk-37-1.pdf, id=250, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-37-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-37-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-37-1.pdf  used on input line 1026.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[24 <./_main_files/figure-latex/unnamed-chunk-36-1.pdf>]
+<_main_files/figure-latex/unnamed-chunk-38-1.pdf, id=261, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-38-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-38-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-38-1.pdf  used on input line 1039.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[25 <./_main_files/figure-latex/unnamed-chunk-37-1.pdf>]
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 1043.
 (/Users/mauriciomardones/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<_main_files/figure-latex/unnamed-chunk-41-1.jpeg, id=245, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-41-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-41-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-41-1.jpeg  used on input line 1048.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-<_main_files/figure-latex/unnamed-chunk-42-1.jpeg, id=246, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-42-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-42-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-42-1.jpeg  used on input line 1059.
+<_main_files/figure-latex/unnamed-chunk-39-1.pdf, id=273, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-39-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-39-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-39-1.pdf  used on input line 1058.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[25 <./_main_files/figure-latex/unnamed-chunk-41-1.jpeg>]
-<_main_files/figure-latex/unnamed-chunk-43-1.jpeg, id=252, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-43-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-43-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-43-1.jpeg  used on input line 1071.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-[26 <./_main_files/figure-latex/unnamed-chunk-42-1.jpeg> <./_main_files/figure-latex/unnamed-chunk-43-1.jpeg>]
-<_main_files/figure-latex/unnamed-chunk-44-1.jpeg, id=257, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-44-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-44-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-44-1.jpeg  used on input line 1085.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1089.
-<_main_files/figure-latex/unnamed-chunk-46-1.jpeg, id=258, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-46-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-46-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-46-1.jpeg  used on input line 1111.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[27 <./_main_files/figure-latex/unnamed-chunk-44-1.jpeg>]
-<_main_files/figure-latex/unnamed-chunk-48-1.jpeg, id=266, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-48-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-48-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-48-1.jpeg  used on input line 1135.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[28 <./_main_files/figure-latex/unnamed-chunk-46-1.jpeg>]
-<_main_files/figure-latex/unnamed-chunk-49-1.jpeg, id=271, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-49-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-49-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-49-1.jpeg  used on input line 1146.
+[26 <./_main_files/figure-latex/unnamed-chunk-38-1.pdf>]
+<_main_files/figure-latex/unnamed-chunk-40-1.pdf, id=285, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-40-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-40-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-40-1.pdf  used on input line 1069.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 4416) has occurred while \output is active []
 
-[29 <./_main_files/figure-latex/unnamed-chunk-48-1.jpeg> <./_main_files/figure-latex/unnamed-chunk-49-1.jpeg>]
-<_main_files/figure-latex/unnamed-chunk-50-1.jpeg, id=277, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-50-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-50-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-50-1.jpeg  used on input line 1159.
+[27 <./_main_files/figure-latex/unnamed-chunk-39-1.pdf> <./_main_files/figure-latex/unnamed-chunk-40-1.pdf>]
+<_main_files/figure-latex/unnamed-chunk-41-1.pdf, id=302, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-41-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-41-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-41-1.pdf  used on input line 1082.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-<_main_files/figure-latex/unnamed-chunk-51-1.jpeg, id=278, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-51-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-51-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-51-1.jpeg  used on input line 1171.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[30 <./_main_files/figure-latex/unnamed-chunk-50-1.jpeg>]
-<_main_files/figure-latex/unnamed-chunk-52-1.jpeg, id=284, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-52-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-52-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-52-1.jpeg  used on input line 1184.
+<_main_files/figure-latex/unnamed-chunk-42-1.pdf, id=303, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-42-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-42-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-42-1.pdf  used on input line 1098.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[31 <./_main_files/figure-latex/unnamed-chunk-51-1.jpeg>]
-<_main_files/figure-latex/unnamed-chunk-55-1.jpeg, id=289, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-55-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-55-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-55-1.jpeg  used on input line 1224.
+[28 <./_main_files/figure-latex/unnamed-chunk-41-1.pdf>]
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1102.
+<_main_files/figure-latex/unnamed-chunk-44-1.pdf, id=314, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-44-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-44-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-44-1.pdf  used on input line 1126.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
-Underfull \vbox (badness 7649) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 1126--1128
+[][]
+ []
 
-[32 <./_main_files/figure-latex/unnamed-chunk-52-1.jpeg>]
-<_main_files/figure-latex/unnamed-chunk-56-1.jpeg, id=294, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-56-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-56-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-56-1.jpeg  used on input line 1236.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-[33 <./_main_files/figure-latex/unnamed-chunk-55-1.jpeg> <./_main_files/figure-latex/unnamed-chunk-56-1.jpeg>]
-<_main_files/figure-latex/unnamed-chunk-57-1.jpeg, id=299, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-57-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-57-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-57-1.jpeg  used on input line 1252.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-[34 <./_main_files/figure-latex/unnamed-chunk-57-1.jpeg>]
-<_main_files/figure-latex/unnamed-chunk-59-1.jpeg, id=304, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-59-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-59-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-59-1.jpeg  used on input line 1284.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-<_main_files/figure-latex/unnamed-chunk-60-1.jpeg, id=305, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-60-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-60-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-60-1.jpeg  used on input line 1313.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[29 <./_main_files/figure-latex/unnamed-chunk-42-1.pdf>]
+<_main_files/figure-latex/unnamed-chunk-46-1.pdf, id=329, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-46-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-46-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-46-1.pdf  used on input line 1154.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[35 <./_main_files/figure-latex/unnamed-chunk-59-1.jpeg>]
-<_main_files/figure-latex/unnamed-chunk-61-1.jpeg, id=311, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-61-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-61-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-61-1.jpeg  used on input line 1332.
+[30 <./_main_files/figure-latex/unnamed-chunk-44-1.pdf>]
+<_main_files/figure-latex/unnamed-chunk-47-1.pdf, id=339, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-47-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-47-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-47-1.pdf  used on input line 1166.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+[31 <./_main_files/figure-latex/unnamed-chunk-46-1.pdf> <./_main_files/figure-latex/unnamed-chunk-47-1.pdf>]
+<_main_files/figure-latex/unnamed-chunk-48-1.pdf, id=354, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-48-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-48-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-48-1.pdf  used on input line 1181.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+<_main_files/figure-latex/unnamed-chunk-49-1.pdf, id=355, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-49-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-49-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-49-1.pdf  used on input line 1196.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1196--1198
+[][]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[32 <./_main_files/figure-latex/unnamed-chunk-48-1.pdf>]
+<_main_files/figure-latex/unnamed-chunk-50-1.pdf, id=368, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-50-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-50-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-50-1.pdf  used on input line 1211.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[36 <./_main_files/figure-latex/unnamed-chunk-60-1.jpeg>] [37 <./_main_files/figure-latex/unnamed-chunk-61-1.jpeg>]
-<_main_files/figure-latex/unnamed-chunk-67-1.jpeg, id=322, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-67-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-67-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-67-1.jpeg  used on input line 1413.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-[38 <./_main_files/figure-latex/unnamed-chunk-67-1.jpeg>]
-<_main_files/figure-latex/unnamed-chunk-69-1.jpeg, id=327, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-69-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-69-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-69-1.jpeg  used on input line 1440.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-<_main_files/figure-latex/unnamed-chunk-70-1.jpeg, id=328, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-70-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-70-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-70-1.jpeg  used on input line 1455.
+[33 <./_main_files/figure-latex/unnamed-chunk-49-1.pdf>] [34 <./_main_files/figure-latex/unnamed-chunk-50-1.pdf>]
+<_main_files/figure-latex/unnamed-chunk-53-1.pdf, id=387, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-53-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-53-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-53-1.pdf  used on input line 1261.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
-Underfull \vbox (badness 6204) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 1261--1263
+[][]
+ []
 
-[39 <./_main_files/figure-latex/unnamed-chunk-69-1.jpeg>]
-<_main_files/figure-latex/unnamed-chunk-71-1.jpeg, id=335, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-71-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-71-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-71-1.jpeg  used on input line 1469.
+<_main_files/figure-latex/unnamed-chunk-54-1.pdf, id=388, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-54-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-54-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-54-1.pdf  used on input line 1276.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[40 <./_main_files/figure-latex/unnamed-chunk-70-1.jpeg>]
-<_main_files/figure-latex/unnamed-chunk-72-1.jpeg, id=340, 469.755pt x 325.215pt>
-File: _main_files/figure-latex/unnamed-chunk-72-1.jpeg Graphic file (type jpg)
-<use _main_files/figure-latex/unnamed-chunk-72-1.jpeg>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-72-1.jpeg  used on input line 1487.
+[35 <./_main_files/figure-latex/unnamed-chunk-53-1.pdf>]
+<_main_files/figure-latex/unnamed-chunk-55-1.pdf, id=400, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-55-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-55-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-55-1.pdf  used on input line 1294.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[41 <./_main_files/figure-latex/unnamed-chunk-71-1.jpeg>]
+[36 <./_main_files/figure-latex/unnamed-chunk-54-1.pdf>]
+<_main_files/figure-latex/unnamed-chunk-57-1.pdf, id=410, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-57-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-57-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-57-1.pdf  used on input line 1329.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1329--1331
+[][]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[37 <./_main_files/figure-latex/unnamed-chunk-55-1.pdf>]
+<_main_files/figure-latex/unnamed-chunk-58-1.pdf, id=424, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-58-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-58-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-58-1.pdf  used on input line 1355.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[38 <./_main_files/figure-latex/unnamed-chunk-57-1.pdf>]
+<_main_files/figure-latex/unnamed-chunk-59-1.pdf, id=435, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-59-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-59-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-59-1.pdf  used on input line 1375.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[39 <./_main_files/figure-latex/unnamed-chunk-58-1.pdf>] [40 <./_main_files/figure-latex/unnamed-chunk-59-1.pdf>]
+<_main_files/figure-latex/unnamed-chunk-65-1.pdf, id=459, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-65-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-65-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-65-1.pdf  used on input line 1458.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[41]
+<_main_files/figure-latex/unnamed-chunk-67-1.pdf, id=465, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-67-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-67-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-67-1.pdf  used on input line 1487.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[42 <./_main_files/figure-latex/unnamed-chunk-65-1.pdf>]
+<_main_files/figure-latex/unnamed-chunk-68-1.pdf, id=479, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-68-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-68-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-68-1.pdf  used on input line 1505.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[43 <./_main_files/figure-latex/unnamed-chunk-67-1.pdf>]
+<_main_files/figure-latex/unnamed-chunk-69-1.pdf, id=491, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-69-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-69-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-69-1.pdf  used on input line 1520.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[44 <./_main_files/figure-latex/unnamed-chunk-68-1.pdf>]
+<_main_files/figure-latex/unnamed-chunk-70-1.pdf, id=503, 469.755pt x 325.215pt>
+File: _main_files/figure-latex/unnamed-chunk-70-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-70-1.pdf>
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-70-1.pdf  used on input line 1541.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[45 <./_main_files/figure-latex/unnamed-chunk-69-1.pdf>]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1523.
-[42 <./_main_files/figure-latex/unnamed-chunk-72-1.jpeg>]
-Underfull \hbox (badness 10000) in paragraph at lines 1543--1547
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1574.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1594--1598
+
+ []
+
+[46 <./_main_files/figure-latex/unnamed-chunk-70-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 1627--1630
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1576--1579
+Underfull \hbox (badness 10000) in paragraph at lines 1662--1664
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1611--1613
+Underfull \hbox (badness 10000) in paragraph at lines 1665--1667
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1614--1616
+Underfull \hbox (badness 10000) in paragraph at lines 1668--1670
 
  []
 
+[47] [48
 
-Underfull \hbox (badness 10000) in paragraph at lines 1617--1619
+] [49] [50
 
- []
-
-[43] [44
-
-] [45] [46
-
-] [47] [48
+] [51] [52
 
 ] (./_main.aux) ) 
 Here is how much of TeX's memory you used:
- 16104 strings out of 478033
- 277908 string characters out of 5838239
+ 15845 strings out of 478033
+ 264782 string characters out of 5838239
  1866330 words of memory out of 5000000
- 35645 multiletter control sequences out of 15000+600000
- 582288 words of font info for 137 fonts, out of 8000000 for 9000
+ 35382 multiletter control sequences out of 15000+600000
+ 582168 words of font info for 138 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 77i,7n,81p,1002b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxo10.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro10.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtto10.pfb>
-Output written on _main.pdf (50 pages, 4599194 bytes).
+ 77i,7n,81p,1002b,617s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxo10.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro10.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></Users/mauriciomardones/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtto10.pfb>
+Output written on _main.pdf (54 pages, 1802496 bytes).
 PDF statistics:
- 685 PDF objects out of 1000 (max. 8388607)
- 552 compressed objects within 6 object streams
- 162 named destinations out of 1000 (max. 500000)
+ 858 PDF objects out of 1000 (max. 8388607)
+ 689 compressed objects within 7 object streams
+ 165 named destinations out of 1000 (max. 500000)
  39449 words of extra memory for PDF output out of 42996 (max. 10000000)
 

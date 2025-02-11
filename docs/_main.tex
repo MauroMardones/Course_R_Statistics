@@ -138,6 +138,13 @@
   pdfcreator={LaTeX via pandoc}}
 
 \title{R Basic Course}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{This book was made with educational objetctive to improve R skill in students and professional staff}
 \author{Mardones, Mauricio. \& Zúñiga, María José.}
 \date{2025-02-11}
 
@@ -171,7 +178,7 @@ This course has these sections;
   \setcounter{enumi}{1}
   \tightlist
   \item
-    \textbf{Exploratory Data Analysis}. Basic concepts for data exploration.
+    \textbf{Exploratory Data Analysis}. Basic concepts for data exploration. Essential statistical calculations.
   \end{enumerate}
 \item
   \begin{enumerate}
@@ -179,7 +186,7 @@ This course has these sections;
   \setcounter{enumi}{2}
   \tightlist
   \item
-    \textbf{Descriptive Statistics}. Essential statistical calculations.
+    \textbf{Visualization}. Graphics and Maps using modern packages
   \end{enumerate}
 \item
   \begin{enumerate}
@@ -187,7 +194,7 @@ This course has these sections;
   \setcounter{enumi}{3}
   \tightlist
   \item
-    \textbf{Visualization}. Graphics and Maps using modern packages
+    \textbf{Efficient code}. Organization strategies.\\
   \end{enumerate}
 \item
   \begin{enumerate}
@@ -195,20 +202,12 @@ This course has these sections;
   \setcounter{enumi}{4}
   \tightlist
   \item
-    \textbf{Efficient code}. Organization strategies.\\
-  \end{enumerate}
-\item
-  \begin{enumerate}
-  \def\labelenumi{\arabic{enumi}.}
-  \setcounter{enumi}{5}
-  \tightlist
-  \item
     \textbf{Automatization and sharing} Report generation and result sharing.\\
   \end{enumerate}
 \item
   \begin{enumerate}
   \def\labelenumi{\arabic{enumi}.}
-  \setcounter{enumi}{6}
+  \setcounter{enumi}{5}
   \tightlist
   \item
     \textbf{Management of Bibliographic} sources and additional materials.
@@ -365,8 +364,7 @@ Seminal paper or R! \href{http://www.aliquote.org/cours/2012_biomed/biblio/Ihaka
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{Name =} \FunctionTok{c}\NormalTok{(}\StringTok{"John"}\NormalTok{, }\StringTok{"Jane"}\NormalTok{),}
-    \AttributeTok{Age =} \FunctionTok{c}\NormalTok{(}\DecValTok{25}\NormalTok{, }\DecValTok{30}\NormalTok{))}
+\NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{Name =} \FunctionTok{c}\NormalTok{(}\StringTok{"John"}\NormalTok{, }\StringTok{"Jane"}\NormalTok{), }\AttributeTok{Age =} \FunctionTok{c}\NormalTok{(}\DecValTok{25}\NormalTok{, }\DecValTok{30}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -425,8 +423,10 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{plottex }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(iris, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Sepal.Length,}
-    \AttributeTok{y =}\NormalTok{ Species)) }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{)}
+\NormalTok{plottex }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(iris, }
+       \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Sepal.Length, }
+           \AttributeTok{y =}\NormalTok{ Species)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{)}
 \NormalTok{plottex}
 \end{Highlighting}
 \end{Shaded}
@@ -435,9 +435,11 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{plottex }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(iris, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Sepal.Length,}
-    \AttributeTok{y =}\NormalTok{ Species)) }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{) }\SpecialCharTok{+}
-    \FunctionTok{theme\_minimal}\NormalTok{()}
+\NormalTok{plottex }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(iris, }
+       \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Sepal.Length, }
+           \AttributeTok{y =}\NormalTok{ Species)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
 \NormalTok{plottex}
 \end{Highlighting}
 \end{Shaded}
@@ -446,9 +448,12 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{plottex }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(iris, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Sepal.Length,}
-    \AttributeTok{y =}\NormalTok{ Species)) }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{) }\SpecialCharTok{+}
-    \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{coord\_flip}\NormalTok{()}
+\NormalTok{plottex }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(iris, }
+       \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Sepal.Length, }
+           \AttributeTok{y =}\NormalTok{ Species)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}\SpecialCharTok{+}
+  \FunctionTok{coord\_flip}\NormalTok{()}
 \NormalTok{plottex}
 \end{Highlighting}
 \end{Shaded}
@@ -467,8 +472,8 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{square }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) \{}
-    \FunctionTok{return}\NormalTok{(x}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}
-\NormalTok{\}}
+     \FunctionTok{return}\NormalTok{(x}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}
+\NormalTok{   \}}
 \FunctionTok{square}\NormalTok{(}\DecValTok{4}\NormalTok{)  }\CommentTok{\# Output: 16}
 \end{Highlighting}
 \end{Shaded}
@@ -694,8 +699,7 @@ This section demonstrates an exploratory data analysis (EDA) of the \textbf{Palm
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{Standard deviation of body mass:"}\NormalTok{,}
-\NormalTok{    sd\_body\_mass)}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{Standard deviation of body mass:"}\NormalTok{, sd\_body\_mass)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -735,10 +739,8 @@ This section demonstrates an exploratory data analysis (EDA) of the \textbf{Palm
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{cov\_bill }\OtherTok{\textless{}{-}} \FunctionTok{cov}\NormalTok{(penguins\_clean}\SpecialCharTok{$}\NormalTok{bill\_length\_mm,}
-\NormalTok{    penguins\_clean}\SpecialCharTok{$}\NormalTok{bill\_depth\_mm)}
-\NormalTok{cor\_bill }\OtherTok{\textless{}{-}} \FunctionTok{cor}\NormalTok{(penguins\_clean}\SpecialCharTok{$}\NormalTok{bill\_length\_mm,}
-\NormalTok{    penguins\_clean}\SpecialCharTok{$}\NormalTok{bill\_depth\_mm)}
+\NormalTok{cov\_bill }\OtherTok{\textless{}{-}} \FunctionTok{cov}\NormalTok{(penguins\_clean}\SpecialCharTok{$}\NormalTok{bill\_length\_mm, penguins\_clean}\SpecialCharTok{$}\NormalTok{bill\_depth\_mm)}
+\NormalTok{cor\_bill }\OtherTok{\textless{}{-}} \FunctionTok{cor}\NormalTok{(penguins\_clean}\SpecialCharTok{$}\NormalTok{bill\_length\_mm, penguins\_clean}\SpecialCharTok{$}\NormalTok{bill\_depth\_mm)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -747,18 +749,15 @@ This section demonstrates an exploratory data analysis (EDA) of the \textbf{Palm
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{q1 }\OtherTok{\textless{}{-}} \FunctionTok{quantile}\NormalTok{(penguins\_clean}\SpecialCharTok{$}\NormalTok{body\_mass\_g,}
-    \FloatTok{0.25}\NormalTok{)}
-\NormalTok{q3 }\OtherTok{\textless{}{-}} \FunctionTok{quantile}\NormalTok{(penguins\_clean}\SpecialCharTok{$}\NormalTok{body\_mass\_g,}
-    \FloatTok{0.75}\NormalTok{)}
+\NormalTok{q1 }\OtherTok{\textless{}{-}} \FunctionTok{quantile}\NormalTok{(penguins\_clean}\SpecialCharTok{$}\NormalTok{body\_mass\_g, }\FloatTok{0.25}\NormalTok{)}
+\NormalTok{q3 }\OtherTok{\textless{}{-}} \FunctionTok{quantile}\NormalTok{(penguins\_clean}\SpecialCharTok{$}\NormalTok{body\_mass\_g, }\FloatTok{0.75}\NormalTok{)}
 \NormalTok{iqr\_value }\OtherTok{\textless{}{-}}\NormalTok{ q3 }\SpecialCharTok{{-}}\NormalTok{ q1}
 \NormalTok{lower\_bound }\OtherTok{\textless{}{-}}\NormalTok{ q1 }\SpecialCharTok{{-}} \FloatTok{1.5} \SpecialCharTok{*}\NormalTok{ iqr\_value}
 \NormalTok{upper\_bound }\OtherTok{\textless{}{-}}\NormalTok{ q3 }\SpecialCharTok{+} \FloatTok{1.5} \SpecialCharTok{*}\NormalTok{ iqr\_value}
 
-\NormalTok{outliers }\OtherTok{\textless{}{-}}\NormalTok{ penguins\_clean }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{filter}\NormalTok{(body\_mass\_g }\SpecialCharTok{\textless{}}\NormalTok{ lower\_bound }\SpecialCharTok{|}\NormalTok{ body\_mass\_g }\SpecialCharTok{\textgreater{}}
-\NormalTok{        upper\_bound) }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{select}\NormalTok{(species, body\_mass\_g)}
+\NormalTok{outliers }\OtherTok{\textless{}{-}}\NormalTok{ penguins\_clean }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(body\_mass\_g }\SpecialCharTok{\textless{}}\NormalTok{ lower\_bound }\SpecialCharTok{|}\NormalTok{ body\_mass\_g }\SpecialCharTok{\textgreater{}}\NormalTok{ upper\_bound) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(species, body\_mass\_g)}
 
 \FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{Outliers in body mass:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
 \end{Highlighting}
@@ -785,11 +784,13 @@ This section demonstrates an exploratory data analysis (EDA) of the \textbf{Palm
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{penguins\_clean }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{filter}\NormalTok{(species }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"Adelie"}\NormalTok{, }\StringTok{"Gentoo"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{group\_by}\NormalTok{(species) }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{summarise}\NormalTok{(}\AttributeTok{mean\_body\_mass =} \FunctionTok{mean}\NormalTok{(body\_mass\_g),}
-        \AttributeTok{sd\_body\_mass =} \FunctionTok{sd}\NormalTok{(body\_mass\_g))}
+\NormalTok{penguins\_clean }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(species }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"Adelie"}\NormalTok{, }\StringTok{"Gentoo"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(species) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarise}\NormalTok{(}
+    \AttributeTok{mean\_body\_mass =} \FunctionTok{mean}\NormalTok{(body\_mass\_g),}
+    \AttributeTok{sd\_body\_mass =} \FunctionTok{sd}\NormalTok{(body\_mass\_g)}
+\NormalTok{  )}
 \end{Highlighting}
 \end{Shaded}
 
@@ -807,10 +808,10 @@ This section demonstrates an exploratory data analysis (EDA) of the \textbf{Palm
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{penguins\_subset }\OtherTok{\textless{}{-}}\NormalTok{ penguins\_clean }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{filter}\NormalTok{(species }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"Adelie"}\NormalTok{, }\StringTok{"Gentoo"}\NormalTok{))}
+  \FunctionTok{filter}\NormalTok{(species }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"Adelie"}\NormalTok{, }\StringTok{"Gentoo"}\NormalTok{))}
 
-\NormalTok{t\_test\_result }\OtherTok{\textless{}{-}} \FunctionTok{t.test}\NormalTok{(body\_mass\_g }\SpecialCharTok{\textasciitilde{}}\NormalTok{ species,}
-    \AttributeTok{data =}\NormalTok{ penguins\_subset)}
+\NormalTok{t\_test\_result }\OtherTok{\textless{}{-}} \FunctionTok{t.test}\NormalTok{(body\_mass\_g }\SpecialCharTok{\textasciitilde{}}\NormalTok{ species, }
+                        \AttributeTok{data =}\NormalTok{ penguins\_subset)}
 
 \FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{T{-}Test Results:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
 \end{Highlighting}
@@ -848,8 +849,7 @@ The null hypothesis (\texttt{H0}) assumes that the mean body mass of \emph{Adeli
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{anova\_body\_mass }\OtherTok{\textless{}{-}} \FunctionTok{aov}\NormalTok{(bill\_length\_mm }\SpecialCharTok{\textasciitilde{}}\NormalTok{ species,}
-    \AttributeTok{data =}\NormalTok{ penguins\_clean)}
+\NormalTok{anova\_body\_mass }\OtherTok{\textless{}{-}} \FunctionTok{aov}\NormalTok{(bill\_length\_mm }\SpecialCharTok{\textasciitilde{}}\NormalTok{ species, }\AttributeTok{data =}\NormalTok{ penguins\_clean)}
 \FunctionTok{summary}\NormalTok{(anova\_body\_mass)}
 \end{Highlighting}
 \end{Shaded}
@@ -867,8 +867,7 @@ The null hypothesis (\texttt{H0}) assumes that the mean body mass of \emph{Adeli
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{model }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(body\_mass\_g }\SpecialCharTok{\textasciitilde{}}\NormalTok{ flipper\_length\_mm,}
-    \AttributeTok{data =}\NormalTok{ penguins\_clean)}
+\NormalTok{model }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(body\_mass\_g }\SpecialCharTok{\textasciitilde{}}\NormalTok{ flipper\_length\_mm, }\AttributeTok{data =}\NormalTok{ penguins\_clean)}
 \FunctionTok{summary}\NormalTok{(model)}
 \end{Highlighting}
 \end{Shaded}
@@ -961,65 +960,73 @@ Histogram of body mass
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{hist}\NormalTok{(penguins}\SpecialCharTok{$}\NormalTok{body\_mass\_g, }\AttributeTok{main =} \StringTok{"Histogram of Body Mass"}\NormalTok{,}
-    \AttributeTok{xlab =} \StringTok{"Body Mass (g)"}\NormalTok{, }\AttributeTok{col =} \StringTok{"skyblue"}\NormalTok{,}
-    \AttributeTok{border =} \StringTok{"white"}\NormalTok{)}
+\FunctionTok{hist}\NormalTok{(penguins}\SpecialCharTok{$}\NormalTok{body\_mass\_g, }
+     \AttributeTok{main =} \StringTok{"Histogram of Body Mass"}\NormalTok{, }
+     \AttributeTok{xlab =} \StringTok{"Body Mass (g)"}\NormalTok{, }
+     \AttributeTok{col =} \StringTok{"skyblue"}\NormalTok{, }
+     \AttributeTok{border =} \StringTok{"white"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-36-1} \end{center}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-34-1.pdf}
 
 Boxplot of body mass by species
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{boxplot}\NormalTok{(body\_mass\_g }\SpecialCharTok{\textasciitilde{}}\NormalTok{ species, }\AttributeTok{data =}\NormalTok{ penguins,}
-    \AttributeTok{main =} \StringTok{"Body Mass by Species"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"Body Mass (g)"}\NormalTok{,}
-    \AttributeTok{col =} \FunctionTok{c}\NormalTok{(}\StringTok{"tomato"}\NormalTok{, }\StringTok{"lightgreen"}\NormalTok{, }\StringTok{"lightblue"}\NormalTok{))}
+\FunctionTok{boxplot}\NormalTok{(body\_mass\_g }\SpecialCharTok{\textasciitilde{}}\NormalTok{ species, }\AttributeTok{data =}\NormalTok{ penguins, }
+        \AttributeTok{main =} \StringTok{"Body Mass by Species"}\NormalTok{, }
+        \AttributeTok{ylab =} \StringTok{"Body Mass (g)"}\NormalTok{, }
+        \AttributeTok{col =} \FunctionTok{c}\NormalTok{(}\StringTok{"tomato"}\NormalTok{, }\StringTok{"lightgreen"}\NormalTok{, }\StringTok{"lightblue"}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-37-1} \end{center}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-35-1.pdf}
 
 Scatter plot of flipper length vs body mass
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{plot}\NormalTok{(penguins}\SpecialCharTok{$}\NormalTok{flipper\_length\_mm, penguins}\SpecialCharTok{$}\NormalTok{body\_mass\_g,}
-    \AttributeTok{main =} \StringTok{"Flipper Length vs Body Mass"}\NormalTok{,}
-    \AttributeTok{xlab =} \StringTok{"Flipper Length (mm)"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"Body Mass (g)"}\NormalTok{,}
-    \AttributeTok{pch =} \DecValTok{19}\NormalTok{, }\AttributeTok{col =} \StringTok{"darkorange"}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(penguins}\SpecialCharTok{$}\NormalTok{flipper\_length\_mm, penguins}\SpecialCharTok{$}\NormalTok{body\_mass\_g, }
+     \AttributeTok{main =} \StringTok{"Flipper Length vs Body Mass"}\NormalTok{, }
+     \AttributeTok{xlab =} \StringTok{"Flipper Length (mm)"}\NormalTok{, }
+     \AttributeTok{ylab =} \StringTok{"Body Mass (g)"}\NormalTok{, }
+     \AttributeTok{pch =} \DecValTok{19}\NormalTok{, }\AttributeTok{col =} \StringTok{"darkorange"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-38-1} \end{center}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-36-1.pdf}
 
 Bar plot of species counts
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{species\_counts }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(penguins}\SpecialCharTok{$}\NormalTok{species)}
-\FunctionTok{barplot}\NormalTok{(species\_counts, }\AttributeTok{main =} \StringTok{"Counts of Penguin Species"}\NormalTok{,}
-    \AttributeTok{col =} \FunctionTok{c}\NormalTok{(}\StringTok{"purple"}\NormalTok{, }\StringTok{"cyan"}\NormalTok{, }\StringTok{"gold"}\NormalTok{), }\AttributeTok{ylab =} \StringTok{"Count"}\NormalTok{)}
+\FunctionTok{barplot}\NormalTok{(species\_counts, }
+        \AttributeTok{main =} \StringTok{"Counts of Penguin Species"}\NormalTok{, }
+        \AttributeTok{col =} \FunctionTok{c}\NormalTok{(}\StringTok{"purple"}\NormalTok{, }\StringTok{"cyan"}\NormalTok{, }\StringTok{"gold"}\NormalTok{), }
+        \AttributeTok{ylab =} \StringTok{"Count"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-39-1} \end{center}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-37-1.pdf}
 
 Pie chart of species distribution
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{pie}\NormalTok{(species\_counts, }\AttributeTok{main =} \StringTok{"Species Distribution"}\NormalTok{,}
-    \AttributeTok{col =} \FunctionTok{c}\NormalTok{(}\StringTok{"purple"}\NormalTok{, }\StringTok{"cyan"}\NormalTok{, }\StringTok{"gold"}\NormalTok{), }\AttributeTok{border =} \StringTok{"antiquewhite3"}\NormalTok{)}
+\FunctionTok{pie}\NormalTok{(species\_counts, }
+    \AttributeTok{main =} \StringTok{"Species Distribution"}\NormalTok{, }
+    \AttributeTok{col =} \FunctionTok{c}\NormalTok{(}\StringTok{"purple"}\NormalTok{, }\StringTok{"cyan"}\NormalTok{, }\StringTok{"gold"}\NormalTok{),}
+    \AttributeTok{border =} \StringTok{"antiquewhite3"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-40-1} \end{center}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-38-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# cl \textless{}{-} colors() Nº colores}
+\CommentTok{\# cl \textless{}{-} colors() Nº colores }
 \end{Highlighting}
 \end{Shaded}
 
@@ -1027,49 +1034,54 @@ Density plot of bill length
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{plot}\NormalTok{(}\FunctionTok{density}\NormalTok{(penguins}\SpecialCharTok{$}\NormalTok{bill\_length\_mm), }\AttributeTok{main =} \StringTok{"Density Plot of Bill Length"}\NormalTok{,}
-    \AttributeTok{xlab =} \StringTok{"Bill Length (mm)"}\NormalTok{, }\AttributeTok{col =} \StringTok{"darkgreen"}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{density}\NormalTok{(penguins}\SpecialCharTok{$}\NormalTok{bill\_length\_mm), }
+     \AttributeTok{main =} \StringTok{"Density Plot of Bill Length"}\NormalTok{, }
+     \AttributeTok{xlab =} \StringTok{"Bill Length (mm)"}\NormalTok{, }
+     \AttributeTok{col =} \StringTok{"darkgreen"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-41-1} \end{center}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-39-1.pdf}
 
 Pairs plot for numeric variables
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{pairs}\NormalTok{(penguins[, }\FunctionTok{sapply}\NormalTok{(penguins, is.numeric)],}
-    \AttributeTok{main =} \StringTok{"Pairs Plot for Penguins Data"}\NormalTok{)}
+\FunctionTok{pairs}\NormalTok{(penguins[, }\FunctionTok{sapply}\NormalTok{(penguins, is.numeric)], }
+      \AttributeTok{main =} \StringTok{"Pairs Plot for Penguins Data"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-42-1} \end{center}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-40-1.pdf}
 
 Stripchart of body mass by species
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{stripchart}\NormalTok{(body\_mass\_g }\SpecialCharTok{\textasciitilde{}}\NormalTok{ species, }\AttributeTok{data =}\NormalTok{ penguins,}
-    \AttributeTok{vertical =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{main =} \StringTok{"Stripchart of Body Mass by Species"}\NormalTok{,}
-    \AttributeTok{col =} \FunctionTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{, }\StringTok{"blue"}\NormalTok{, }\StringTok{"green"}\NormalTok{))}
+\FunctionTok{stripchart}\NormalTok{(body\_mass\_g }\SpecialCharTok{\textasciitilde{}}\NormalTok{ species, }\AttributeTok{data =}\NormalTok{ penguins, }
+           \AttributeTok{vertical =} \ConstantTok{TRUE}\NormalTok{, }
+           \AttributeTok{main =} \StringTok{"Stripchart of Body Mass by Species"}\NormalTok{, }
+           \AttributeTok{col =} \FunctionTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{, }\StringTok{"blue"}\NormalTok{, }\StringTok{"green"}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-43-1} \end{center}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-41-1.pdf}
 
 Scatter plot with regression line
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{plot}\NormalTok{(penguins}\SpecialCharTok{$}\NormalTok{bill\_length\_mm, penguins}\SpecialCharTok{$}\NormalTok{bill\_depth\_mm,}
-    \AttributeTok{main =} \StringTok{"Bill Length vs Bill Depth"}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Bill Length (mm)"}\NormalTok{,}
-    \AttributeTok{ylab =} \StringTok{"Bill Depth (mm)"}\NormalTok{, }\AttributeTok{pch =} \DecValTok{19}\NormalTok{, }\AttributeTok{col =} \StringTok{"blue"}\NormalTok{)}
-\FunctionTok{abline}\NormalTok{(}\FunctionTok{lm}\NormalTok{(bill\_depth\_mm }\SpecialCharTok{\textasciitilde{}}\NormalTok{ bill\_length\_mm,}
-    \AttributeTok{data =}\NormalTok{ penguins), }\AttributeTok{col =} \StringTok{"red"}\NormalTok{, }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(penguins}\SpecialCharTok{$}\NormalTok{bill\_length\_mm, penguins}\SpecialCharTok{$}\NormalTok{bill\_depth\_mm, }
+     \AttributeTok{main =} \StringTok{"Bill Length vs Bill Depth"}\NormalTok{, }
+     \AttributeTok{xlab =} \StringTok{"Bill Length (mm)"}\NormalTok{, }
+     \AttributeTok{ylab =} \StringTok{"Bill Depth (mm)"}\NormalTok{, }
+     \AttributeTok{pch =} \DecValTok{19}\NormalTok{, }\AttributeTok{col =} \StringTok{"blue"}\NormalTok{)}
+\FunctionTok{abline}\NormalTok{(}\FunctionTok{lm}\NormalTok{(bill\_depth\_mm }\SpecialCharTok{\textasciitilde{}}\NormalTok{ bill\_length\_mm, }\AttributeTok{data =}\NormalTok{ penguins), }
+       \AttributeTok{col =} \StringTok{"red"}\NormalTok{, }\AttributeTok{lwd =} \DecValTok{2}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-44-1} \end{center}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-42-1.pdf}
 
 \hypertarget{tidyverse-universe-visualizations}{%
 \section{\texorpdfstring{\texttt{Tidyverse} universe Visualizations}{Tidyverse universe Visualizations}}\label{tidyverse-universe-visualizations}}
@@ -1088,22 +1100,25 @@ Histogram using ggplot2
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{ggplot}\NormalTok{(penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ body\_mass\_g)) }\SpecialCharTok{+}
-    \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \DecValTok{200}\NormalTok{, }\AttributeTok{fill =} \StringTok{"steelblue"}\NormalTok{,}
-        \AttributeTok{color =} \StringTok{"white"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Histogram of Body Mass"}\NormalTok{,}
-    \AttributeTok{x =} \StringTok{"Body Mass (g)"}\NormalTok{)}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \DecValTok{200}\NormalTok{, }
+                 \AttributeTok{fill =} \StringTok{"steelblue"}\NormalTok{, }
+                 \AttributeTok{color =} \StringTok{"white"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Histogram of Body Mass"}\NormalTok{, }
+       \AttributeTok{x =} \StringTok{"Body Mass (g)"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-46-1} \end{center}
-
+\includegraphics{_main_files/figure-latex/unnamed-chunk-44-1.pdf}
 Boxplot of body mass by species
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{body }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ species,}
-    \AttributeTok{y =}\NormalTok{ body\_mass\_g, }\AttributeTok{fill =}\NormalTok{ species)) }\SpecialCharTok{+} \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
-    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Body Mass by Species"}\NormalTok{,}
-        \AttributeTok{y =} \StringTok{"Body Mass (g)"}\NormalTok{)}
+\NormalTok{body }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ species, }
+                     \AttributeTok{y =}\NormalTok{ body\_mass\_g, }
+                     \AttributeTok{fill =}\NormalTok{ species)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Body Mass by Species"}\NormalTok{, }
+       \AttributeTok{y =} \StringTok{"Body Mass (g)"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1111,63 +1126,74 @@ Scatter plot of flipper length vs body mass
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ flipper\_length\_mm,}
-    \AttributeTok{y =}\NormalTok{ body\_mass\_g, }\AttributeTok{color =}\NormalTok{ species)) }\SpecialCharTok{+}
-    \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Flipper Length vs Body Mass"}\NormalTok{,}
-    \AttributeTok{x =} \StringTok{"Flipper Length (mm)"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Body Mass (g)"}\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ flipper\_length\_mm, }
+                     \AttributeTok{y =}\NormalTok{ body\_mass\_g, }
+                     \AttributeTok{color =}\NormalTok{ species)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Flipper Length vs Body Mass"}\NormalTok{, }
+       \AttributeTok{x =} \StringTok{"Flipper Length (mm)"}\NormalTok{, }
+       \AttributeTok{y =} \StringTok{"Body Mass (g)"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-48-1} \end{center}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-46-1.pdf}
 
 Bar plot of species counts
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{ggplot}\NormalTok{(penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ species, }\AttributeTok{fill =}\NormalTok{ species)) }\SpecialCharTok{+}
-    \FunctionTok{geom\_bar}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Counts of Penguin Species"}\NormalTok{)}
+  \FunctionTok{geom\_bar}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Counts of Penguin Species"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-49-1} \end{center}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-47-1.pdf}
 
 Density plot of bill length
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ bill\_length\_mm,}
-    \AttributeTok{fill =}\NormalTok{ species)) }\SpecialCharTok{+} \FunctionTok{geom\_density}\NormalTok{(}\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}
-    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Density Plot of Bill Length"}\NormalTok{,}
-        \AttributeTok{x =} \StringTok{"Bill Length (mm)"}\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(penguins, }
+       \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ bill\_length\_mm, }
+           \AttributeTok{fill =}\NormalTok{ species)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_density}\NormalTok{(}\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Density Plot of Bill Length"}\NormalTok{, }
+       \AttributeTok{x =} \StringTok{"Bill Length (mm)"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-50-1} \end{center}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-48-1.pdf}
 
 Violin plot of body mass by species
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ species, }\AttributeTok{y =}\NormalTok{ body\_mass\_g,}
-    \AttributeTok{fill =}\NormalTok{ species)) }\SpecialCharTok{+} \FunctionTok{geom\_violin}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Violin Plot of Body Mass by Species"}\NormalTok{,}
-    \AttributeTok{y =} \StringTok{"Body Mass (g)"}\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ species, }
+                     \AttributeTok{y =}\NormalTok{ body\_mass\_g, }
+                     \AttributeTok{fill =}\NormalTok{ species)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_violin}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Violin Plot of Body Mass by Species"}\NormalTok{, }
+       \AttributeTok{y =} \StringTok{"Body Mass (g)"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-51-1} \end{center}
-
+\includegraphics{_main_files/figure-latex/unnamed-chunk-49-1.pdf}
 Faceted scatter plot
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ bill\_length\_mm,}
-    \AttributeTok{y =}\NormalTok{ bill\_depth\_mm, }\AttributeTok{color =}\NormalTok{ species)) }\SpecialCharTok{+}
-    \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{species) }\SpecialCharTok{+}
-    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Bill Length vs Bill Depth by Species"}\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(penguins, }
+       \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ bill\_length\_mm, }
+           \AttributeTok{y =}\NormalTok{ bill\_depth\_mm, }
+           \AttributeTok{color =}\NormalTok{ species)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{species) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Bill Length vs Bill Depth by Species"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-52-1} \end{center}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-50-1.pdf}
 
 Correlations plot
 
@@ -1175,9 +1201,10 @@ Select numeric columns and compute correlation matrix
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{penguins\_numeric }\OtherTok{\textless{}{-}}\NormalTok{ penguins }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{select}\NormalTok{(}\FunctionTok{where}\NormalTok{(is.numeric))}
-\NormalTok{cor\_matrix }\OtherTok{\textless{}{-}} \FunctionTok{cor}\NormalTok{(penguins\_numeric, }\AttributeTok{use =} \StringTok{"complete.obs"}\NormalTok{)}
+\NormalTok{penguins\_numeric }\OtherTok{\textless{}{-}}\NormalTok{ penguins }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}\FunctionTok{where}\NormalTok{(is.numeric))}
+\NormalTok{cor\_matrix }\OtherTok{\textless{}{-}} \FunctionTok{cor}\NormalTok{(penguins\_numeric, }
+                  \AttributeTok{use =} \StringTok{"complete.obs"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1185,8 +1212,8 @@ Melt the correlation matrix for ggplot
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{cor\_data }\OtherTok{\textless{}{-}}\NormalTok{ data.table}\SpecialCharTok{::}\FunctionTok{melt}\NormalTok{(cor\_matrix,}
-    \AttributeTok{varnames =} \FunctionTok{c}\NormalTok{(}\StringTok{"Var1"}\NormalTok{, }\StringTok{"Var2"}\NormalTok{))}
+\NormalTok{cor\_data }\OtherTok{\textless{}{-}}\NormalTok{ data.table}\SpecialCharTok{::}\FunctionTok{melt}\NormalTok{(cor\_matrix, }
+                             \AttributeTok{varnames =} \FunctionTok{c}\NormalTok{(}\StringTok{"Var1"}\NormalTok{, }\StringTok{"Var2"}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1194,48 +1221,62 @@ Create the heatmap plot
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(cor\_data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Var1, }\AttributeTok{y =}\NormalTok{ Var2,}
-    \AttributeTok{fill =}\NormalTok{ value)) }\SpecialCharTok{+} \FunctionTok{geom\_tile}\NormalTok{(}\AttributeTok{color =} \StringTok{"white"}\NormalTok{) }\SpecialCharTok{+}
-    \FunctionTok{scale\_fill\_gradient2}\NormalTok{(}\AttributeTok{low =} \StringTok{"red"}\NormalTok{, }\AttributeTok{mid =} \StringTok{"white"}\NormalTok{,}
-        \AttributeTok{high =} \StringTok{"blue"}\NormalTok{, }\AttributeTok{midpoint =} \DecValTok{0}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{geom\_text}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{label =} \FunctionTok{round}\NormalTok{(value,}
-    \DecValTok{2}\NormalTok{)), }\AttributeTok{color =} \StringTok{"black"}\NormalTok{, }\AttributeTok{size =} \DecValTok{4}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
-    \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle =} \DecValTok{90}\NormalTok{,}
-        \AttributeTok{hjust =} \DecValTok{1}\NormalTok{), }\AttributeTok{axis.text.y =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size =} \DecValTok{10}\NormalTok{)) }\SpecialCharTok{+}
-    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Correlation Heatmap of Numeric Variables"}\NormalTok{,}
-        \AttributeTok{x =} \StringTok{"Variables"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Variables"}\NormalTok{,}
-        \AttributeTok{fill =} \StringTok{"Correlation"}\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(cor\_data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Var1,}
+                     \AttributeTok{y =}\NormalTok{ Var2, }
+                     \AttributeTok{fill =}\NormalTok{ value)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_tile}\NormalTok{(}\AttributeTok{color =} \StringTok{"white"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_gradient2}\NormalTok{(}\AttributeTok{low =} \StringTok{"red"}\NormalTok{, }\AttributeTok{mid =} \StringTok{"white"}\NormalTok{, }
+                       \AttributeTok{high =} \StringTok{"blue"}\NormalTok{,}
+                       \AttributeTok{midpoint =} \DecValTok{0}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_text}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{label =} \FunctionTok{round}\NormalTok{(value, }\DecValTok{2}\NormalTok{)), }\AttributeTok{color =} \StringTok{"black"}\NormalTok{, }\AttributeTok{size =} \DecValTok{4}\NormalTok{) }\SpecialCharTok{+}  
+  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}
+    \AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle =} \DecValTok{90}\NormalTok{, }\AttributeTok{hjust =} \DecValTok{1}\NormalTok{),}
+    \AttributeTok{axis.text.y =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size =} \DecValTok{10}\NormalTok{)}
+\NormalTok{  ) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{title =} \StringTok{"Correlation Heatmap of Numeric Variables"}\NormalTok{,}
+    \AttributeTok{x =} \StringTok{"Variables"}\NormalTok{,}
+    \AttributeTok{y =} \StringTok{"Variables"}\NormalTok{,}
+    \AttributeTok{fill =} \StringTok{"Correlation"}
+\NormalTok{  )}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-55-1} \end{center}
-
+\includegraphics{_main_files/figure-latex/unnamed-chunk-53-1.pdf}
 Dot plot
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(penguins, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ body\_mass\_g, }\AttributeTok{y =}\NormalTok{ species)) }\SpecialCharTok{+}
-    \FunctionTok{geom\_dotplot}\NormalTok{(}\AttributeTok{binaxis =} \StringTok{"x"}\NormalTok{, }\AttributeTok{stackdir =} \StringTok{"center"}\NormalTok{,}
-        \AttributeTok{dotsize =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Dot Plot of Body Mass by Species"}\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(penguins, }
+       \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ body\_mass\_g, }
+           \AttributeTok{y =}\NormalTok{ species)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_dotplot}\NormalTok{(}\AttributeTok{binaxis =} \StringTok{"x"}\NormalTok{, }
+               \AttributeTok{stackdir =} \StringTok{"center"}\NormalTok{, }
+               \AttributeTok{dotsize =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Dot Plot of Body Mass by Species"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-56-1} \end{center}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-54-1.pdf}
 
 Plot regression with tidyverse
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{penguins }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ flipper\_length\_mm, }\AttributeTok{y =}\NormalTok{ body\_mass\_g)) }\SpecialCharTok{+}
-    \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{color =} \StringTok{"skyblue"}\NormalTok{, }\AttributeTok{size =} \DecValTok{3}\NormalTok{) }\SpecialCharTok{+}
-    \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"loess"}\NormalTok{, }\AttributeTok{color =} \StringTok{"red"}\NormalTok{,}
-        \AttributeTok{se =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Linear Regression: Body Mass vs Flipper Length"}\NormalTok{,}
-    \AttributeTok{x =} \StringTok{"Flipper Length (mm)"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Body Mass (g)"}\NormalTok{) }\SpecialCharTok{+}
-    \FunctionTok{theme\_minimal}\NormalTok{()}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ flipper\_length\_mm, }\AttributeTok{y =}\NormalTok{ body\_mass\_g)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{color =} \StringTok{"skyblue"}\NormalTok{, }\AttributeTok{size =} \DecValTok{3}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"loess"}\NormalTok{,}
+              \AttributeTok{color =} \StringTok{"red"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Linear Regression: Body Mass vs Flipper Length"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"Flipper Length (mm)"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Body Mass (g)"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-57-1} \end{center}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-55-1.pdf}
 
 Multivariate Analysis Example (PCA)
 
@@ -1243,10 +1284,13 @@ Base R PCA
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{pca\_data }\OtherTok{\textless{}{-}}\NormalTok{ penguins }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{select}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"bill\_length\_mm"}\NormalTok{, }\StringTok{"bill\_depth\_mm"}\NormalTok{,}
-        \StringTok{"flipper\_length\_mm"}\NormalTok{, }\StringTok{"body\_mass\_g"}\NormalTok{))}
-\NormalTok{pca\_result }\OtherTok{\textless{}{-}} \FunctionTok{prcomp}\NormalTok{(}\FunctionTok{na.omit}\NormalTok{(pca\_data), }\AttributeTok{scale. =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{pca\_data }\OtherTok{\textless{}{-}}\NormalTok{ penguins }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"bill\_length\_mm"}\NormalTok{,}
+                         \StringTok{"bill\_depth\_mm"}\NormalTok{, }
+                         \StringTok{"flipper\_length\_mm"}\NormalTok{, }
+                         \StringTok{"body\_mass\_g"}\NormalTok{))}
+\NormalTok{pca\_result }\OtherTok{\textless{}{-}} \FunctionTok{prcomp}\NormalTok{(}\FunctionTok{na.omit}\NormalTok{(pca\_data), }
+                     \AttributeTok{scale. =} \ConstantTok{TRUE}\NormalTok{)}
 \FunctionTok{summary}\NormalTok{(pca\_result)}
 \end{Highlighting}
 \end{Shaded}
@@ -1267,55 +1311,53 @@ PCA Plot in Base R
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-59-1} \end{center}
-
+\includegraphics{_main_files/figure-latex/unnamed-chunk-57-1.pdf}
 Clustering with k-means
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(cluster)}
 
-\CommentTok{\# Seleccionar solo las columnas}
-\CommentTok{\# numéricas necesarias (removiendo NAs)}
-\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{na.omit}\NormalTok{(penguins[, }\FunctionTok{c}\NormalTok{(}\StringTok{"bill\_length\_mm"}\NormalTok{,}
-    \StringTok{"bill\_depth\_mm"}\NormalTok{, }\StringTok{"flipper\_length\_mm"}\NormalTok{,}
-    \StringTok{"body\_mass\_g"}\NormalTok{)])}
+\CommentTok{\# Seleccionar solo las columnas numéricas necesarias (removiendo NAs)}
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{na.omit}\NormalTok{(penguins[, }\FunctionTok{c}\NormalTok{(}\StringTok{"bill\_length\_mm"}\NormalTok{, }\StringTok{"bill\_depth\_mm"}\NormalTok{, }
+                             \StringTok{"flipper\_length\_mm"}\NormalTok{, }\StringTok{"body\_mass\_g"}\NormalTok{)])}
 
 \CommentTok{\# Escalado de los datos}
 \NormalTok{scaled\_data }\OtherTok{\textless{}{-}} \FunctionTok{scale}\NormalTok{(data)}
 
-\CommentTok{\# Selección del número óptimo de}
-\CommentTok{\# clústeres (Método Elbow)}
+\CommentTok{\# Selección del número óptimo de clústeres (Método Elbow)}
 \NormalTok{wss }\OtherTok{\textless{}{-}} \FunctionTok{sapply}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{, }\ControlFlowTok{function}\NormalTok{(k) \{}
-    \FunctionTok{kmeans}\NormalTok{(scaled\_data, }\AttributeTok{centers =}\NormalTok{ k, }\AttributeTok{nstart =} \DecValTok{25}\NormalTok{)}\SpecialCharTok{$}\NormalTok{tot.withinss}
+  \FunctionTok{kmeans}\NormalTok{(scaled\_data, }\AttributeTok{centers =}\NormalTok{ k, }\AttributeTok{nstart =} \DecValTok{25}\NormalTok{)}\SpecialCharTok{$}\NormalTok{tot.withinss}
 \NormalTok{\})}
 
 \CommentTok{\# Gráfico del codo}
 \FunctionTok{plot}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{, wss, }\AttributeTok{type =} \StringTok{"b"}\NormalTok{, }\AttributeTok{pch =} \DecValTok{19}\NormalTok{, }\AttributeTok{frame =} \ConstantTok{FALSE}\NormalTok{,}
-    \AttributeTok{xlab =} \StringTok{"Número de clusters"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"Suma total de cuadrados dentro de los clusters"}\NormalTok{)}
+     \AttributeTok{xlab =} \StringTok{"Número de clusters"}\NormalTok{,}
+     \AttributeTok{ylab =} \StringTok{"Suma total de cuadrados dentro de los clusters"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-60-1} \end{center}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-58-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Aplicación del algoritmo k{-}means}
-\NormalTok{kmeans\_result }\OtherTok{\textless{}{-}} \FunctionTok{kmeans}\NormalTok{(scaled\_data, }\AttributeTok{centers =} \DecValTok{3}\NormalTok{,}
-    \AttributeTok{nstart =} \DecValTok{25}\NormalTok{)}
+\NormalTok{kmeans\_result }\OtherTok{\textless{}{-}} \FunctionTok{kmeans}\NormalTok{(scaled\_data, }\AttributeTok{centers =} \DecValTok{3}\NormalTok{, }
+                        \AttributeTok{nstart =} \DecValTok{25}\NormalTok{)}
 \NormalTok{data}\SpecialCharTok{$}\NormalTok{cluster }\OtherTok{\textless{}{-}} \FunctionTok{as.factor}\NormalTok{(kmeans\_result}\SpecialCharTok{$}\NormalTok{cluster)}
 
 \CommentTok{\# Visualización de clústeres}
 \FunctionTok{library}\NormalTok{(factoextra)}
 
 \CommentTok{\# Visualización en un espacio PCA}
-\FunctionTok{fviz\_cluster}\NormalTok{(kmeans\_result, }\AttributeTok{data =}\NormalTok{ scaled\_data,}
-    \AttributeTok{geom =} \StringTok{"point"}\NormalTok{, }\AttributeTok{ellipse.type =} \StringTok{"convex"}\NormalTok{,}
-    \AttributeTok{ggtheme =} \FunctionTok{theme\_minimal}\NormalTok{())}
+\FunctionTok{fviz\_cluster}\NormalTok{(kmeans\_result, }
+             \AttributeTok{data =}\NormalTok{ scaled\_data,}
+             \AttributeTok{geom =} \StringTok{"point"}\NormalTok{, }\AttributeTok{ellipse.type =} \StringTok{"convex"}\NormalTok{,}
+             \AttributeTok{ggtheme =} \FunctionTok{theme\_minimal}\NormalTok{())}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-61-1} \end{center}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-59-1.pdf}
 
 \hypertarget{simple-maps}{%
 \section{Simple maps}\label{simple-maps}}
@@ -1348,7 +1390,7 @@ Puerto Montt example
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{region\_puerto\_montt }\OtherTok{\textless{}{-}}\NormalTok{ chile }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{filter}\NormalTok{(name\_en }\SpecialCharTok{==} \StringTok{"Los Lagos"}\NormalTok{)}
+  \FunctionTok{filter}\NormalTok{(name\_en }\SpecialCharTok{==} \StringTok{"Los Lagos"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1359,14 +1401,13 @@ random coordinates with variable
 \NormalTok{lat\_center }\OtherTok{\textless{}{-}} \SpecialCharTok{{-}}\FloatTok{41.469}
 \NormalTok{lon\_center }\OtherTok{\textless{}{-}} \SpecialCharTok{{-}}\FloatTok{72.942}
 
-\CommentTok{\# set.seed(42) \# Semilla para}
-\CommentTok{\# reproducibilidad}
+\CommentTok{\#set.seed(42)  \# Semilla para reproducibilidad}
 \NormalTok{n\_points }\OtherTok{\textless{}{-}} \DecValTok{50}
-\NormalTok{points\_data }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{lon =} \FunctionTok{runif}\NormalTok{(n\_points,}
-\NormalTok{    lon\_center }\SpecialCharTok{{-}} \FloatTok{0.8}\NormalTok{, lon\_center }\SpecialCharTok{+} \FloatTok{0.8}\NormalTok{),}
-    \AttributeTok{lat =} \FunctionTok{runif}\NormalTok{(n\_points, lat\_center }\SpecialCharTok{{-}} \FloatTok{0.8}\NormalTok{,}
-\NormalTok{        lat\_center }\SpecialCharTok{+} \FloatTok{0.8}\NormalTok{), }\AttributeTok{respiration\_rate =} \FunctionTok{rnorm}\NormalTok{(n\_points,}
-        \AttributeTok{mean =} \DecValTok{10}\NormalTok{, }\AttributeTok{sd =} \DecValTok{2}\NormalTok{))}
+\NormalTok{points\_data }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
+  \AttributeTok{lon =} \FunctionTok{runif}\NormalTok{(n\_points, lon\_center }\SpecialCharTok{{-}} \FloatTok{0.8}\NormalTok{, lon\_center }\SpecialCharTok{+} \FloatTok{0.8}\NormalTok{),}
+  \AttributeTok{lat =} \FunctionTok{runif}\NormalTok{(n\_points, lat\_center }\SpecialCharTok{{-}} \FloatTok{0.8}\NormalTok{, lat\_center }\SpecialCharTok{+} \FloatTok{0.8}\NormalTok{),}
+  \AttributeTok{respiration\_rate =} \FunctionTok{rnorm}\NormalTok{(n\_points, }\AttributeTok{mean =} \DecValTok{10}\NormalTok{, }\AttributeTok{sd =} \DecValTok{2}\NormalTok{)  }
+\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1374,8 +1415,7 @@ Convert \texttt{sf} object
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{points\_sf }\OtherTok{\textless{}{-}} \FunctionTok{st\_as\_sf}\NormalTok{(points\_data, }\AttributeTok{coords =} \FunctionTok{c}\NormalTok{(}\StringTok{"lon"}\NormalTok{,}
-    \StringTok{"lat"}\NormalTok{), }\AttributeTok{crs =} \DecValTok{4326}\NormalTok{)}
+\NormalTok{points\_sf }\OtherTok{\textless{}{-}} \FunctionTok{st\_as\_sf}\NormalTok{(points\_data, }\AttributeTok{coords =} \FunctionTok{c}\NormalTok{(}\StringTok{"lon"}\NormalTok{, }\StringTok{"lat"}\NormalTok{), }\AttributeTok{crs =} \DecValTok{4326}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1384,26 +1424,29 @@ Test map with attributes
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{plot }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ region\_puerto\_montt) }\SpecialCharTok{+}
-    \FunctionTok{geom\_sf}\NormalTok{(}\AttributeTok{fill =} \StringTok{"lightblue"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{geom\_sf}\NormalTok{(}\AttributeTok{data =}\NormalTok{ points\_sf,}
-    \FunctionTok{aes}\NormalTok{(}\AttributeTok{color =}\NormalTok{ respiration\_rate), }\AttributeTok{size =} \DecValTok{3}\NormalTok{) }\SpecialCharTok{+}
-    \FunctionTok{scale\_color\_viridis\_c}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{annotation\_scale}\NormalTok{(}\AttributeTok{location =} \StringTok{"bl"}\NormalTok{) }\SpecialCharTok{+}
-    \FunctionTok{annotation\_north\_arrow}\NormalTok{(}\AttributeTok{location =} \StringTok{"tr"}\NormalTok{,}
-        \AttributeTok{which\_north =} \StringTok{"true"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Puntos Aleatorios en Puerto Montt"}\NormalTok{,}
+  \FunctionTok{geom\_sf}\NormalTok{(}\AttributeTok{fill =} \StringTok{"lightblue"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_sf}\NormalTok{(}\AttributeTok{data =}\NormalTok{ points\_sf, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{color =}\NormalTok{ respiration\_rate), }\AttributeTok{size =} \DecValTok{3}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_viridis\_c}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{annotation\_scale}\NormalTok{(}\AttributeTok{location =} \StringTok{"bl"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{annotation\_north\_arrow}\NormalTok{(}\AttributeTok{location =} \StringTok{"tr"}\NormalTok{, }\AttributeTok{which\_north =} \StringTok{"true"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{title =} \StringTok{"Puntos Aleatorios en Puerto Montt"}\NormalTok{,}
     \AttributeTok{subtitle =} \StringTok{"Tasa de respiración de animales (simulada)"}\NormalTok{,}
-    \AttributeTok{color =} \StringTok{"Respiration Rate"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{theme\_minimal}\NormalTok{()}
+    \AttributeTok{color =} \StringTok{"Respiration Rate"}
+\NormalTok{  ) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
 
 \FunctionTok{print}\NormalTok{(plot)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-67-1} \end{center}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-65-1.pdf}
 
 Convertir a objeto espacial \texttt{sf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{points\_sf }\OtherTok{\textless{}{-}} \FunctionTok{st\_as\_sf}\NormalTok{(points\_data, }\AttributeTok{coords =} \FunctionTok{c}\NormalTok{(}\StringTok{"lon"}\NormalTok{,}
-    \StringTok{"lat"}\NormalTok{), }\AttributeTok{crs =} \DecValTok{4326}\NormalTok{)}
+\NormalTok{points\_sf }\OtherTok{\textless{}{-}} \FunctionTok{st\_as\_sf}\NormalTok{(points\_data, }\AttributeTok{coords =} \FunctionTok{c}\NormalTok{(}\StringTok{"lon"}\NormalTok{, }\StringTok{"lat"}\NormalTok{), }\AttributeTok{crs =} \DecValTok{4326}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1414,86 +1457,93 @@ Heat map
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ region\_puerto\_montt) }\SpecialCharTok{+} \FunctionTok{geom\_sf}\NormalTok{(}\AttributeTok{fill =} \StringTok{"lightgrey"}\NormalTok{) }\SpecialCharTok{+}
-    \FunctionTok{stat\_density\_2d}\NormalTok{(}\AttributeTok{data =}\NormalTok{ points\_data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ lon,}
-        \AttributeTok{y =}\NormalTok{ lat, }\AttributeTok{fill =}\NormalTok{ ..level..), }\AttributeTok{geom =} \StringTok{"polygon"}\NormalTok{) }\SpecialCharTok{+}
-    \FunctionTok{scale\_fill\_viridis\_c}\NormalTok{(}\AttributeTok{option =} \StringTok{"C"}\NormalTok{) }\SpecialCharTok{+}
-    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Mapa de Calor de Tasas de Respiración"}\NormalTok{) }\SpecialCharTok{+}
-    \FunctionTok{theme\_minimal}\NormalTok{()}
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ region\_puerto\_montt) }\SpecialCharTok{+}
+  \FunctionTok{geom\_sf}\NormalTok{(}\AttributeTok{fill =} \StringTok{"lightgrey"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{stat\_density\_2d}\NormalTok{(}\AttributeTok{data =}\NormalTok{ points\_data, }
+                  \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ lon, }\AttributeTok{y =}\NormalTok{ lat, }
+                      \AttributeTok{fill =}\NormalTok{ ..level..), }
+                  \AttributeTok{geom =} \StringTok{"polygon"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_viridis\_c}\NormalTok{(}\AttributeTok{option=}\StringTok{"C"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Mapa de Calor de Tasas de Respiración"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-69-1} \end{center}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-67-1.pdf}
 
 Points by attribute
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ region\_puerto\_montt) }\SpecialCharTok{+} \FunctionTok{geom\_sf}\NormalTok{(}\AttributeTok{fill =} \StringTok{"lightgreen"}\NormalTok{) }\SpecialCharTok{+}
-    \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ points\_data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ lon,}
-        \AttributeTok{y =}\NormalTok{ lat, }\AttributeTok{size =}\NormalTok{ respiration\_rate,}
-        \AttributeTok{color =}\NormalTok{ respiration\_rate)) }\SpecialCharTok{+} \FunctionTok{scale\_color\_viridis\_c}\NormalTok{() }\SpecialCharTok{+}
-    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Rate respiration by attribute"}\NormalTok{) }\SpecialCharTok{+}
-    \FunctionTok{theme\_minimal}\NormalTok{()}
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ region\_puerto\_montt) }\SpecialCharTok{+}
+  \FunctionTok{geom\_sf}\NormalTok{(}\AttributeTok{fill =} \StringTok{"lightgreen"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ points\_data, }
+             \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ lon, }\AttributeTok{y =}\NormalTok{ lat, }
+                 \AttributeTok{size =}\NormalTok{ respiration\_rate, }
+                 \AttributeTok{color =}\NormalTok{ respiration\_rate)) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_viridis\_c}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Rate respiration by attribute"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-70-1} \end{center}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-68-1.pdf}
 
 Mapa con líneas de contorno
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ region\_puerto\_montt) }\SpecialCharTok{+} \FunctionTok{geom\_sf}\NormalTok{(}\AttributeTok{fill =} \StringTok{"lightyellow"}\NormalTok{) }\SpecialCharTok{+}
-    \FunctionTok{stat\_density\_2d}\NormalTok{(}\AttributeTok{data =}\NormalTok{ points\_data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ lon,}
-        \AttributeTok{y =}\NormalTok{ lat, }\AttributeTok{color =}\NormalTok{ ..level..), }\AttributeTok{geom =} \StringTok{"density2d"}\NormalTok{) }\SpecialCharTok{+}
-    \FunctionTok{scale\_color\_viridis\_c}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Mapa con Líneas de Contorno"}\NormalTok{) }\SpecialCharTok{+}
-    \FunctionTok{theme\_minimal}\NormalTok{()}
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ region\_puerto\_montt) }\SpecialCharTok{+}
+  \FunctionTok{geom\_sf}\NormalTok{(}\AttributeTok{fill =} \StringTok{"lightyellow"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{stat\_density\_2d}\NormalTok{(}\AttributeTok{data =}\NormalTok{ points\_data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ lon, }\AttributeTok{y =}\NormalTok{ lat, }\AttributeTok{color =}\NormalTok{ ..level..), }\AttributeTok{geom =} \StringTok{"density2d"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_viridis\_c}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Mapa con Líneas de Contorno"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-71-1} \end{center}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-69-1.pdf}
 
 Mapa por cuadrantes
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{points\_data }\OtherTok{\textless{}{-}}\NormalTok{ points\_data }\SpecialCharTok{\%\textgreater{}\%}
-    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{lat\_group =} \FunctionTok{cut}\NormalTok{(lat, }\AttributeTok{breaks =} \DecValTok{4}\NormalTok{),}
-        \AttributeTok{lon\_group =} \FunctionTok{cut}\NormalTok{(lon, }\AttributeTok{breaks =} \DecValTok{4}\NormalTok{))}
+  \FunctionTok{mutate}\NormalTok{(}
+    \AttributeTok{lat\_group =} \FunctionTok{cut}\NormalTok{(lat, }\AttributeTok{breaks =} \DecValTok{4}\NormalTok{),}
+    \AttributeTok{lon\_group =} \FunctionTok{cut}\NormalTok{(lon, }\AttributeTok{breaks =} \DecValTok{4}\NormalTok{)}
+\NormalTok{  )}
 
-\FunctionTok{ggplot}\NormalTok{(points\_data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ lon, }\AttributeTok{y =}\NormalTok{ lat,}
-    \AttributeTok{color =}\NormalTok{ respiration\_rate)) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{size =} \DecValTok{3}\NormalTok{) }\SpecialCharTok{+}
-    \FunctionTok{facet\_grid}\NormalTok{(lat\_group }\SpecialCharTok{\textasciitilde{}}\NormalTok{ lon\_group) }\SpecialCharTok{+} \FunctionTok{scale\_color\_viridis\_c}\NormalTok{() }\SpecialCharTok{+}
-    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Mapa Facetado por Cuadrantes"}\NormalTok{) }\SpecialCharTok{+}
-    \FunctionTok{theme\_minimal}\NormalTok{()}
+\FunctionTok{ggplot}\NormalTok{(points\_data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ lon, }\AttributeTok{y =}\NormalTok{ lat, }\AttributeTok{color =}\NormalTok{ respiration\_rate)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{size =} \DecValTok{3}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{facet\_grid}\NormalTok{(lat\_group }\SpecialCharTok{\textasciitilde{}}\NormalTok{ lon\_group) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_viridis\_c}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Mapa Facetado por Cuadrantes"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-72-1} \end{center}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-70-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# Cargar shapefile en R ruta\_shapefile}
-\CommentTok{\# \textless{}{-} \textquotesingle{}ruta/del/archivo.shp\textquotesingle{}}
-\CommentTok{\# shapefile\_data \textless{}{-}}
-\CommentTok{\# st\_read(ruta\_shapefile)}
+\CommentTok{\# Cargar shapefile en R}
+\CommentTok{\# ruta\_shapefile \textless{}{-} "ruta/del/archivo.shp"}
+\CommentTok{\# shapefile\_data \textless{}{-} st\_read(ruta\_shapefile)}
 \CommentTok{\# plot(st\_geometry(shapefile\_data))}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# Cargar archivo Excel con datos}
-\CommentTok{\# georreferenciados ruta\_excel \textless{}{-}}
-\CommentTok{\# \textquotesingle{}ruta/del/archivo.xlsx\textquotesingle{} datos\_excel}
-\CommentTok{\# \textless{}{-} read\_excel(ruta\_excel) sf\_datos \textless{}{-}}
-\CommentTok{\# st\_as\_sf(datos\_excel, coords =}
-\CommentTok{\# c(\textquotesingle{}lon\textquotesingle{}, \textquotesingle{}lat\textquotesingle{}), crs = 4326) ggplot()}
-\CommentTok{\# + geom\_sf(data = region\_puerto\_montt,}
-\CommentTok{\# fill = \textquotesingle{}lightgrey\textquotesingle{}) + geom\_sf(data =}
-\CommentTok{\# sf\_datos, color = \textquotesingle{}red\textquotesingle{}, size = 3) +}
-\CommentTok{\# theme\_minimal()}
+\CommentTok{\# Cargar archivo Excel con datos georreferenciados}
+\CommentTok{\# ruta\_excel \textless{}{-} "ruta/del/archivo.xlsx"}
+\CommentTok{\# datos\_excel \textless{}{-} read\_excel(ruta\_excel)}
+\CommentTok{\# sf\_datos \textless{}{-} st\_as\_sf(datos\_excel, coords = c("lon", "lat"), crs = 4326)}
+\CommentTok{\# ggplot() +}
+\CommentTok{\#   geom\_sf(data = region\_puerto\_montt, fill = "lightgrey") +}
+\CommentTok{\#   geom\_sf(data = sf\_datos, color = "red", size = 3) +}
+\CommentTok{\#   theme\_minimal()}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1637,7 +1687,7 @@ Or use:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\StringTok{\textasciigrave{}}\AttributeTok{?}\StringTok{\textasciigrave{}}\NormalTok{(bookdown}\SpecialCharTok{::}\NormalTok{gitbook)}
+\NormalTok{?bookdown}\SpecialCharTok{::}\NormalTok{gitbook}
 \end{Highlighting}
 \end{Shaded}
 
