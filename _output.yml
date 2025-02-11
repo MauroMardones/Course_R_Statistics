@@ -22,5 +22,6 @@ bookdown::pdf_book:
   keep_tex: yes
   linkcolor: blue
 
-bookdown::epub_book: default
+bookdown::epub_book:
+  keep_md: true
 

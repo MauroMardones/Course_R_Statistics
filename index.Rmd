@@ -1,7 +1,7 @@
 --- 
 title: "R Basic Course"
 subtitle: "This book was made with educational objetctive to improve R skill in students and professional staff"
-author: "Mardones, Mauricio. & Zúñiga, María José."
+author: "Mardones, Mauricio & Zúñiga, María José."
 date: "`r Sys.Date()`"
 output: pdf_document
 documentclass: book
