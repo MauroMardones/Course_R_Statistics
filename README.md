@@ -23,11 +23,11 @@ The online version of the course is available at the following link:
 
 ## Script 
 Raw exercise in script can be found here:
-[Script](https://github.com/MauroMardones/Course_R_Statistics/slides)  
+[Script](https://github.com/MauroMardones/Course_R_Statistics/tree/main/scripts)  
 
 ## Presentations  
 Interactive course presentations can be found here:  
-[Course Presentations](https://github.com/MauroMardones/Course_R_Statistics/slides)  
+[Course Presentations](https://github.com/MauroMardones/Course_R_Statistics/tree/main/slides)  
 
 to render each slides follow this;
 
