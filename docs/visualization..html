@@ -20,7 +20,7 @@
   
   
 
-<meta name="author" content="Mardones, Mauricio. &amp; Zúñiga, María José." />
+<meta name="author" content="Mardones, Mauricio &amp; Zúñiga, María José." />
 
 
 <meta name="date" content="2025-02-11" />
@@ -247,50 +247,50 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb57-3"><a href="visualization..html#cb57-3" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Body Mass (g)&quot;</span>, </span>
 <span id="cb57-4"><a href="visualization..html#cb57-4" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;skyblue&quot;</span>, </span>
 <span id="cb57-5"><a href="visualization..html#cb57-5" tabindex="-1"></a>     <span class="at">border =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+<embed src="_main_files/figure-html/unnamed-chunk-34-1.pdf" width="672" type="application/pdf" />
 <p>Boxplot of body mass by species</p>
 <div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="visualization..html#cb58-1" tabindex="-1"></a><span class="fu">boxplot</span>(body_mass_g <span class="sc">~</span> species, <span class="at">data =</span> penguins, </span>
 <span id="cb58-2"><a href="visualization..html#cb58-2" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;Body Mass by Species&quot;</span>, </span>
 <span id="cb58-3"><a href="visualization..html#cb58-3" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&quot;Body Mass (g)&quot;</span>, </span>
 <span id="cb58-4"><a href="visualization..html#cb58-4" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;tomato&quot;</span>, <span class="st">&quot;lightgreen&quot;</span>, <span class="st">&quot;lightblue&quot;</span>))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+<embed src="_main_files/figure-html/unnamed-chunk-35-1.pdf" width="672" type="application/pdf" />
 <p>Scatter plot of flipper length vs body mass</p>
 <div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="visualization..html#cb59-1" tabindex="-1"></a><span class="fu">plot</span>(penguins<span class="sc">$</span>flipper_length_mm, penguins<span class="sc">$</span>body_mass_g, </span>
 <span id="cb59-2"><a href="visualization..html#cb59-2" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Flipper Length vs Body Mass&quot;</span>, </span>
 <span id="cb59-3"><a href="visualization..html#cb59-3" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Flipper Length (mm)&quot;</span>, </span>
 <span id="cb59-4"><a href="visualization..html#cb59-4" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Body Mass (g)&quot;</span>, </span>
 <span id="cb59-5"><a href="visualization..html#cb59-5" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">&quot;darkorange&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+<embed src="_main_files/figure-html/unnamed-chunk-36-1.pdf" width="672" type="application/pdf" />
 <p>Bar plot of species counts</p>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="visualization..html#cb60-1" tabindex="-1"></a>species_counts <span class="ot">&lt;-</span> <span class="fu">table</span>(penguins<span class="sc">$</span>species)</span>
 <span id="cb60-2"><a href="visualization..html#cb60-2" tabindex="-1"></a><span class="fu">barplot</span>(species_counts, </span>
 <span id="cb60-3"><a href="visualization..html#cb60-3" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;Counts of Penguin Species&quot;</span>, </span>
 <span id="cb60-4"><a href="visualization..html#cb60-4" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;purple&quot;</span>, <span class="st">&quot;cyan&quot;</span>, <span class="st">&quot;gold&quot;</span>), </span>
 <span id="cb60-5"><a href="visualization..html#cb60-5" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&quot;Count&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<embed src="_main_files/figure-html/unnamed-chunk-37-1.pdf" width="672" type="application/pdf" />
 <p>Pie chart of species distribution</p>
 <div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="visualization..html#cb61-1" tabindex="-1"></a><span class="fu">pie</span>(species_counts, </span>
 <span id="cb61-2"><a href="visualization..html#cb61-2" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Species Distribution&quot;</span>, </span>
 <span id="cb61-3"><a href="visualization..html#cb61-3" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;purple&quot;</span>, <span class="st">&quot;cyan&quot;</span>, <span class="st">&quot;gold&quot;</span>),</span>
 <span id="cb61-4"><a href="visualization..html#cb61-4" tabindex="-1"></a>    <span class="at">border =</span> <span class="st">&quot;antiquewhite3&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+<embed src="_main_files/figure-html/unnamed-chunk-38-1.pdf" width="672" type="application/pdf" />
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="visualization..html#cb62-1" tabindex="-1"></a><span class="co"># cl &lt;- colors() Nº colores </span></span></code></pre></div>
 <p>Density plot of bill length</p>
 <div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="visualization..html#cb63-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(penguins<span class="sc">$</span>bill_length_mm), </span>
 <span id="cb63-2"><a href="visualization..html#cb63-2" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Density Plot of Bill Length&quot;</span>, </span>
 <span id="cb63-3"><a href="visualization..html#cb63-3" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Bill Length (mm)&quot;</span>, </span>
 <span id="cb63-4"><a href="visualization..html#cb63-4" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;darkgreen&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+<embed src="_main_files/figure-html/unnamed-chunk-39-1.pdf" width="672" type="application/pdf" />
 <p>Pairs plot for numeric variables</p>
 <div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="visualization..html#cb64-1" tabindex="-1"></a><span class="fu">pairs</span>(penguins[, <span class="fu">sapply</span>(penguins, is.numeric)], </span>
 <span id="cb64-2"><a href="visualization..html#cb64-2" tabindex="-1"></a>      <span class="at">main =</span> <span class="st">&quot;Pairs Plot for Penguins Data&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+<embed src="_main_files/figure-html/unnamed-chunk-40-1.pdf" width="672" type="application/pdf" />
 <p>Stripchart of body mass by species</p>
 <div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="visualization..html#cb65-1" tabindex="-1"></a><span class="fu">stripchart</span>(body_mass_g <span class="sc">~</span> species, <span class="at">data =</span> penguins, </span>
 <span id="cb65-2"><a href="visualization..html#cb65-2" tabindex="-1"></a>           <span class="at">vertical =</span> <span class="cn">TRUE</span>, </span>
 <span id="cb65-3"><a href="visualization..html#cb65-3" tabindex="-1"></a>           <span class="at">main =</span> <span class="st">&quot;Stripchart of Body Mass by Species&quot;</span>, </span>
 <span id="cb65-4"><a href="visualization..html#cb65-4" tabindex="-1"></a>           <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;green&quot;</span>))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
+<embed src="_main_files/figure-html/unnamed-chunk-41-1.pdf" width="672" type="application/pdf" />
 <p>Scatter plot with regression line</p>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="visualization..html#cb66-1" tabindex="-1"></a><span class="fu">plot</span>(penguins<span class="sc">$</span>bill_length_mm, penguins<span class="sc">$</span>bill_depth_mm, </span>
 <span id="cb66-2"><a href="visualization..html#cb66-2" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Bill Length vs Bill Depth&quot;</span>, </span>
@@ -299,7 +299,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb66-5"><a href="visualization..html#cb66-5" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
 <span id="cb66-6"><a href="visualization..html#cb66-6" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">lm</span>(bill_depth_mm <span class="sc">~</span> bill_length_mm, <span class="at">data =</span> penguins), </span>
 <span id="cb66-7"><a href="visualization..html#cb66-7" tabindex="-1"></a>       <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
+<embed src="_main_files/figure-html/unnamed-chunk-42-1.pdf" width="672" type="application/pdf" />
 </div>
 </div>
 <div id="tidyverse-universe-visualizations" class="section level2 hasAnchor" number="3.2">
@@ -314,8 +314,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb68-4"><a href="visualization..html#cb68-4" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
 <span id="cb68-5"><a href="visualization..html#cb68-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Histogram of Body Mass&quot;</span>, </span>
 <span id="cb68-6"><a href="visualization..html#cb68-6" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Body Mass (g)&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-44-1.png" width="672" />
-Boxplot of body mass by species</p>
+<embed src="_main_files/figure-html/unnamed-chunk-44-1.pdf" width="672" type="application/pdf" />
+<p>Boxplot of body mass by species</p>
 <div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="visualization..html#cb69-1" tabindex="-1"></a>body <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> species, </span>
 <span id="cb69-2"><a href="visualization..html#cb69-2" tabindex="-1"></a>                     <span class="at">y =</span> body_mass_g, </span>
 <span id="cb69-3"><a href="visualization..html#cb69-3" tabindex="-1"></a>                     <span class="at">fill =</span> species)) <span class="sc">+</span></span>
@@ -330,12 +330,12 @@ Boxplot of body mass by species</p>
 <span id="cb70-5"><a href="visualization..html#cb70-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Flipper Length vs Body Mass&quot;</span>, </span>
 <span id="cb70-6"><a href="visualization..html#cb70-6" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Flipper Length (mm)&quot;</span>, </span>
 <span id="cb70-7"><a href="visualization..html#cb70-7" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Body Mass (g)&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
+<embed src="_main_files/figure-html/unnamed-chunk-46-1.pdf" width="672" type="application/pdf" />
 <p>Bar plot of species counts</p>
 <div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="visualization..html#cb71-1" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
 <span id="cb71-2"><a href="visualization..html#cb71-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
 <span id="cb71-3"><a href="visualization..html#cb71-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Counts of Penguin Species&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
+<embed src="_main_files/figure-html/unnamed-chunk-47-1.pdf" width="672" type="application/pdf" />
 <p>Density plot of bill length</p>
 <div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="visualization..html#cb72-1" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, </span>
 <span id="cb72-2"><a href="visualization..html#cb72-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
@@ -343,7 +343,7 @@ Boxplot of body mass by species</p>
 <span id="cb72-4"><a href="visualization..html#cb72-4" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb72-5"><a href="visualization..html#cb72-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Density Plot of Bill Length&quot;</span>, </span>
 <span id="cb72-6"><a href="visualization..html#cb72-6" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Bill Length (mm)&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
+<embed src="_main_files/figure-html/unnamed-chunk-48-1.pdf" width="672" type="application/pdf" />
 <p>Violin plot of body mass by species</p>
 <div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="visualization..html#cb73-1" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> species, </span>
 <span id="cb73-2"><a href="visualization..html#cb73-2" tabindex="-1"></a>                     <span class="at">y =</span> body_mass_g, </span>
@@ -351,8 +351,8 @@ Boxplot of body mass by species</p>
 <span id="cb73-4"><a href="visualization..html#cb73-4" tabindex="-1"></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
 <span id="cb73-5"><a href="visualization..html#cb73-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Violin Plot of Body Mass by Species&quot;</span>, </span>
 <span id="cb73-6"><a href="visualization..html#cb73-6" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Body Mass (g)&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-49-1.png" width="672" />
-Faceted scatter plot</p>
+<embed src="_main_files/figure-html/unnamed-chunk-49-1.pdf" width="672" type="application/pdf" />
+<p>Faceted scatter plot</p>
 <div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="visualization..html#cb74-1" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, </span>
 <span id="cb74-2"><a href="visualization..html#cb74-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
 <span id="cb74-3"><a href="visualization..html#cb74-3" tabindex="-1"></a>           <span class="at">y =</span> bill_depth_mm, </span>
@@ -360,7 +360,7 @@ Faceted scatter plot</p>
 <span id="cb74-5"><a href="visualization..html#cb74-5" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb74-6"><a href="visualization..html#cb74-6" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species) <span class="sc">+</span></span>
 <span id="cb74-7"><a href="visualization..html#cb74-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Bill Length vs Bill Depth by Species&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
+<embed src="_main_files/figure-html/unnamed-chunk-50-1.pdf" width="672" type="application/pdf" />
 <p>Correlations plot</p>
 <p>Select numeric columns and compute correlation matrix</p>
 <div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="visualization..html#cb75-1" tabindex="-1"></a>penguins_numeric <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
@@ -390,8 +390,8 @@ Faceted scatter plot</p>
 <span id="cb77-17"><a href="visualization..html#cb77-17" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Variables&quot;</span>,</span>
 <span id="cb77-18"><a href="visualization..html#cb77-18" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;Correlation&quot;</span></span>
 <span id="cb77-19"><a href="visualization..html#cb77-19" tabindex="-1"></a>  )</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-53-1.png" width="672" />
-Dot plot</p>
+<embed src="_main_files/figure-html/unnamed-chunk-53-1.pdf" width="672" type="application/pdf" />
+<p>Dot plot</p>
 <div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="visualization..html#cb78-1" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, </span>
 <span id="cb78-2"><a href="visualization..html#cb78-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, </span>
 <span id="cb78-3"><a href="visualization..html#cb78-3" tabindex="-1"></a>           <span class="at">y =</span> species)) <span class="sc">+</span></span>
@@ -399,7 +399,7 @@ Dot plot</p>
 <span id="cb78-5"><a href="visualization..html#cb78-5" tabindex="-1"></a>               <span class="at">stackdir =</span> <span class="st">&quot;center&quot;</span>, </span>
 <span id="cb78-6"><a href="visualization..html#cb78-6" tabindex="-1"></a>               <span class="at">dotsize =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb78-7"><a href="visualization..html#cb78-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Dot Plot of Body Mass by Species&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
+<embed src="_main_files/figure-html/unnamed-chunk-54-1.pdf" width="672" type="application/pdf" />
 <p>Plot regression with tidyverse</p>
 <div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="visualization..html#cb79-1" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
 <span id="cb79-2"><a href="visualization..html#cb79-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
@@ -410,7 +410,7 @@ Dot plot</p>
 <span id="cb79-7"><a href="visualization..html#cb79-7" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Flipper Length (mm)&quot;</span>,</span>
 <span id="cb79-8"><a href="visualization..html#cb79-8" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Body Mass (g)&quot;</span>) <span class="sc">+</span></span>
 <span id="cb79-9"><a href="visualization..html#cb79-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
+<embed src="_main_files/figure-html/unnamed-chunk-55-1.pdf" width="672" type="application/pdf" />
 <p>Multivariate Analysis Example (PCA)</p>
 <p>Base R PCA</p>
 <div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="visualization..html#cb80-1" tabindex="-1"></a>pca_data <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> </span>
@@ -428,8 +428,8 @@ Dot plot</p>
 ## Cumulative Proportion  0.6863 0.8809 0.97303 1.00000</code></pre>
 <p>PCA Plot in Base R</p>
 <div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="visualization..html#cb82-1" tabindex="-1"></a><span class="fu">biplot</span>(pca_result, <span class="at">main =</span> <span class="st">&quot;PCA of Penguins Data&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-57-1.png" width="672" />
-Clustering with k-means</p>
+<embed src="_main_files/figure-html/unnamed-chunk-57-1.pdf" width="672" type="application/pdf" />
+<p>Clustering with k-means</p>
 <div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="visualization..html#cb83-1" tabindex="-1"></a><span class="fu">library</span>(cluster)</span>
 <span id="cb83-2"><a href="visualization..html#cb83-2" tabindex="-1"></a></span>
 <span id="cb83-3"><a href="visualization..html#cb83-3" tabindex="-1"></a><span class="co"># Seleccionar solo las columnas numéricas necesarias (removiendo NAs)</span></span>
@@ -448,7 +448,7 @@ Clustering with k-means</p>
 <span id="cb83-16"><a href="visualization..html#cb83-16" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, wss, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">frame =</span> <span class="cn">FALSE</span>,</span>
 <span id="cb83-17"><a href="visualization..html#cb83-17" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Número de clusters&quot;</span>,</span>
 <span id="cb83-18"><a href="visualization..html#cb83-18" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Suma total de cuadrados dentro de los clusters&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
+<embed src="_main_files/figure-html/unnamed-chunk-58-1.pdf" width="672" type="application/pdf" />
 <div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="visualization..html#cb84-1" tabindex="-1"></a><span class="co"># Aplicación del algoritmo k-means</span></span>
 <span id="cb84-2"><a href="visualization..html#cb84-2" tabindex="-1"></a>kmeans_result <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(scaled_data, <span class="at">centers =</span> <span class="dv">3</span>, </span>
 <span id="cb84-3"><a href="visualization..html#cb84-3" tabindex="-1"></a>                        <span class="at">nstart =</span> <span class="dv">25</span>)</span>
@@ -462,7 +462,7 @@ Clustering with k-means</p>
 <span id="cb84-11"><a href="visualization..html#cb84-11" tabindex="-1"></a>             <span class="at">data =</span> scaled_data,</span>
 <span id="cb84-12"><a href="visualization..html#cb84-12" tabindex="-1"></a>             <span class="at">geom =</span> <span class="st">&quot;point&quot;</span>, <span class="at">ellipse.type =</span> <span class="st">&quot;convex&quot;</span>,</span>
 <span id="cb84-13"><a href="visualization..html#cb84-13" tabindex="-1"></a>             <span class="at">ggtheme =</span> <span class="fu">theme_minimal</span>())</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
+<embed src="_main_files/figure-html/unnamed-chunk-59-1.pdf" width="672" type="application/pdf" />
 </div>
 <div id="simple-maps" class="section level2 hasAnchor" number="3.3">
 <h2><span class="header-section-number">3.3</span> Simple maps<a href="visualization..html#simple-maps" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -508,7 +508,7 @@ Clustering with k-means</p>
 <span id="cb90-12"><a href="visualization..html#cb90-12" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
 <span id="cb90-13"><a href="visualization..html#cb90-13" tabindex="-1"></a></span>
 <span id="cb90-14"><a href="visualization..html#cb90-14" tabindex="-1"></a><span class="fu">print</span>(plot)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-65-1.png" width="672" /></p>
+<embed src="_main_files/figure-html/unnamed-chunk-65-1.pdf" width="672" type="application/pdf" />
 <p>Convertir a objeto espacial <code>sf</code></p>
 <div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="visualization..html#cb91-1" tabindex="-1"></a>points_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(points_data, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;lon&quot;</span>, <span class="st">&quot;lat&quot;</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span></code></pre></div>
 <div id="other-maps" class="section level3 hasAnchor" number="3.3.1">
@@ -523,7 +523,7 @@ Clustering with k-means</p>
 <span id="cb92-7"><a href="visualization..html#cb92-7" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option=</span><span class="st">&quot;C&quot;</span>) <span class="sc">+</span></span>
 <span id="cb92-8"><a href="visualization..html#cb92-8" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Mapa de Calor de Tasas de Respiración&quot;</span>) <span class="sc">+</span></span>
 <span id="cb92-9"><a href="visualization..html#cb92-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
+<embed src="_main_files/figure-html/unnamed-chunk-67-1.pdf" width="672" type="application/pdf" />
 <p>Points by attribute</p>
 <div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="visualization..html#cb93-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> region_puerto_montt) <span class="sc">+</span></span>
 <span id="cb93-2"><a href="visualization..html#cb93-2" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">fill =</span> <span class="st">&quot;lightgreen&quot;</span>) <span class="sc">+</span></span>
@@ -534,7 +534,7 @@ Clustering with k-means</p>
 <span id="cb93-7"><a href="visualization..html#cb93-7" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>() <span class="sc">+</span></span>
 <span id="cb93-8"><a href="visualization..html#cb93-8" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Rate respiration by attribute&quot;</span>) <span class="sc">+</span></span>
 <span id="cb93-9"><a href="visualization..html#cb93-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
+<embed src="_main_files/figure-html/unnamed-chunk-68-1.pdf" width="672" type="application/pdf" />
 <p>Mapa con líneas de contorno</p>
 <div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="visualization..html#cb94-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> region_puerto_montt) <span class="sc">+</span></span>
 <span id="cb94-2"><a href="visualization..html#cb94-2" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">fill =</span> <span class="st">&quot;lightyellow&quot;</span>) <span class="sc">+</span></span>
@@ -542,7 +542,7 @@ Clustering with k-means</p>
 <span id="cb94-4"><a href="visualization..html#cb94-4" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>() <span class="sc">+</span></span>
 <span id="cb94-5"><a href="visualization..html#cb94-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Mapa con Líneas de Contorno&quot;</span>) <span class="sc">+</span></span>
 <span id="cb94-6"><a href="visualization..html#cb94-6" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
+<embed src="_main_files/figure-html/unnamed-chunk-69-1.pdf" width="672" type="application/pdf" />
 <p>Mapa por cuadrantes</p>
 <div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="visualization..html#cb95-1" tabindex="-1"></a>points_data <span class="ot">&lt;-</span> points_data <span class="sc">%&gt;%</span></span>
 <span id="cb95-2"><a href="visualization..html#cb95-2" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -556,7 +556,7 @@ Clustering with k-means</p>
 <span id="cb95-10"><a href="visualization..html#cb95-10" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>() <span class="sc">+</span></span>
 <span id="cb95-11"><a href="visualization..html#cb95-11" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Mapa Facetado por Cuadrantes&quot;</span>) <span class="sc">+</span></span>
 <span id="cb95-12"><a href="visualization..html#cb95-12" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-70-1.png" width="672" /></p>
+<embed src="_main_files/figure-html/unnamed-chunk-70-1.pdf" width="672" type="application/pdf" />
 <div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="visualization..html#cb96-1" tabindex="-1"></a><span class="co"># Cargar shapefile en R</span></span>
 <span id="cb96-2"><a href="visualization..html#cb96-2" tabindex="-1"></a><span class="co"># ruta_shapefile &lt;- &quot;ruta/del/archivo.shp&quot;</span></span>
 <span id="cb96-3"><a href="visualization..html#cb96-3" tabindex="-1"></a><span class="co"># shapefile_data &lt;- st_read(ruta_shapefile)</span></span>

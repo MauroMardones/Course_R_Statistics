@@ -17,7 +17,8 @@ site: bookdown::bookdown_site
 
 ```{r setup1, echo=FALSE}
 knitr::opts_chunk$set(message = FALSE,
-                      warning = FALSE)
+                      warning = FALSE,
+                      dev = "cairo_pdf")
 ```
 
 # About Course_R {-}
