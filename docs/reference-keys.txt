@@ -1,4 +1,3 @@
-fig:semi
 eq:binom
 user.-intro-to-r-and-basic-features
 welcome-r-user

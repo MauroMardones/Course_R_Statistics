@@ -15,12 +15,6 @@ site: bookdown::bookdown_site
 ---
 
 
-```{r setup1, echo=FALSE}
-knitr::opts_chunk$set(message = FALSE,
-                      warning = FALSE,
-                      dev = "cairo_pdf")
-```
-
 # About Course_R {-}
 
 Description and educational material for introductory course on R, descriptive statistics, and visualizations with applications in fisheries.

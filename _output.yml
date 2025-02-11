@@ -23,5 +23,5 @@ bookdown::pdf_book:
   linkcolor: blue
 
 bookdown::epub_book:
-  keep_md: true
+  toc: true
 
