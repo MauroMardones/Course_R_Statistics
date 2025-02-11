@@ -490,7 +490,6 @@ The `sf` package (Simple Features) by Edzer Pebesma is a crucial tool for spatia
 - `st_intersection()`, `st_union()`: Spatial operations.
 - `ggplot2::geom_sf()`: Plot spatial data directly.
 
----
 
 ### **Additional Resources**
 - [Official `sf` Documentation](https://r-spatial.github.io/sf/)  

@@ -1,14 +1,12 @@
 ---
 title: "Intro to R and Basic Features"
-author: "Mauricio Mardones. Biologo Marino. Instituto Español de Oceanografía, Spain."
+subtitle: "Curso R. Carrera Biología M/ Medio Ambiente. Universidad de Chile."
+author: "Mauricio Mardones. Biólogo Marino. Instituto Español de Oceanografía, Spain."
 date: "`r Sys.Date()`"
 output:
-  ioslides_presentation: default
-  widescreen: true
-  self_contained: true
-  css: custom.css
-  slidy_presentation: default
-subtitle: Curso R. Carrera Biología m/ Medio ambiente. Universidad de Chile.
+  ioslides_presentation:
+    widescreen: true
+    css: custom.css
 ---
 
 ```{r echo=FALSE}
@@ -28,10 +26,11 @@ library(tidyverse)
 
 - R comenzó a ser desarrollado en 1992 por Robert Gentleman y Ross Ihaka, de departamento de Estadística de la Universidad de Auckland (Nueva Zelanda), con el objetivo de disponer de un lenguaje para enseñar cursos introductorios de estadística.
 
-- La primera versión del programa sale en 1994; en 1995 adopta una licencia de software libre GNU. La difusión del programa se realiza boca a oreja.
+- La primera versión del programa sale en 1994; en 1995 adopta una licencia de software libre GNU. La difusión del programa se realiza boca a boca.
 
+##
 
-```{r echo=FALSE, out.width='50%', fig.align='center'}
+```{r echo=FALSE, out.width='75%', fig.align='center'}
 knitr::include_graphics(here::here('images/Ross&Robert.png'))
 ```
 
@@ -39,9 +38,8 @@ knitr::include_graphics(here::here('images/Ross&Robert.png'))
 
 - En 1996 publican en el Journal of Computational and Graphical Statistics un artículo describiendo el programa: [R: A language for data analysis and graphics](http://www.aliquote.org/cours/2012_biomed/biblio/Ihaka1996.pdf)
 
-##
 
-```{r echo=FALSE, out.width='60%', fig.align='center'}
+```{r echo=FALSE, out.width='50%', fig.align='center'}
 knitr::include_graphics('~/IEO/CURSOS/Course_R_Statistics/images/papeR.png')
 ```
 
@@ -54,15 +52,6 @@ knitr::include_graphics('~/IEO/CURSOS/Course_R_Statistics/images/papeR.png')
 
 <div style="width: 50%;">
 
-- Open source and free  
-- big community  
-- ~ 13.000 packages  
-- Reproducible science
-
-</div>
-
-<div style="width: 50%; text-align: center;">
-
 
 is just this
 
@@ -71,6 +60,17 @@ knitr::include_graphics(here::here('images/calc.jpg'))
 ```
 
 but... powerfull!
+
+</div>
+
+<div style="width: 50%; text-align: center;">
+
+
+
+- Open source and free  
+- big community  
+- ~ 13.000 packages  
+- Reproducible science
 
 
 
@@ -149,8 +149,16 @@ head(df)
 Data used
 
 ```{r}
-kbl(head(iris))
+head(iris)
 ```
+##
+
+Structure
+
+```{r}
+str(iris)
+```
+
 ##
 
 ```{r fig.width=5, fig.height=3, out.width="60%", fig.align='center'}

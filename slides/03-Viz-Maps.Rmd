@@ -11,14 +11,12 @@ output:
 
 
 
-# Slide 1: Introduction
-
 ## Visualizations and Maps in R
+
 - Importance of clear, informative visualizations
 - Common mistakes to avoid
 - Overview of good and bad examples
 
----
 
 # Slide 2: Principles of Good Visualization
 ## Key Elements:
@@ -27,7 +25,6 @@ output:
 - Relevance
 - Consistency
 
----
 
 # Slide 3: Good Example - Clear and Simple Plot
 
@@ -42,7 +39,6 @@ ggplot(mpg, aes(x=displ, y=hwy)) +
 - Clear labels and title
 - Simple scatter plot
 
----
 
 # Slide 4: Bad Example - Overloaded Plot
 
@@ -140,15 +136,18 @@ ggplot(world, aes(fill = AREA)) +
 - Static map limits user interaction and exploration
 - Ineffective for interactive data
 
----
 
-# Slide 12: Conclusion
 ## Best Practices:
 - Simplify your plots
 - Choose the right map type
 - Avoid visual clutter
 - Make interactive maps when appropriate
 
-----
+## Hand on!
 
-This provides a presentation structure with both good and bad examples, demonstrating clear principles of effective visualization and mapping in R. You can add images or further tweak the formatting for the final output in `ioslides`.
+- This class will cover:
+  
+  - Basic visualization 
+  - `Tidyverse` visualization
+  - Maps and georefered data.
+  - Run this [code](https://github.com/MauroMardones/Course_R_Statistics/blob/main/scripts/03-Viz-Maps.R)

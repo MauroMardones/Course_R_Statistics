@@ -1,45 +1,52 @@
 ---
 title: "Exploratory Analisys Data in R"
-author: "Mauricio Mardones. Biologo Marino. Instituto Español de Oceanografía, Spain."
+subtitle: "Curso R. Carrera Biología M/ Medio Ambiente. Universidad de Chile."
+author: "Mauricio Mardones. Biólogo Marino. Instituto Español de Oceanografía, Spain."
 date: "`r Sys.Date()`"
 output:
-  ioslides_presentation: default
-  widescreen: true
-  self_contained: true
-  css: custom.css
-  slidy_presentation: default
-subtitle: Curso R. Carrera Biología m/ Medio ambiente. Universidad de Chile.
+  ioslides_presentation:
+    widescreen: true
+    css: custom.css
 ---
 
 
 ## What is Exploratory Data Analysis (EDA)? 
 
+```{r echo=FALSE, out.width='50%', fig.align='center'}
+knitr::include_graphics(here::here('images/EDA.jpeg'))
+```
+
+## 
+
+Usually...
+
+```{r echo=FALSE, out.width='85%', fig.align='center'}
+knitr::include_graphics(here::here('images/EDAexcel.png'))
+```
+
+But, we don't leave the **"route"**. So, what if my colleague wants to reproduce my analysis and results?
+
+In *R* (a script), we can clearly show this **"route"**...
+
+##
+
+```{r echo=FALSE, out.width='90%', fig.align='center'}
+knitr::include_graphics(here::here('images/reprocomic.jpeg'))
+```
+
+Good lecture about [Reproducible Science](https://theness.com/neurologicablog/science-we-have-a-reproducibility-problem/)
+
+##
 
 Exploratory Data Analysis (EDA) involves summarizing and visualizing datasets to uncover insights. Key steps include: 
 
 >1. **Data Overview:** Understanding data types, structure, and missing values using `str()` and `summary()`.  
 >2. **Data Cleaning:** Handling missing data, correcting errors, and standardizing values.  
->3. **Descriptive Statistics:** Calculating means, medians, and standard deviations for quantitative variables.  
+>3. **Identifying Patterns:** Detecting relationships, clusters, or anomalies for hypothesis generation.  
 >4. **Visualizations:** Plotting histograms, scatter plots, and box plots to identify trends and outliers.  
->5. **Identifying Patterns:** Detecting relationships, clusters, or anomalies for hypothesis generation.
+>5. **Descriptive Statistics:** Calculating means, medians, and standard deviations for quantitative variables.
 
 ## Data set example
-
-Structure
-
-```{r}
-head(mtcars)
-```
-##
-
-Summary by variable
-
-```{r}
-summary(mtcars)
-```
-
-
-## Data
 
 - Loading the `palmerpenguins` dataset
 
@@ -55,7 +62,6 @@ Where this data was obtained...
 knitr::include_graphics(here::here('images/palmer.jpeg'))
 ```
 
----
 
 ## The `penguins` Dataset  
 
@@ -64,10 +70,8 @@ knitr::include_graphics(here::here('images/palmer.jpeg'))
 library(palmerpenguins)  
 library(kableExtra)
 data("penguins")  
-kbl(head(penguins, n = c(4, 8)))
 ```  
 
----
 
 ## Basic Data Exploration  
 
@@ -77,7 +81,6 @@ dim(penguins)
 str(penguins)  
 ```  
 
----
 
 ## Summary Statistics  
 
@@ -86,7 +89,6 @@ str(penguins)
 summary(penguins)  
 ```  
 
----
 
 ## Central Tendency  
 
@@ -99,7 +101,6 @@ mean(penguins$bill_length_mm, na.rm = TRUE)
 median(penguins$bill_length_mm, na.rm = TRUE)  
 ```  
 
----
 
 ## Variability  
 
@@ -113,7 +114,6 @@ var(penguins$bill_length_mm, na.rm = TRUE)
 sd(penguins$bill_length_mm, na.rm = TRUE)  
 ```  
 
----
 
 ## Grouped Summaries  
 
@@ -140,8 +140,6 @@ cor(penguins$bill_length_mm,
 - Descriptive statistics are fundamental for understanding data.  
 - R provides powerful tools to calculate, visualize, and interpret data patterns.  
 
-Questions?  
-
 
 ## Hand on!
 
@@ -150,3 +148,4 @@ Questions?
   - Data manipulation 
   - Descriptive statistics
   - Multivariate statistics...
+  - Run this [code](https://github.com/MauroMardones/Course_R_Statistics/blob/main/scripts/02-EDA.R)

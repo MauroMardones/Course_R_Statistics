@@ -138,7 +138,6 @@ plottex <- ggplot(iris,
 plottex
 ```
 
-
 ## Functions
 
 - Encapsulate reusable logic:
@@ -151,8 +150,7 @@ square(4)  # Output: 16
 ```
 
 
-## Statistical Analysis {.columns-2}
-
+## Statistical Analysis 
 
 - Linear regression example:
 ```{r}

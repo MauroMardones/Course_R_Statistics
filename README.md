@@ -28,7 +28,6 @@ Raw exercise in script can be found here:
 ## Presentations  
 Interactive course presentations can be found here:  
 [Course Presentations](https://github.com/MauroMardones/Course_R_Statistics/tree/main/slides)  
-
 to render each slides follow this;
 
 `rmarkdown::render("slides/slides_file.Rmd", output_file = "../slides/slides_file.html")`
