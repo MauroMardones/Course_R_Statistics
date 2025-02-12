@@ -37,7 +37,7 @@ knitr::include_graphics(here::here('images/rstudio.png'))
 
 is just this
 
-```{r echo=FALSE}
+```{r echo=FALSE, out.width="60%"}
 knitr::include_graphics(here::here('images/calc.jpg'))
 ```
 

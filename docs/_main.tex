@@ -37,6 +37,7 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -138,15 +139,8 @@
   pdfcreator={LaTeX via pandoc}}
 
 \title{R Basic Course}
-\usepackage{etoolbox}
-\makeatletter
-\providecommand{\subtitle}[1]{% add subtitle to \maketitle
-  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
-}
-\makeatother
-\subtitle{This book was made with educational objetctive to improve R skill in students and professional staff}
 \author{Mardones, Mauricio \& Zúñiga, María José.}
-\date{2025-02-11}
+\date{2025-02-12}
 
 \begin{document}
 \maketitle
@@ -243,7 +237,7 @@ All codes and used in this course can be founded in this repository with the str
 
 \href{https://www.r-project.org}{Download R}
 
-\includegraphics[width=16.69in]{images/rpages}
+\includegraphics[width=27.31in]{images/rstudio}
 
 \href{https://posit.co/download/rstudio-desktop/}{Download Rstudio}
 
@@ -264,7 +258,7 @@ All codes and used in this course can be founded in this repository with the str
 
 is just this
 
-\includegraphics[width=13.61in]{images/calc}
+\includegraphics[width=0.6\linewidth]{images/calc}
 
 but\ldots{}
 
@@ -680,51 +674,11 @@ This section demonstrates an exploratory data analysis (EDA) of the \textbf{Palm
 \NormalTok{range\_body\_mass }\OtherTok{\textless{}{-}} \FunctionTok{range}\NormalTok{(penguins\_clean}\SpecialCharTok{$}\NormalTok{body\_mass\_g)}
 \NormalTok{var\_body\_mass }\OtherTok{\textless{}{-}} \FunctionTok{var}\NormalTok{(penguins\_clean}\SpecialCharTok{$}\NormalTok{body\_mass\_g)}
 \NormalTok{sd\_body\_mass }\OtherTok{\textless{}{-}} \FunctionTok{sd}\NormalTok{(penguins\_clean}\SpecialCharTok{$}\NormalTok{body\_mass\_g)}
-
-\FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{Range of body mass:"}\NormalTok{, range\_body\_mass)}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-## 
-## Range of body mass: 2700 6300
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{Variance of body mass:"}\NormalTok{, var\_body\_mass)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## 
-## Variance of body mass: 648372.5
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{Standard deviation of body mass:"}\NormalTok{, sd\_body\_mass)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## 
-## Standard deviation of body mass: 805.2158
-\end{verbatim}
 
 \hypertarget{frequency-tables-for-categorical-data}{%
 \section{Frequency Tables for Categorical Data}\label{frequency-tables-for-categorical-data}}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{Frequency of species:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## 
-## Frequency of species:
-\end{verbatim}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -763,17 +717,6 @@ This section demonstrates an exploratory data analysis (EDA) of the \textbf{Palm
   \FunctionTok{filter}\NormalTok{(body\_mass\_g }\SpecialCharTok{\textless{}}\NormalTok{ lower\_bound }\SpecialCharTok{|}\NormalTok{ body\_mass\_g }\SpecialCharTok{\textgreater{}}\NormalTok{ upper\_bound) }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{select}\NormalTok{(species, body\_mass\_g)}
 
-\FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{Outliers in body mass:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## 
-## Outliers in body mass:
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
 \FunctionTok{print}\NormalTok{(outliers)}
 \end{Highlighting}
 \end{Shaded}
@@ -817,17 +760,7 @@ This section demonstrates an exploratory data analysis (EDA) of the \textbf{Palm
 \NormalTok{t\_test\_result }\OtherTok{\textless{}{-}} \FunctionTok{t.test}\NormalTok{(body\_mass\_g }\SpecialCharTok{\textasciitilde{}}\NormalTok{ species, }
                         \AttributeTok{data =}\NormalTok{ penguins\_subset)}
 
-\FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{T{-}Test Results:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
 
-\begin{verbatim}
-## 
-## T-Test Results:
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
 \FunctionTok{print}\NormalTok{(t\_test\_result)}
 \end{Highlighting}
 \end{Shaded}
@@ -1736,8 +1669,6 @@ The \texttt{sf} package (Simple Features) by Edzer Pebesma is a crucial tool for
 \item
   \texttt{ggplot2::geom\_sf()}: Plot spatial data directly.
 \end{itemize}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{additional-resources}{%
 \subsection{\texorpdfstring{\textbf{Additional Resources}}{Additional Resources}}\label{additional-resources}}

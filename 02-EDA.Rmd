@@ -55,16 +55,11 @@ median_flipper
 range_body_mass <- range(penguins_clean$body_mass_g)
 var_body_mass <- var(penguins_clean$body_mass_g)
 sd_body_mass <- sd(penguins_clean$body_mass_g)
-
-cat("\nRange of body mass:", range_body_mass)
-cat("\nVariance of body mass:", var_body_mass)
-cat("\nStandard deviation of body mass:", sd_body_mass)
 ```
 
 ## Frequency Tables for Categorical Data
 
 ```{r}
-cat("\nFrequency of species:\n")
 print(table(penguins_clean$species))
 ```
 
@@ -88,7 +83,6 @@ outliers <- penguins_clean %>%
   filter(body_mass_g < lower_bound | body_mass_g > upper_bound) %>% 
   select(species, body_mass_g)
 
-cat("\nOutliers in body mass:\n")
 print(outliers)
 ```
 
@@ -113,7 +107,7 @@ penguins_subset <- penguins_clean %>%
 t_test_result <- t.test(body_mass_g ~ species, 
                         data = penguins_subset)
 
-cat("\nT-Test Results:\n")
+
 print(t_test_result)
 ```
 
