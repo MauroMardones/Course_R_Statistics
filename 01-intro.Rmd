@@ -22,7 +22,7 @@ knitr::include_graphics(here::here('images/rpages.png'))
 
 
 ```{r echo=FALSE}
-knitr::include_graphics(here::here('images/rpages.png'))
+knitr::include_graphics(here::here('images/rstudio.png'))
 ```
 
 [Download Rstudio](https://posit.co/download/rstudio-desktop/)

@@ -1,7 +1,7 @@
 bookdown::gitbook:
   css: style.css
   config:
-    self_contained: true
+    self_contained: false
     output_dir: "docs"
     toc:
       before: |

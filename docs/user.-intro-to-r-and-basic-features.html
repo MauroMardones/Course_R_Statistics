@@ -23,7 +23,7 @@
 <meta name="author" content="Mardones, Mauricio &amp; Zúñiga, María José." />
 
 
-<meta name="date" content="2025-02-11" />
+<meta name="date" content="2025-02-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -238,7 +238,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><img src="images/rpages.png" width="601" /></p>
 <p><a href="https://www.r-project.org">Download R</a></p>
-<p><img src="images/rpages.png" width="601" /></p>
+<p><img src="images/rstudio.png" width="983" /></p>
 <p><a href="https://posit.co/download/rstudio-desktop/">Download Rstudio</a></p>
 </div>
 <div id="why-learn-r" class="section level2 hasAnchor" number="1.2">
@@ -303,7 +303,8 @@ Figure 1.1: Seminal Paper of R
 <ul>
 <li>Table-like structures:</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="user.-intro-to-r-and-basic-features.html#cb6-1" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Name =</span> <span class="fu">c</span>(<span class="st">&quot;John&quot;</span>, <span class="st">&quot;Jane&quot;</span>), <span class="at">Age =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="user.-intro-to-r-and-basic-features.html#cb6-1" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Name =</span> <span class="fu">c</span>(<span class="st">&quot;John&quot;</span>, <span class="st">&quot;Jane&quot;</span>),</span>
+<span id="cb6-2"><a href="user.-intro-to-r-and-basic-features.html#cb6-2" tabindex="-1"></a>    <span class="at">Age =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>))</span></code></pre></div>
 <ul>
 <li>Inspect the structure:</li>
 </ul>
@@ -444,26 +445,19 @@ setosa
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="user.-intro-to-r-and-basic-features.html#cb10-1" tabindex="-1"></a>plottex <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(iris, </span>
-<span id="cb10-2"><a href="user.-intro-to-r-and-basic-features.html#cb10-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, </span>
-<span id="cb10-3"><a href="user.-intro-to-r-and-basic-features.html#cb10-3" tabindex="-1"></a>           <span class="at">y =</span> Species)) <span class="sc">+</span> </span>
-<span id="cb10-4"><a href="user.-intro-to-r-and-basic-features.html#cb10-4" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>)</span>
-<span id="cb10-5"><a href="user.-intro-to-r-and-basic-features.html#cb10-5" tabindex="-1"></a>plottex</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="user.-intro-to-r-and-basic-features.html#cb10-1" tabindex="-1"></a>plottex <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length,</span>
+<span id="cb10-2"><a href="user.-intro-to-r-and-basic-features.html#cb10-2" tabindex="-1"></a>    <span class="at">y =</span> Species)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>)</span>
+<span id="cb10-3"><a href="user.-intro-to-r-and-basic-features.html#cb10-3" tabindex="-1"></a>plottex</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="user.-intro-to-r-and-basic-features.html#cb11-1" tabindex="-1"></a>plottex <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(iris, </span>
-<span id="cb11-2"><a href="user.-intro-to-r-and-basic-features.html#cb11-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, </span>
-<span id="cb11-3"><a href="user.-intro-to-r-and-basic-features.html#cb11-3" tabindex="-1"></a>           <span class="at">y =</span> Species)) <span class="sc">+</span> </span>
-<span id="cb11-4"><a href="user.-intro-to-r-and-basic-features.html#cb11-4" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>)<span class="sc">+</span></span>
-<span id="cb11-5"><a href="user.-intro-to-r-and-basic-features.html#cb11-5" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb11-6"><a href="user.-intro-to-r-and-basic-features.html#cb11-6" tabindex="-1"></a>plottex</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="user.-intro-to-r-and-basic-features.html#cb11-1" tabindex="-1"></a>plottex <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length,</span>
+<span id="cb11-2"><a href="user.-intro-to-r-and-basic-features.html#cb11-2" tabindex="-1"></a>    <span class="at">y =</span> Species)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
+<span id="cb11-3"><a href="user.-intro-to-r-and-basic-features.html#cb11-3" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
+<span id="cb11-4"><a href="user.-intro-to-r-and-basic-features.html#cb11-4" tabindex="-1"></a>plottex</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="user.-intro-to-r-and-basic-features.html#cb12-1" tabindex="-1"></a>plottex <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(iris, </span>
-<span id="cb12-2"><a href="user.-intro-to-r-and-basic-features.html#cb12-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, </span>
-<span id="cb12-3"><a href="user.-intro-to-r-and-basic-features.html#cb12-3" tabindex="-1"></a>           <span class="at">y =</span> Species)) <span class="sc">+</span> </span>
-<span id="cb12-4"><a href="user.-intro-to-r-and-basic-features.html#cb12-4" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>)<span class="sc">+</span></span>
-<span id="cb12-5"><a href="user.-intro-to-r-and-basic-features.html#cb12-5" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
-<span id="cb12-6"><a href="user.-intro-to-r-and-basic-features.html#cb12-6" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span>
-<span id="cb12-7"><a href="user.-intro-to-r-and-basic-features.html#cb12-7" tabindex="-1"></a>plottex</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="user.-intro-to-r-and-basic-features.html#cb12-1" tabindex="-1"></a>plottex <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length,</span>
+<span id="cb12-2"><a href="user.-intro-to-r-and-basic-features.html#cb12-2" tabindex="-1"></a>    <span class="at">y =</span> Species)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="user.-intro-to-r-and-basic-features.html#cb12-3" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">coord_flip</span>()</span>
+<span id="cb12-4"><a href="user.-intro-to-r-and-basic-features.html#cb12-4" tabindex="-1"></a>plottex</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 </div>
 <div id="functions" class="section level2 hasAnchor" number="1.9">
@@ -472,12 +466,12 @@ setosa
 <li>Encapsulate reusable logic:</li>
 </ul>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="user.-intro-to-r-and-basic-features.html#cb13-1" tabindex="-1"></a>square <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb13-2"><a href="user.-intro-to-r-and-basic-features.html#cb13-2" tabindex="-1"></a>     <span class="fu">return</span>(x<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb13-3"><a href="user.-intro-to-r-and-basic-features.html#cb13-3" tabindex="-1"></a>   }</span>
+<span id="cb13-2"><a href="user.-intro-to-r-and-basic-features.html#cb13-2" tabindex="-1"></a>    <span class="fu">return</span>(x<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb13-3"><a href="user.-intro-to-r-and-basic-features.html#cb13-3" tabindex="-1"></a>}</span>
 <span id="cb13-4"><a href="user.-intro-to-r-and-basic-features.html#cb13-4" tabindex="-1"></a><span class="fu">square</span>(<span class="dv">4</span>)  <span class="co"># Output: 16</span></span></code></pre></div>
 <pre><code>## [1] 16</code></pre>
 </div>
-<div id="statistical-analysis" class="section level2 columns-2 hasAnchor" number="1.10">
+<div id="statistical-analysis" class="section level2 hasAnchor" number="1.10">
 <h2><span class="header-section-number">1.10</span> Statistical Analysis<a href="user.-intro-to-r-and-basic-features.html#statistical-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Linear regression example:</li>
@@ -577,7 +571,7 @@ gitbook.start({
 "toc": {
 "collapse": "subsection"
 },
-"self_contained": true,
+"self_contained": false,
 "output_dir": "docs",
 "collapse_section": true
 });
