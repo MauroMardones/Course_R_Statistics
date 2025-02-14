@@ -114,6 +114,12 @@ print(t_test_result)
 
 The null hypothesis (`H0`) assumes that the mean body mass of *Adelie* and *Gentoo* penguins is the same. If the p-value < 0.05, we reject `H0`, indicating a significant difference in the body mass of these species.
 
+p-value: If `p < 0.05`, we reject H0, indicating a significant difference in the body mass of these species.
+
+Confidence interval: Provides the range within which the true difference in means lies.
+
+t-statistic: Indicates the magnitude of the difference relative to variability.
+
 
 ## One-Way ANOVA
 
@@ -128,6 +134,176 @@ summary(anova_body_mass)
 model <- lm(body_mass_g ~ flipper_length_mm, data = penguins_clean)
 summary(model)
 ```
+
+Interpretation:
+
+ `lm(formula = body_mass_g ~ flipper_length_mm, data = penguins_clean)`
+
+ This indicates that the **body mass** (dependent variable) is being modeled as a function of
+ **flipper length** (independent variable) using the `lm()` function.
+
+
+  **2. Residuals:**
+
+ Min       1Q   Median       3Q      Max
+ -1057.33  -259.79   -12.24   242.97  1293.89
+
+
+ - **Residuals** represent the differences between the observed values (body mass)
+and the predicted values from the regression model.
+ - The residuals range from -1057.33 to 1293.89.
+ - **1st Quartile (1Q)**: -259.79 (lower bound of the data distribution).
+ - **Median**: -12.24 (the middle value).
+ - **3rd Quartile (3Q)**: 242.97 (upper bound of the data distribution).
+ - **Max**: 1293.89 (the largest residual).
+
+ Ideally, residuals should be evenly distributed around 0 for a good model fit.
+ The spread of residuals suggests some variance, but there's no major sign of non-linearity in this output.
+
+**3. Coefficients:**
+
+ Estimate Std. Error t value Pr(>|t|)
+ (Intercept)       -5872.09     310.29  -18.93   <2e-16 ***
+   flipper_length_mm    50.15       1.54   32.56   <2e-16 ***
+
+ - **Intercept**: -5872.09
+ - This is the estimated value of **body mass** when **flipper length** is 0 mm.
+In a real-world context, this intercept doesn’t make sense because a flipper length of 0
+mm is unrealistic. It’s just a mathematical value.
+
+ - **Flipper_length_mm coefficient**: 50.15
+ - For every 1 mm increase in **flipper length**, **body mass** increases by
+ approximately **50.15 grams**. This is the **slope** of the regression line.
+
+ - **Standard Error**: 310.29 (intercept) and 1.54 (flipper length coefficient)
+ - This measures the accuracy of the coefficient estimates.
+ Smaller values indicate more precise estimates.
+
+ - **t-value**:  -18.93 (Intercept) and 32.56 (flipper length coefficient)
+ - The t-value tests the hypothesis that the coefficient is significantly different from zero.
+ The larger the t-value, the stronger the evidence against the null hypothesis.
+
+ - **Pr(>|t|)**:  < 2e-16 (both coefficients)
+ - This is the **p-value** for each coefficient. A value below **0.05**
+ indicates statistical significance, meaning there's strong evidence that
+ the coefficient is not equal to zero. Here, both the intercept and the slope are
+ **highly significant** with p-values much smaller than 0.05.
+
+  **4. Model Summary:**
+
+ Residual standard error: 393.3 on 331 degrees of freedom
+ Multiple R-squared:  0.7621,	Adjusted R-squared:  0.7614
+ F-statistic:  1060 on 1 and 331 DF,  p-value: < 2.2e-16
+
+**Residual Standard Error**: 393.3
+
+   - This is the average distance that the observed values deviate from the
+ regression line. A lower value indicates a better fit, although this needs to
+ be interpreted relative to the scale of **body mass**.
+
+ **Multiple R-squared**: 0.7621
+   - This indicates that about **76.21%** of the variability in **body mass**
+ can be explained by the **flipper length**. A value closer to 1 suggests a better fit of the model.
+
+ **Adjusted R-squared**: 0.7614
+   - This is similar to R-squared but adjusts for the number of predictors in the model.
+ It is used to assess the model’s fit when there are multiple predictors,
+ although in this case, we have only one predictor.
+
+ **F-statistic**: 1060 on 1 and 331 degrees of freedom, p-value: < 2.2e-16
+   - The **F-statistic** tests whether at least one predictor variable has a
+ non-zero coefficient (i.e., the model is a good fit). Here, the F-statistic is very large,
+ and the p-value is extremely small, indicating that the model explains the data well.
+
+ **Interpretation:**
+
+ - **Relationship**: There is a **strong, positive relationship** between **flipper length** and **body mass**. As flipper length increases by 1 mm, **body mass** increases by approximately **50.15 grams**.
+ - **Model Fit**: The **Multiple R-squared value** (0.7621) suggests that the model explains about 76% of the variance in **body mass** based on **flipper length**.
+ - **Significance**: Both the intercept and the slope are highly significant, with **p-values** near **0** (less than 0.05), suggesting that the relationship between **flipper length** and **body mass** is statistically significant.
+ - **Error**: The **residual standard error** of 393.3 suggests that the predictions of body mass from this model could be off by around 393 grams on average. This might be large compared to the range of body masses (which is typically less than 10000 grams), so there might still be other factors affecting **body mass**.
+
+
+## Multiple Regresion
+
+```{r}
+model_multiple <- lm(body_mass_g ~ flipper_length_mm + 
+                       bill_length_mm + 
+                       bill_depth_mm, 
+                     data = penguins_clean)
+summary(model_multiple)
+```
+
+
+
+ Interpretation
+   
+    **Model Overview:**
+   The model you ran predicts `body_mass_g` (body mass of penguins) based on three predictors:
+   1. `flipper_length_mm` (flipper length in mm),
+ 2. `bill_length_mm` (bill length in mm),
+ 3. `bill_depth_mm` (bill depth in mm).
+ 
+  **1. Residuals:**
+ The residuals represent the differences between the observed and predicted values for the `body_mass_g`. The values provided are:
+   
+   - **Min:** -1051.37 (the smallest residual),
+ - **1st Quartile (1Q):** -284.50 (25th percentile of residuals),
+ - **Median:** -20.37 (50th percentile of residuals),
+ - **3rd Quartile (3Q):** 241.03 (75th percentile of residuals),
+ - **Max:** 1283.51 (the largest residual).
+ 
+ These values suggest that the residuals are somewhat spread out, 
+ with the median being close to zero, which is expected. The range of residuals shows some
+ relatively large errors, particularly on the high side (positive residuals).
+ 
+  **2. Coefficients:**
+ The coefficients represent the estimated effect of each predictor variable on the outcome 
+ (`body_mass_g`). Here’s a breakdown of each coefficient:
+   
+   - **Intercept:** -6445.476
+ - This is the estimated body mass when all predictor variables (flipper length, bill length, and bill depth) 
+ are zero. In practice, the intercept may not always have a meaningful interpretation but is necessary 
+ for the linear model calculation.
+ 
+ - **Flipper length (`flipper_length_mm`):** 50.762
+ - For every 1 mm increase in `flipper_length_mm`, the body mass (`body_mass_g`) 
+ increases by approximately 50.76 grams. This predictor is highly significant with a very low p-value (`< 2e-16`), 
+indicating a strong relationship with body mass.
+ 
+ - **Bill length (`bill_length_mm`):** 3.293
+ - For every 1 mm increase in `bill_length_mm`, the body mass (`body_mass_g`)
+ increases by approximately 3.29 grams. However, the p-value for this coefficient is 0.540,
+ which is **not statistically significant** (p-value > 0.05). This means bill length is 
+ not a strong predictor of body mass in this model.
+ 
+ - **Bill depth (`bill_depth_mm`):** 17.836
+ - For every 1 mm increase in `bill_depth_mm`, the body mass (`body_mass_g`) increases 
+ by approximately 17.84 grams. However, the p-value for this coefficient is 0.198,
+ which is **also not statistically significant** (p-value > 0.05). Bill depth does not 
+ significantly contribute to predicting body mass in this model.
+ 
+  **3. Residual Standard Error:**
+ - The **residual standard error** (393) is the average amount by which the model's predictions differ from the actual observed values. It gives a measure of how well the model fits the data. A smaller value is better, and 393 suggests that the model has moderate prediction error.
+ 
+  **4. R-squared and Adjusted R-squared:**
+ - **Multiple R-squared:** 0.7639
+    - This means that about 76.4% of the variability in body mass (`body_mass_g`) can be explained by the three predictor variables (flipper length, bill length, and bill depth). This is a relatively high proportion of variance explained, indicating a good fit.
+    
+ - **Adjusted R-squared:** 0.7618
+    - This value is adjusted for the number of predictors in the model, and it’s very close to the R-squared value, indicating that the inclusion of the predictors is adding value to the model and not overfitting.
+ 
+  **5. F-statistic:**
+ - The **F-statistic** (354.9) tests whether the model as a whole is significant (i.e., whether the predictors are jointly useful for predicting body mass). The associated **p-value** (`< 2.2e-16`) is extremely small, meaning that at least one of the predictors is significantly related to the outcome variable. In other words, the model is highly significant.
+ 
+  **Summary:**
+ 
+ - **Flipper length (`flipper_length_mm`)** is the most important predictor of penguin body mass, with a statistically significant relationship.
+ - **Bill length** and **bill depth** are not significant predictors in this model, as their p-values are much higher than 0.05.
+ - The model explains a high percentage (76.4%) of the variability in body mass.
+ - The overall model is statistically significant, with a very low p-value for the F-statistic.
+ 
+ This model can be useful for predicting penguin body mass based on flipper length, but the inclusion of bill length and bill depth does not add much value for this specific outcome.
+
 
 ## Conclusion
 

@@ -16,8 +16,7 @@ library(palmerpenguins)
 penguins <- palmerpenguins::penguins
 
 # Mostrar las primeras filas del conjunto de datos
-cat("Primeras filas del dataset:\n")
-print(head(penguins))
+head(penguins, 10)
 
 # Dimensiones del dataset
 dim(penguins)
@@ -68,11 +67,6 @@ sd(penguins_clean$flipper_length_mm)
 range(penguins_clean$flipper_length_mm)
 IQR(penguins_clean$flipper_length_mm)
 
-# Tablas de frecuencia
-table(penguins_clean$species)
-penguins_clean %>% count(species)
-
-
 # ====================================================
 # Cumulative Statistics
 # ====================================================
@@ -93,8 +87,6 @@ cov_bill <- cov(penguins_clean$bill_length_mm,
                 method = c("pearson", "kendall", "spearman"))
 cor_bill <- cor(penguins_clean$bill_length_mm, penguins_clean$bill_depth_mm)
 
-
-
 # =============================
 # Outliers Handling
 # =============================
@@ -104,8 +96,8 @@ cor_bill <- cor(penguins_clean$bill_length_mm, penguins_clean$bill_depth_mm)
 #El IQR es la diferencia entre el tercer cuartil (Q3, el percentil 75) y
 # el primer cuartil (Q1, el percentil 25). Es una medida de dispersión 
 # que indica el rango central donde se ubica el 50% de los datos.
-q1 <- quantile(penguins_clean$body_mass_g, 0.10)
-q3 <- quantile(penguins_clean$body_mass_g, 0.90)
+q1 <- quantile(penguins_clean$body_mass_g, 0.25)
+q3 <- quantile(penguins_clean$body_mass_g, 0.75)
 iqr_value <- q3 - q1
 lower_bound <- q1 - 0.5 * iqr_value
 upper_bound <- q3 + 0.5 * iqr_value
@@ -190,11 +182,13 @@ selected_data <- select(penguins_clean, species, island, body_mass_g)
 head(selected_data)
 
 # Filtrar filas con condiciones múltiples
-filtered_data <- filter(penguins_clean, species == "Adelie", island != "Biscoe")
+filtered_data <- filter(penguins_clean,
+                        species == "Chinstrap", 
+                        island != "Biscoe")
 head(filtered_data)
 
 # Reordenar filas
-arranged_data <- arrange(penguins_clean, desc(body_mass_g))
+arranged_data <- arrange(penguins_clean, desc(bill_length_mm))
 head(arranged_data)
 
 # Crear nuevas variables
@@ -202,7 +196,6 @@ mutated_data <- mutate(penguins_clean,
                        body_mass_kg = body_mass_g / 1000,
                        bmi = body_mass_g / (flipper_length_mm / 100)^2)
 head(select(mutated_data, body_mass_g, body_mass_kg, bmi))
-
 
 penguins_body_ratio <- penguins_clean %>%
   mutate(bill_mass_ratio = bill_length_mm / body_mass_g)
@@ -213,7 +206,7 @@ print(head(penguins_body_ratio$bill_mass_ratio))
 
 # Agrupar y resumir
 grouped_summary <- penguins_clean %>%
-  group_by(species) %>%
+  group_by(species, sex, island) %>%
   summarise(
     mean_mass = mean(body_mass_g),
     sd_mass = sd(body_mass_g),
@@ -225,7 +218,8 @@ print(grouped_summary)
 
 # Resumir múltiples variables a la vez
 penguins_clean %>%
-  summarise(across(where(is.numeric), list(mean = mean, sd = sd)))
+  summarise(across(where(is.numeric), 
+                   list(mean = mean, sd = sd)))
 
 # =============================
 # Manipular data frames
@@ -242,9 +236,11 @@ long_format <- penguins_clean %>%
 
 head(long_format)
 
+#(Revisar!!)
 wide_format <- long_format %>%
-  pivot_wider(names_from = measurement, 
-              values_from = value)
+  dplyr::group_by(species, island, sex, year, measurement) %>%
+  dplyr::summarise(value = mean(value, na.rm = TRUE)) %>%
+  pivot_wider(names_from = measurement, values_from = value)
 
 head(wide_format)
 
@@ -261,37 +257,24 @@ extra_data <- data.frame(
 
 # Left join
 joined_data <- left_join(penguins_clean, 
-                         extra_data, by = "species")
+                         extra_data, 
+                         by = "species")
 head(joined_data)
 
 # Inner join
 inner_joined <- inner_join(penguins_clean, 
-                           extra_data, by = "species")
+                           extra_data, 
+                           by = "species")
 head(inner_joined)
 
-
-
-# =============================
-# Visualización Básica
-# =============================
-
-# Histogramas
-ggplot(penguins_clean, aes(x = body_mass_g)) + 
-  geom_histogram(bins = 30, fill = "blue", color = "black") +
-  facet_wrap(~species) +
-  labs(title = "Distribución de Body Mass por Especie")
-
-# Boxplots
-ggplot(penguins_clean, aes(x = species, y = body_mass_g, fill = species)) + 
-  geom_boxplot() +
-  labs(title = "Boxplot de Body Mass por Especie")
 
 # =============================
 # Relaciones entre Variables
 # =============================
 
 # Matriz de correlación
-cor_matrix <- select(penguins_clean, where(is.numeric)) %>% cor()
+cor_matrix <- select(penguins_clean, where(is.numeric)) %>% 
+  cor() 
 print(cor_matrix)
 
 # Pair plot con GGally
@@ -318,7 +301,8 @@ summary(anova_result)
 # =============================
 
 # Regresión lineal simple
-model_simple <- lm(body_mass_g ~ flipper_length_mm, data = penguins_clean)
+model_simple <- lm(body_mass_g ~ flipper_length_mm, 
+                   data = penguins_clean)
 summary(model_simple)
 
 
@@ -394,14 +378,101 @@ t_test_result
 anova_body_mass <- aov(bill_length_mm ~ species, data = penguins_clean)
 summary(anova_body_mass)
 
+
+# =============================
+# PCA
+# =============================
+
+# Instala los paquetes si no los tienes
+# install.packages(c("palmerpenguins", "ggplot2", "dplyr", "factoextra"))
+
+# Carga los paquetes
+library(palmerpenguins)
+library(ggplot2)
+library(dplyr)
+library(factoextra)
+
+# Seleccionar variables numéricas y eliminar NAs
+penguins_numeric <- penguins %>%
+  select(bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g) %>%
+  na.omit()
+# Escalar los datos
+penguins_scaled <- scale(penguins_numeric)
+
+## Paso 5: Realizar el PCA
+  
+# Realizar el PCA
+penguins_pca <- prcomp(penguins_scaled, center = TRUE, scale. = TRUE)
+
+# Ver el resumen del PCA
+summary(penguins_pca)
+
+# Proporción de varianza**: Cuánta varianza explica cada componente.
+# Varianza acumulada**: La suma acumulativa de varianza explicada.
+ 
+#  Veamos los **autovalores** (varianza explicada por cada componente) y el **scree plot**:
+
+# Scree plot
+fviz_eig(penguins_pca)
+
+# Los **autovalores** indican la cantidad de varianza explicada por cada componente.
+# El **scree plot** ayuda a determinar el número óptimo de componentes a retener, 
+#buscando el "codo" de la gráfica.
+ 
+# Paso 7: Cargar y visualizar las variables
+  
+# Cargas de las variables
+fviz_pca_var(penguins_pca,
+             col.var = "contrib", # Colorear por contribución
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+             repel = TRUE)       # Evitar solapamiento de etiquetas
+
+
+# Las flechas muestran las variables originales.
+# La dirección y longitud indican la contribución y correlación con los componentes.
+# Variables cercanas entre sí están correlacionadas.
+
+## Paso 8: Visualizar los individuos (pingüinos)
+  
+# Agregar información de especies
+penguins_pca_data <- data.frame(penguins_pca$x, 
+                                species = penguins$species[!is.na(penguins$bill_length_mm)])
+
+# Gráfico de individuos
+ggplot(penguins_pca_data, aes(PC1, PC2, color = species)) +
+  geom_point(size = 3) +
+  labs(title = "PCA de Pingüinos",
+       x = "Componente Principal 1",
+       y = "Componente Principal 2") +
+  theme_minimal()
+
+# Este gráfico muestra la distribución de las observaciones (pingüinos) 
+# en el espacio de los dos primeros componentes principales.
+# Los colores representan las especies, permitiendo ver 
+# si hay separación o solapamiento entre ellas.
+
+ 
+# 1. **Varianza Explicada**:
+#   - Los primeros dos componentes suelen explicar la mayor parte de la varianza. 
+# Si juntos explican más del 70-80%, el PCA es una buena representación de los datos en menor dimensión.
+# 
+# 2. **Contribución de las Variables**:
+#   - Observando las **cargas**, se puede interpretar qué variables están más 
+# correlacionadas con cada componente.
+# 
+# 3. **Agrupamiento por Especies**:
+#   - Si las especies se agrupan claramente en el gráfico de individuos,
+# esto sugiere que las medidas morfológicas (longitud del pico, aletas, etc.) son útiles para diferenciar entre especies de pingüinos.
+
 # =============================
 # Model Linear Regresion simple
 # =============================
 
 # Simple linear regression model
-model <- lm(body_mass_g ~ flipper_length_mm, data = penguins_clean)
+model <- lm(body_mass_g ~ 
+              flipper_length_mm, 
+            data = penguins_clean)
 summary(model)
-
 
 # Plot the regression line
 ggplot(penguins_clean, aes(x = flipper_length_mm, y = body_mass_g)) +
@@ -411,97 +482,100 @@ ggplot(penguins_clean, aes(x = flipper_length_mm, y = body_mass_g)) +
 
 # lm(formula = body_mass_g ~ flipper_length_mm, data = penguins_clean)
 
-# This indicates that the **body mass** (dependent variable) is being modeled as a function of 
+# This indicates that the **body mass** (dependent variable) is being modeled as a function of
 # **flipper length** (independent variable) using the `lm()` function.
-# 
-# 
+#
+#
 # ### **2. Residuals:**
 
-# Min       1Q   Median       3Q      Max 
+# Min       1Q   Median       3Q      Max
 # -1057.33  -259.79   -12.24   242.97  1293.89
 # ```
-# - **Residuals** represent the differences between the observed values (body mass) 
+# - **Residuals** represent the differences between the observed values (body mass)
 #and the predicted values from the regression model.
 # - The residuals range from -1057.33 to 1293.89.
 # - **1st Quartile (1Q)**: -259.79 (lower bound of the data distribution).
 # - **Median**: -12.24 (the middle value).
 # - **3rd Quartile (3Q)**: 242.97 (upper bound of the data distribution).
 # - **Max**: 1293.89 (the largest residual).
-# 
-# Ideally, residuals should be evenly distributed around 0 for a good model fit. 
+#
+# Ideally, residuals should be evenly distributed around 0 for a good model fit.
 # The spread of residuals suggests some variance, but there's no major sign of non-linearity in this output.
-# 
+#
 # ---
-#   
+#
 #   ### **3. Coefficients:**
 
-# Estimate Std. Error t value Pr(>|t|)    
+# Estimate Std. Error t value Pr(>|t|)
 # (Intercept)       -5872.09     310.29  -18.93   <2e-16 ***
 #   flipper_length_mm    50.15       1.54   32.56   <2e-16 ***
 #   ```
 # - **Intercept**: -5872.09
-# - This is the estimated value of **body mass** when **flipper length** is 0 mm. 
+# - This is the estimated value of **body mass** when **flipper length** is 0 mm.
 #In a real-world context, this intercept doesn’t make sense because a flipper length of 0
 #mm is unrealistic. It’s just a mathematical value.
-# 
+#
 # - **Flipper_length_mm coefficient**: 50.15
-# - For every 1 mm increase in **flipper length**, **body mass** increases by 
+# - For every 1 mm increase in **flipper length**, **body mass** increases by
 # approximately **50.15 grams**. This is the **slope** of the regression line.
-# 
+#
 # - **Standard Error**: 310.29 (intercept) and 1.54 (flipper length coefficient)
 # - This measures the accuracy of the coefficient estimates.
 # Smaller values indicate more precise estimates.
-# 
+#
 # - **t-value**:  -18.93 (Intercept) and 32.56 (flipper length coefficient)
 # - The t-value tests the hypothesis that the coefficient is significantly different from zero.
 # The larger the t-value, the stronger the evidence against the null hypothesis.
-# 
+#
 # - **Pr(>|t|)**:  < 2e-16 (both coefficients)
-# - This is the **p-value** for each coefficient. A value below **0.05** 
-# indicates statistical significance, meaning there's strong evidence that 
-# the coefficient is not equal to zero. Here, both the intercept and the slope are 
+# - This is the **p-value** for each coefficient. A value below **0.05**
+# indicates statistical significance, meaning there's strong evidence that
+# the coefficient is not equal to zero. Here, both the intercept and the slope are
 # **highly significant** with p-values much smaller than 0.05.
-# 
+#
 # ---
-# 
+#
 # ### **4. Model Summary:**
 # ```
 # Residual standard error: 393.3 on 331 degrees of freedom
-# Multiple R-squared:  0.7621,	Adjusted R-squared:  0.7614 
+# Multiple R-squared:  0.7621,	Adjusted R-squared:  0.7614
 # F-statistic:  1060 on 1 and 331 DF,  p-value: < 2.2e-16
 # ```
-# 
+#
 # - **Residual Standard Error**: 393.3
-#   - This is the average distance that the observed values deviate from the 
-# regression line. A lower value indicates a better fit, although this needs to 
+#   - This is the average distance that the observed values deviate from the
+# regression line. A lower value indicates a better fit, although this needs to
 # be interpreted relative to the scale of **body mass**.
-# 
+#
 # - **Multiple R-squared**: 0.7621
-#   - This indicates that about **76.21%** of the variability in **body mass** 
+#   - This indicates that about **76.21%** of the variability in **body mass**
 # can be explained by the **flipper length**. A value closer to 1 suggests a better fit of the model.
-# 
+#
 # - **Adjusted R-squared**: 0.7614
-#   - This is similar to R-squared but adjusts for the number of predictors in the model. 
-# It is used to assess the model’s fit when there are multiple predictors, 
+#   - This is similar to R-squared but adjusts for the number of predictors in the model.
+# It is used to assess the model’s fit when there are multiple predictors,
 # although in this case, we have only one predictor.
-# 
+#
 # - **F-statistic**: 1060 on 1 and 331 degrees of freedom, p-value: < 2.2e-16
-#   - The **F-statistic** tests whether at least one predictor variable has a 
+#   - The **F-statistic** tests whether at least one predictor variable has a
 # non-zero coefficient (i.e., the model is a good fit). Here, the F-statistic is very large,
 # and the p-value is extremely small, indicating that the model explains the data well.
-# 
+#
 # ---
-# 
+#
 # ### **Interpretation:**
-# 
+#
 # - **Relationship**: There is a **strong, positive relationship** between **flipper length** and **body mass**. As flipper length increases by 1 mm, **body mass** increases by approximately **50.15 grams**.
 # - **Model Fit**: The **Multiple R-squared value** (0.7621) suggests that the model explains about 76% of the variance in **body mass** based on **flipper length**.
 # - **Significance**: Both the intercept and the slope are highly significant, with **p-values** near **0** (less than 0.05), suggesting that the relationship between **flipper length** and **body mass** is statistically significant.
 # - **Error**: The **residual standard error** of 393.3 suggests that the predictions of body mass from this model could be off by around 393 grams on average. This might be large compared to the range of body masses (which is typically less than 10000 grams), so there might still be other factors affecting **body mass**.
-# 
+#
 
 # Regresión lineal múltiple
-model_multiple <- lm(body_mass_g ~ flipper_length_mm + bill_length_mm + bill_depth_mm, data = penguins_clean)
+model_multiple <- lm(body_mass_g ~ flipper_length_mm + 
+                       bill_length_mm + 
+                       bill_depth_mm, 
+                     data = penguins_clean)
 summary(model_multiple)
 
 
