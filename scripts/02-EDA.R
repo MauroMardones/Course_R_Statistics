@@ -236,7 +236,7 @@ long_format <- penguins_clean %>%
 
 head(long_format)
 
-#(Revisar!!)
+
 wide_format <- long_format %>%
   dplyr::group_by(species, island, sex, year, measurement) %>%
   dplyr::summarise(value = mean(value, na.rm = TRUE)) %>%
