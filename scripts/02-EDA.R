@@ -238,8 +238,8 @@ head(long_format)
 
 
 wide_format <- long_format %>%
-  dplyr::group_by(species, island, sex, year, measurement) %>%
-  dplyr::summarise(value = mean(value, na.rm = TRUE)) %>%
+  group_by(species, island, sex, year, measurement) %>%
+  summarise(value = mean(value, na.rm = TRUE)) %>%
   pivot_wider(names_from = measurement, values_from = value)
 
 head(wide_format)
@@ -463,6 +463,19 @@ ggplot(penguins_pca_data, aes(PC1, PC2, color = species)) +
 # 3. **Agrupamiento por Especies**:
 #   - Si las especies se agrupan claramente en el gráfico de individuos,
 # esto sugiere que las medidas morfológicas (longitud del pico, aletas, etc.) son útiles para diferenciar entre especies de pingüinos.
+
+
+
+# 1 Data points are represented as dots.
+# 2 Variables are represented as arrows.
+# 3 The direction of the arrows shows the relationship between variables.
+# 4 The length of the arrows indicates the strength of each variable in explaining the data.
+# 
+# With biplots, you can:
+# Visualize relationships between variables and data points.
+# Identify patterns and clusters within your data.
+# Understand which variables are most influential in explaining the variance.
+
 
 # =============================
 # Model Linear Regresion simple

@@ -304,6 +304,54 @@ indicating a strong relationship with body mass.
  
  This model can be useful for predicting penguin body mass based on flipper length, but the inclusion of bill length and bill depth does not add much value for this specific outcome.
 
+## Multivariate Statistics
+
+### PCA
+
+Principal Component Analysis (PCA) is a powerful statistical tool used to simplify complex data sets by transforming them into a set of linearly uncorrelated variables called principal components. This technique is highly beneficial for visualizing your data, especially when dealing with high-dimensional data. Here's why PCA is a game-changer:
+
+- Reduces Complexity: PCA helps in reducing the dimensionality of the data while retaining the most informative features. This makes it easier to explore and interpret the underlying patterns in the data.
+
+- Improves Visualization: By compressing multiple dimensions into just two or three principal components, PCA allows us to visualize complex data in a 2D or 3D space. This is ideal for spotting trends, clusters, and outliers that may not be obvious in higher dimensions.
+
+- Enhances Understanding: The transformation of data to principal components can reveal relationships between variables that are not apparent in the original data. This can lead to better insights and more effective decision-making.
+
+- Speeds Up Other Analyses: By focusing on the components that account for the most variance, PCA can speed up other data analysis techniques, reducing computational costs and enabling quicker results.
+
+Looking to explore PCA using R? Enroll in our Statistics Globe online course to boost your data analysis expertise! 
+
+El Análisis de Componentes Principales (PCA) es útil para reducir la dimensionalidad de los datos y encontrar patrones en variables altamente correlacionadas. En este caso, el PCA nos ayudará a visualizar la variación entre los pingüinos basándonos en características morfológicas (bill length, bill depth, flipper length y body mass).
+
+
+```{r}
+# Cargar librerías
+library(ggplot2)
+library(FactoMineR)
+library(factoextra)
+library(palmerpenguins)
+
+# Cargar datos
+data <- penguins_clean
+
+# Seleccionar solo las variables numéricas para PCA
+data_pca <- data[, c("bill_length_mm", "bill_depth_mm", "flipper_length_mm", "body_mass_g")]
+
+# Escalar datos (estandarización)
+data_pca_scaled <- scale(data_pca)
+
+# Aplicar PCA
+pca_result <- PCA(data_pca_scaled, graph = FALSE)
+
+# Visualización de los individuos (pingüinos) en el espacio de componentes principales
+fviz_pca_ind(pca_result, 
+             geom = "point",
+             col.ind = data$species, # Colorear por especie
+             palette = c("#E69F00", "#56B4E9", "#009E73"),
+             addEllipses = TRUE, # Agregar elipses por grupo
+             legend.title = "te")
+
+```
+
 
 ## Conclusion
 

@@ -38,7 +38,8 @@ hist(penguins$body_mass_g,
 Boxplot of body mass by species
 
 ```{r}
-boxplot(body_mass_g ~ species, data = penguins, 
+boxplot(body_mass_g ~ species, 
+        data = penguins, 
         main = "Body Mass by Species", 
         ylab = "Body Mass (g)", 
         col = c("tomato", "lightgreen", "lightblue"))
@@ -125,7 +126,7 @@ Histogram using ggplot2
 
 ```{r}
 ggplot(penguins, aes(x = body_mass_g)) +
-  geom_histogram(binwidth = 200, 
+  geom_histogram(binwidth = 100, 
                  fill = "steelblue", 
                  color = "white") +
   labs(title = "Histogram of Body Mass", 
@@ -277,44 +278,7 @@ PCA Plot in Base R
 ```{r}
 biplot(pca_result, main = "PCA of Penguins Data")
 ```
-Clustering with k-means
 
-```{r}
-library(cluster)
-
-# Seleccionar solo las columnas numéricas necesarias (removiendo NAs)
-data <- na.omit(penguins[, c("bill_length_mm", "bill_depth_mm", 
-                             "flipper_length_mm", "body_mass_g")])
-
-# Escalado de los datos
-scaled_data <- scale(data)
-
-# Selección del número óptimo de clústeres (Método Elbow)
-wss <- sapply(1:10, function(k) {
-  kmeans(scaled_data, centers = k, nstart = 25)$tot.withinss
-})
-
-# Gráfico del codo
-plot(1:10, wss, type = "b", pch = 19, frame = FALSE,
-     xlab = "Número de clusters",
-     ylab = "Suma total de cuadrados dentro de los clusters")
-```
-
-```{r}
-# Aplicación del algoritmo k-means
-kmeans_result <- kmeans(scaled_data, centers = 3, 
-                        nstart = 25)
-data$cluster <- as.factor(kmeans_result$cluster)
-
-# Visualización de clústeres
-library(factoextra)
-
-# Visualización en un espacio PCA
-fviz_cluster(kmeans_result, 
-             data = scaled_data,
-             geom = "point", ellipse.type = "convex",
-             ggtheme = theme_minimal())
-```
 
 ## Simple maps
 
