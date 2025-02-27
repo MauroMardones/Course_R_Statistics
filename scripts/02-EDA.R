@@ -14,9 +14,9 @@ library(palmerpenguins)
 
 # Cargar el dataset de penguins
 penguins <- palmerpenguins::penguins
-
+penguins
 # Mostrar las primeras filas del conjunto de datos
-head(penguins, 10)
+head(penguins, 4)
 
 # Dimensiones del dataset
 dim(penguins)
@@ -30,25 +30,22 @@ colSums(is.na(penguins))
 # Remover filas con valores faltantes
 penguins_clean <- na.omit(penguins)
 
-
+dim(penguins)
+dim(penguins_clean)
 # =============================
 # Basic Data Overview
 # =============================
 
 # Estructura del dataset limpio
-cat("\nEstructura del dataset:\n")
+
 str(penguins_clean)
 
-# Resumen estadístico de las variables numéricas
-cat("\nResumen estadístico de variables numéricas:\n")
-print(summary(select(penguins_clean, where(is.numeric))))
 
 # Nombres de las columnas
-cat("\nNombres de las columnas:\n")
-print(names(penguins_clean))
+names(penguins_clean)
 
 # Summary statistics
-summary(select(penguins_clean, where(is.numeric)))
+summary(dplyr::select(penguins_clean, where(is.numeric)))
 
 # Column names
 print(names(penguins_clean))
@@ -57,10 +54,13 @@ print(names(penguins_clean))
 
 table(penguins_clean$species)
 
+# conteo de registros de especies por sexo
+table(penguins_clean$species, penguins_clean$sex)
+
 # =============================
 # Central trends and dispersion measure
 # =============================
-
+var(penguins_clean$body_mass_g)
 mean(penguins_clean$flipper_length_mm)
 median(penguins_clean$flipper_length_mm)
 sd(penguins_clean$flipper_length_mm)
@@ -85,6 +85,7 @@ cov_bill <- cov(penguins_clean$bill_length_mm,
                 penguins_clean$bill_depth_mm,
                 use = "everything",
                 method = c("pearson", "kendall", "spearman"))
+
 cor_bill <- cor(penguins_clean$bill_length_mm, penguins_clean$bill_depth_mm)
 
 # =============================
@@ -167,18 +168,23 @@ cat("\nDimensions of the cleaned dataset:",
 # =============================
 
 # Dataset structure
+str(penguins_clean)
 glimpse(penguins_clean)
 
-# Descripción rápida con `skimr`
-skim(penguins_clean)
 
+# Descripción rápida con `skimr`
+summary(penguins_clean)
+skimr::skim(penguins_clean)
 
 # =============================
 # Manipulación Exhaustiva de Datos
 # =============================
 
 # Seleccionar columnas específicas
-selected_data <- select(penguins_clean, species, island, body_mass_g)
+selected_data <- dplyr::select(penguins_clean, 
+                               species,
+                               island, 
+                               body_mass_g)
 head(selected_data)
 
 # Filtrar filas con condiciones múltiples
@@ -186,16 +192,19 @@ filtered_data <- filter(penguins_clean,
                         species == "Chinstrap", 
                         island != "Biscoe")
 head(filtered_data)
+dim(filtered_data)
 
 # Reordenar filas
-arranged_data <- arrange(penguins_clean, desc(bill_length_mm))
+arranged_data <- arrange(penguins_clean, 
+                         desc(bill_length_mm))
 head(arranged_data)
 
 # Crear nuevas variables
 mutated_data <- mutate(penguins_clean, 
                        body_mass_kg = body_mass_g / 1000,
                        bmi = body_mass_g / (flipper_length_mm / 100)^2)
-head(select(mutated_data, body_mass_g, body_mass_kg, bmi))
+names(mutated_data)
+head(dplyr::select(mutated_data, body_mass_g, body_mass_kg, bmi))
 
 penguins_body_ratio <- penguins_clean %>%
   mutate(bill_mass_ratio = bill_length_mm / body_mass_g)
@@ -217,7 +226,7 @@ grouped_summary <- penguins_clean %>%
 print(grouped_summary)
 
 # Resumir múltiples variables a la vez
-penguins_clean %>%
+mean_clean <- penguins_clean %>%
   summarise(across(where(is.numeric), 
                    list(mean = mean, sd = sd)))
 
@@ -238,9 +247,15 @@ head(long_format)
 
 
 wide_format <- long_format %>%
-  group_by(species, island, sex, year, measurement) %>%
-  summarise(value = mean(value, na.rm = TRUE)) %>%
-  pivot_wider(names_from = measurement, values_from = value)
+  group_by(species, 
+           island, 
+           sex, 
+           year, 
+           measurement) %>%
+  summarise(value = mean(value, 
+                         na.rm = TRUE)) %>%
+  pivot_wider(names_from = measurement, 
+              values_from = value)
 
 head(wide_format)
 
@@ -252,7 +267,9 @@ head(wide_format)
 
 extra_data <- data.frame(
   species = c("Adelie", "Chinstrap", "Gentoo"),
-  conservation_status = c("High Concern", "Near Threatened", "Least Concern")
+  conservation_status = c("High Concern", 
+                          "Near Threatened", 
+                          "Least Concern")
 )
 
 # Left join
@@ -262,7 +279,7 @@ joined_data <- left_join(penguins_clean,
 head(joined_data)
 
 # Inner join
-inner_joined <- inner_join(penguins_clean, 
+inner_joined <- full_join(penguins_clean, 
                            extra_data, 
                            by = "species")
 head(inner_joined)
@@ -273,12 +290,14 @@ head(inner_joined)
 # =============================
 
 # Matriz de correlación
-cor_matrix <- select(penguins_clean, where(is.numeric)) %>% 
+penguins_clean_ch <- penguins_clean %>% 
+  filter(species == "Gentoo")
+cor_matrix <- select(penguins_clean_ch, where(is.numeric)) %>%
   cor() 
 print(cor_matrix)
 
 # Pair plot con GGally
-ggpairs(select(penguins_clean, where(is.numeric)))
+GGally::ggpairs(select(penguins_clean_ch, where(is.numeric)))
 
 # =============================
 # Pruebas Estadísticas
@@ -370,14 +389,6 @@ t_test_result
 # Confidence interval: Provides the range within which the true difference in means lies.
 # t-statistic: Indicates the magnitude of the difference relative to variability.
 
-# # =============================
-# Comparision between groups ANOVA
-# =============================
-
-# One-way ANOVA
-anova_body_mass <- aov(bill_length_mm ~ species, data = penguins_clean)
-summary(anova_body_mass)
-
 
 # =============================
 # PCA
@@ -439,7 +450,7 @@ penguins_pca_data <- data.frame(penguins_pca$x,
                                 species = penguins$species[!is.na(penguins$bill_length_mm)])
 
 # Gráfico de individuos
-ggplot(penguins_pca_data, aes(PC1, PC2, color = species)) +
+ggplot(penguins_pca_data, aes(PC1, PC2)) +
   geom_point(size = 3) +
   labs(title = "PCA de Pingüinos",
        x = "Componente Principal 1",
@@ -464,18 +475,25 @@ ggplot(penguins_pca_data, aes(PC1, PC2, color = species)) +
 #   - Si las especies se agrupan claramente en el gráfico de individuos,
 # esto sugiere que las medidas morfológicas (longitud del pico, aletas, etc.) son útiles para diferenciar entre especies de pingüinos.
 
+# Cargar datos
+data <- penguins_clean
+
+# Seleccionar solo las variables numéricas para PCA
+data_pca <- data[, c("bill_length_mm", "bill_depth_mm", "flipper_length_mm", "body_mass_g")]
+
+# Escalar datos (estandarización)
+data_pca_scaled <- scale(data_pca)
 
 
-# 1 Data points are represented as dots.
-# 2 Variables are represented as arrows.
-# 3 The direction of the arrows shows the relationship between variables.
-# 4 The length of the arrows indicates the strength of each variable in explaining the data.
-# 
-# With biplots, you can:
-# Visualize relationships between variables and data points.
-# Identify patterns and clusters within your data.
-# Understand which variables are most influential in explaining the variance.
+pca_result <- PCA(data_pca_scaled, graph = FALSE)
 
+# Visualización de los individuos (pingüinos) en el espacio de componentes principales
+fviz_pca_ind(pca_result, 
+             geom = "point",
+             col.ind = data$species, # Colorear por especie
+             palette = c("#E69F00", "#56B4E9", "#009E73"),
+             addEllipses = TRUE, # Agregar elipses por grupo
+             legend.title = "specie")
 
 # =============================
 # Model Linear Regresion simple
@@ -492,6 +510,9 @@ ggplot(penguins_clean, aes(x = flipper_length_mm, y = body_mass_g)) +
   geom_point() +
   geom_smooth(method = "lm", color = "blue") +
   ggtitle("Linear Regression: Body Mass vs Flipper Length")
+
+
+
 
 # lm(formula = body_mass_g ~ flipper_length_mm, data = penguins_clean)
 
@@ -692,3 +713,58 @@ ggplot(penguins_clean, aes(x = model_multiple$fitted.values, y = body_mass_g)) +
 # - The overall model is statistically significant, with a very low p-value for the F-statistic.
 # 
 # This model can be useful for predicting penguin body mass based on flipper length, but the inclusion of bill length and bill depth does not add much value for this specific outcome.
+
+
+
+#############
+# Otra transformacion
+############
+
+data_transformed <- penguins_clean %>%
+  mutate(
+    log_flipper_length = log(flipper_length_mm),  # Logaritmo de longitud de aleta
+    log_body_mass = log(body_mass_g),  # Logaritmo de masa corporal
+    sqrt_bill_length = sqrt(bill_length_mm)  # Raíz cuadrada de longitud de pico
+  )
+
+# Ver primeras filas con las transformaciones
+head(data_transformed)
+
+
+
+## calcula varianza
+
+# La varianza es una medida de dispersión que representa la
+# variabilidad de una serie de datos con respecto a su media. 
+# Formalmente, se calcula como la suma de los cuadrados de los 
+# residuos dividida por las observaciones totales.
+
+
+# Cargar datos
+
+
+# Calcular la varianza de la longitud de la aleta (ignorando NA)
+var_flipper <- var(penguins_clean$flipper_length_mm, 
+                   na.rm = TRUE)
+
+# Mostrar resultado
+print(var_flipper)
+
+## 
+# Calcular la media
+mean_flipper <- mean(penguins_clean$flipper_length_mm, 
+                     na.rm = TRUE)
+
+# Aplicar la fórmula de varianza
+var_manual <- sum((penguins_clean$flipper_length_mm - mean_flipper)^2,
+                  na.rm = TRUE) / (sum(!is.na(penguins_clean$flipper_length_mm)) - 1)
+
+# Mostrar resultado
+print(var_manual)
+
+
+
+
+
+
+

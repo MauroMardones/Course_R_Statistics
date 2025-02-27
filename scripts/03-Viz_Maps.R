@@ -20,9 +20,11 @@ penguins <- na.omit(palmerpenguins::penguins)
 # 1. Histogram of body mass
 hist(penguins$body_mass_g, 
      main = "Histogram of Body Mass", 
-     xlab = "Body Mass (g)", 
-     col = "skyblue", 
-     border = "white")
+     xlab = "Body Mass (g)",
+     ylab = "Frecuencia",
+     col = "red", 
+     border = "white", 
+     breaks = 50)
 
 # 2. Boxplot of body mass by species
 boxplot(body_mass_g ~ species, data = penguins, 
@@ -66,12 +68,13 @@ stripchart(body_mass_g ~ species, data = penguins,
            col = c("red", "blue", "green"))
 
 # 9. Scatter plot with regression line
-plot(penguins$bill_length_mm, penguins$bill_depth_mm, 
+plot(penguins$bill_length_mm, penguins$body_mass_g, 
      main = "Bill Length vs Bill Depth", 
      xlab = "Bill Length (mm)", 
      ylab = "Bill Depth (mm)", 
      pch = 19, col = "blue")
-abline(lm(bill_depth_mm ~ bill_length_mm, data = penguins), 
+abline(lm(penguins$body_mass_g ~ bill_length_mm,
+          data = penguins), 
        col = "red", lwd = 2)
 
 
@@ -85,20 +88,28 @@ library(tidyverse)
 
 # 10. Histogram using ggplot2
 ggplot(penguins, aes(x = body_mass_g)) +
-  geom_histogram(binwidth = 200, fill = "steelblue", color = "white") +
-  labs(title = "Histogram of Body Mass", x = "Body Mass (g)")
+  geom_histogram(binwidth = 200, fill = "steelblue", 
+                 color = "white") +
+  labs(title = "Histogram of Body Mass", x = "Body Mass (g)")+
+  theme_few()
 
 # 11. Boxplot of body mass by species
-ggplot(penguins, aes(x = species, y = body_mass_g, fill = species)) +
-  geom_boxplot() +
-  labs(title = "Body Mass by Species", y = "Body Mass (g)")
+box2 <- ggplot(penguins, aes(x = species, 
+                             y = body_mass_g, 
+                             fill = species)) +
+  geom_boxplot(outliers = FALSE) +
+  labs(title = "Body Mass by Species", y = "Body Mass (g)")+
+  theme_few()
 
 # 12. Scatter plot of flipper length vs body mass
-ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
-  geom_point() +
+ggplot(penguins, aes(x = flipper_length_mm, 
+                     y = body_mass_g, 
+                     color = species)) +
+  geom_point(size=3, shape=21) +
   labs(title = "Flipper Length vs Body Mass", 
        x = "Flipper Length (mm)", 
-       y = "Body Mass (g)")
+       y = "Body Mass (g)")+
+  theme_few()
 
 # 13. Bar plot of species counts
 ggplot(penguins, aes(x = species, fill = species)) +
@@ -106,20 +117,25 @@ ggplot(penguins, aes(x = species, fill = species)) +
   labs(title = "Counts of Penguin Species")
 
 # 14. Density plot of bill length
-ggplot(penguins, aes(x = bill_length_mm, fill = species)) +
+ggplot(penguins, aes(x = body_mass_g, fill = species)) +
   geom_density(alpha = 0.5) +
-  labs(title = "Density Plot of Bill Length", x = "Bill Length (mm)")
+  labs(title = "Density Plot of Bill Length", x = "Bill Length (mm)")+
+  theme_minimal()
 
 # 15. Violin plot of body mass by species
 ggplot(penguins, aes(x = species, y = body_mass_g, fill = species)) +
   geom_violin() +
+  geom_jitter(width = 0.1)+
   labs(title = "Violin Plot of Body Mass by Species", y = "Body Mass (g)")
 
 # 16. Faceted scatter plot
-ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
+ggplot(penguins, aes(x = bill_length_mm, 
+                     y = bill_depth_mm, 
+                     color = species)) +
   geom_point() +
   facet_wrap(~species) +
-  labs(title = "Bill Length vs Bill Depth by Species")
+  labs(title = "Bill Length vs Bill Depth by Species")+
+  theme_bw()
 
 # 17. Line plot example (dummy cumulative data)
 cumulative_data <- penguins %>% 
@@ -127,15 +143,18 @@ cumulative_data <- penguins %>%
   mutate(cumulative_mass = cumsum(body_mass_g)) %>% 
   slice_head(n = 10)
 
-ggplot(cumulative_data, aes(x = row_number(), y = cumulative_mass, color = species)) +
+ggplot(cumulative_data, aes(x = row_number(cumulative_data), 
+                            y = cumulative_mass, 
+                            color = species)) +
   geom_line() +
-  labs(title = "Cumulative Body Mass by Species", x = "Observation", y = "Cumulative Mass (g)")
+  labs(title = "Cumulative Body Mass by Species",
+       x = "Observation", y = "Cumulative Mass (g)")
 
-# 18. Heatmap example
-penguins_numeric <- penguins %>% select(where(is.numeric))
+# # # 18. Heatmap example
+penguins_numeric <- penguins %>% dplyr::select(where(is.numeric))
 cor_matrix <- cor(penguins_numeric, use = "complete.obs")
 
-ggplot(melt(cor_matrix), aes(Var1, Var2, fill = value)) +
+ggplot(data.table::melt(cor_matrix), aes(Var1, Var2, fill = value)) +
   geom_tile() +
   labs(title = "Heatmap of Numeric Variable Correlations")
 
@@ -148,7 +167,7 @@ ggplot(penguins, aes(x = body_mass_g, y = species)) +
 if (!require("plotly")) install.packages("plotly")
 library(plotly)
 
-p <- ggplot(penguins, aes(x = bill_length_mm,
+p <- ggplot(penguins, aes(x = body_mass_g,
                           y = flipper_length_mm, 
                           color = species)) +
   geom_point() +
@@ -298,7 +317,13 @@ fviz_cluster(kmeans_result,
 ## Maps
 
 # Instalar paquetes necesarios si no están instalados
-install.packages(c("sf", "ggplot2", "dplyr", "ggspatial", "rnaturalearth", "rnaturalearthdata", "terra", "rasterVis", "ncdf4", "lubridate", "jsonlite", "httr"))
+install.packages(c("sf", "ggplot2",
+                   "dplyr",
+                   "ggspatial", "rnaturalearth", 
+                   "rnaturalearthdata", "terra", 
+                   "rasterVis", "ncdf4", "lubridate", 
+                   "jsonlite", 
+                   "httr"))
 
 # Cargar librerías
 library(sf)
@@ -316,10 +341,19 @@ library(httr)
 # Obtener el mapa de Chile
 chile <- ne_states(country = "Chile", returnclass = "sf")
 
+plotchile <- ggplot(chile) +
+  geom_sf(fill = "lightblue") +
+  geom_sf() +
+  theme_bw()
+
 # Filtrar para la Región de Los Lagos, que incluye Puerto Montt
 region_puerto_montt <- chile %>%
   filter(name_en == "Los Lagos")
-
+#
+plotchile <- ggplot(region_puerto_montt) +
+  geom_sf(fill = "lightblue") +
+  geom_sf() +
+  theme_bw()
 # Coordenadas aproximadas de Puerto Montt
 lat_center <- -41.469
 lon_center <- -72.942
@@ -334,18 +368,20 @@ points_data <- data.frame(
 )
 
 # Convertir a objeto espacial sf
-points_sf <- st_as_sf(points_data, coords = c("lon", "lat"), crs = 4326)
+points_sf <- st_as_sf(points_data,
+                      coords = c("lon", "lat"), crs = 4326)
 
 # Plot del mapa con puntos y atributos
 plot <- ggplot(data = region_puerto_montt) +
   geom_sf(fill = "lightblue") +
-  geom_sf(data = points_sf, aes(color = respiration_rate), size = 3) +
+  geom_sf(data = points_sf, aes(color = respiration_rate), 
+          size = 3) +
   scale_color_viridis_c() +
   annotation_scale(location = "bl") +
   annotation_north_arrow(location = "tr", which_north = "true") +
   labs(
     title = "Puntos Aleatorios en Puerto Montt",
-    subtitle = "Tasa de respiración de animales (simulada)",
+    subtitle = "Tasa de respiración de arboles (simulada)",
     color = "Respiration Rate"
   ) +
   theme_minimal()
@@ -379,8 +415,10 @@ ggplot(data = region_puerto_montt) +
 # ================================
 # Mapa de puntos escalados por atributo
 ggplot(data = region_puerto_montt) +
-  geom_sf(fill = "lightgreen") +
-  geom_point(data = points_data, aes(x = lon, y = lat, size = respiration_rate, color = respiration_rate)) +
+  geom_sf(fill = "white") +
+  geom_point(data = points_data, aes(x = lon, y = lat, 
+                                     size = respiration_rate
+                                     )) +
   scale_color_viridis_c() +
   labs(title = "Mapa de Puntos Escalados por Tasa de Respiración") +
   theme_minimal()
@@ -389,30 +427,19 @@ ggplot(data = region_puerto_montt) +
 # Mapa con líneas de contorno
 ggplot(data = region_puerto_montt) +
   geom_sf(fill = "lightyellow") +
-  stat_density_2d(data = points_data, aes(x = lon, y = lat, color = ..level..), geom = "density2d") +
+  stat_density_2d(data = points_data, aes(x = lon, y = lat,
+                                          color = ..level..),
+                  geom = "density2d") +
   scale_color_viridis_c() +
   labs(title = "Mapa con Líneas de Contorno") +
   theme_minimal()
 
-# ================================
-# Mapa por cuadrantes
-points_data <- points_data %>%
-  mutate(
-    lat_group = cut(lat, breaks = 4),
-    lon_group = cut(lon, breaks = 4)
-  )
 
-ggplot(points_data, aes(x = lon, y = lat, color = respiration_rate)) +
-  geom_point(size = 3) +
-  facet_grid(lat_group ~ lon_group) +
-  scale_color_viridis_c() +
-  labs(title = "Mapa Facetado por Cuadrantes") +
-  theme_minimal()
 
 
 # ================================
 # Cargar shapefile en R
-# ruta_shapefile <- "ruta/del/archivo.shp"
+#ruta_shapefile <- "ruta/del/archivo.shp"
 # shapefile_data <- st_read(ruta_shapefile)
 # plot(st_geometry(shapefile_data))
 
